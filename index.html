@@ -76,11 +76,11 @@
     main.page-wrapper {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 8% 60px;
+      padding: 32px 8% 60px;
     }
 
     /* ============================================================
-       💠 HERO
+       💠 HERO PEQUEÑO / INTRO
     ============================================================ */
     #hero {
       position:relative;
@@ -90,11 +90,11 @@
       text-align:center;
       background:#0b0f1a;
       overflow:hidden;
-      min-height:640px;
-      padding:72px 24px;
+      min-height:340px;
+      padding:34px 20px;
       border-radius:16px;
-      max-width:760px;
-      margin:0 auto 60px;
+      max-width:620px;
+      margin:0 auto 40px;
     }
 
     #network-bg {
@@ -105,33 +105,35 @@
     .hero-content {
       position:relative;
       z-index:2;
-      max-width:540px;
-      padding:16px 10px;
+      max-width:460px;
+      padding:8px 6px;
     }
 
     #hero h1 {
       color:var(--accent);
-      margin-bottom:8px;
-      font-size:2rem;
+      margin:0 0 8px;
+      font-size:1.8rem;
     }
 
     #hero h2 {
-      color:#bfc6d4;
-      font-size:1rem;
-      margin-bottom:18px;
+      color:#d7dbe4;
+      font-size:.98rem;
+      margin:0 0 12px;
+      font-weight:600;
     }
 
     #hero p {
       color:#cfd3dd;
-      max-width:470px;
-      margin:0 auto 12px;
-      line-height:1.55;
+      max-width:420px;
+      margin:0 auto 10px;
+      line-height:1.5;
+      font-size:.98rem;
     }
 
     .contact-links {
-      margin-top:20px;
+      margin-top:16px;
       display:flex;
-      gap:12px;
+      gap:10px;
       justify-content:center;
       flex-wrap:wrap;
     }
@@ -139,12 +141,13 @@
     .btn {
       background:var(--accent);
       color:#0f1625;
-      padding:10px 18px;
+      padding:9px 16px;
       border-radius:6px;
       font-weight:600;
       text-decoration:none;
       border:none;
       cursor:pointer;
+      font-size:.95rem;
     }
 
     .btn:hover { background:var(--accent-soft); }
@@ -456,30 +459,41 @@
     ============================================================ */
     @media (max-width: 768px) {
       main.page-wrapper {
-        padding: 30px 5% 40px;
+        padding: 24px 5% 40px;
       }
 
       #hero {
-        min-height:420px;
-        padding:40px 16px;
+        min-height:300px;
+        padding:28px 14px;
         max-width:100%;
+        margin:0 auto 32px;
       }
 
       .hero-content {
         max-width:100%;
-        padding:6px;
+        padding:4px;
       }
 
       #hero h1 {
-        font-size:1.7rem;
+        font-size:1.55rem;
       }
 
       #hero h2 {
-        font-size:.95rem;
+        font-size:.92rem;
       }
 
       #hero p {
         max-width:100%;
+        font-size:.94rem;
+      }
+
+      .contact-links {
+        margin-top:14px;
+      }
+
+      .btn {
+        padding:8px 14px;
+        font-size:.9rem;
       }
 
       .exp-columns {
