@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos · Automatización e informes</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0f1625;
+      --tx:#f3f5fa;
+      --muted:#a2a7b7;
+      --card:#1a2234;
+      --bd:#2b3349;
+      --acc:#00bfae;
+      --acc-soft:#14d1c5;
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      padding:56px 8%;
+      font-family:Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--tx);
+      line-height:1.7;
+    }
+
+    .page-header{
+      max-width:980px;
+      margin:0 auto 24px;
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size:2.1rem;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    h1 span.emoji{
+      font-size:1.9rem;
+    }
+
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    .breadcrumb{
+      margin-top:10px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .breadcrumb a{
+      color:var(--acc);
+      text-decoration:none;
+    }
+
+    .subject-grid{
+      max-width:980px;
+      margin:24px auto 0;
+      display:grid;
+      gap:16px;
+    }
+
+    details.subject{
+      background:var(--card);
+      border:1.5px solid var(--bd);
+      border-radius:14px;
+      padding:14px 16px 10px;
+    }
+
+    details.subject[open]{
+      border-color:var(--acc-soft);
+      box-shadow:0 0 0 1px rgba(0,191,174,.2);
+    }
+
+    summary{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      cursor:pointer;
+    }
+    summary::-webkit-details-marker{display:none;}
+
+    .subject-title{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .subject-name{
+      font-weight:600;
+      font-size:1rem;
+    }
+
+    .subject-tags{
+      font-size:.8rem;
+      color:var(--muted);
+    }
+
+    .chip{
+      display:inline-block;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid #2b3349;
+      margin-right:4px;
+    }
+
+    .subject-arrow{
+      font-size:1.1rem;
+      color:var(--muted);
+      transition:transform .2s ease;
+    }
+
+    details[open] .subject-arrow{
+      transform:rotate(90deg);
+      color:var(--acc);
+    }
+
+    .subject-body{
+      margin-top:10px;
+      padding-top:8px;
+      border-top:1px solid #252c40;
+      font-size:.93rem;
+    }
+
+    .subject-body p{
+      margin:0 0 10px;
+      color:var(--muted);
+    }
+
+    .resource-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .resource-list li{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 10px;
+      align-items:center;
+      font-size:.9rem;
+    }
+
+    .resource-type{
+      font-size:.8rem;
+      padding:2px 8px;
+      border-radius:999px;
+      background:#121a2a;
+      border:1px solid #283144;
+      color:var(--muted);
+    }
+
+    .resource-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 10px;
+      align-items:center;
+    }
+
+    .resource-links a{
+      color:var(--acc);
+      text-decoration:none;
+      font-weight:600;
+      margin-right:10px;
+      word-break:break-all;
+    }
+
+    .resource-links a:hover{
+      text-decoration:underline;
+    }
+
+    .empty{
+      font-style:italic;
+      color:var(--muted);
+    }
+
+    .footer-nav{
+      max-width:980px;
+      margin:32px auto 0;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .btn-next{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:10px 16px;
+      border-radius:10px;
+      border:none;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.93rem;
+      cursor:pointer;
+      background:var(--acc);
+      color:#0f1625;
+    }
+
+    @media (max-width:640px){
+      body{padding:40px 5%;}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1>
+      <span class="emoji">🧾</span>
+      Automatización e informes
+    </h1>
+    <p class="subtitle">
+      Scripts y procesos para generar informes automáticos: datos de inventario, actividad de sistemas,
+      métricas de seguridad y reporting para negocio y TI.
+    </p>
+    <div class="breadcrumb">
+      <a href="../index.html">⬅ Volver al portfolio</a> · 
+      <span>Automatización y Gestión de la Seguridad</span>
+    </div>
+  </header>
+
+  <main class="subject-grid">
+
+    <!-- 1. Informes operativos de IT -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Informes operativos de IT</span>
+          <span class="subject-tags">
+            <span class="chip">Inventario</span>
+            <span class="chip">Tickets / Soporte</span>
+            <span class="chip">Automatización</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Scripts para generar informes periódicos de inventario, tickets de soporte y estado de los equipos,
+          listos para enviar a responsables técnicos o dirección.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📊 Inventario</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/informe-inventario-equipos.xlsx" target="_blank">
+                Informe de inventario de equipos (XLSX)
+              </a>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/script-inventario-equipos.zip" target="_blank">
+                Script de generación de inventario (ZIP)
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">🎫 Tickets</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/informe-tickets-soporte.xlsx" target="_blank">
+                Informe de tickets de soporte (XLSX)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 2. Informes de seguridad y cumplimiento -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Informes de seguridad y cumplimiento</span>
+          <span class="subject-tags">
+            <span class="chip">Logs</span>
+            <span class="chip">Compliance</span>
+            <span class="chip">Dashboards</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Automatización de informes de seguridad: consolidación de logs, detección de eventos recurrentes
+          y generación de resúmenes para auditoría interna o ISO 27001.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">🧾 Logs</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/script-consolidar-logs.zip" target="_blank">
+                Script para consolidar logs y métricas (ZIP)
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">✅ Compliance</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/plantilla-informe-controles.pdf" target="_blank">
+                Plantilla de informe de controles de seguridad (PDF)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 3. Limpieza y transformación de datos para informes -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Limpieza y transformación de datos</span>
+          <span class="subject-tags">
+            <span class="chip">ETL ligero</span>
+            <span class="chip">Excel / CSV</span>
+            <span class="chip">Python</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Pequeños procesos tipo ETL para coger datos “sucios” (CSV, exportaciones de herramientas),
+          limpiarlos y dejarlos listos para usarlos en informes o dashboards.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📂 Normalización</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/script-limpieza-datos.zip" target="_blank">
+                Script de limpieza y normalización de datos (ZIP)
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📈 Dataset ejemplo</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/dataset-ejemplo-limpio.xlsx" target="_blank">
+                Dataset limpio para informes (XLSX)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 4. Plantillas y automatización de reporting -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Plantillas y automatización del reporting</span>
+          <span class="subject-tags">
+            <span class="chip">Plantillas</span>
+            <span class="chip">PowerPoint / Excel</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Plantillas y documentos que uso para estandarizar los informes:
+          estructura fija, métricas clave y pequeños scripts que rellenan partes del reporte de forma automática.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📑 Plantillas</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/plantilla-informe-mensual-it.pptx" target="_blank">
+                Plantilla de informe mensual IT (PPTX)
+              </a>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/plantilla-dashboard-metricas.xlsx" target="_blank">
+                Plantilla de métricas en Excel (XLSX)
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">⚙️ Automatización</span>
+            <div class="resource-links">
+              <span class="empty">Pendiente de subir script que rellena estas plantillas a partir de datos reales.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+  </main>
+
+  <footer class="footer-nav">
+    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+  </footer>
+
+</body>
+</html>
+

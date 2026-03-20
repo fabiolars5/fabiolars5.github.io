@@ -1,0 +1,797 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos · 2º Curso · Ingeniería de Ciberseguridad</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0f1625;
+      --tx:#f3f5fa;
+      --muted:#a2a7b7;
+      --card:#1a2234;
+      --bd:#2b3349;
+      --acc:#00bfae;
+      --acc-soft:#14d1c5;
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      padding:56px 8%;
+      font-family:Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--tx);
+      line-height:1.7;
+    }
+
+    .page-header{
+      max-width:980px;
+      margin:0 auto 24px;
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size:2.1rem;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    h1 span.emoji{
+      font-size:1.9rem;
+    }
+
+    .badge-year{
+      display:inline-block;
+      padding:2px 10px;
+      border-radius:999px;
+      border:1px solid var(--acc-soft);
+      font-size:.85rem;
+      color:var(--acc-soft);
+      margin-left:4px;
+    }
+
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    .breadcrumb{
+      margin-top:10px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .breadcrumb a{
+      color:var(--acc);
+      text-decoration:none;
+    }
+
+    .subject-grid{
+      max-width:980px;
+      margin:24px auto 0;
+      display:grid;
+      gap:16px;
+    }
+
+    details.subject{
+      background:var(--card);
+      border:1.5px solid var(--bd);
+      border-radius:14px;
+      padding:14px 16px 10px;
+    }
+
+    details.subject[open]{
+      border-color:var(--acc-soft);
+      box-shadow:0 0 0 1px rgba(0,191,174,.2);
+    }
+
+    summary{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      cursor:pointer;
+    }
+    summary::-webkit-details-marker{display:none;}
+
+    .subject-title{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .subject-name{
+      font-weight:600;
+      font-size:1rem;
+    }
+
+    .subject-tags{
+      font-size:.8rem;
+      color:var(--muted);
+    }
+
+    .chip{
+      display:inline-block;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid #2b3349;
+      margin-right:4px;
+    }
+
+    .subject-arrow{
+      font-size:1.1rem;
+      color:var(--muted);
+      transition:transform .2s ease;
+    }
+
+    details[open] .subject-arrow{
+      transform:rotate(90deg);
+      color:var(--acc);
+    }
+
+    .subject-body{
+      margin-top:10px;
+      padding-top:8px;
+      border-top:1px solid #252c40;
+      font-size:.93rem;
+    }
+
+    .subject-body p{
+      margin:0 0 10px;
+      color:var(--muted);
+    }
+
+    .resource-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .resource-list li{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 10px;
+      align-items:center;
+      font-size:.9rem;
+    }
+
+    .resource-type{
+      font-size:.8rem;
+      padding:2px 8px;
+      border-radius:999px;
+      background:#121a2a;
+      border:1px solid #283144;
+      color:var(--muted);
+    }
+
+    .resource-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 10px;
+      align-items:center;
+    }
+
+    .resource-links a{
+      color:var(--acc);
+      text-decoration:none;
+      font-weight:600;
+      margin-right:10px;
+      word-break:break-all;
+    }
+
+    .resource-links a:hover{
+      text-decoration:underline;
+    }
+
+    .private-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(0,191,174,.08);
+      border:1px solid rgba(0,191,174,.35);
+      color:var(--acc-soft);
+      font-size:.85rem;
+      font-weight:600;
+    }
+
+    .request-link{
+      color:var(--acc);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .request-link:hover{
+      text-decoration:underline;
+    }
+
+    .empty{
+      font-style:italic;
+      color:var(--muted);
+    }
+
+    .footer-nav{
+      max-width:980px;
+      margin:32px auto 0;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .btn-back, .btn-next{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:10px 16px;
+      border-radius:10px;
+      border:none;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.93rem;
+      cursor:pointer;
+    }
+
+    .btn-back{
+      background:#151d30;
+      color:var(--tx);
+    }
+
+    .btn-next{
+      background:var(--acc);
+      color:#0f1625;
+    }
+
+    @media (max-width:640px){
+      body{padding:40px 5%;}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1>
+      <span class="emoji">📗</span>
+      2º Curso · Proyectos y documentación
+    </h1>
+    <p class="subtitle">
+      Año fuerte de programación, sistemas, bases de datos y primeras asignaturas
+      claramente orientadas a ciberseguridad (hacking, criptografía y desarrollo seguro).
+      Aquí muestro una selección representativa del curso. La documentación completa y el código fuente permanecen en acceso restringido.
+    </p>
+    <div class="breadcrumb">
+      <a href="../index.html">⬅ Volver al portfolio</a> · 
+    </div>
+  </header>
+
+  <main class="subject-grid">
+
+    <!-- Técnicas de Programación Avanzadas -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Técnicas de Programación Avanzadas</span>
+          <span class="subject-tags">
+            <span class="chip">Algoritmos</span>
+            <span class="chip">Buenas prácticas</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>Ejercicios y proyectos donde trabajo con estructuras de datos avanzadas, recursividad y patrones de diseño básicos.</p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Proyecto 1</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 2</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 3</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 4</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Programación Orientada a Objetos -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Programación Orientada a Objetos</span>
+          <span class="subject-tags">
+            <span class="chip">Java</span>
+            <span class="chip">POO</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>Clases, herencia, interfaces, polimorfismo y pequeños sistemas hechos en Java.</p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Proyecto 1</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Código fuente privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Programaci%C3%B3n%20Orientada%20a%20Objetos" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 2</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 3</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 4</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Programación Concurrente y Distribuida -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Programación Concurrente y Distribuida</span>
+          <span class="subject-tags">
+            <span class="chip">Hilos</span>
+            <span class="chip">Sockets</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>Prácticas con hilos, sincronización, comunicación entre procesos y aplicaciones distribuidas.</p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Proyecto 1</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 2</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 3</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 4</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Arquitectura de Computadores -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Arquitectura de Computadores</span>
+          <span class="subject-tags">
+            <span class="chip">CPU</span>
+            <span class="chip">Memoria</span>
+            <span class="chip">ESP32</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Proyecto final completo sobre ESP32: memoria técnica, presentación, esquema de conexiones, evidencias reales, código y vídeos de demostración.
+        </p>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">🏁 Proyecto final · ESP32</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Documentación y código privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%20final%20ESP32%20Arquitectura%20de%20Computadores" class="request-link">
+                Solicitar acceso
+              </a>
+              <a href="https://youtu.be/X0RyGSRV5M8" target="_blank" rel="noopener">
+                ▶️ Vídeo demostración (YouTube)
+              </a>
+              <a href="https://youtube.com/shorts/wmAIrs2cMsg?feature=share" target="_blank" rel="noopener">
+                ✅ Short · Dispositivo funcionando (YouTube)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Criptografía -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Criptografía</span>
+          <span class="subject-tags">
+            <span class="chip">Cifrado</span>
+            <span class="chip">GPG / PGP</span>
+            <span class="chip">Criptoanálisis</span>
+            <span class="chip">Certificados</span>
+            <span class="chip">Post-cuántica</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>Cuadernos de laboratorio y prácticas: cifrado/descifrado, claves y certificados, criptoanálisis y una práctica grupal de criptografía post-cuántica.</p>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Práctica 1 — Laboratorio + GPG4Win/Kleopatra</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Documentación privada</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Criptograf%C3%ADa" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 2 — Criptoanálisis y tipos de cifrados</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Documentación privada</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Criptograf%C3%ADa" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 3 — Cifrado de archivos, claves y certificados</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Documentación privada</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Criptograf%C3%ADa" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 4 — Grupal: Criptografía post-cuántica</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Criptograf%C3%ADa" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Sistemas Operativos -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Sistemas Operativos</span>
+          <span class="subject-tags">
+            <span class="chip">Linux</span>
+            <span class="chip">Procesos</span>
+            <span class="chip">Concurrencia</span>
+            <span class="chip">Memoria</span>
+            <span class="chip">Planificadores</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>Prácticas de Linux y fundamentos de SO: planificación, concurrencia, gestión de memoria y ejercicios tipo laboratorio.</p>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Práctica 1 — Planificadores</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe y código privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Sistemas%20Operativos" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 2 — Concurrencia</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe y código privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Sistemas%20Operativos" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 3 — Gestión de memoria</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Sistemas%20Operativos" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 4 — Linux</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Material privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Sistemas%20Operativos" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Bases de Datos -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Bases de Datos</span>
+          <span class="subject-tags">
+            <span class="chip">SQL</span>
+            <span class="chip">E/R</span>
+            <span class="chip">Modelo relacional</span>
+            <span class="chip">Tablas &amp; Vistas</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>Modelado (Entidad-Relación), diseño relacional, creación de tablas/vistas y resolución de ejercicios con scripts SQL.</p>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Práctica 1 — Diagramas Entidad-Relación</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Bases%20de%20Datos" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 2 — Sentencias SQL</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Bases%20de%20Datos" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 3 — Tablas, vistas y ejercicios (SQL)</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe y scripts privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Bases%20de%20Datos" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 4 — Grupal</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe y scripts privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Bases%20de%20Datos" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Técnicas de Hacking -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Técnicas de Hacking</span>
+          <span class="subject-tags">
+            <span class="chip">Pentesting</span>
+            <span class="chip">Nmap</span>
+            <span class="chip">Web/Móvil</span>
+            <span class="chip">Sniffing</span>
+            <span class="chip">IoT / Firmware</span>
+            <span class="chip">Reversing</span>
+            <span class="chip">Python</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>Informes de laboratorio y entregables: reconocimiento (Nmap), pentesting web/móvil, análisis de firmware (ESP32), sniffing en red local e ingeniería inversa.</p>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Práctica 1 — Scanner de puertos (Nmap)</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe y código privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20T%C3%A9cnicas%20de%20Hacking" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 2 — Ataques a firmware (ESP32)</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe y archivo privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20T%C3%A9cnicas%20de%20Hacking" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 3 — Ingeniería inversa</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe y código privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20T%C3%A9cnicas%20de%20Hacking" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 4 — Grupal: Pentesting + Sniffing</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20T%C3%A9cnicas%20de%20Hacking" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Metodologías de Desarrollo Seguro -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Metodologías de Desarrollo Seguro</span>
+          <span class="subject-tags">
+            <span class="chip">Secure SDLC</span>
+            <span class="chip">Threat modeling</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>Documentación de análisis de riesgos, modelos de amenazas y buenas prácticas de seguridad en el ciclo de vida del software.</p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Proyecto 1</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 2</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 3</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 4</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Metodologías de Gestión de Proyectos -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Metodologías de Gestión de Proyectos</span>
+          <span class="subject-tags">
+            <span class="chip">Scrum</span>
+            <span class="chip">Kanban</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>Trabajos sobre gestión ágil, planificación y seguimiento de proyectos tecnológicos.</p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Proyecto 1</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 2</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 3</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Proyecto 4</span>
+            <div class="resource-links">
+              <span class="empty">Sin archivos subidos todavía.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+  </main>
+
+  <footer class="footer-nav">
+    <a class="btn-back" href="1er-ano-proy_uni.html">⬅ Volver a 1º curso</a>
+    <a class="btn-next" href="3er-ano-proy_uni.html">Ir a 3º curso ➜</a>
+  </footer>
+
+</body>
+</html>

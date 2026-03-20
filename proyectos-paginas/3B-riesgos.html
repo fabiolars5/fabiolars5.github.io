@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos · Análisis y gestión de riesgos</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0f1625;
+      --tx:#f3f5fa;
+      --muted:#a2a7b7;
+      --card:#1a2234;
+      --bd:#2b3349;
+      --acc:#00bfae;
+      --acc-soft:#14d1c5;
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      padding:56px 8%;
+      font-family:Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--tx);
+      line-height:1.7;
+    }
+
+    .page-header{
+      max-width:980px;
+      margin:0 auto 24px;
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size:2.1rem;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    h1 span.emoji{
+      font-size:1.9rem;
+    }
+
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    .breadcrumb{
+      margin-top:10px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .breadcrumb a{
+      color:var(--acc);
+      text-decoration:none;
+    }
+
+    .subject-grid{
+      max-width:980px;
+      margin:24px auto 0;
+      display:grid;
+      gap:16px;
+    }
+
+    details.subject{
+      background:var(--card);
+      border:1.5px solid var(--bd);
+      border-radius:14px;
+      padding:14px 16px 10px;
+    }
+
+    details.subject[open]{
+      border-color:var(--acc-soft);
+      box-shadow:0 0 0 1px rgba(0,191,174,.2);
+    }
+
+    summary{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      cursor:pointer;
+    }
+    summary::-webkit-details-marker{display:none;}
+
+    .subject-title{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .subject-name{
+      font-weight:600;
+      font-size:1rem;
+    }
+
+    .subject-tags{
+      font-size:.8rem;
+      color:var(--muted);
+    }
+
+    .chip{
+      display:inline-block;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid #2b3349;
+      margin-right:4px;
+    }
+
+    .subject-arrow{
+      font-size:1.1rem;
+      color:var(--muted);
+      transition:transform .2s ease;
+    }
+
+    details[open] .subject-arrow{
+      transform:rotate(90deg);
+      color:var(--acc);
+    }
+
+    .subject-body{
+      margin-top:10px;
+      padding-top:8px;
+      border-top:1px solid #252c40;
+      font-size:.93rem;
+    }
+
+    .subject-body p{
+      margin:0 0 10px;
+      color:var(--muted);
+    }
+
+    .resource-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .resource-list li{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 10px;
+      align-items:center;
+      font-size:.9rem;
+    }
+
+    .resource-type{
+      font-size:.8rem;
+      padding:2px 8px;
+      border-radius:999px;
+      background:#121a2a;
+      border:1px solid #283144;
+      color:var(--muted);
+    }
+
+    .resource-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 10px;
+      align-items:center;
+    }
+
+    .resource-links a{
+      color:var(--acc);
+      text-decoration:none;
+      font-weight:600;
+      margin-right:10px;
+      word-break:break-all;
+    }
+
+    .resource-links a:hover{
+      text-decoration:underline;
+    }
+
+    .empty{
+      font-style:italic;
+      color:var(--muted);
+    }
+
+    .footer-nav{
+      max-width:980px;
+      margin:32px auto 0;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .btn-next{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:10px 16px;
+      border-radius:10px;
+      border:none;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.93rem;
+      cursor:pointer;
+      background:var(--acc);
+      color:#0f1625;
+    }
+
+    @media (max-width:640px){
+      body{padding:40px 5%;}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1>
+      <span class="emoji">📉</span>
+      Análisis y gestión de riesgos
+    </h1>
+    <p class="subtitle">
+      Proyectos donde identifico activos, amenazas y vulnerabilidades, calculo el nivel de riesgo 
+      y defino planes de tratamiento siguiendo buenas prácticas (ISO&nbsp;27005, NIST, etc.).
+    </p>
+    <div class="breadcrumb">
+      <a href="../index.html">⬅ Volver al portfolio</a> · 
+      <span>Automatización y Gestión de la Seguridad</span>
+    </div>
+  </header>
+
+  <main class="subject-grid">
+
+    <!-- 1. Inventario de activos y contexto -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Inventario de activos y análisis de contexto</span>
+          <span class="subject-tags">
+            <span class="chip">Activos</span>
+            <span class="chip">Impacto</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Identificación de activos de negocio y tecnológicos, valoración de impacto (confidencialidad, integridad y 
+          disponibilidad) y definición del contexto organizativo antes de iniciar el análisis de riesgos.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Documento</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/riesgos/inventario-activos-contexto.pdf" target="_blank">
+                Inventario de activos y contexto (PDF)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 2. Matriz de riesgos -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Matriz de riesgos y metodología de valoración</span>
+          <span class="subject-tags">
+            <span class="chip">ISO&nbsp;27005</span>
+            <span class="chip">Probabilidad · Impacto</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Definición de criterios de riesgo, escalas de probabilidad/impacto y construcción de una matriz de riesgos para 
+          priorizar amenazas sobre los activos críticos.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📊 Hoja de cálculo</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/riesgos/matriz-riesgos.xlsx" target="_blank">
+                Matriz de riesgos (XLSX)
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📄 Guía</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/riesgos/metodologia-valoracion-riesgos.pdf" target="_blank">
+                Metodología de valoración (PDF)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 3. Caso práctico -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Caso práctico: análisis de riesgos en una pyme</span>
+          <span class="subject-tags">
+            <span class="chip">Caso realista</span>
+            <span class="chip">Informe ejecutivo</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Aplicación de la metodología a una organización ficticia: identificación de escenarios de riesgo, cálculo del 
+          riesgo inherente y residual, y recomendaciones priorizadas.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Informe</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/riesgos/caso-practico-pyme-informe.pdf" target="_blank">
+                Informe de análisis de riesgos (PDF)
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📑 Presentación</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/riesgos/caso-practico-pyme-presentacion.pdf" target="_blank">
+                Resumen ejecutivo para dirección
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 4. Plan de tratamiento y seguimiento -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Plan de tratamiento y seguimiento de riesgos</span>
+          <span class="subject-tags">
+            <span class="chip">Tratamiento</span>
+            <span class="chip">Controles</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Diseño de un plan de tratamiento (evitar, reducir, transferir, aceptar), asignación de responsables,
+          fechas objetivo y métricas de seguimiento para la mejora continua.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Plan</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/riesgos/plan-tratamiento-riesgos.pdf" target="_blank">
+                Plan de tratamiento de riesgos (PDF)
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📊 Dashboard</span>
+            <div class="resource-links">
+              <span class="empty">Pendiente de subir ejemplo de dashboard de seguimiento.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+  </main>
+
+  <footer class="footer-nav">
+    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+  </footer>
+
+</body>
+</html>
+

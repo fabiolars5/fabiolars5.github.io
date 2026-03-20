@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Herramientas de Inteligencia · Fabiola RS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0f1625;
+      --tx:#f3f5fa;
+      --muted:#a2a7b7;
+      --card:#1a2234;
+      --bd:#2b3349;
+      --acc:#00bfae;
+      --acc-soft:#14d1c5;
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      padding:56px 8%;
+      font-family:Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--tx);
+      line-height:1.7;
+    }
+
+    .page-header{
+      max-width:980px;
+      margin:0 auto 24px;
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size:2.1rem;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    h1 span.emoji{
+      font-size:1.9rem;
+    }
+
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    .breadcrumb{
+      margin-top:10px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .breadcrumb a{
+      color:var(--acc);
+      text-decoration:none;
+    }
+
+    .subject-grid{
+      max-width:980px;
+      margin:24px auto 0;
+      display:grid;
+      gap:16px;
+    }
+
+    details.subject{
+      background:var(--card);
+      border:1.5px solid var(--bd);
+      border-radius:14px;
+      padding:14px 16px 10px;
+    }
+
+    details.subject[open]{
+      border-color:var(--acc-soft);
+      box-shadow:0 0 0 1px rgba(0,191,174,.2);
+    }
+
+    summary{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      cursor:pointer;
+    }
+    summary::-webkit-details-marker{display:none;}
+
+    .subject-title{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .subject-name{
+      font-weight:600;
+      font-size:1rem;
+    }
+
+    .subject-tags{
+      font-size:.8rem;
+      color:var(--muted);
+    }
+
+    .chip{
+      display:inline-block;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid #2b3349;
+      margin-right:4px;
+    }
+
+    .subject-arrow{
+      font-size:1.1rem;
+      color:var(--muted);
+      transition:transform .2s ease;
+    }
+
+    details[open] .subject-arrow{
+      transform:rotate(90deg);
+      color:var(--acc);
+    }
+
+    .subject-body{
+      margin-top:10px;
+      padding-top:8px;
+      border-top:1px solid #252c40;
+      font-size:.93rem;
+    }
+
+    .subject-body p{
+      margin:0 0 10px;
+      color:var(--muted);
+    }
+
+    .resource-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .resource-list li{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 10px;
+      align-items:center;
+      font-size:.9rem;
+    }
+
+    .resource-type{
+      font-size:.8rem;
+      padding:2px 8px;
+      border-radius:999px;
+      background:#121a2a;
+      border:1px solid #283144;
+      color:var(--muted);
+    }
+
+    .resource-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 10px;
+      align-items:center;
+    }
+
+    .resource-links a{
+      color:var(--acc);
+      text-decoration:none;
+      font-weight:600;
+      margin-right:10px;
+      word-break:break-all;
+    }
+
+    .resource-links a:hover{
+      text-decoration:underline;
+    }
+
+    .empty{
+      font-style:italic;
+      color:var(--muted);
+    }
+
+    .footer-nav{
+      max-width:980px;
+      margin:32px auto 0;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .btn-next{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:10px 16px;
+      border-radius:10px;
+      border:none;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.93rem;
+      cursor:pointer;
+      background:var(--acc);
+      color:#0f1625;
+    }
+
+    @media (max-width:640px){
+      body{padding:40px 5%;}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1>
+      <span class="emoji">🛠️</span>
+      Herramientas de Inteligencia
+    </h1>
+    <p class="subtitle">
+      Uso práctico de herramientas OSINT y SOCMINT para construir grafos de relaciones, automatizar
+      la recolección de datos y analizar la superficie de exposición de organizaciones y objetivos.
+    </p>
+    <div class="breadcrumb">
+      <a href="../index.html">⬅ Volver al portfolio</a> · 
+      <span>Ciberinteligencia y análisis de amenazas</span>
+    </div>
+  </header>
+
+  <main class="subject-grid">
+
+    <!-- 1. Maltego -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Análisis de relaciones con Maltego</span>
+          <span class="subject-tags">
+            <span class="chip">Maltego</span>
+            <span class="chip">Grafos</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Caso práctico de construcción de un grafo de relaciones entre dominios, correos, IPs y
+          organizaciones usando Maltego, con enfoque en la visualización de infraestructura maliciosa.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Informe</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/herramientas-inteligencia/maltego-informe.pdf" target="_blank">
+                Informe de análisis con Maltego (PDF)
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">🗺️ Grafo</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/herramientas-inteligencia/maltego-grafo.mtgx" target="_blank">
+                Grafo Maltego (MTGX)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 2. SpiderFoot -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Automatización OSINT con SpiderFoot</span>
+          <span class="subject-tags">
+            <span class="chip">SpiderFoot</span>
+            <span class="chip">Automatización</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Escaneo automatizado de un objetivo (dominio/empresa) con SpiderFoot, selección de módulos,
+          análisis de resultados y filtrado de hallazgos relevantes para ciberseguridad.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📊 Informe</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/herramientas-inteligencia/spiderfoot-informe.pdf" target="_blank">
+                Informe de escaneo con SpiderFoot (PDF)
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📁 Export</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/herramientas-inteligencia/spiderfoot-export.csv" target="_blank">
+                Export de resultados (CSV)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 3. Shodan -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Superficie de exposición con Shodan</span>
+          <span class="subject-tags">
+            <span class="chip">Shodan</span>
+            <span class="chip">Servicios expuestos</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Uso de Shodan para identificar servicios expuestos, tecnologías utilizadas y posibles
+          vectores de entrada en una organización o rango de IPs determinado.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Informe</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/herramientas-inteligencia/shodan-superficie-expuesta.pdf" target="_blank">
+                Informe Shodan: servicios expuestos (PDF)
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📂 Consultas</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/herramientas-inteligencia/shodan-queries.txt" target="_blank">
+                Colección de queries avanzadas (TXT)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- 4. Stack de herramientas OSINT integrado -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Uso combinado de herramientas OSINT</span>
+          <span class="subject-tags">
+            <span class="chip">Playbook</span>
+            <span class="chip">Metodología</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+      <div class="subject-body">
+        <p>
+          Playbook donde combino diferentes herramientas (Maltego, SpiderFoot, Shodan, buscadores,
+          etc.) para construir una visión completa del objetivo en una investigación de inteligencia.
+        </p>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📑 Playbook</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/herramientas-inteligencia/playbook-herramientas-osint.pdf" target="_blank">
+                Playbook de uso combinado (PDF)
+              </a>
+            </div>
+          </li>
+          <li>
+            <span class="resource-type">📋 Checklist</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/herramientas-inteligencia/checklist-investigacion-osint.pdf" target="_blank">
+                Checklist de pasos OSINT (PDF)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+  </main>
+
+  <footer class="footer-nav">
+    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+  </footer>
+
+</body>
+</html>

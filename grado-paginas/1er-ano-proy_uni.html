@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos · 1º Curso · Ingeniería de Ciberseguridad</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0f1625;
+      --tx:#f3f5fa;
+      --muted:#a2a7b7;
+      --card:#1a2234;
+      --bd:#2b3349;
+      --acc:#00bfae;
+      --acc-soft:#14d1c5;
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      padding:56px 8%;
+      font-family:Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--tx);
+      line-height:1.7;
+    }
+
+    .page-header{
+      max-width:980px;
+      margin:0 auto 24px;
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size:2.1rem;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    h1 span.emoji{
+      font-size:1.9rem;
+    }
+
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    .breadcrumb{
+      margin-top:10px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .breadcrumb a{
+      color:var(--acc);
+      text-decoration:none;
+    }
+
+    .subject-grid{
+      max-width:980px;
+      margin:24px auto 0;
+      display:grid;
+      gap:16px;
+    }
+
+    details.subject{
+      background:var(--card);
+      border:1.5px solid var(--bd);
+      border-radius:14px;
+      padding:14px 16px 10px;
+    }
+
+    details.subject[open]{
+      border-color:var(--acc-soft);
+      box-shadow:0 0 0 1px rgba(0,191,174,.2);
+    }
+
+    summary{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      cursor:pointer;
+    }
+    summary::-webkit-details-marker{display:none;}
+
+    .subject-title{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .subject-name{
+      font-weight:600;
+      font-size:1rem;
+    }
+
+    .subject-tags{
+      font-size:.8rem;
+      color:var(--muted);
+    }
+
+    .chip{
+      display:inline-block;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid #2b3349;
+      margin-right:4px;
+    }
+
+    .subject-arrow{
+      font-size:1.1rem;
+      color:var(--muted);
+      transition:transform .2s ease;
+    }
+
+    details[open] .subject-arrow{
+      transform:rotate(90deg);
+      color:var(--acc);
+    }
+
+    .subject-body{
+      margin-top:10px;
+      padding-top:8px;
+      border-top:1px solid #252c40;
+      font-size:.93rem;
+    }
+
+    .subject-body p{
+      margin:0 0 10px;
+      color:var(--muted);
+    }
+
+    .resource-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .resource-list li{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 10px;
+      align-items:center;
+      font-size:.9rem;
+    }
+
+    .resource-type{
+      font-size:.8rem;
+      padding:2px 8px;
+      border-radius:999px;
+      background:#121a2a;
+      border:1px solid #283144;
+      color:var(--muted);
+    }
+
+    .resource-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 10px;
+      align-items:center;
+    }
+
+    .resource-links a{
+      color:var(--acc);
+      text-decoration:none;
+      font-weight:600;
+      margin-right:10px;
+      word-break:break-all;
+    }
+
+    .resource-links a:hover{
+      text-decoration:underline;
+    }
+
+    .private-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(0,191,174,.08);
+      border:1px solid rgba(0,191,174,.35);
+      color:var(--acc-soft);
+      font-size:.85rem;
+      font-weight:600;
+    }
+
+    .request-link{
+      color:var(--acc);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .request-link:hover{
+      text-decoration:underline;
+    }
+
+    .empty{
+      font-style:italic;
+      color:var(--muted);
+    }
+
+    .footer-nav{
+      max-width:980px;
+      margin:32px auto 0;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .btn-next{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:10px 16px;
+      border-radius:10px;
+      border:none;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.93rem;
+      cursor:pointer;
+      background:var(--acc);
+      color:#0f1625;
+    }
+
+    @media (max-width:640px){
+      body{padding:40px 5%;}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1>
+      <span class="emoji"></span>
+      1º Curso · Proyectos y documentación
+    </h1>
+    <p class="subtitle">
+      Fundamentos matemáticos, programación y primeras asignaturas técnicas.
+      Aquí muestro una selección representativa del curso. La documentación completa y el código fuente permanecen en acceso restringido.
+    </p>
+    <div class="breadcrumb">
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
+    </div>
+  </header>
+
+  <main class="subject-grid">
+
+    <!-- Empresa y Legislación -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Empresa y Legislación</span>
+          <span class="subject-tags">
+            <span class="chip">Negocio</span>
+            <span class="chip">Marco legal</span>
+            <span class="chip">Estrategia</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>Trabajos sobre organizaciones, análisis empresarial y marco legal básico aplicado a TI.</p>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Práctica 1 — DAFO y Fuerzas de Porter</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Empresa%20y%20Legislaci%C3%B3n" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 2 — Análisis estratégico (Telefónica)</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Empresa%20y%20Legislaci%C3%B3n" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 3 — Firma digital</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Empresa%20y%20Legislaci%C3%B3n" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Fundamentos de Programación -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Fundamentos de Programación</span>
+          <span class="subject-tags">
+            <span class="chip">Java</span>
+            <span class="chip">Algoritmos básicos</span>
+            <span class="chip">Consola</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>Primeros programas en Java: estructuras de control, lógica básica y mini-proyectos de consola.</p>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Práctica 1 — Piedra, papel o tijeras</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Código fuente privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Fundamentos%20de%20Programaci%C3%B3n" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 2 — Piedra, papel o tijeras avanzado</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Código fuente privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Fundamentos%20de%20Programaci%C3%B3n" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 3 — Calculadora de matrices</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Código fuente privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Fundamentos%20de%20Programaci%C3%B3n" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Programación con Estructuras Lineales -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Programación con Estructuras Lineales</span>
+          <span class="subject-tags">
+            <span class="chip">Listas</span>
+            <span class="chip">Colas</span>
+            <span class="chip">Pilas</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>Ejercicios y prácticas en C++ centradas en memoria, punteros y fundamentos de estructuras lineales, con demos en vídeo.</p>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Práctica 1 — Ejercicios Gestión de Memoria</span>
+            <div class="resource-links">
+              <a href="https://youtu.be/CO09mfytyLA" target="_blank" rel="noopener">
+                🎥 Vídeo (YouTube)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 2 — Punteros</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Código fuente privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Programaci%C3%B3n%20con%20Estructuras%20Lineales" class="request-link">
+                Solicitar acceso
+              </a>
+              <a href="https://youtu.be/WwAmQkIthss" target="_blank" rel="noopener">
+                🎥 Vídeo (YouTube)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 3 — Concurrencia</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Código y enunciado privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Programaci%C3%B3n%20con%20Estructuras%20Lineales" class="request-link">
+                Solicitar acceso
+              </a>
+              <a href="https://youtu.be/UUapmiGcLBA" target="_blank" rel="noopener">
+                🎥 Vídeo (YouTube)
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Redes de Ordenadores -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Redes de Ordenadores</span>
+          <span class="subject-tags">
+            <span class="chip">TCP/IP</span>
+            <span class="chip">CISCO</span>
+            <span class="chip">Packet Tracer</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>Simulaciones y prácticas en Packet Tracer: VLANs, routing estático/por defecto y DHCPv4, con entregas técnicas y escenarios de laboratorio en acceso restringido.</p>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Práctica 1 — Fundamentos de red</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informe y escenarios privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Redes%20de%20Ordenadores" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 2 — VLANs y Trunking (Packet Tracer)</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informes y escenarios privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Redes%20de%20Ordenadores" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 3 — Enrutamiento estático y rutas por defecto</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Informes y escenarios privados</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Redes%20de%20Ordenadores" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 4 — DHCPv4 (Packet Tracer)</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Documentación privada</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Redes%20de%20Ordenadores" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Dimensiones de la Seguridad -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Dimensiones de la Seguridad</span>
+          <span class="subject-tags">
+            <span class="chip">Fundamentos de ciber</span>
+            <span class="chip">Riesgos</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>Trabajos y resúmenes sobre conceptos básicos de ciberseguridad: CIA, amenazas, controles y buenas prácticas.</p>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Práctica 1 · Ciberguerra</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Material privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Dimensiones%20de%20la%20Seguridad" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 2 · Predicciones 2024 (Mikko)</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Material privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Dimensiones%20de%20la%20Seguridad" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 3 · Amenaza Insider</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Material privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Dimensiones%20de%20la%20Seguridad" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 4 · Drones e Infraestructuras Críticas</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Material privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Dimensiones%20de%20la%20Seguridad" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Principios Jurídicos aplicados a la Ciberseguridad -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Principios Jurídicos aplicados a la Ciberseguridad</span>
+          <span class="subject-tags">
+            <span class="chip">RGPD</span>
+            <span class="chip">Derecho TIC</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>Ensayos, resúmenes y esquemas sobre normativa de protección de datos y legislación aplicada a seguridad.</p>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📁 Práctica 1 · Derecho de la UE</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Material privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Principios%20Jur%C3%ADdicos%20aplicados%20a%20la%20Ciberseguridad" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 2 · Protocolos de Ciberseguridad</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Material privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Principios%20Jur%C3%ADdicos%20aplicados%20a%20la%20Ciberseguridad" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 3 · Protección de datos</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Material privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Principios%20Jur%C3%ADdicos%20aplicados%20a%20la%20Ciberseguridad" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📁 Práctica 4 · Encriptación de extremo a extremo (caso y debate)</span>
+            <div class="resource-links">
+              <span class="private-badge">🔒 Material privado</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Principios%20Jur%C3%ADdicos%20aplicados%20a%20la%20Ciberseguridad" class="request-link">
+                Solicitar acceso
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+
+  </main>
+
+  <footer class="footer-nav">
+    <a class="btn-next" href="2do-ano-proy_uni.html">Ir a 2º curso ➜</a>
+  </footer>
+
+</body>
+</html>
