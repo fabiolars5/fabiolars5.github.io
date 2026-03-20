@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fabiola RS | Cybersecurity Engineer Portfolio</title>
 
-  <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -35,28 +34,40 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:16px 8%;
+      padding:10px 6%;
       background:#000a18;
       border-bottom:1px solid var(--border);
       position:sticky;
       top:0;
       z-index:10;
     }
-    .brand-name { color:var(--accent); font-size:1.4rem; font-weight:700; }
-    .brand-role { color:var(--muted); font-size:.9rem; }
+
+    .brand-name {
+      color:var(--accent);
+      font-size:1.2rem;
+      font-weight:700;
+    }
+
+    .brand-role {
+      color:var(--muted);
+      font-size:.82rem;
+    }
 
     nav ul {
       list-style:none;
       display:flex;
-      gap:28px;
+      gap:20px;
       margin:0;
       padding:0;
     }
+
     nav a {
       color:var(--text);
       text-decoration:none;
       font-weight:600;
+      font-size:.95rem;
     }
+
     nav a:hover { color:var(--accent); }
 
     /* ============================================================
@@ -84,16 +95,19 @@
       border-radius: 16px;
       margin-bottom: 60px;
     }
+
     #network-bg {
       position:absolute;
       inset:0;
     }
+
     .hero-content {
       position:relative;
       z-index:2;
       max-width:900px;
       padding:20px;
     }
+
     #hero h1 { color:var(--accent); margin-bottom:8px; font-size:2.4rem; }
     #hero h2 { color:#bfc6d4; font-size:1.1rem; margin-bottom:20px; }
     #hero p { color:#cfd3dd; max-width:700px; margin:auto; }
@@ -116,19 +130,22 @@
       border:none;
       cursor:pointer;
     }
+
     .btn:hover { background:var(--accent-soft); }
+
     .btn-outline {
       color:var(--accent);
       border:1px solid var(--accent);
       background:transparent;
     }
+
     .btn-outline:hover {
       background:var(--accent);
       color:#0f1625;
     }
 
     /* ============================================================
-       💠 BLOQUES ENCAPSULADOS (Diseño original)
+       💠 BLOQUES ENCAPSULADOS
     ============================================================ */
     .section {
       background:var(--card-bg);
@@ -147,6 +164,7 @@
       align-items:center;
       gap:12px;
     }
+
     .section-title::before {
       content:"";
       width:5px;
@@ -178,6 +196,7 @@
       margin-bottom:25px;
       flex-wrap:wrap;
     }
+
     .project-tab {
       padding:10px 18px;
       border-radius:8px;
@@ -188,7 +207,9 @@
       cursor:pointer;
       transition:0.3s;
     }
+
     .project-tab:hover { background:rgba(0,191,174,.1); }
+
     .project-tab.active {
       background:var(--accent);
       color:#0f1625;
@@ -202,6 +223,7 @@
       padding:20px 25px;
       margin-bottom:25px;
     }
+
     .project-block.visible { display:block !important; }
     .project-block.hidden { display:none !important; }
 
@@ -209,6 +231,7 @@
       color:#00bcd4;
       margin-bottom:10px;
     }
+
     .project-block p {
       color:#bfc6d4;
       margin-bottom:15px;
@@ -225,6 +248,7 @@
       margin:8px 0;
       border:1px solid rgba(255,255,255,.08);
     }
+
     .mini-projects span { color:#e3e5e9; }
 
     .project-btn {
@@ -235,6 +259,7 @@
       font-weight:700;
       text-decoration:none;
     }
+
     .project-btn:hover { background:var(--accent-soft); }
 
     /* ============================================================
@@ -254,6 +279,7 @@
       margin-bottom:20px;
       gap:10px;
     }
+
     .exp-role { color:var(--accent); font-size:1.3rem; font-weight:700; }
     .exp-company { color:#cfd3dd; }
     .exp-date { color:var(--muted); }
@@ -268,6 +294,7 @@
       border:none;
       margin-top:10px;
     }
+
     .exp-toggle-btn:hover { background:var(--accent-soft); }
 
     .exp-columns {
@@ -276,6 +303,7 @@
       grid-template-columns:repeat(3,1fr);
       gap:30px;
     }
+
     .exp-columns.show { display:grid; }
 
     .exp-col h5 { color:#00bcd4; margin-top:0; }
@@ -323,11 +351,11 @@
       background:var(--accent-soft);
     }
 
-    /* Desplegable principal (Asignaturas ▼) */
     .assign-container { 
       display:none; 
       margin-top:10px;
     }
+
     .assign-container.show { display:block; }
 
     .courses-grid {
@@ -351,7 +379,6 @@
       color:#e5e7eb;
     }
 
-    /* Lista interior (asignaturas) */
     .edu-list {
       display:none;
       grid-column:1 / -1;
@@ -371,6 +398,7 @@
       margin-top:0;
       color:#00bcd4;
     }
+
     .cert-block ul {
       padding-left:18px;
     }
@@ -379,6 +407,7 @@
       color:var(--accent-soft);
       text-decoration:none;
     }
+
     .contact-content a:hover {
       text-decoration:underline;
     }
@@ -388,6 +417,7 @@
       text-align:center;
       color:#d1d5db;
     }
+
     .profile-summary ul {
       list-style:none;
       padding:0;
@@ -412,13 +442,16 @@
       main.page-wrapper {
         padding: 30px 5% 40px;
       }
+
       #hero {
         height:auto;
         min-height:380px;
       }
+
       .exp-columns {
         grid-template-columns:1fr;
       }
+
       .courses-grid {
         grid-template-columns:1fr;
       }
@@ -473,103 +506,91 @@
       </div>
     </section>
 
-<!-- =============================================================
-     SECCIÓN PROYECTOS
-============================================================= -->
-
-<section id="proyectos" class="section projects">
-
-  <h2>🚀 Proyectos</h2>
-
-  <div class="project-container">
-
-    <p>Explora mis proyectos de grado, defensa técnica, automatización y ciberinteligencia.</p>
-
-    <!-- PESTAÑAS DE CATEGORÍA -->
-    <div class="project-tabs">
-      <button class="project-tab active" onclick="showProjectBlock('uni', this)">Universitarios</button>
-      <button class="project-tab" onclick="showProjectBlock('tec', this)">Técnica / Operativa</button>
-      <button class="project-tab" onclick="showProjectBlock('auto', this)">Automatización / Gestión</button>
-      <button class="project-tab" onclick="showProjectBlock('intel', this)">Ciberinteligencia</button>
-    </div>
-
-    <!-- BLOQUE 1 — PROYECTOS UNIVERSITARIOS -->
-    <div id="proj-uni" class="project-block visible">
-      <h3>📘 Proyectos Universitarios</h3>
-      <p>Trabajos destacados del grado en Ciberseguridad.</p>
-
-      <div class="mini-projects">
-        <div><span>📘 Primer Año</span><a href="grado-paginas/1er-ano-proy_uni.html" class="project-btn">Entrar</a></div>
-        <div><span>📘 Segundo Año</span><a href="grado-paginas/2do-ano-proy_uni.html" class="project-btn">Entrar</a></div>
-        <div><span>📘 Tercer Año</span><a href="grado-paginas/3er-ano-proy_uni.html" class="project-btn">Entrar</a></div>
-        <div><span>📘 Cuarto Año</span><a href="grado-paginas/4to-ano-proy_uni.html" class="project-btn">Entrar</a></div>
-      </div>
-    </div>
-
-    <!-- BLOQUE 2 — CIBERSEGURIDAD TÉCNICA -->
-    <div id="proj-tec" class="project-block hidden">
-      <h3>💻 Ciberseguridad Técnica y Operativa</h3>
-      <p>Scripting, vulnerabilidades, hardening y defensa ofensiva.</p>
-
-      <div class="mini-projects">
-        <div><span>🛡️ Configuración segura de sistemas y redes</span>
-          <a href="proyectos-paginas/2B-configuracion-segura.html" class="project-btn">Entrar</a></div>
-        <div><span>🔍 Análisis técnico y defensa</span>
-          <a href="proyectos-paginas/2B-analisis-defensa.html" class="project-btn">Entrar</a></div>
-        <div><span>💣 Herramientas ofensivas y pruebas de explotación</span>
-          <a href="proyectos-paginas/2B-herramientas-ofensivas.html" class="project-btn">Entrar</a></div>
-        <div><span>🏁 Retos CTF y write-ups</span>
-          <a href="proyectos-paginas/2B-retos-ctf.html" class="project-btn">Entrar</a></div>
-      </div>
-    </div>
-
-    <!-- BLOQUE 3 — AUTOMATIZACIÓN Y GESTIÓN DE LA SEGURIDAD -->
-    <div id="proj-auto" class="project-block hidden">
-      <h3>⚙️ Automatización y Gestión de la Seguridad</h3>
-      <p>Scripts, pequeñas herramientas y proyectos donde aplico seguridad tanto a nivel técnico como organizativo: automatización, riesgos, normas y concienciación.</p>
-
-      <div class="mini-projects">
-        <div><span>🧾 Automatización e informes</span>
-          <a href="proyectos-paginas/3B-automatizacion.html" class="project-btn">Entrar</a></div>
-        <div><span>💻 Desarrollo y scripts seguros</span>
-          <a href="proyectos-paginas/3B-desarrollo-seguro.html" class="project-btn">Entrar</a></div>
-        <div><span>📉 Análisis y gestión de riesgos</span>
-          <a href="proyectos-paginas/3B-riesgos.html" class="project-btn">Entrar</a></div>
-        <div><span>📜 Políticas y concienciación</span>
-          <a href="proyectos-paginas/3B-politicas-concienciacion.html" class="project-btn">Entrar</a></div>
-      </div>
-    </div>
-
-    <!-- BLOQUE 4 — CIBERINTELIGENCIA -->
-    <div id="proj-intel" class="project-block hidden">
-      <h3>🧠 Ciberinteligencia y Análisis de Amenazas</h3>
-      <p>OSINT, dark web, dorks, actores de amenaza y APTs.</p>
-
-      <div class="mini-projects">
-        <div><span>🔍 Investigación OSINT</span>
-          <a href="proyectos-paginas/4B-osint.html" class="project-btn">Entrar</a></div>
-        <div><span>🕵️ Herramientas de inteligencia</span>
-          <a href="proyectos-paginas/4B-herramientas-inteligencia.html" class="project-btn">Entrar</a></div>
-        <div><span>⚔️ APTs y campañas de amenazas</span>
-          <a href="proyectos-paginas/4B-amenazas-apts.html" class="project-btn">Entrar</a></div>
-        <div><span>🌍 Ciberconflictos y geopolítica</span>
-          <a href="proyectos-paginas/4B-ciberconflictos.html" class="project-btn">Entrar</a></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-    
     <!-- =============================================================
-         SECCIÓN EXPERIENCIA LABORAL
+         SECCIÓN PROYECTOS
     ============================================================= -->
-    <section class="section experience" id="experiencia-laboral">
+    <section id="proyectos" class="section projects">
 
+      <h2>🚀 Proyectos</h2>
+
+      <div class="project-container">
+
+        <p>Explora mis proyectos de grado, defensa técnica, automatización y ciberinteligencia.</p>
+
+        <div class="project-tabs">
+          <button class="project-tab active" onclick="showProjectBlock('uni', this)">Universitarios</button>
+          <button class="project-tab" onclick="showProjectBlock('tec', this)">Técnica / Operativa</button>
+          <button class="project-tab" onclick="showProjectBlock('auto', this)">Automatización / Gestión</button>
+          <button class="project-tab" onclick="showProjectBlock('intel', this)">Ciberinteligencia</button>
+        </div>
+
+        <div id="proj-uni" class="project-block visible">
+          <h3>📘 Proyectos Universitarios</h3>
+          <p>Trabajos destacados del grado en Ciberseguridad.</p>
+
+          <div class="mini-projects">
+            <div><span>📘 Primer Año</span><a href="grado-paginas/1er-ano-proy_uni.html" class="project-btn">Entrar</a></div>
+            <div><span>📘 Segundo Año</span><a href="grado-paginas/2do-ano-proy_uni.html" class="project-btn">Entrar</a></div>
+            <div><span>📘 Tercer Año</span><a href="grado-paginas/3er-ano-proy_uni.html" class="project-btn">Entrar</a></div>
+            <div><span>📘 Cuarto Año</span><a href="grado-paginas/4to-ano-proy_uni.html" class="project-btn">Entrar</a></div>
+          </div>
+        </div>
+
+        <div id="proj-tec" class="project-block hidden">
+          <h3>💻 Ciberseguridad Técnica y Operativa</h3>
+          <p>Scripting, vulnerabilidades, hardening y defensa ofensiva.</p>
+
+          <div class="mini-projects">
+            <div><span>🛡️ Configuración segura de sistemas y redes</span>
+              <a href="proyectos-paginas/2B-configuracion-segura.html" class="project-btn">Entrar</a></div>
+            <div><span>🔍 Análisis técnico y defensa</span>
+              <a href="proyectos-paginas/2B-analisis-defensa.html" class="project-btn">Entrar</a></div>
+            <div><span>💣 Herramientas ofensivas y pruebas de explotación</span>
+              <a href="proyectos-paginas/2B-herramientas-ofensivas.html" class="project-btn">Entrar</a></div>
+            <div><span>🏁 Retos CTF y write-ups</span>
+              <a href="proyectos-paginas/2B-retos-ctf.html" class="project-btn">Entrar</a></div>
+          </div>
+        </div>
+
+        <div id="proj-auto" class="project-block hidden">
+          <h3>⚙️ Automatización y Gestión de la Seguridad</h3>
+          <p>Scripts, pequeñas herramientas y proyectos donde aplico seguridad tanto a nivel técnico como organizativo: automatización, riesgos, normas y concienciación.</p>
+
+          <div class="mini-projects">
+            <div><span>🧾 Automatización e informes</span>
+              <a href="proyectos-paginas/3B-automatizacion.html" class="project-btn">Entrar</a></div>
+            <div><span>💻 Desarrollo y scripts seguros</span>
+              <a href="proyectos-paginas/3B-desarrollo-seguro.html" class="project-btn">Entrar</a></div>
+            <div><span>📉 Análisis y gestión de riesgos</span>
+              <a href="proyectos-paginas/3B-riesgos.html" class="project-btn">Entrar</a></div>
+            <div><span>📜 Políticas y concienciación</span>
+              <a href="proyectos-paginas/3B-politicas-concienciacion.html" class="project-btn">Entrar</a></div>
+          </div>
+        </div>
+
+        <div id="proj-intel" class="project-block hidden">
+          <h3>🧠 Ciberinteligencia y Análisis de Amenazas</h3>
+          <p>OSINT, dark web, dorks, actores de amenaza y APTs.</p>
+
+          <div class="mini-projects">
+            <div><span>🔍 Investigación OSINT</span>
+              <a href="proyectos-paginas/4B-osint.html" class="project-btn">Entrar</a></div>
+            <div><span>🕵️ Herramientas de inteligencia</span>
+              <a href="proyectos-paginas/4B-herramientas-inteligencia.html" class="project-btn">Entrar</a></div>
+            <div><span>⚔️ APTs y campañas de amenazas</span>
+              <a href="proyectos-paginas/4B-amenazas-apts.html" class="project-btn">Entrar</a></div>
+            <div><span>🌍 Ciberconflictos y geopolítica</span>
+              <a href="proyectos-paginas/4B-ciberconflictos.html" class="project-btn">Entrar</a></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+    <section class="section experience" id="experiencia-laboral">
       <h2 class="section-title">💼 Experiencia Laboral</h2>
 
       <div class="exp-card">
-
-        <!-- CABECERA DEL PUESTO -->
         <div class="exp-top">
           <div>
             <div class="exp-role">💼 IT Systems & Security Technician</div>
@@ -578,13 +599,9 @@
           <div class="exp-date">Abril 2024 — 2027</div>
         </div>
 
-        <!-- BOTÓN DESPLEGABLE -->
         <button class="exp-toggle-btn" onclick="toggleExp()">Funciones y Responsabilidades</button>
 
-        <!-- CONTENIDO DESPLEGABLE -->
         <div id="exp-columns" class="exp-columns">
-
-          <!-- COLUMNA 1 -->
           <div class="exp-col">
             <h5>Soporte Nivel 1–2</h5>
             <ul>
@@ -596,7 +613,6 @@
             </ul>
           </div>
 
-          <!-- COLUMNA 2 -->
           <div class="exp-col">
             <h5>Administración de Sistemas</h5>
             <ul>
@@ -607,7 +623,6 @@
             </ul>
           </div>
 
-          <!-- COLUMNA 3 -->
           <div class="exp-col">
             <h5>Ciberseguridad Corporativa</h5>
             <ul>
@@ -616,35 +631,24 @@
               <li>Campañas de concienciación de seguridad.</li>
             </ul>
           </div>
-
         </div>
 
-        <!-- Nota final -->
         <p class="cv-note">CV completo disponible bajo solicitud.</p>
-
       </div>
     </section>
 
-    <!-- =============================================================
-         SECCIÓN FORMACIÓN ACADÉMICA
-    ============================================================= -->
     <section id="formacion-academica" class="section education">
-
       <h2 class="section-title">🎓 Formación Académica</h2>
 
-      <!-- GRADO RELACIONES INTERNACIONALES -->
       <div class="edu-block">
         <div class="edu-title">🌍 Grado en Relaciones Internacionales</div>
         <div class="edu-sub">Universidad Rey Juan Carlos | 2014 – 2019 (Finalizado)</div>
 
         <button class="assign-toggle-btn" onclick="toggleAssign(this)">Asignaturas ▼</button>
 
-        <!-- DESPLEGABLE -->
         <div class="assign-container">
-
           <div class="courses-grid">
 
-            <!-- 1º CURSO -->
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📘 Primer curso</span><button class="project-btn" type="button">Ver</button>
             </div>
@@ -655,7 +659,6 @@
               <li>Introducción al Derecho</li><li>Derecho Internacional Público</li>
             </ul>
 
-            <!-- 2º CURSO -->
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📗 Segundo curso</span><button class="project-btn" type="button">Ver</button>
             </div>
@@ -665,7 +668,6 @@
               <li>Economía Internacional</li><li>Empresas Multinacionales</li><li>Opinión Pública y Periodismo Internacional</li>
             </ul>
 
-            <!-- 3º CURSO -->
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📙 Tercer curso</span><button class="project-btn" type="button">Ver</button>
             </div>
@@ -676,7 +678,6 @@
               <li>Derecho Procesal y Tribunales Internacionales</li><li>Idioma Chino Básico</li>
             </ul>
 
-            <!-- 4º CURSO -->
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📕 Cuarto curso</span><button class="project-btn" type="button">Ver</button>
             </div>
@@ -689,19 +690,15 @@
         </div>
       </div>
 
-      <!-- GRADO CIBERSEGURIDAD -->
       <div class="edu-block">
         <div class="edu-title">🛡️ Grado en Ingeniería de la Ciberseguridad</div>
         <div class="edu-sub">Universidad Europea Madrid | 2023 — Actualmente</div>
 
         <button class="assign-toggle-btn" onclick="toggleAssign(this)">Asignaturas ▼</button>
 
-        <!-- DESPLEGABLE -->
         <div class="assign-container">
-
           <div class="courses-grid">
 
-            <!-- 1º CURSO -->
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📘 Primer curso</span><button class="project-btn" type="button">Ver</button>
             </div>
@@ -712,7 +709,6 @@
               <li>Principios Jurídicos aplicados a la Ciberseguridad</li>
             </ul>
 
-            <!-- 2º CURSO -->
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📗 Segundo curso</span><button class="project-btn" type="button">Ver</button>
             </div>
@@ -722,7 +718,6 @@
               <li>Bases de Datos</li><li>Técnicas de Hacking</li><li>Metodologías de Desarrollo Seguro</li><li>Metodologías de Gestión de Proyectos</li>
             </ul>
 
-            <!-- 3º CURSO -->
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📙 Tercer curso</span><button class="project-btn" type="button">Ver</button>
             </div>
@@ -732,7 +727,6 @@
               <li>Seguridad en Redes</li><li>Desarrollo Seguro Web y Apps</li><li>Proyecto Ingeniería II</li>
             </ul>
 
-            <!-- 4º CURSO -->
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📕 Cuarto curso</span><button class="project-btn" type="button">Ver</button>
             </div>
@@ -746,12 +740,8 @@
           </div>
         </div>
       </div>
-
     </section>
 
-    <!-- =============================================================
-         CERTIFICADOS
-    ============================================================= -->
     <section id="certificados" class="section certificates">
       <h2 class="section-title">✅ Certificados</h2>
 
@@ -767,11 +757,7 @@
       </div>
     </section>
 
-    <!-- =============================================================
-         CONTACTO
-    ============================================================= -->
     <section id="contacto" class="section contact-box">
-
       <h2 class="section-title">📬 Contacto</h2>
 
       <div class="contact-content">
@@ -789,12 +775,8 @@
           <a href="https://www.linkedin.com/in/fabiolars5" target="_blank">linkedin.com/in/fabiolars5</a>
         </p>
       </div>
-
     </section>
 
-    <!-- =============================================================
-         PERFIL PROFESIONAL PEQUEÑO (TRES VALORES)
-    ============================================================= -->
     <div class="profile-summary">
       <ul>
         <li>✔ Adaptabilidad</li>
@@ -803,20 +785,12 @@
       </ul>
     </div>
 
-    <!-- =============================================================
-         FOOTER FINAL
-    ============================================================= -->
     <footer>
       &copy; 2025 Fabiola RS · Portfolio de Ciberseguridad · Hecho con GitHub Pages
     </footer>
 
   </main>
 
-  <!-- =============================================================
-       SCRIPTS FINALES — SIEMPRE AQUÍ ABAJO
-  ============================================================= -->
-
-  <!-- Fondo animado tipo red -->
   <script>
   const canvas = document.getElementById("network-bg");
   const ctx = canvas.getContext("2d");
@@ -883,22 +857,17 @@
   draw();
   </script>
 
-  <!-- Control de pestañas de proyectos -->
   <script>
   function showProjectBlock(target, btn) {
-    // Ocultar todos
     document.querySelectorAll(".project-block").forEach(b => {
       b.classList.add("hidden");
       b.classList.remove("visible");
     });
 
-    // Desactivar pestañas
     document.querySelectorAll(".project-tab").forEach(t => t.classList.remove("active"));
 
-    // Activar pestaña pulsada
     btn.classList.add("active");
 
-    // Mostrar bloque elegido
     const block = document.getElementById("proj-" + target);
     if (block) {
       block.classList.remove("hidden");
@@ -907,7 +876,6 @@
   }
   </script>
 
-  <!-- Desplegar experiencia laboral -->
   <script>
   function toggleExp() {
     const cols = document.getElementById("exp-columns");
@@ -915,7 +883,6 @@
   }
   </script>
 
-  <!-- Desplegar asignaturas (Asignaturas ▼ / ▲ ) -->
   <script>
   function toggleAssign(btn) {
     const container = btn.nextElementSibling;
@@ -928,7 +895,6 @@
   }
   </script>
 
-  <!-- Desplegar cursos dentro de cada año -->
   <script>
   function toggleEduList(el) {
     const next = el.nextElementSibling;
@@ -939,4 +905,3 @@
 
 </body>
 </html>
-<!-- FIN DEL DOCUMENTO -->
