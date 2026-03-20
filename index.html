@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- ============================================================
+       METADATOS BÁSICOS
+       - charset: codificación
+       - viewport: responsive móvil
+       - title: título de la pestaña
+  ============================================================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fabiola RS | Cybersecurity Engineer Portfolio</title>
 
+  <!-- ============================================================
+       FUENTE EXTERNA
+       - Cargamos Montserrat desde Google Fonts
+  ============================================================ -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
+    /* ============================================================
+       VARIABLES GLOBALES DE COLOR
+       - Aquí puedes cambiar la paleta general del portfolio
+    ============================================================ */
     :root {
-      --main-bg:#0f1625; 
-      --accent:#00bfae;
-      --accent-soft:#14d1c5;
-      --text:#f3f5fa;
-      --muted:#a2a7b7;
-      --card-bg:#111a2b;
-      --border:#2b3349;
+      --main-bg: #0f1625;
+      --accent: #00bfae;
+      --accent-soft: #14d1c5;
+      --text: #f3f5fa;
+      --muted: #a2a7b7;
+      --card-bg: #111a2b;
+      --border: #2b3349;
     }
 
-    * { box-sizing: border-box; }
+    /* ============================================================
+       RESET BÁSICO
+       - box-sizing ayuda a controlar mejor tamaños y paddings
+    ============================================================ */
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -28,436 +48,508 @@
     }
 
     /* ============================================================
-       💠 CABECERA
+       CABECERA SUPERIOR / MENÚ
+       - Header fijo arriba
+       - Marca personal a la izquierda
+       - Navegación a la derecha
     ============================================================ */
     header {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:10px 6%;
-      background:#000a18;
-      border-bottom:1px solid var(--border);
-      position:sticky;
-      top:0;
-      z-index:10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 6%;
+      background: #000a18;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .brand-name {
-      color:var(--accent);
-      font-size:1.2rem;
-      font-weight:700;
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: 700;
     }
 
     .brand-role {
-      color:var(--muted);
-      font-size:.82rem;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
     nav ul {
-      list-style:none;
-      display:flex;
-      gap:20px;
-      margin:0;
-      padding:0;
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
     }
 
     nav a {
-      color:var(--text);
-      text-decoration:none;
-      font-weight:600;
-      font-size:.95rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
     }
 
-    nav a:hover { color:var(--accent); }
+    nav a:hover {
+      color: var(--accent);
+    }
 
     /* ============================================================
-       💠 CONTENEDOR PRINCIPAL
+       CONTENEDOR PRINCIPAL DE TODA LA PÁGINA
+       - Limita el ancho general del contenido
     ============================================================ */
     main.page-wrapper {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 32px 8% 60px;
+      padding: 24px 8% 60px;
     }
 
     /* ============================================================
-       💠 HERO PEQUEÑO / INTRO
+       BLOQUE "SOBRE MÍ" / HERO PEQUEÑO
+       - Esta es la caja de introducción breve
+       - Si quieres hacerla MÁS PEQUEÑA:
+         * baja max-width
+         * baja min-height
+         * baja padding
     ============================================================ */
     #hero {
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      background:#0b0f1a;
-      overflow:hidden;
-      min-height:340px;
-      padding:34px 20px;
-      border-radius:16px;
-      max-width:620px;
-      margin:0 auto 40px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #0b0f1a;
+      overflow: hidden;
+      min-height: 300px;
+      padding: 26px 18px;
+      border-radius: 16px;
+      max-width: 560px;
+      margin: 0 auto 34px;
     }
 
+    /* Canvas de la red animada del fondo */
     #network-bg {
-      position:absolute;
-      inset:0;
+      position: absolute;
+      inset: 0;
     }
 
+    /* Contenido interior del bloque Sobre mí */
     .hero-content {
-      position:relative;
-      z-index:2;
-      max-width:460px;
-      padding:8px 6px;
+      position: relative;
+      z-index: 2;
+      max-width: 420px;
+      padding: 4px;
     }
 
     #hero h1 {
-      color:var(--accent);
-      margin:0 0 8px;
-      font-size:1.8rem;
+      color: var(--accent);
+      margin: 0 0 8px;
+      font-size: 1.65rem;
     }
 
     #hero h2 {
-      color:#d7dbe4;
-      font-size:.98rem;
-      margin:0 0 12px;
-      font-weight:600;
+      color: #d7dbe4;
+      font-size: 0.95rem;
+      margin: 0 0 10px;
+      font-weight: 600;
     }
 
     #hero p {
-      color:#cfd3dd;
-      max-width:420px;
-      margin:0 auto 10px;
-      line-height:1.5;
-      font-size:.98rem;
+      color: #cfd3dd;
+      max-width: 390px;
+      margin: 0 auto 9px;
+      line-height: 1.45;
+      font-size: 0.94rem;
     }
 
+    /* Botones del hero */
     .contact-links {
-      margin-top:16px;
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      flex-wrap:wrap;
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .btn {
-      background:var(--accent);
-      color:#0f1625;
-      padding:9px 16px;
-      border-radius:6px;
-      font-weight:600;
-      text-decoration:none;
-      border:none;
-      cursor:pointer;
-      font-size:.95rem;
+      background: var(--accent);
+      color: #0f1625;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
     }
 
-    .btn:hover { background:var(--accent-soft); }
+    .btn:hover {
+      background: var(--accent-soft);
+    }
 
     .btn-outline {
-      color:var(--accent);
-      border:1px solid var(--accent);
-      background:transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      background: transparent;
     }
 
     .btn-outline:hover {
-      background:var(--accent);
-      color:#0f1625;
+      background: var(--accent);
+      color: #0f1625;
     }
 
     /* ============================================================
-       💠 BLOQUES ENCAPSULADOS
+       BLOQUES GENERALES DE SECCIÓN
+       - Se usa en Proyectos, Experiencia, Formación, etc.
     ============================================================ */
     .section {
-      background:var(--card-bg);
-      border:1px solid rgba(255,255,255,.15);
-      border-radius:12px;
-      padding:30px;
-      margin-bottom:60px;
-      box-shadow:0 0 10px rgba(0,191,174,.10);
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 60px;
+      box-shadow: 0 0 10px rgba(0,191,174,.10);
     }
 
+    /* Título principal de sección */
     .section-title {
-      font-size:2rem;
-      font-weight:700;
-      margin-bottom:25px;
-      display:flex;
-      align-items:center;
-      gap:12px;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .section-title::before {
-      content:"";
-      width:5px;
-      height:28px;
-      background:var(--accent);
-      border-radius:3px;
+      content: "";
+      width: 5px;
+      height: 28px;
+      background: var(--accent);
+      border-radius: 3px;
     }
 
     /* ============================================================
-       💠 PROYECTOS — Pestañas
+       SECCIÓN PROYECTOS
+       - Botones por pestañas
+       - Cada bloque cambia al pulsar pestaña
     ============================================================ */
     #proyectos > h2 {
-      font-size:2rem;
-      font-weight:700;
-      margin-bottom:18px;
-      display:flex;
-      align-items:center;
-      gap:10px;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .project-container > p {
-      color:#cfd3dd;
-      margin-bottom:20px;
+      color: #cfd3dd;
+      margin-bottom: 20px;
     }
 
     .project-tabs {
-      display:flex;
-      gap:12px;
-      margin-bottom:25px;
-      flex-wrap:wrap;
+      display: flex;
+      gap: 12px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
     }
 
     .project-tab {
-      padding:10px 18px;
-      border-radius:8px;
-      background:transparent;
-      border:2px solid var(--accent);
-      color:var(--accent);
-      font-weight:700;
-      cursor:pointer;
-      transition:0.3s;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    .project-tab:hover { background:rgba(0,191,174,.1); }
+    .project-tab:hover {
+      background: rgba(0,191,174,.1);
+    }
 
     .project-tab.active {
-      background:var(--accent);
-      color:#0f1625;
+      background: var(--accent);
+      color: #0f1625;
     }
 
-    .project-block { 
-      display:none;
-      background:rgba(255,255,255,.02);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:10px;
-      padding:20px 25px;
-      margin-bottom:25px;
+    .project-block {
+      display: none;
+      background: rgba(255,255,255,.02);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px;
+      padding: 20px 25px;
+      margin-bottom: 25px;
     }
 
-    .project-block.visible { display:block !important; }
-    .project-block.hidden { display:none !important; }
+    .project-block.visible {
+      display: block !important;
+    }
+
+    .project-block.hidden {
+      display: none !important;
+    }
 
     .project-block h3 {
-      color:#00bcd4;
-      margin-bottom:10px;
+      color: #00bcd4;
+      margin-bottom: 10px;
     }
 
     .project-block p {
-      color:#bfc6d4;
-      margin-bottom:15px;
-      line-height:1.5em;
+      color: #bfc6d4;
+      margin-bottom: 15px;
+      line-height: 1.5em;
     }
 
     .mini-projects div {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:rgba(255,255,255,.02);
-      padding:10px 14px;
-      border-radius:8px;
-      margin:8px 0;
-      border:1px solid rgba(255,255,255,.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,.02);
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin: 8px 0;
+      border: 1px solid rgba(255,255,255,.08);
     }
 
-    .mini-projects span { color:#e3e5e9; }
+    .mini-projects span {
+      color: #e3e5e9;
+    }
 
     .project-btn {
-      background:var(--accent);
-      color:#0f1625;
-      padding:6px 14px;
-      border-radius:8px;
-      font-weight:700;
-      text-decoration:none;
+      background: var(--accent);
+      color: #0f1625;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
     }
 
-    .project-btn:hover { background:var(--accent-soft); }
+    .project-btn:hover {
+      background: var(--accent-soft);
+    }
 
     /* ============================================================
-       💠 EXPERIENCIA
+       SECCIÓN EXPERIENCIA LABORAL
+       - Tarjeta principal
+       - Botón para desplegar detalles
+       - Grid de 2 columnas
     ============================================================ */
     .exp-card {
-      background:rgba(255,255,255,.02);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:12px;
-      padding:25px 30px;
+      background: rgba(255,255,255,.02);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 25px 30px;
     }
 
+    /* Parte superior de experiencia: cargo, empresa, fecha */
     .exp-top {
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      margin-bottom:20px;
-      gap:10px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      gap: 10px;
     }
 
-    .exp-role { color:var(--accent); font-size:1.3rem; font-weight:700; }
-    .exp-company { color:#cfd3dd; }
-    .exp-date { color:var(--muted); }
+    .exp-role {
+      color: var(--accent);
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
 
+    .exp-company {
+      color: #cfd3dd;
+    }
+
+    .exp-date {
+      color: var(--muted);
+    }
+
+    /* Botón para desplegar responsabilidades */
     .exp-toggle-btn {
-      background:var(--accent);
-      color:#0f1625;
-      padding:10px 18px;
-      border-radius:8px;
-      font-weight:700;
-      cursor:pointer;
-      border:none;
-      margin-top:10px;
+      background: var(--accent);
+      color: #0f1625;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      margin-top: 10px;
     }
 
-    .exp-toggle-btn:hover { background:var(--accent-soft); }
+    .exp-toggle-btn:hover {
+      background: var(--accent-soft);
+    }
 
+    /* Grid desplegable de experiencia */
     .exp-columns {
-    display:none;
-    margin-top:20px;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
-  }
+      display: none;
+      margin-top: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
 
-   .exp-columns.show { 
-    display:grid; 
-  }
+    .exp-columns.show {
+      display: grid;
+    }
 
-    .exp-col h5 { color:#00bcd4; margin-top:0; }
+    .exp-col h5 {
+      color: #00bcd4;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
 
+    .exp-col ul {
+      padding-left: 18px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .exp-col li {
+      margin-bottom: 10px;
+    }
+
+    /* Texto auxiliar / notas */
     .cv-note {
-      margin-top:20px;
-      color:#9ca3af;
-      font-size:0.9rem;
+      margin-top: 20px;
+      color: #9ca3af;
+      font-size: 0.9rem;
     }
 
     /* ============================================================
-       💠 FORMACIÓN
+       SECCIÓN FORMACIÓN ACADÉMICA
+       - Bloques por grado
+       - Botón "Asignaturas"
+       - Grid por cursos
     ============================================================ */
     .edu-block {
-      background:rgba(255,255,255,.02);
-      border:1px solid rgba(255,255,255,.1);
-      padding:22px 26px;
-      border-radius:10px;
-      margin-bottom:40px;
+      background: rgba(255,255,255,.02);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 22px 26px;
+      border-radius: 10px;
+      margin-bottom: 40px;
     }
 
-    .edu-title { 
-      color:#00bcd4; 
-      font-size:1.3rem; 
-      font-weight:700; 
+    .edu-title {
+      color: #00bcd4;
+      font-size: 1.3rem;
+      font-weight: 700;
     }
 
-    .edu-sub { 
-      color:#9ca3af; 
-      margin-bottom:18px; 
+    .edu-sub {
+      color: #9ca3af;
+      margin-bottom: 18px;
     }
 
     .assign-toggle-btn {
-      background:var(--accent);
-      color:#0f1625;
-      padding:10px 18px;
-      border-radius:8px;
-      font-weight:700;
-      cursor:pointer;
-      margin-bottom:15px;
-      border:none;
+      background: var(--accent);
+      color: #0f1625;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 15px;
+      border: none;
     }
 
     .assign-toggle-btn:hover {
-      background:var(--accent-soft);
+      background: var(--accent-soft);
     }
 
-    .assign-container { 
-      display:none; 
-      margin-top:10px;
+    .assign-container {
+      display: none;
+      margin-top: 10px;
     }
 
-    .assign-container.show { display:block; }
+    .assign-container.show {
+      display: block;
+    }
 
     .courses-grid {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px 26px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 26px;
     }
 
     .course-item {
-      background:rgba(255,255,255,.02);
-      border:1px solid rgba(255,255,255,.1);
-      padding:12px 16px;
-      border-radius:8px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      cursor:pointer;
+      background: rgba(255,255,255,.02);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 12px 16px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
     }
 
     .course-item span {
-      color:#e5e7eb;
+      color: #e5e7eb;
     }
 
     .edu-list {
-      display:none;
-      grid-column:1 / -1;
-      border-left:2px solid var(--accent);
-      padding:12px 22px;
-      color:#d1d5db;
-      line-height:1.45em;
+      display: none;
+      grid-column: 1 / -1;
+      border-left: 2px solid var(--accent);
+      padding: 12px 22px;
+      color: #d1d5db;
+      line-height: 1.45em;
       margin: 4px 0 10px;
     }
 
-    .edu-list.show { display:block; }
+    .edu-list.show {
+      display: block;
+    }
 
     /* ============================================================
-       💠 CERTIFICADOS / CONTACTO / PERFIL / FOOTER
+       SECCIÓN CERTIFICADOS / CONTACTO / FOOTER
     ============================================================ */
     .cert-block h4 {
-      margin-top:0;
-      color:#00bcd4;
+      margin-top: 0;
+      color: #00bcd4;
     }
 
     .cert-block ul {
-      padding-left:18px;
+      padding-left: 18px;
     }
 
     .contact-content a {
-      color:var(--accent-soft);
-      text-decoration:none;
+      color: var(--accent-soft);
+      text-decoration: none;
     }
 
     .contact-content a:hover {
-      text-decoration:underline;
+      text-decoration: underline;
     }
 
     .profile-summary {
       margin: 0 auto 40px;
-      text-align:center;
-      color:#d1d5db;
+      text-align: center;
+      color: #d1d5db;
     }
 
     .profile-summary ul {
-      list-style:none;
-      padding:0;
-      margin:0;
-      display:flex;
-      gap:18px;
-      justify-content:center;
-      flex-wrap:wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     footer {
-      text-align:center;
-      padding:18px 0 24px;
-      color:#9ca3af;
-      font-size:0.9rem;
+      text-align: center;
+      padding: 18px 0 24px;
+      color: #9ca3af;
+      font-size: 0.9rem;
     }
 
     /* ============================================================
-       💠 RESPONSIVE BÁSICO
+       RESPONSIVE
+       - Ajustes para móvil / pantallas pequeñas
     ============================================================ */
     @media (max-width: 768px) {
       main.page-wrapper {
@@ -465,45 +557,51 @@
       }
 
       #hero {
-        min-height:300px;
-        padding:28px 14px;
-        max-width:100%;
-        margin:0 auto 32px;
+        min-height: 280px;
+        padding: 24px 14px;
+        max-width: 100%;
+        margin: 0 auto 28px;
       }
 
       .hero-content {
-        max-width:100%;
-        padding:4px;
+        max-width: 100%;
+        padding: 4px;
       }
 
       #hero h1 {
-        font-size:1.55rem;
+        font-size: 1.5rem;
       }
 
       #hero h2 {
-        font-size:.92rem;
+        font-size: 0.9rem;
       }
 
       #hero p {
-        max-width:100%;
-        font-size:.94rem;
+        max-width: 100%;
+        font-size: 0.92rem;
       }
 
       .contact-links {
-        margin-top:14px;
+        margin-top: 12px;
       }
 
       .btn {
-        padding:8px 14px;
-        font-size:.9rem;
+        padding: 8px 14px;
+        font-size: 0.9rem;
       }
 
       .exp-columns {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
       }
 
       .courses-grid {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
     }
   </style>
@@ -512,7 +610,7 @@
 <body>
 
   <!-- =============================================================
-       CABECERA
+       CABECERA / NAVEGACIÓN
   ============================================================= -->
   <header>
     <div class="brand">
@@ -532,12 +630,14 @@
   </header>
 
   <!-- =============================================================
-       CONTENEDOR PRINCIPAL
+       CONTENIDO PRINCIPAL DE LA WEB
   ============================================================= -->
   <main class="page-wrapper">
 
     <!-- =============================================================
-         HERO SECTION CON RED ANIMADA
+         SECCIÓN 1: SOBRE MÍ / INTRODUCCIÓN BREVE
+         - Bloque pequeño superior
+         - Fondo animado con red
     ============================================================= -->
     <section id="hero">
       <canvas id="network-bg"></canvas>
@@ -550,23 +650,24 @@
 
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/fabiolars5" target="_blank" class="btn">🔗 LinkedIn</a>
-          <a href="mailto:frscuentas@gmail.com?subject=Solicitud%20de%20CV%20-%20Portfolio"
-             class="btn btn-outline">📄 Solicitar CV</a>
+          <a href="mailto:frscuentas@gmail.com?subject=Solicitud%20de%20CV%20-%20Portfolio" class="btn btn-outline">📄 Solicitar CV</a>
         </div>
       </div>
     </section>
 
     <!-- =============================================================
-         SECCIÓN PROYECTOS
+         SECCIÓN 2: PROYECTOS
+         - Pestañas por categoría
+         - Subbloques con enlaces
     ============================================================= -->
     <section id="proyectos" class="section projects">
 
       <h2>🚀 Proyectos</h2>
 
       <div class="project-container">
-
         <p>Explora mis proyectos de grado, defensa técnica, automatización y ciberinteligencia.</p>
 
+        <!-- PESTAÑAS -->
         <div class="project-tabs">
           <button class="project-tab active" onclick="showProjectBlock('uni', this)">Universitarios</button>
           <button class="project-tab" onclick="showProjectBlock('tec', this)">Técnica / Operativa</button>
@@ -574,6 +675,7 @@
           <button class="project-tab" onclick="showProjectBlock('intel', this)">Ciberinteligencia</button>
         </div>
 
+        <!-- BLOQUE: UNIVERSITARIOS -->
         <div id="proj-uni" class="project-block visible">
           <h3>📘 Proyectos Universitarios</h3>
           <p>Trabajos destacados del grado en Ciberseguridad.</p>
@@ -586,131 +688,143 @@
           </div>
         </div>
 
+        <!-- BLOQUE: TÉCNICA / OPERATIVA -->
         <div id="proj-tec" class="project-block hidden">
           <h3>💻 Ciberseguridad Técnica y Operativa</h3>
           <p>Scripting, vulnerabilidades, hardening y defensa ofensiva.</p>
 
           <div class="mini-projects">
-            <div><span>🛡️ Configuración segura de sistemas y redes</span>
-              <a href="proyectos-paginas/2B-configuracion-segura.html" class="project-btn">Entrar</a></div>
-            <div><span>🔍 Análisis técnico y defensa</span>
-              <a href="proyectos-paginas/2B-analisis-defensa.html" class="project-btn">Entrar</a></div>
-            <div><span>💣 Herramientas ofensivas y pruebas de explotación</span>
-              <a href="proyectos-paginas/2B-herramientas-ofensivas.html" class="project-btn">Entrar</a></div>
-            <div><span>🏁 Retos CTF y write-ups</span>
-              <a href="proyectos-paginas/2B-retos-ctf.html" class="project-btn">Entrar</a></div>
+            <div><span>🛡️ Configuración segura de sistemas y redes</span><a href="proyectos-paginas/2B-configuracion-segura.html" class="project-btn">Entrar</a></div>
+            <div><span>🔍 Análisis técnico y defensa</span><a href="proyectos-paginas/2B-analisis-defensa.html" class="project-btn">Entrar</a></div>
+            <div><span>💣 Herramientas ofensivas y pruebas de explotación</span><a href="proyectos-paginas/2B-herramientas-ofensivas.html" class="project-btn">Entrar</a></div>
+            <div><span>🏁 Retos CTF y write-ups</span><a href="proyectos-paginas/2B-retos-ctf.html" class="project-btn">Entrar</a></div>
           </div>
         </div>
 
+        <!-- BLOQUE: AUTOMATIZACIÓN / GESTIÓN -->
         <div id="proj-auto" class="project-block hidden">
           <h3>⚙️ Automatización y Gestión de la Seguridad</h3>
           <p>Scripts, pequeñas herramientas y proyectos donde aplico seguridad tanto a nivel técnico como organizativo: automatización, riesgos, normas y concienciación.</p>
 
           <div class="mini-projects">
-            <div><span>🧾 Automatización e informes</span>
-              <a href="proyectos-paginas/3B-automatizacion.html" class="project-btn">Entrar</a></div>
-            <div><span>💻 Desarrollo y scripts seguros</span>
-              <a href="proyectos-paginas/3B-desarrollo-seguro.html" class="project-btn">Entrar</a></div>
-            <div><span>📉 Análisis y gestión de riesgos</span>
-              <a href="proyectos-paginas/3B-riesgos.html" class="project-btn">Entrar</a></div>
-            <div><span>📜 Políticas y concienciación</span>
-              <a href="proyectos-paginas/3B-politicas-concienciacion.html" class="project-btn">Entrar</a></div>
+            <div><span>🧾 Automatización e informes</span><a href="proyectos-paginas/3B-automatizacion.html" class="project-btn">Entrar</a></div>
+            <div><span>💻 Desarrollo y scripts seguros</span><a href="proyectos-paginas/3B-desarrollo-seguro.html" class="project-btn">Entrar</a></div>
+            <div><span>📉 Análisis y gestión de riesgos</span><a href="proyectos-paginas/3B-riesgos.html" class="project-btn">Entrar</a></div>
+            <div><span>📜 Políticas y concienciación</span><a href="proyectos-paginas/3B-politicas-concienciacion.html" class="project-btn">Entrar</a></div>
           </div>
         </div>
 
+        <!-- BLOQUE: CIBERINTELIGENCIA -->
         <div id="proj-intel" class="project-block hidden">
           <h3>🧠 Ciberinteligencia y Análisis de Amenazas</h3>
           <p>OSINT, dark web, dorks, actores de amenaza y APTs.</p>
 
           <div class="mini-projects">
-            <div><span>🔍 Investigación OSINT</span>
-              <a href="proyectos-paginas/4B-osint.html" class="project-btn">Entrar</a></div>
-            <div><span>🕵️ Herramientas de inteligencia</span>
-              <a href="proyectos-paginas/4B-herramientas-inteligencia.html" class="project-btn">Entrar</a></div>
-            <div><span>⚔️ APTs y campañas de amenazas</span>
-              <a href="proyectos-paginas/4B-amenazas-apts.html" class="project-btn">Entrar</a></div>
-            <div><span>🌍 Ciberconflictos y geopolítica</span>
-              <a href="proyectos-paginas/4B-ciberconflictos.html" class="project-btn">Entrar</a></div>
+            <div><span>🔍 Investigación OSINT</span><a href="proyectos-paginas/4B-osint.html" class="project-btn">Entrar</a></div>
+            <div><span>🕵️ Herramientas de inteligencia</span><a href="proyectos-paginas/4B-herramientas-inteligencia.html" class="project-btn">Entrar</a></div>
+            <div><span>⚔️ APTs y campañas de amenazas</span><a href="proyectos-paginas/4B-amenazas-apts.html" class="project-btn">Entrar</a></div>
+            <div><span>🌍 Ciberconflictos y geopolítica</span><a href="proyectos-paginas/4B-ciberconflictos.html" class="project-btn">Entrar</a></div>
           </div>
         </div>
 
       </div>
     </section>
-    
+
+    <!-- =============================================================
+         SECCIÓN 3: EXPERIENCIA LABORAL
+         - Nuevo bloque profesional
+         - Desplegable de responsabilidades
+    ============================================================= -->
     <section class="section experience" id="experiencia-laboral">
 
-  <h2 class="section-title">💼 Experiencia Laboral</h2>
+      <h2 class="section-title">💼 Experiencia Laboral</h2>
 
-  <div class="exp-card">
+      <div class="exp-card">
 
-    <div class="exp-top">
-      <div>
-        <div class="exp-role">💼 IT Security Specialist</div>
-        <div class="exp-company">Manheim Cox Automotive</div>
-      </div>
-      <div class="exp-date">Abril 2024 — 2027</div>
-    </div>
+        <!-- CABECERA DEL PUESTO -->
+        <div class="exp-top">
+          <div>
+            <div class="exp-role">💼 IT Security Specialist</div>
+            <div class="exp-company">Manheim Cox Automotive</div>
+          </div>
+          <div class="exp-date">Abril 2024 — 2027</div>
+        </div>
 
-    <p class="cv-note" style="margin-top:0; margin-bottom:18px; font-size:1rem; color:#cfd3dd;">
-      Soporte IT integral a usuarios y colaboración en administración de sistemas, con foco en ciberseguridad corporativa e ISO/IEC 27001 (SGSI). Trabajo diario combinando operación técnica (L1–L3), gestión de accesos, automatización y soporte a aplicaciones internas.
-    </p>
+        <!-- RESUMEN BREVE -->
+        <p class="cv-note" style="margin-top:0; margin-bottom:18px; font-size:1rem; color:#cfd3dd;">
+          Soporte IT integral a usuarios y colaboración en administración de sistemas, con foco en ciberseguridad corporativa e ISO/IEC 27001 (SGSI). Trabajo diario combinando operación técnica (L1–L3), gestión de accesos, automatización y soporte a aplicaciones internas.
+        </p>
 
-    <button class="exp-toggle-btn" onclick="toggleExp()">Funciones y Responsabilidades</button>
+        <!-- BOTÓN DESPLEGABLE -->
+        <button class="exp-toggle-btn" onclick="toggleExp()">Funciones y Responsabilidades</button>
 
-    <div id="exp-columns" class="exp-columns">
+        <!-- CONTENIDO DESPLEGABLE -->
+        <div id="exp-columns" class="exp-columns">
 
-      <div class="exp-col">
-        <h5>Ciberseguridad Corporativa</h5>
-        <ul>
-          <li>Monitorización y alertas (EDR): triage de eventos y detecciones en SentinelOne, recopilación de evidencias y documentación técnica; apoyo en contención, aislamiento, reseteo de credenciales y escalado.</li>
-          <li>Gestión de vulnerabilidades con N-able N-sight: identificación de CVEs críticas e importantes en activos y coordinación de remediación con usuarios.</li>
-          <li>Threat intelligence básica y phishing: análisis de correos sospechosos, encabezados, enlaces y adjuntos; comunicación preventiva interna y registro del incidente en el SGSI.</li>
-          <li>Formación y concienciación: diseño y ejecución de campañas sobre phishing, contraseñas, redes públicas y uso seguro del correo; desarrollo de intranet en SharePoint con recursos para empleados.</li>
-        </ul>
-      </div>
+          <!-- COLUMNA 1 -->
+          <div class="exp-col">
+            <h5>Ciberseguridad Corporativa</h5>
+            <ul>
+              <li>Monitorización y alertas (EDR): triage de eventos y detecciones en SentinelOne, recopilación de evidencias y documentación técnica; apoyo en contención, aislamiento, reseteo de credenciales y escalado.</li>
+              <li>Gestión de vulnerabilidades con N-able N-sight: identificación de CVEs críticas e importantes en activos y coordinación de remediación con usuarios.</li>
+              <li>Threat intelligence básica y phishing: análisis de correos sospechosos, encabezados, enlaces y adjuntos; comunicación preventiva interna y registro del incidente en el SGSI.</li>
+              <li>Formación y concienciación: diseño y ejecución de campañas sobre phishing, contraseñas, redes públicas y uso seguro del correo; desarrollo de intranet en SharePoint con recursos para empleados.</li>
+            </ul>
+          </div>
 
-      <div class="exp-col">
-        <h5>ISO/IEC 27001 – Operación del SGSI</h5>
-        <ul>
-          <li>Mantenimiento operativo del SGSI corporativo conforme a ISO/IEC 27001: redacción y actualización de políticas, procedimientos y guías.</li>
-          <li>Recopilación, organización y trazabilidad de evidencias: registros, checklists, pruebas de cumplimiento y soporte al seguimiento de controles.</li>
-          <li>Apoyo en auditorías internas y mejora continua: detección de gaps, propuestas de ajuste y seguimiento de acciones.</li>
-        </ul>
-      </div>
+          <!-- COLUMNA 2 -->
+          <div class="exp-col">
+            <h5>ISO/IEC 27001 – Operación del SGSI</h5>
+            <ul>
+              <li>Mantenimiento operativo del SGSI corporativo conforme a ISO/IEC 27001: redacción y actualización de políticas, procedimientos y guías.</li>
+              <li>Recopilación, organización y trazabilidad de evidencias: registros, checklists, pruebas de cumplimiento y soporte al seguimiento de controles.</li>
+              <li>Apoyo en auditorías internas y mejora continua: detección de gaps, propuestas de ajuste y seguimiento de acciones.</li>
+            </ul>
+          </div>
 
-      <div class="exp-col">
-        <h5>Soporte y Administración de Sistemas (Nivel 1–3)</h5>
-        <ul>
-          <li>Soporte a ~45 usuarios, presencial y remoto: incidencias de hardware, software, red, IP, VPN, Wi-Fi, DNS, herramientas y sistemas corporativos.</li>
-          <li>Configuración integral de equipos Windows, macOS y Linux: instalación de software corporativo, dominio, perfiles y puesta en producción.</li>
-          <li>Administración de Active Directory: altas, bajas, modificaciones, asignación a grupos, control de permisos, reseteo y desbloqueo de contraseñas.</li>
-          <li>Administración de Microsoft 365 y Microsoft Entra ID: usuarios, grupos, licencias, roles, buzones, listas de distribución y revisión de sign-in logs para soporte y verificación de accesos.</li>
-        </ul>
-      </div>
+          <!-- COLUMNA 3 -->
+          <div class="exp-col">
+            <h5>Soporte y Administración de Sistemas (Nivel 1–3)</h5>
+            <ul>
+              <li>Soporte a ~45 usuarios, presencial y remoto: incidencias de hardware, software, red, IP, VPN, Wi-Fi, DNS, herramientas y sistemas corporativos.</li>
+              <li>Configuración integral de equipos Windows, macOS y Linux: instalación de software corporativo, dominio, perfiles y puesta en producción.</li>
+              <li>Administración de Active Directory: altas, bajas, modificaciones, asignación a grupos, control de permisos, reseteo y desbloqueo de contraseñas.</li>
+              <li>Administración de Microsoft 365 y Microsoft Entra ID: usuarios, grupos, licencias, roles, buzones, listas de distribución y revisión de sign-in logs para soporte y verificación de accesos.</li>
+            </ul>
+          </div>
 
-      <div class="exp-col">
-        <h5>IAM, SQL, Automatización y Entorno Internacional</h5>
-        <ul>
-          <li>Gestión de identidades y accesos (IAM): usuarios y grupos en AD, Microsoft 365 y Entra ID; revisión y ajuste de permisos, incluidos NTFS en recursos compartidos.</li>
-          <li>Operativa con SQL Server Management Studio: mantenimiento de más de 15 BBDD mediante consultas y ajustes T-SQL (SELECT, UPDATE, INSERT y DELETE).</li>
-          <li>Soporte funcional y técnico a aplicaciones internas como Miol, Autotrack, Oscar, Kingfisher y DF Server, además de cargas masivas mediante CSV + SQL.</li>
-          <li>Automatización y mejora: desarrollo y documentación de scripts en Python, PowerShell y CMD (.bat) para automatizar tareas IT y procesos internos, reduciendo tiempos y errores.</li>
-          <li>Participación en reuniones de actualización de sistemas con equipos internacionales y uso habitual de inglés conversacional.</li>
-        </ul>
-      </div>
+          <!-- COLUMNA 4 -->
+          <div class="exp-col">
+            <h5>IAM, SQL, Automatización y Entorno Internacional</h5>
+            <ul>
+              <li>Gestión de identidades y accesos (IAM): usuarios y grupos en AD, Microsoft 365 y Entra ID; revisión y ajuste de permisos, incluidos NTFS en recursos compartidos.</li>
+              <li>Operativa con SQL Server Management Studio: mantenimiento de más de 15 BBDD mediante consultas y ajustes T-SQL (SELECT, UPDATE, INSERT y DELETE).</li>
+              <li>Soporte funcional y técnico a aplicaciones internas como Miol, Autotrack, Oscar, Kingfisher y DF Server, además de cargas masivas mediante CSV + SQL.</li>
+              <li>Automatización y mejora: desarrollo y documentación de scripts en Python, PowerShell y CMD (.bat) para automatizar tareas IT y procesos internos, reduciendo tiempos y errores.</li>
+              <li>Participación en reuniones de actualización de sistemas con equipos internacionales y uso habitual de inglés conversacional.</li>
+            </ul>
+          </div>
 
-    </div>
+        </div>
 
-    <p class="cv-note" style="margin-top:24px; line-height:1.6;">
-      <strong>Tecnologías:</strong> ISO/IEC 27001 (SGSI), políticas y procedimientos, evidencias y trazabilidad, auditoría interna, gestión de incidencias, gestión de vulnerabilidades (N-able N-sight), SentinelOne (EDR), monitorización de alertas y logs, gestión de activos IT, IAM (Active Directory / Microsoft 365 / Microsoft Entra ID), Windows Server, GPO, DHCP/DNS, Microsoft 365 Admin Center, AnyDesk, TeamViewer, RDP, SQL Server (SSMS, T-SQL), Python, PowerShell, Bash/CMD (.bat), Java, VMware, VirtualBox, Docker Desktop, Docker Compose, Kali Linux, Cisco Packet Tracer, Wireshark, Nmap, Burp Suite, Metasploit, OpenVAS (GVM), Trivy, Ghidra, Hydra, Binwalk, Salesforce, SAP ERP, Power BI, QlikView, DF Server EVO, MongoDB, Hadoop/HDFS y Apache Spark.
+        <!-- BLOQUE TECNOLOGÍAS -->
+        <p class="cv-note" style="margin-top:24px; line-height:1.6;">
+          <strong>Tecnologías:</strong> ISO/IEC 27001 (SGSI), políticas y procedimientos, evidencias y trazabilidad, auditoría interna, gestión de incidencias, gestión de vulnerabilidades (N-able N-sight), SentinelOne (EDR), monitorización de alertas y logs, gestión de activos IT, IAM (Active Directory / Microsoft 365 / Microsoft Entra ID), Windows Server, GPO, DHCP/DNS, Microsoft 365 Admin Center, AnyDesk, TeamViewer, RDP, SQL Server (SSMS, T-SQL), Python, PowerShell, Bash/CMD (.bat), Java, VMware, VirtualBox, Docker Desktop, Docker Compose, Kali Linux, Cisco Packet Tracer, Wireshark, Nmap, Burp Suite, Metasploit, OpenVAS (GVM), Trivy, Ghidra, Hydra, Binwalk, Salesforce, SAP ERP, Power BI, QlikView, DF Server EVO, MongoDB, Hadoop/HDFS y Apache Spark.
+        </p>
 
         <p class="cv-note">CV completo disponible bajo solicitud.</p>
       </div>
     </section>
 
+    <!-- =============================================================
+         SECCIÓN 4: FORMACIÓN ACADÉMICA
+         - Dos grados
+         - Cursos desplegables
+    ============================================================= -->
     <section id="formacion-academica" class="section education">
       <h2 class="section-title">🎓 Formación Académica</h2>
 
+      <!-- BLOQUE 1: RELACIONES INTERNACIONALES -->
       <div class="edu-block">
         <div class="edu-title">🌍 Grado en Relaciones Internacionales</div>
         <div class="edu-sub">Universidad Rey Juan Carlos | 2014 – 2019 (Finalizado)</div>
@@ -724,43 +838,67 @@
               <span>📘 Primer curso</span><button class="project-btn" type="button">Ver</button>
             </div>
             <ul class="edu-list">
-              <li>Historia de las RRII</li><li>Sistemas y Modelos Constitucionales En El Ambito Internacional</li>
-              <li>Geografía Humana, Economica y Politica</li><li>Nuevas Tecnologías en las RRII</li><li>Teoría y Fundamentos de las RRII</li>
-              <li>Principios de Economía</li><li>Historia Del Mundo Contemporáneo y los Movimientos Sociales</li><li>Organizaciones e Instituciones Internacionales</li>
-              <li>Introducción al Derecho</li><li>Derecho Internacional Público</li>
+              <li>Historia de las RRII</li>
+              <li>Sistemas y Modelos Constitucionales En El Ambito Internacional</li>
+              <li>Geografía Humana, Economica y Politica</li>
+              <li>Nuevas Tecnologías en las RRII</li>
+              <li>Teoría y Fundamentos de las RRII</li>
+              <li>Principios de Economía</li>
+              <li>Historia Del Mundo Contemporáneo y los Movimientos Sociales</li>
+              <li>Organizaciones e Instituciones Internacionales</li>
+              <li>Introducción al Derecho</li>
+              <li>Derecho Internacional Público</li>
             </ul>
 
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📗 Segundo curso</span><button class="project-btn" type="button">Ver</button>
             </div>
             <ul class="edu-list">
-              <li>Marketing Internacional</li><li>RRII y Globalización</li><li>Historia de las Ideas Políticas Internacionales</li>
-              <li>Política Exterior de España</li><li>Seguridad y Defensa en el Orden Internacional </li><li>Conflictos Armados y Derecho Internacional Humanitario</li>
-              <li>Economía Internacional</li><li>Empresas Multinacionales</li><li>Opinión Pública y Periodismo Internacional</li>
+              <li>Marketing Internacional</li>
+              <li>RRII y Globalización</li>
+              <li>Historia de las Ideas Políticas Internacionales</li>
+              <li>Política Exterior de España</li>
+              <li>Seguridad y Defensa en el Orden Internacional</li>
+              <li>Conflictos Armados y Derecho Internacional Humanitario</li>
+              <li>Economía Internacional</li>
+              <li>Empresas Multinacionales</li>
+              <li>Opinión Pública y Periodismo Internacional</li>
             </ul>
 
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📙 Tercer curso</span><button class="project-btn" type="button">Ver</button>
             </div>
             <ul class="edu-list">
-              <li>Culturas, Religiones y Fundamentalismos</li><li>Procesos de Democratización, Transiciones y Comunidad Internacional</li>
-              <li>Derecho Penal Internacional</li><li>Comunidad Iberoamericana de Naciones y Procesos de Integración En América</li>
-              <li>Comercio y Arbitraje Internacional</li><li>UE y Derecho Comunitario</li><li>Terrorismo Internacional</li><li>Derecho Internacional de los DDHH</li>
-              <li>Derecho Procesal y Tribunales Internacionales</li><li>Idioma Chino Básico</li>
+              <li>Culturas, Religiones y Fundamentalismos</li>
+              <li>Procesos de Democratización, Transiciones y Comunidad Internacional</li>
+              <li>Derecho Penal Internacional</li>
+              <li>Comunidad Iberoamericana de Naciones y Procesos de Integración En América</li>
+              <li>Comercio y Arbitraje Internacional</li>
+              <li>UE y Derecho Comunitario</li>
+              <li>Terrorismo Internacional</li>
+              <li>Derecho Internacional de los DDHH</li>
+              <li>Derecho Procesal y Tribunales Internacionales</li>
+              <li>Idioma Chino Básico</li>
             </ul>
 
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📕 Cuarto curso</span><button class="project-btn" type="button">Ver</button>
             </div>
             <ul class="edu-list">
-              <li>Protocolo y Ceremonial</li><li>Regiones Emergentes Asia y África</li><li>Cooperación al Desarrollo: Asilo, Inmigración</li>
-              <li>Derecho Diplomático & Consular</li><li>Idioma Chino Avanzado</li><li>TFG</li><li>Prácticas Externas</li>
+              <li>Protocolo y Ceremonial</li>
+              <li>Regiones Emergentes Asia y África</li>
+              <li>Cooperación al Desarrollo: Asilo, Inmigración</li>
+              <li>Derecho Diplomático & Consular</li>
+              <li>Idioma Chino Avanzado</li>
+              <li>TFG</li>
+              <li>Prácticas Externas</li>
             </ul>
 
           </div>
         </div>
       </div>
 
+      <!-- BLOQUE 2: CIBERSEGURIDAD -->
       <div class="edu-block">
         <div class="edu-title">🛡️ Grado en Ingeniería de la Ciberseguridad</div>
         <div class="edu-sub">Universidad Europea Madrid | 2023 — Actualmente</div>
@@ -774,9 +912,15 @@
               <span>📘 Primer curso</span><button class="project-btn" type="button">Ver</button>
             </div>
             <ul class="edu-list">
-              <li>Álgebra</li><li>Análisis Matemático</li><li>Lógica</li><li>Empresa y Legislación</li>
-              <li>Fundamentos de Programación</li><li>Estadística y Optimización</li>
-              <li>Programación con Estructuras Lineales</li><li>Redes de Ordenadores</li><li>Dimensiones de la Seguridad</li>
+              <li>Álgebra</li>
+              <li>Análisis Matemático</li>
+              <li>Lógica</li>
+              <li>Empresa y Legislación</li>
+              <li>Fundamentos de Programación</li>
+              <li>Estadística y Optimización</li>
+              <li>Programación con Estructuras Lineales</li>
+              <li>Redes de Ordenadores</li>
+              <li>Dimensiones de la Seguridad</li>
               <li>Principios Jurídicos aplicados a la Ciberseguridad</li>
             </ul>
 
@@ -784,27 +928,49 @@
               <span>📗 Segundo curso</span><button class="project-btn" type="button">Ver</button>
             </div>
             <ul class="edu-list">
-              <li>Técnicas de Programación Avanzadas</li><li>Programación Orientada a Objetos</li><li>Programación Concurrente y Distribuida</li>
-              <li>Arquitectura de Computadores</li><li>Criptografía</li><li>Sistemas Operativos</li>
-              <li>Bases de Datos</li><li>Técnicas de Hacking</li><li>Metodologías de Desarrollo Seguro</li><li>Metodologías de Gestión de Proyectos</li>
+              <li>Técnicas de Programación Avanzadas</li>
+              <li>Programación Orientada a Objetos</li>
+              <li>Programación Concurrente y Distribuida</li>
+              <li>Arquitectura de Computadores</li>
+              <li>Criptografía</li>
+              <li>Sistemas Operativos</li>
+              <li>Bases de Datos</li>
+              <li>Técnicas de Hacking</li>
+              <li>Metodologías de Desarrollo Seguro</li>
+              <li>Metodologías de Gestión de Proyectos</li>
             </ul>
 
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📙 Tercer curso</span><button class="project-btn" type="button">Ver</button>
             </div>
             <ul class="edu-list">
-              <li>Ingeniería del Software</li><li>Grandes Volúmenes de Datos:Big Data</li><li>Redes Avanzadas y Computación en la Nube</li>
-              <li>Diseño y Análisis de Algoritmos</li><li>Proyecto Ingeniería I</li><li>Inteligencia Artificial</li>
-              <li>Seguridad en Bases de Datos</li><li>Seguridad en Redes</li><li>Desarrollo Seguro Web y Apps</li><li>Proyecto Ingeniería II</li>
+              <li>Ingeniería del Software</li>
+              <li>Grandes Volúmenes de Datos: Big Data</li>
+              <li>Redes Avanzadas y Computación en la Nube</li>
+              <li>Diseño y Análisis de Algoritmos</li>
+              <li>Proyecto Ingeniería I</li>
+              <li>Inteligencia Artificial</li>
+              <li>Seguridad en Bases de Datos</li>
+              <li>Seguridad en Redes</li>
+              <li>Desarrollo Seguro Web y Apps</li>
+              <li>Proyecto Ingeniería II</li>
             </ul>
 
             <div class="course-item" onclick="toggleEduList(this)">
               <span>📕 Cuarto curso</span><button class="project-btn" type="button">Ver</button>
             </div>
             <ul class="edu-list">
-              <li>Análisis y Gestión del Riesgo</li><li>Malware y Amenazadas Dirigidas</li><li>Auditoría</li><li>Pentesting</li>
-              <li>Proyecto Ingenieria III</li><li>Regulación y Gobernanza de la Seguridad</li><li>Prácticas Externas</li><li>TFG</li>
-              <li>Liderazgo y Emprendimiento</li><li>Ética y Eficacia Profesional</li><li>Actividades Universitarias</li>
+              <li>Análisis y Gestión del Riesgo</li>
+              <li>Malware y Amenazadas Dirigidas</li>
+              <li>Auditoría</li>
+              <li>Pentesting</li>
+              <li>Proyecto Ingenieria III</li>
+              <li>Regulación y Gobernanza de la Seguridad</li>
+              <li>Prácticas Externas</li>
+              <li>TFG</li>
+              <li>Liderazgo y Emprendimiento</li>
+              <li>Ética y Eficacia Profesional</li>
+              <li>Actividades Universitarias</li>
               <li>Prácticas Profesionales II</li>
             </ul>
 
@@ -813,6 +979,9 @@
       </div>
     </section>
 
+    <!-- =============================================================
+         SECCIÓN 5: CERTIFICADOS
+    ============================================================= -->
     <section id="certificados" class="section certificates">
       <h2 class="section-title">✅ Certificados</h2>
 
@@ -828,6 +997,9 @@
       </div>
     </section>
 
+    <!-- =============================================================
+         SECCIÓN 6: CONTACTO
+    ============================================================= -->
     <section id="contacto" class="section contact-box">
       <h2 class="section-title">📬 Contacto</h2>
 
@@ -848,6 +1020,9 @@
       </div>
     </section>
 
+    <!-- =============================================================
+         RESUMEN FINAL DE CUALIDADES
+    ============================================================= -->
     <div class="profile-summary">
       <ul>
         <li>✔ Adaptabilidad</li>
@@ -856,122 +1031,145 @@
       </ul>
     </div>
 
+    <!-- =============================================================
+         FOOTER
+    ============================================================= -->
     <footer>
       &copy; 2025 Fabiola RS · Portfolio de Ciberseguridad · Hecho con GitHub Pages
     </footer>
 
   </main>
 
+  <!-- =============================================================
+       SCRIPT 1: FONDO ANIMADO DEL HERO
+       - Dibuja nodos y líneas en movimiento
+  ============================================================= -->
   <script>
-  const canvas = document.getElementById("network-bg");
-  const ctx = canvas.getContext("2d");
+    const canvas = document.getElementById("network-bg");
+    const ctx = canvas.getContext("2d");
 
-  let w, h, nodes;
+    let w, h, nodes;
 
-  function resize() {
-    if (!canvas) return;
-    w = canvas.width = window.innerWidth;
-    const hero = document.getElementById("hero");
-    h = canvas.height = hero ? hero.offsetHeight : 400;
+    function resize() {
+      if (!canvas) return;
 
-    nodes = Array.from({ length: 50 }, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      dx: (Math.random() - 0.5) * 0.5,
-      dy: (Math.random() - 0.5) * 0.5,
-    }));
-  }
+      w = canvas.width = window.innerWidth;
+      const hero = document.getElementById("hero");
+      h = canvas.height = hero ? hero.offsetHeight : 400;
 
-  window.addEventListener("resize", resize);
-  resize();
+      nodes = Array.from({ length: 50 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5,
+      }));
+    }
 
-  function draw() {
-    if (!ctx || !nodes) return;
+    window.addEventListener("resize", resize);
+    resize();
 
-    ctx.clearRect(0, 0, w, h);
+    function draw() {
+      if (!ctx || !nodes) return;
 
-    ctx.fillStyle = "#00bfae";
-    ctx.strokeStyle = "rgba(0,191,174,0.25)";
-    ctx.lineWidth = 0.8;
+      ctx.clearRect(0, 0, w, h);
 
-    for (let i = 0; i < nodes.length; i++) {
-      const n = nodes[i];
+      ctx.fillStyle = "#00bfae";
+      ctx.strokeStyle = "rgba(0,191,174,0.25)";
+      ctx.lineWidth = 0.8;
 
-      n.x += n.dx;
-      n.y += n.dy;
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i];
 
-      if (n.x < 0 || n.x > w) n.dx *= -1;
-      if (n.y < 0 || n.y > h) n.dy *= -1;
+        n.x += n.dx;
+        n.y += n.dy;
 
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, 1.6, 0, Math.PI * 2);
-      ctx.fill();
+        if (n.x < 0 || n.x > w) n.dx *= -1;
+        if (n.y < 0 || n.y > h) n.dy *= -1;
 
-      for (let j = i + 1; j < nodes.length; j++) {
-        const n2 = nodes[j];
-        const dist = Math.hypot(n.x - n2.x, n.y - n2.y);
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, 1.6, 0, Math.PI * 2);
+        ctx.fill();
 
-        if (dist < 120) {
-          ctx.globalAlpha = 1 - dist / 120;
-          ctx.beginPath();
-          ctx.moveTo(n.x, n.y);
-          ctx.lineTo(n2.x, n2.y);
-          ctx.stroke();
+        for (let j = i + 1; j < nodes.length; j++) {
+          const n2 = nodes[j];
+          const dist = Math.hypot(n.x - n2.x, n.y - n2.y);
+
+          if (dist < 120) {
+            ctx.globalAlpha = 1 - dist / 120;
+            ctx.beginPath();
+            ctx.moveTo(n.x, n.y);
+            ctx.lineTo(n2.x, n2.y);
+            ctx.stroke();
+          }
         }
       }
+
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(draw);
     }
 
-    ctx.globalAlpha = 1;
-    requestAnimationFrame(draw);
-  }
-
-  draw();
+    draw();
   </script>
 
+  <!-- =============================================================
+       SCRIPT 2: CAMBIO DE PESTAÑAS EN PROYECTOS
+       - Muestra un bloque y oculta los demás
+  ============================================================= -->
   <script>
-  function showProjectBlock(target, btn) {
-    document.querySelectorAll(".project-block").forEach(b => {
-      b.classList.add("hidden");
-      b.classList.remove("visible");
-    });
+    function showProjectBlock(target, btn) {
+      document.querySelectorAll(".project-block").forEach(b => {
+        b.classList.add("hidden");
+        b.classList.remove("visible");
+      });
 
-    document.querySelectorAll(".project-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".project-tab").forEach(t => t.classList.remove("active"));
 
-    btn.classList.add("active");
+      btn.classList.add("active");
 
-    const block = document.getElementById("proj-" + target);
-    if (block) {
-      block.classList.remove("hidden");
-      block.classList.add("visible");
+      const block = document.getElementById("proj-" + target);
+      if (block) {
+        block.classList.remove("hidden");
+        block.classList.add("visible");
+      }
     }
-  }
   </script>
 
+  <!-- =============================================================
+       SCRIPT 3: DESPLEGAR / OCULTAR EXPERIENCIA
+  ============================================================= -->
   <script>
-  function toggleExp() {
-    const cols = document.getElementById("exp-columns");
-    if (cols) cols.classList.toggle("show");
-  }
+    function toggleExp() {
+      const cols = document.getElementById("exp-columns");
+      if (cols) cols.classList.toggle("show");
+    }
   </script>
 
+  <!-- =============================================================
+       SCRIPT 4: DESPLEGAR ASIGNATURAS DE CADA GRADO
+  ============================================================= -->
   <script>
-  function toggleAssign(btn) {
-    const container = btn.nextElementSibling;
-    if (!container) return;
-    container.classList.toggle("show");
+    function toggleAssign(btn) {
+      const container = btn.nextElementSibling;
+      if (!container) return;
 
-    btn.textContent = container.classList.contains("show")
-      ? "Asignaturas ▲"
-      : "Asignaturas ▼";
-  }
+      container.classList.toggle("show");
+
+      btn.textContent = container.classList.contains("show")
+        ? "Asignaturas ▲"
+        : "Asignaturas ▼";
+    }
   </script>
 
+  <!-- =============================================================
+       SCRIPT 5: DESPLEGAR CURSOS INDIVIDUALES
+       - Primer curso / Segundo curso / etc.
+  ============================================================= -->
   <script>
-  function toggleEduList(el) {
-    const next = el.nextElementSibling;
-    if (!next) return;
-    next.classList.toggle("show");
-  }
+    function toggleEduList(el) {
+      const next = el.nextElementSibling;
+      if (!next) return;
+      next.classList.toggle("show");
+    }
   </script>
 
 </body>
