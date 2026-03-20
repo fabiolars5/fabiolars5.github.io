@@ -83,19 +83,19 @@
        💠 HERO
     ============================================================ */
     #hero {
-    position:relative;
-    height:70vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    background:#0b0f1a;
-    overflow:hidden;
-    min-height:480px;
-    border-radius:16px;
-    max-width:800px;
-    margin:0 auto 60px;
-}
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:#0b0f1a;
+      overflow:hidden;
+      min-height:300px;
+      padding:34px 20px;
+      border-radius:16px;
+      max-width:760px;
+      margin:0 auto 60px;
+    }
 
     #network-bg {
       position:absolute;
@@ -105,18 +105,33 @@
     .hero-content {
       position:relative;
       z-index:2;
-      max-width:900px;
-      padding:20px;
+      max-width:560px;
+      padding:8px 10px;
     }
 
-    #hero h1 { color:var(--accent); margin-bottom:8px; font-size:2.4rem; }
-    #hero h2 { color:#bfc6d4; font-size:1.1rem; margin-bottom:20px; }
-    #hero p { color:#cfd3dd; max-width:700px; margin:auto; }
+    #hero h1 {
+      color:var(--accent);
+      margin-bottom:6px;
+      font-size:1.95rem;
+    }
+
+    #hero h2 {
+      color:#bfc6d4;
+      font-size:1rem;
+      margin-bottom:14px;
+    }
+
+    #hero p {
+      color:#cfd3dd;
+      max-width:500px;
+      margin:0 auto 8px;
+      line-height:1.5;
+    }
 
     .contact-links {
-      margin-top: 24px;
+      margin-top:18px;
       display:flex;
-      gap:14px;
+      gap:12px;
       justify-content:center;
       flex-wrap:wrap;
     }
@@ -445,8 +460,26 @@
       }
 
       #hero {
-        height:auto;
-        min-height:380px;
+        min-height:260px;
+        padding:28px 16px;
+        max-width:100%;
+      }
+
+      .hero-content {
+        max-width:100%;
+        padding:4px;
+      }
+
+      #hero h1 {
+        font-size:1.7rem;
+      }
+
+      #hero h2 {
+        font-size:.95rem;
+      }
+
+      #hero p {
+        max-width:100%;
       }
 
       .exp-columns {
