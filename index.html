@@ -661,7 +661,7 @@
          - Pestañas por categoría
          - Subbloques con enlaces
     ============================================================= -->
-   <section id="proyectos" class="section projects">
+ <section id="proyectos" class="section projects">
 
   <h2>🚀 Proyectos</h2>
 
@@ -670,17 +670,21 @@
 
     <!-- ============================================================
          PESTAÑAS PRINCIPALES
-         ESTRUCTURA FINAL:
+         ESTRUCTURA FINAL DEL PORTFOLIO:
          1) Universitarios
          2) Proyectos de Ciberseguridad
          3) Ciberinteligencia
 
          NOTA PARA MÍ:
-         - "Proyectos de Ciberseguridad" agrupa TODO lo práctico
-           relacionado con seguridad.
-         - Dentro de ese bloque NO lo organizo por "técnico vs GRC",
+         - "Proyectos de Ciberseguridad" agrupa todo lo práctico y útil
+           de cara a entrevistas y trabajo real.
+         - Dentro de este bloque NO se organiza por "técnico vs GRC",
            sino por FUNCIÓN dentro de la seguridad.
-         - Así queda más profesional, más coherente y más fácil de leer.
+         - Esto permite enseñar mejor lo que una empresa quiere ver:
+             • proteger sistemas
+             • detectar y analizar
+             • automatizar
+             • gestionar riesgo / cumplimiento / cultura de seguridad
     ============================================================ -->
     <div class="project-tabs">
       <button class="project-tab active" onclick="showProjectBlock('uni', this)">Universitarios</button>
@@ -711,27 +715,27 @@
          BLOQUE 2: PROYECTOS DE CIBERSEGURIDAD
          LÓGICA DE AGRUPACIÓN:
          Aquí meto todos los proyectos prácticos de seguridad,
-         pero organizados por FUNCIÓN:
+         pero organizados por FUNCIÓN dentro de la seguridad:
 
          1. Protección y defensa
-            -> endurecer, proteger, probar seguridad de sistemas
-         2. Análisis y respuesta
-            -> investigar, detectar, revisar, interpretar
+            -> endurecer, proteger, validar seguridad de sistemas y redes
+         2. Análisis, detección y respuesta
+            -> investigar, detectar, revisar, interpretar evidencias y responder
          3. Automatización y desarrollo
-            -> scripts, herramientas, mejoras técnicas
+            -> scripts, herramientas, mejoras técnicas, eficiencia
          4. Gobierno, riesgo y cultura de seguridad
-            -> riesgos, políticas, concienciación, cumplimiento
+            -> riesgos, políticas, cumplimiento, concienciación
 
          NOTA PARA MÍ:
-         Esta agrupación es mejor porque todas las categorías
-         siguen la misma lógica y se entienden más rápido.
+         Esta agrupación es mejor porque sigue una lógica profesional
+         parecida a cómo trabajan muchas empresas y equipos de seguridad.
     ============================================================ -->
     <div id="proj-cyber" class="project-block hidden">
       <h3>🛡️ Proyectos de Ciberseguridad</h3>
       <p>
         Proyectos orientados a la aplicación práctica de la ciberseguridad,
         organizados por su función dentro de la seguridad: proteger,
-        analizar, automatizar y gobernar.
+        detectar, automatizar y gobernar.
       </p>
 
       <!-- EXPLICACIÓN VISIBLE PARA RECORDAR LA ESTRUCTURA -->
@@ -739,8 +743,8 @@
         <p><strong>Cómo está organizado este bloque:</strong></p>
         <ul>
           <li><strong>Protección y defensa:</strong> proyectos para asegurar, endurecer o validar la seguridad de sistemas y redes.</li>
-          <li><strong>Análisis y respuesta:</strong> proyectos enfocados en investigar, detectar, revisar y entender amenazas o comportamientos técnicos.</li>
-          <li><strong>Automatización y desarrollo:</strong> scripts, utilidades y mejoras técnicas para agilizar procesos de seguridad.</li>
+          <li><strong>Análisis, detección y respuesta:</strong> proyectos enfocados en investigar, detectar, revisar e interpretar amenazas, eventos o comportamientos técnicos.</li>
+          <li><strong>Automatización y desarrollo:</strong> scripts, utilidades y mejoras técnicas para agilizar procesos de seguridad y reducir trabajo manual.</li>
           <li><strong>Gobierno, riesgo y cultura de seguridad:</strong> proyectos relacionados con riesgos, políticas, cumplimiento y concienciación.</li>
         </ul>
       </div>
@@ -754,6 +758,11 @@
            - pruebas ofensivas controladas
            - CTFs
            - validación de controles técnicos
+
+           EN ENTREVISTA DEMUESTRA:
+           - que sé proteger sistemas
+           - que entiendo superficie de ataque
+           - que sé aplicar medidas defensivas
       ============================================================ -->
       <h4>🛡️ Protección y defensa</h4>
       <p class="subblock-note">
@@ -768,17 +777,24 @@
 
       <!-- ============================================================
            SUBBLOQUE 2
-           ANÁLISIS Y RESPUESTA
+           ANÁLISIS, DETECCIÓN Y RESPUESTA
            QUÉ VA AQUÍ:
            - análisis técnico
-           - revisión de comportamiento
-           - defensa
+           - análisis de logs
+           - análisis de alertas
+           - revisión de tráfico
            - detección
-           - investigación de eventos o incidentes
+           - investigación de incidentes
+           - respuesta defensiva
+
+           EN ENTREVISTA DEMUESTRA:
+           - que sé investigar
+           - que sé interpretar evidencias
+           - que puedo encajar en tareas tipo SOC / Blue Team / IR básico
       ============================================================ -->
-      <h4>🔍 Análisis y respuesta</h4>
+      <h4>🔍 Análisis, detección y respuesta</h4>
       <p class="subblock-note">
-        Reúne proyectos orientados al análisis técnico, la detección, la interpretación de evidencias y la respuesta defensiva.
+        Reúne proyectos orientados al análisis técnico, la detección, la interpretación de evidencias y la respuesta defensiva ante eventos o incidentes.
       </p>
 
       <div class="mini-projects">
@@ -794,6 +810,11 @@
            - pequeñas herramientas
            - informes automáticos
            - utilidades de apoyo a seguridad
+
+           EN ENTREVISTA DEMUESTRA:
+           - que sé ahorrar tiempo
+           - que sé mejorar procesos
+           - que puedo escalar tareas repetitivas
       ============================================================ -->
       <h4>⚙️ Automatización y desarrollo</h4>
       <p class="subblock-note">
@@ -815,6 +836,11 @@
            - cumplimiento
            - concienciación
            - cultura de seguridad
+
+           EN ENTREVISTA DEMUESTRA:
+           - que entiendo seguridad en entorno empresa
+           - que sé trabajar con riesgos y controles
+           - que aporto visión de cumplimiento y madurez organizativa
       ============================================================ -->
       <h4>📋 Gobierno, riesgo y cultura de seguridad</h4>
       <p class="subblock-note">
