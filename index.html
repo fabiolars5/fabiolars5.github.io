@@ -63,17 +63,26 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
     .brand-name {
       color: var(--accent);
       font-size: 1.2rem;
       font-weight: 700;
+      line-height: 1.1;
     }
 
     .brand-role {
       color: var(--muted);
       font-size: 0.82rem;
+      line-height: 1.1;
     }
 
     nav ul {
@@ -302,6 +311,49 @@
       line-height: 1.5em;
     }
 
+    .project-block h4 {
+      color: var(--accent);
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .project-block h4:first-of-type {
+      margin-top: 18px;
+    }
+
+    .project-structure-note {
+      background: rgba(0,191,174,.08);
+      border: 1px solid rgba(0,191,174,.25);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 18px 0 26px;
+    }
+
+    .project-structure-note p {
+      margin: 0 0 10px;
+      color: #e5e7eb;
+    }
+
+    .project-structure-note ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #cfd3dd;
+      line-height: 1.55;
+    }
+
+    .project-structure-note li {
+      margin-bottom: 8px;
+    }
+
+    .subblock-note {
+      color: #bfc6d4;
+      margin: 0 0 14px;
+      line-height: 1.5em;
+      font-size: 0.95rem;
+    }
+
     .mini-projects div {
       display: flex;
       justify-content: space-between;
@@ -311,6 +363,7 @@
       border-radius: 8px;
       margin: 8px 0;
       border: 1px solid rgba(255,255,255,.08);
+      gap: 12px;
     }
 
     .mini-projects span {
@@ -324,6 +377,7 @@
       border-radius: 8px;
       font-weight: 700;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .project-btn:hover {
@@ -481,6 +535,7 @@
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
+      gap: 12px;
     }
 
     .course-item span {
@@ -554,6 +609,11 @@
         padding: 24px 5% 40px;
       }
 
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       #hero {
         min-height: 240px;
         padding: 24px 18px;
@@ -602,7 +662,16 @@
       nav ul {
         gap: 12px;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: flex-start;
+      }
+
+      .mini-projects div {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .project-btn {
+        align-self: flex-start;
       }
     }
   </style>
@@ -658,225 +727,170 @@
 
     <!-- =============================================================
          SECCIÓN 2: PROYECTOS
-         - Pestañas por categoría
-         - Subbloques con enlaces
     ============================================================= -->
- <section id="proyectos" class="section projects">
+    <section id="proyectos" class="section projects">
 
-  <h2>🚀 Proyectos</h2>
+      <h2>🚀 Proyectos</h2>
 
-  <div class="project-container">
-    <p>Explora mis proyectos académicos, de ciberseguridad aplicada y de ciberinteligencia.</p>
+      <div class="project-container">
+        <p>Explora mis proyectos académicos, de ciberseguridad aplicada y de ciberinteligencia.</p>
 
-    <!-- ============================================================
-         PESTAÑAS PRINCIPALES
-         ESTRUCTURA FINAL DEL PORTFOLIO:
-         1) Universitarios
-         2) Proyectos de Ciberseguridad
-         3) Ciberinteligencia
+        <!-- ============================================================
+             PESTAÑAS PRINCIPALES
+             ESTRUCTURA FINAL DEL PORTFOLIO:
+             1) Universitarios
+             2) Proyectos de Ciberseguridad
+             3) Ciberinteligencia
 
-         NOTA PARA MÍ:
-         - "Proyectos de Ciberseguridad" agrupa todo lo práctico y útil
-           de cara a entrevistas y trabajo real.
-         - Dentro de este bloque NO se organiza por "técnico vs GRC",
-           sino por FUNCIÓN dentro de la seguridad.
-         - Esto permite enseñar mejor lo que una empresa quiere ver:
-             • proteger sistemas
-             • detectar y analizar
-             • automatizar
-             • gestionar riesgo / cumplimiento / cultura de seguridad
-    ============================================================ -->
-    <div class="project-tabs">
-      <button class="project-tab active" onclick="showProjectBlock('uni', this)">Universitarios</button>
-      <button class="project-tab" onclick="showProjectBlock('cyber', this)">Proyectos de Ciberseguridad</button>
-      <button class="project-tab" onclick="showProjectBlock('intel', this)">Ciberinteligencia</button>
-    </div>
+             NOTA PARA MÍ:
+             - "Proyectos de Ciberseguridad" agrupa todo lo práctico y útil
+               de cara a entrevistas y trabajo real.
+             - Dentro de este bloque NO se organiza por "técnico vs GRC",
+               sino por FUNCIÓN dentro de la seguridad.
+             - Esto permite enseñar mejor lo que una empresa quiere ver:
+                 • proteger sistemas
+                 • detectar y analizar
+                 • automatizar
+                 • gestionar riesgo / cumplimiento / cultura de seguridad
+        ============================================================ -->
+        <div class="project-tabs">
+          <button class="project-tab active" onclick="showProjectBlock('uni', this)">Universitarios</button>
+          <button class="project-tab" onclick="showProjectBlock('cyber', this)">Proyectos de Ciberseguridad</button>
+          <button class="project-tab" onclick="showProjectBlock('intel', this)">Ciberinteligencia</button>
+        </div>
 
-    <!-- ============================================================
-         BLOQUE 1: UNIVERSITARIOS
-         QUÉ VA AQUÍ:
-         - trabajos del grado
-         - prácticas académicas
-         - evolución por cursos
-    ============================================================ -->
-    <div id="proj-uni" class="project-block visible">
-      <h3>📘 Proyectos Universitarios</h3>
-      <p>Trabajos destacados del grado en Ciberseguridad, organizados por curso académico.</p>
+        <!-- ============================================================
+             BLOQUE 1: UNIVERSITARIOS
+             QUÉ VA AQUÍ:
+             - trabajos del grado
+             - prácticas académicas
+             - evolución por cursos
+        ============================================================ -->
+        <div id="proj-uni" class="project-block visible">
+          <h3>📘 Proyectos Universitarios</h3>
+          <p>Trabajos destacados del grado en Ciberseguridad, organizados por curso académico.</p>
 
-      <div class="mini-projects">
-        <div><span>📘 Primer Año</span><a href="grado-paginas/1er-ano-proy_uni.html" class="project-btn">Entrar</a></div>
-        <div><span>📘 Segundo Año</span><a href="grado-paginas/2do-ano-proy_uni.html" class="project-btn">Entrar</a></div>
-        <div><span>📘 Tercer Año</span><a href="grado-paginas/3er-ano-proy_uni.html" class="project-btn">Entrar</a></div>
-        <div><span>📘 Cuarto Año</span><a href="grado-paginas/4to-ano-proy_uni.html" class="project-btn">Entrar</a></div>
+          <div class="mini-projects">
+            <div><span>📘 Primer Año</span><a href="grado-paginas/1er-ano-proy_uni.html" class="project-btn">Entrar</a></div>
+            <div><span>📘 Segundo Año</span><a href="grado-paginas/2do-ano-proy_uni.html" class="project-btn">Entrar</a></div>
+            <div><span>📘 Tercer Año</span><a href="grado-paginas/3er-ano-proy_uni.html" class="project-btn">Entrar</a></div>
+            <div><span>📘 Cuarto Año</span><a href="grado-paginas/4to-ano-proy_uni.html" class="project-btn">Entrar</a></div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             BLOQUE 2: PROYECTOS DE CIBERSEGURIDAD
+             LÓGICA DE AGRUPACIÓN:
+             Aquí meto todos los proyectos prácticos de seguridad,
+             pero organizados por FUNCIÓN dentro de la seguridad:
+
+             1. Protección y defensa
+                -> endurecer, proteger, validar seguridad de sistemas y redes
+             2. Análisis, detección y respuesta
+                -> investigar, detectar, revisar, interpretar evidencias y responder
+             3. Automatización y desarrollo
+                -> scripts, herramientas, mejoras técnicas, eficiencia
+             4. Gobierno, riesgo y cultura de seguridad
+                -> riesgos, políticas, cumplimiento, concienciación
+
+             NOTA PARA MÍ:
+             Esta agrupación es mejor porque sigue una lógica profesional
+             parecida a cómo trabajan muchas empresas y equipos de seguridad.
+        ============================================================ -->
+        <div id="proj-cyber" class="project-block hidden">
+          <h3>🛡️ Proyectos de Ciberseguridad</h3>
+          <p>
+            Proyectos orientados a la aplicación práctica de la ciberseguridad,
+            organizados por su función dentro de la seguridad: proteger,
+            detectar, automatizar y gobernar.
+          </p>
+
+          <!-- EXPLICACIÓN VISIBLE PARA RECORDAR LA ESTRUCTURA -->
+          <div class="project-structure-note">
+            <p><strong>Cómo está organizado este bloque:</strong></p>
+            <ul>
+              <li><strong>Protección y defensa:</strong> proyectos para asegurar, endurecer o validar la seguridad de sistemas y redes.</li>
+              <li><strong>Análisis, detección y respuesta:</strong> proyectos enfocados en investigar, detectar, revisar e interpretar amenazas, eventos o comportamientos técnicos.</li>
+              <li><strong>Automatización y desarrollo:</strong> scripts, utilidades y mejoras técnicas para agilizar procesos de seguridad y reducir trabajo manual.</li>
+              <li><strong>Gobierno, riesgo y cultura de seguridad:</strong> proyectos relacionados con riesgos, políticas, cumplimiento y concienciación.</li>
+            </ul>
+          </div>
+
+          <!-- ============================================================
+               SUBBLOQUE 1
+               PROTECCIÓN Y DEFENSA
+          ============================================================ -->
+          <h4>🛡️ Protección y defensa</h4>
+          <p class="subblock-note">
+            Incluye proyectos centrados en proteger sistemas, reforzar configuraciones y poner a prueba la seguridad mediante prácticas ofensivas controladas.
+          </p>
+
+          <div class="mini-projects">
+            <div><span>🛡️ Configuración segura de sistemas y redes</span><a href="proyectos-paginas/2B-configuracion-segura.html" class="project-btn">Entrar</a></div>
+            <div><span>💣 Herramientas ofensivas y pruebas de explotación</span><a href="proyectos-paginas/2B-herramientas-ofensivas.html" class="project-btn">Entrar</a></div>
+            <div><span>🏁 Retos CTF y write-ups</span><a href="proyectos-paginas/2B-retos-ctf.html" class="project-btn">Entrar</a></div>
+          </div>
+
+          <!-- ============================================================
+               SUBBLOQUE 2
+               ANÁLISIS, DETECCIÓN Y RESPUESTA
+          ============================================================ -->
+          <h4>🔍 Análisis, detección y respuesta</h4>
+          <p class="subblock-note">
+            Reúne proyectos orientados al análisis técnico, la detección, la interpretación de evidencias y la respuesta defensiva ante eventos o incidentes.
+          </p>
+
+          <div class="mini-projects">
+            <div><span>🔍 Análisis técnico y defensa</span><a href="proyectos-paginas/2B-analisis-defensa.html" class="project-btn">Entrar</a></div>
+          </div>
+
+          <!-- ============================================================
+               SUBBLOQUE 3
+               AUTOMATIZACIÓN Y DESARROLLO
+          ============================================================ -->
+          <h4>⚙️ Automatización y desarrollo</h4>
+          <p class="subblock-note">
+            Incluye scripts, herramientas y desarrollos pensados para mejorar procesos, reducir tareas manuales y apoyar la operación de seguridad.
+          </p>
+
+          <div class="mini-projects">
+            <div><span>🧾 Automatización e informes</span><a href="proyectos-paginas/3B-automatizacion.html" class="project-btn">Entrar</a></div>
+            <div><span>💻 Desarrollo y scripts seguros</span><a href="proyectos-paginas/3B-desarrollo-seguro.html" class="project-btn">Entrar</a></div>
+          </div>
+
+          <!-- ============================================================
+               SUBBLOQUE 4
+               GOBIERNO, RIESGO Y CULTURA DE SEGURIDAD
+          ============================================================ -->
+          <h4>📋 Gobierno, riesgo y cultura de seguridad</h4>
+          <p class="subblock-note">
+            Agrupa proyectos vinculados a la gestión del riesgo, el cumplimiento, la documentación de seguridad y la concienciación de usuarios.
+          </p>
+
+          <div class="mini-projects">
+            <div><span>📉 Análisis y gestión de riesgos</span><a href="proyectos-paginas/3B-riesgos.html" class="project-btn">Entrar</a></div>
+            <div><span>📜 Políticas y concienciación</span><a href="proyectos-paginas/3B-politicas-concienciacion.html" class="project-btn">Entrar</a></div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             BLOQUE 3: CIBERINTELIGENCIA
+        ============================================================ -->
+        <div id="proj-intel" class="project-block hidden">
+          <h3>🧠 Ciberinteligencia y Análisis de Amenazas</h3>
+          <p>OSINT, dark web, dorks, actores de amenaza y APTs.</p>
+
+          <div class="mini-projects">
+            <div><span>🔍 Investigación OSINT</span><a href="proyectos-paginas/4B-osint.html" class="project-btn">Entrar</a></div>
+            <div><span>🕵️ Herramientas de inteligencia</span><a href="proyectos-paginas/4B-herramientas-inteligencia.html" class="project-btn">Entrar</a></div>
+            <div><span>⚔️ APTs y campañas de amenazas</span><a href="proyectos-paginas/4B-amenazas-apts.html" class="project-btn">Entrar</a></div>
+            <div><span>🌍 Ciberconflictos y geopolítica</span><a href="proyectos-paginas/4B-ciberconflictos.html" class="project-btn">Entrar</a></div>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <!-- ============================================================
-         BLOQUE 2: PROYECTOS DE CIBERSEGURIDAD
-         LÓGICA DE AGRUPACIÓN:
-         Aquí meto todos los proyectos prácticos de seguridad,
-         pero organizados por FUNCIÓN dentro de la seguridad:
-
-         1. Protección y defensa
-            -> endurecer, proteger, validar seguridad de sistemas y redes
-         2. Análisis, detección y respuesta
-            -> investigar, detectar, revisar, interpretar evidencias y responder
-         3. Automatización y desarrollo
-            -> scripts, herramientas, mejoras técnicas, eficiencia
-         4. Gobierno, riesgo y cultura de seguridad
-            -> riesgos, políticas, cumplimiento, concienciación
-
-         NOTA PARA MÍ:
-         Esta agrupación es mejor porque sigue una lógica profesional
-         parecida a cómo trabajan muchas empresas y equipos de seguridad.
-    ============================================================ -->
-    <div id="proj-cyber" class="project-block hidden">
-      <h3>🛡️ Proyectos de Ciberseguridad</h3>
-      <p>
-        Proyectos orientados a la aplicación práctica de la ciberseguridad,
-        organizados por su función dentro de la seguridad: proteger,
-        detectar, automatizar y gobernar.
-      </p>
-
-      <!-- EXPLICACIÓN VISIBLE PARA RECORDAR LA ESTRUCTURA -->
-      <div class="project-structure-note">
-        <p><strong>Cómo está organizado este bloque:</strong></p>
-        <ul>
-          <li><strong>Protección y defensa:</strong> proyectos para asegurar, endurecer o validar la seguridad de sistemas y redes.</li>
-          <li><strong>Análisis, detección y respuesta:</strong> proyectos enfocados en investigar, detectar, revisar e interpretar amenazas, eventos o comportamientos técnicos.</li>
-          <li><strong>Automatización y desarrollo:</strong> scripts, utilidades y mejoras técnicas para agilizar procesos de seguridad y reducir trabajo manual.</li>
-          <li><strong>Gobierno, riesgo y cultura de seguridad:</strong> proyectos relacionados con riesgos, políticas, cumplimiento y concienciación.</li>
-        </ul>
-      </div>
-
-      <!-- ============================================================
-           SUBBLOQUE 1
-           PROTECCIÓN Y DEFENSA
-           QUÉ VA AQUÍ:
-           - hardening
-           - configuración segura
-           - pruebas ofensivas controladas
-           - CTFs
-           - validación de controles técnicos
-
-           EN ENTREVISTA DEMUESTRA:
-           - que sé proteger sistemas
-           - que entiendo superficie de ataque
-           - que sé aplicar medidas defensivas
-      ============================================================ -->
-      <h4>🛡️ Protección y defensa</h4>
-      <p class="subblock-note">
-        Incluye proyectos centrados en proteger sistemas, reforzar configuraciones y poner a prueba la seguridad mediante prácticas ofensivas controladas.
-      </p>
-
-      <div class="mini-projects">
-        <div><span>🛡️ Configuración segura de sistemas y redes</span><a href="proyectos-paginas/2B-configuracion-segura.html" class="project-btn">Entrar</a></div>
-        <div><span>💣 Herramientas ofensivas y pruebas de explotación</span><a href="proyectos-paginas/2B-herramientas-ofensivas.html" class="project-btn">Entrar</a></div>
-        <div><span>🏁 Retos CTF y write-ups</span><a href="proyectos-paginas/2B-retos-ctf.html" class="project-btn">Entrar</a></div>
-      </div>
-
-      <!-- ============================================================
-           SUBBLOQUE 2
-           ANÁLISIS, DETECCIÓN Y RESPUESTA
-           QUÉ VA AQUÍ:
-           - análisis técnico
-           - análisis de logs
-           - análisis de alertas
-           - revisión de tráfico
-           - detección
-           - investigación de incidentes
-           - respuesta defensiva
-
-           EN ENTREVISTA DEMUESTRA:
-           - que sé investigar
-           - que sé interpretar evidencias
-           - que puedo encajar en tareas tipo SOC / Blue Team / IR básico
-      ============================================================ -->
-      <h4>🔍 Análisis, detección y respuesta</h4>
-      <p class="subblock-note">
-        Reúne proyectos orientados al análisis técnico, la detección, la interpretación de evidencias y la respuesta defensiva ante eventos o incidentes.
-      </p>
-
-      <div class="mini-projects">
-        <div><span>🔍 Análisis técnico y defensa</span><a href="proyectos-paginas/2B-analisis-defensa.html" class="project-btn">Entrar</a></div>
-      </div>
-
-      <!-- ============================================================
-           SUBBLOQUE 3
-           AUTOMATIZACIÓN Y DESARROLLO
-           QUÉ VA AQUÍ:
-           - scripts
-           - automatizaciones
-           - pequeñas herramientas
-           - informes automáticos
-           - utilidades de apoyo a seguridad
-
-           EN ENTREVISTA DEMUESTRA:
-           - que sé ahorrar tiempo
-           - que sé mejorar procesos
-           - que puedo escalar tareas repetitivas
-      ============================================================ -->
-      <h4>⚙️ Automatización y desarrollo</h4>
-      <p class="subblock-note">
-        Incluye scripts, herramientas y desarrollos pensados para mejorar procesos, reducir tareas manuales y apoyar la operación de seguridad.
-      </p>
-
-      <div class="mini-projects">
-        <div><span>🧾 Automatización e informes</span><a href="proyectos-paginas/3B-automatizacion.html" class="project-btn">Entrar</a></div>
-        <div><span>💻 Desarrollo y scripts seguros</span><a href="proyectos-paginas/3B-desarrollo-seguro.html" class="project-btn">Entrar</a></div>
-      </div>
-
-      <!-- ============================================================
-           SUBBLOQUE 4
-           GOBIERNO, RIESGO Y CULTURA DE SEGURIDAD
-           QUÉ VA AQUÍ:
-           - análisis de riesgos
-           - GRC
-           - políticas
-           - cumplimiento
-           - concienciación
-           - cultura de seguridad
-
-           EN ENTREVISTA DEMUESTRA:
-           - que entiendo seguridad en entorno empresa
-           - que sé trabajar con riesgos y controles
-           - que aporto visión de cumplimiento y madurez organizativa
-      ============================================================ -->
-      <h4>📋 Gobierno, riesgo y cultura de seguridad</h4>
-      <p class="subblock-note">
-        Agrupa proyectos vinculados a la gestión del riesgo, el cumplimiento, la documentación de seguridad y la concienciación de usuarios.
-      </p>
-
-      <div class="mini-projects">
-        <div><span>📉 Análisis y gestión de riesgos</span><a href="proyectos-paginas/3B-riesgos.html" class="project-btn">Entrar</a></div>
-        <div><span>📜 Políticas y concienciación</span><a href="proyectos-paginas/3B-politicas-concienciacion.html" class="project-btn">Entrar</a></div>
-      </div>
-    </div>
-
-    <!-- ============================================================
-         BLOQUE 3: CIBERINTELIGENCIA
-         QUÉ VA AQUÍ:
-         - OSINT
-         - análisis de amenazas
-         - APTs
-         - actores
-         - campañas
-         - geopolítica
-    ============================================================ -->
-    <div id="proj-intel" class="project-block hidden">
-      <h3>🧠 Ciberinteligencia y Análisis de Amenazas</h3>
-      <p>OSINT, dark web, dorks, actores de amenaza y APTs.</p>
-
-      <div class="mini-projects">
-        <div><span>🔍 Investigación OSINT</span><a href="proyectos-paginas/4B-osint.html" class="project-btn">Entrar</a></div>
-        <div><span>🕵️ Herramientas de inteligencia</span><a href="proyectos-paginas/4B-herramientas-inteligencia.html" class="project-btn">Entrar</a></div>
-        <div><span>⚔️ APTs y campañas de amenazas</span><a href="proyectos-paginas/4B-amenazas-apts.html" class="project-btn">Entrar</a></div>
-        <div><span>🌍 Ciberconflictos y geopolítica</span><a href="proyectos-paginas/4B-ciberconflictos.html" class="project-btn">Entrar</a></div>
-      </div>
-    </div>
-
-  </div>
-</section>
     <!-- =============================================================
          SECCIÓN 3: EXPERIENCIA LABORAL
          - Nuevo bloque profesional
