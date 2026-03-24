@@ -354,6 +354,19 @@
       font-size: 0.95rem;
     }
 
+    /* NUEVO: separador entre bloques de ciberseguridad */
+    .cyber-group {
+      padding: 8px 0 34px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .cyber-group:last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
     .mini-projects div {
       display: flex;
       justify-content: space-between;
@@ -397,7 +410,6 @@
       padding: 25px 30px;
     }
 
-    /* Parte superior de experiencia: cargo, empresa, fecha */
     .exp-top {
       display: flex;
       justify-content: space-between;
@@ -420,7 +432,6 @@
       color: var(--muted);
     }
 
-    /* Botón para desplegar responsabilidades */
     .exp-toggle-btn {
       background: var(--accent);
       color: #0f1625;
@@ -436,7 +447,6 @@
       background: var(--accent-soft);
     }
 
-    /* Grid desplegable de experiencia */
     .exp-columns {
       display: none;
       margin-top: 20px;
@@ -464,7 +474,6 @@
       margin-bottom: 10px;
     }
 
-    /* Texto auxiliar / notas */
     .cv-note {
       margin-top: 20px;
       color: #9ca3af;
@@ -473,9 +482,6 @@
 
     /* ============================================================
        SECCIÓN FORMACIÓN ACADÉMICA
-       - Bloques por grado
-       - Botón "Asignaturas"
-       - Grid por cursos
     ============================================================ */
     .edu-block {
       background: rgba(255,255,255,.02);
@@ -602,7 +608,6 @@
 
     /* ============================================================
        RESPONSIVE
-       - Ajustes para móvil / pantallas pequeñas
     ============================================================ */
     @media (max-width: 768px) {
       main.page-wrapper {
@@ -673,6 +678,11 @@
       .project-btn {
         align-self: flex-start;
       }
+
+      .cyber-group {
+        padding: 6px 0 26px;
+        margin-bottom: 30px;
+      }
     }
   </style>
 </head>
@@ -706,8 +716,6 @@
 
     <!-- =============================================================
          SECCIÓN 1: SOBRE MÍ / INTRODUCCIÓN BREVE
-         - Bloque pequeño superior
-         - Fondo animado con red
     ============================================================= -->
     <section id="hero">
       <canvas id="network-bg"></canvas>
@@ -735,37 +743,12 @@
       <div class="project-container">
         <p>Explora mis proyectos académicos, de ciberseguridad aplicada y de ciberinteligencia.</p>
 
-        <!-- ============================================================
-             PESTAÑAS PRINCIPALES
-             ESTRUCTURA FINAL DEL PORTFOLIO:
-             1) Universitarios
-             2) Proyectos de Ciberseguridad
-             3) Ciberinteligencia
-
-             NOTA PARA MÍ:
-             - "Proyectos de Ciberseguridad" agrupa todo lo práctico y útil
-               de cara a entrevistas y trabajo real.
-             - Dentro de este bloque NO se organiza por "técnico vs GRC",
-               sino por FUNCIÓN dentro de la seguridad.
-             - Esto permite enseñar mejor lo que una empresa quiere ver:
-                 • proteger sistemas
-                 • detectar y analizar
-                 • automatizar
-                 • gestionar riesgo / cumplimiento / cultura de seguridad
-        ============================================================ -->
         <div class="project-tabs">
           <button class="project-tab active" onclick="showProjectBlock('uni', this)">Universitarios</button>
           <button class="project-tab" onclick="showProjectBlock('cyber', this)">Proyectos de Ciberseguridad</button>
           <button class="project-tab" onclick="showProjectBlock('intel', this)">Ciberinteligencia</button>
         </div>
 
-        <!-- ============================================================
-             BLOQUE 1: UNIVERSITARIOS
-             QUÉ VA AQUÍ:
-             - trabajos del grado
-             - prácticas académicas
-             - evolución por cursos
-        ============================================================ -->
         <div id="proj-uni" class="project-block visible">
           <h3>📘 Proyectos Universitarios</h3>
           <p>Trabajos destacados del grado en Ciberseguridad, organizados por curso académico.</p>
@@ -778,25 +761,6 @@
           </div>
         </div>
 
-        <!-- ============================================================
-             BLOQUE 2: PROYECTOS DE CIBERSEGURIDAD
-             LÓGICA DE AGRUPACIÓN:
-             Aquí meto todos los proyectos prácticos de seguridad,
-             pero organizados por FUNCIÓN dentro de la seguridad:
-
-             1. Protección y defensa
-                -> endurecer, proteger, validar seguridad de sistemas y redes
-             2. Análisis, detección y respuesta
-                -> investigar, detectar, revisar, interpretar evidencias y responder
-             3. Automatización y desarrollo
-                -> scripts, herramientas, mejoras técnicas, eficiencia
-             4. Gobierno, riesgo y cultura de seguridad
-                -> riesgos, políticas, cumplimiento, concienciación
-
-             NOTA PARA MÍ:
-             Esta agrupación es mejor porque sigue una lógica profesional
-             parecida a cómo trabajan muchas empresas y equipos de seguridad.
-        ============================================================ -->
         <div id="proj-cyber" class="project-block hidden">
           <h3>🛡️ Proyectos de Ciberseguridad</h3>
           <p>
@@ -805,7 +769,6 @@
             detectar, automatizar y gobernar.
           </p>
 
-          <!-- EXPLICACIÓN VISIBLE PARA RECORDAR LA ESTRUCTURA -->
           <div class="project-structure-note">
             <p><strong>Cómo está organizado este bloque:</strong></p>
             <ul>
@@ -816,66 +779,55 @@
             </ul>
           </div>
 
-          <!-- ============================================================
-               SUBBLOQUE 1
-               PROTECCIÓN Y DEFENSA
-          ============================================================ -->
-          <h4>🛡️ Protección y defensa</h4>
-          <p class="subblock-note">
-            Incluye proyectos centrados en proteger sistemas, reforzar configuraciones y poner a prueba la seguridad mediante prácticas ofensivas controladas.
-          </p>
+          <div class="cyber-group">
+            <h4>🛡️ Protección y defensa</h4>
+            <p class="subblock-note">
+              Incluye proyectos centrados en proteger sistemas, reforzar configuraciones y poner a prueba la seguridad mediante prácticas ofensivas controladas.
+            </p>
 
-          <div class="mini-projects">
-            <div><span>🛡️ Configuración segura de sistemas y redes</span><a href="proyectos-paginas/2B-configuracion-segura.html" class="project-btn">Entrar</a></div>
-            <div><span>💣 Herramientas ofensivas y pruebas de explotación</span><a href="proyectos-paginas/2B-herramientas-ofensivas.html" class="project-btn">Entrar</a></div>
-            <div><span>🏁 Retos CTF y write-ups</span><a href="proyectos-paginas/2B-retos-ctf.html" class="project-btn">Entrar</a></div>
+            <div class="mini-projects">
+              <div><span>🛡️ Configuración segura de sistemas y redes</span><a href="proyectos-paginas/2B-configuracion-segura.html" class="project-btn">Entrar</a></div>
+              <div><span>💣 Herramientas ofensivas y pruebas de explotación</span><a href="proyectos-paginas/2B-herramientas-ofensivas.html" class="project-btn">Entrar</a></div>
+              <div><span>🏁 Retos CTF y write-ups</span><a href="proyectos-paginas/2B-retos-ctf.html" class="project-btn">Entrar</a></div>
+            </div>
           </div>
 
-          <!-- ============================================================
-               SUBBLOQUE 2
-               ANÁLISIS, DETECCIÓN Y RESPUESTA
-          ============================================================ -->
-          <h4>🔍 Análisis, detección y respuesta</h4>
-          <p class="subblock-note">
-            Reúne proyectos orientados al análisis técnico, la detección, la interpretación de evidencias y la respuesta defensiva ante eventos o incidentes.
-          </p>
+          <div class="cyber-group">
+            <h4>🔍 Análisis, detección y respuesta</h4>
+            <p class="subblock-note">
+              Reúne proyectos orientados al análisis técnico, la detección, la interpretación de evidencias y la respuesta defensiva ante eventos o incidentes.
+            </p>
 
-          <div class="mini-projects">
-            <div><span>🔍 Análisis técnico y defensa</span><a href="proyectos-paginas/2B-analisis-defensa.html" class="project-btn">Entrar</a></div>
+            <div class="mini-projects">
+              <div><span>🔍 Análisis técnico y defensa</span><a href="proyectos-paginas/2B-analisis-defensa.html" class="project-btn">Entrar</a></div>
+            </div>
           </div>
 
-          <!-- ============================================================
-               SUBBLOQUE 3
-               AUTOMATIZACIÓN Y DESARROLLO
-          ============================================================ -->
-          <h4>⚙️ Automatización y desarrollo</h4>
-          <p class="subblock-note">
-            Incluye scripts, herramientas y desarrollos pensados para mejorar procesos, reducir tareas manuales y apoyar la operación de seguridad.
-          </p>
+          <div class="cyber-group">
+            <h4>⚙️ Automatización y desarrollo</h4>
+            <p class="subblock-note">
+              Incluye scripts, herramientas y desarrollos pensados para mejorar procesos, reducir tareas manuales y apoyar la operación de seguridad.
+            </p>
 
-          <div class="mini-projects">
-            <div><span>🧾 Automatización e informes</span><a href="proyectos-paginas/3B-automatizacion.html" class="project-btn">Entrar</a></div>
-            <div><span>💻 Desarrollo y scripts seguros</span><a href="proyectos-paginas/3B-desarrollo-seguro.html" class="project-btn">Entrar</a></div>
+            <div class="mini-projects">
+              <div><span>🧾 Automatización e informes</span><a href="proyectos-paginas/3B-automatizacion.html" class="project-btn">Entrar</a></div>
+              <div><span>💻 Desarrollo y scripts seguros</span><a href="proyectos-paginas/3B-desarrollo-seguro.html" class="project-btn">Entrar</a></div>
+            </div>
           </div>
 
-          <!-- ============================================================
-               SUBBLOQUE 4
-               GOBIERNO, RIESGO Y CULTURA DE SEGURIDAD
-          ============================================================ -->
-          <h4>📋 Gobierno, riesgo y cultura de seguridad</h4>
-          <p class="subblock-note">
-            Agrupa proyectos vinculados a la gestión del riesgo, el cumplimiento, la documentación de seguridad y la concienciación de usuarios.
-          </p>
+          <div class="cyber-group">
+            <h4>📋 Gobierno, riesgo y cultura de seguridad</h4>
+            <p class="subblock-note">
+              Agrupa proyectos vinculados a la gestión del riesgo, el cumplimiento, la documentación de seguridad y la concienciación de usuarios.
+            </p>
 
-          <div class="mini-projects">
-            <div><span>📉 Análisis y gestión de riesgos</span><a href="proyectos-paginas/3B-riesgos.html" class="project-btn">Entrar</a></div>
-            <div><span>📜 Políticas y concienciación</span><a href="proyectos-paginas/3B-politicas-concienciacion.html" class="project-btn">Entrar</a></div>
+            <div class="mini-projects">
+              <div><span>📉 Análisis y gestión de riesgos</span><a href="proyectos-paginas/3B-riesgos.html" class="project-btn">Entrar</a></div>
+              <div><span>📜 Políticas y concienciación</span><a href="proyectos-paginas/3B-politicas-concienciacion.html" class="project-btn">Entrar</a></div>
+            </div>
           </div>
         </div>
 
-        <!-- ============================================================
-             BLOQUE 3: CIBERINTELIGENCIA
-        ============================================================ -->
         <div id="proj-intel" class="project-block hidden">
           <h3>🧠 Ciberinteligencia y Análisis de Amenazas</h3>
           <p>OSINT, dark web, dorks, actores de amenaza y APTs.</p>
@@ -893,16 +845,12 @@
 
     <!-- =============================================================
          SECCIÓN 3: EXPERIENCIA LABORAL
-         - Nuevo bloque profesional
-         - Desplegable de responsabilidades
     ============================================================= -->
     <section class="section experience" id="experiencia-laboral">
 
       <h2 class="section-title">💼 Experiencia Laboral</h2>
 
       <div class="exp-card">
-
-        <!-- CABECERA DEL PUESTO -->
         <div class="exp-top">
           <div>
             <div class="exp-role">💼 IT Security Specialist</div>
@@ -911,18 +859,13 @@
           <div class="exp-date">Abril 2024 — 2027</div>
         </div>
 
-        <!-- RESUMEN BREVE -->
         <p class="cv-note" style="margin-top:0; margin-bottom:18px; font-size:1rem; color:#cfd3dd;">
           Soporte IT integral a usuarios y colaboración en administración de sistemas, con foco en ciberseguridad corporativa e ISO/IEC 27001 (SGSI). Trabajo diario combinando operación técnica (L1–L3), gestión de accesos, automatización y soporte a aplicaciones internas.
         </p>
 
-        <!-- BOTÓN DESPLEGABLE -->
         <button class="exp-toggle-btn" onclick="toggleExp()">Funciones y Responsabilidades</button>
 
-        <!-- CONTENIDO DESPLEGABLE -->
         <div id="exp-columns" class="exp-columns">
-
-          <!-- COLUMNA 1 -->
           <div class="exp-col">
             <h5>Ciberseguridad Corporativa</h5>
             <ul>
@@ -933,7 +876,6 @@
             </ul>
           </div>
 
-          <!-- COLUMNA 2 -->
           <div class="exp-col">
             <h5>ISO/IEC 27001 – Operación del SGSI</h5>
             <ul>
@@ -943,7 +885,6 @@
             </ul>
           </div>
 
-          <!-- COLUMNA 3 -->
           <div class="exp-col">
             <h5>Soporte y Administración de Sistemas (Nivel 1–3)</h5>
             <ul>
@@ -954,7 +895,6 @@
             </ul>
           </div>
 
-          <!-- COLUMNA 4 -->
           <div class="exp-col">
             <h5>IAM, SQL, Automatización y Entorno Internacional</h5>
             <ul>
@@ -965,10 +905,8 @@
               <li>Participación en reuniones de actualización de sistemas con equipos internacionales y uso habitual de inglés conversacional.</li>
             </ul>
           </div>
-
         </div>
 
-        <!-- BLOQUE TECNOLOGÍAS -->
         <p class="cv-note" style="margin-top:24px; line-height:1.6;">
           <strong>Tecnologías:</strong> ISO/IEC 27001 (SGSI), políticas y procedimientos, evidencias y trazabilidad, auditoría interna, gestión de incidencias, gestión de vulnerabilidades (N-able N-sight), SentinelOne (EDR), monitorización de alertas y logs, gestión de activos IT, IAM (Active Directory / Microsoft 365 / Microsoft Entra ID), Windows Server, GPO, DHCP/DNS, Microsoft 365 Admin Center, AnyDesk, TeamViewer, RDP, SQL Server (SSMS, T-SQL), Python, PowerShell, Bash/CMD (.bat), Java, VMware, VirtualBox, Docker Desktop, Docker Compose, Kali Linux, Cisco Packet Tracer, Wireshark, Nmap, Burp Suite, Metasploit, OpenVAS (GVM), Trivy, Ghidra, Hydra, Binwalk, Salesforce, SAP ERP, Power BI, QlikView, DF Server EVO, MongoDB, Hadoop/HDFS y Apache Spark.
         </p>
@@ -979,13 +917,10 @@
 
     <!-- =============================================================
          SECCIÓN 4: FORMACIÓN ACADÉMICA
-         - Dos grados
-         - Cursos desplegables
     ============================================================= -->
     <section id="formacion-academica" class="section education">
       <h2 class="section-title">🎓 Formación Académica</h2>
 
-      <!-- BLOQUE 1: RELACIONES INTERNACIONALES -->
       <div class="edu-block">
         <div class="edu-title">🌍 Grado en Relaciones Internacionales</div>
         <div class="edu-sub">Universidad Rey Juan Carlos | 2014 – 2019 (Finalizado)</div>
@@ -1059,7 +994,6 @@
         </div>
       </div>
 
-      <!-- BLOQUE 2: CIBERSEGURIDAD -->
       <div class="edu-block">
         <div class="edu-title">🛡️ Grado en Ingeniería de la Ciberseguridad</div>
         <div class="edu-sub">Universidad Europea Madrid | 2023 — Actualmente</div>
@@ -1203,7 +1137,6 @@
 
   <!-- =============================================================
        SCRIPT 1: FONDO ANIMADO DEL HERO
-       - Dibuja nodos y líneas en movimiento
   ============================================================= -->
   <script>
     const canvas = document.getElementById("network-bg");
@@ -1274,7 +1207,6 @@
 
   <!-- =============================================================
        SCRIPT 2: CAMBIO DE PESTAÑAS EN PROYECTOS
-       - Muestra un bloque y oculta los demás
   ============================================================= -->
   <script>
     function showProjectBlock(target, btn) {
@@ -1323,7 +1255,6 @@
 
   <!-- =============================================================
        SCRIPT 5: DESPLEGAR CURSOS INDIVIDUALES
-       - Primer curso / Segundo curso / etc.
   ============================================================= -->
   <script>
     function toggleEduList(el) {
