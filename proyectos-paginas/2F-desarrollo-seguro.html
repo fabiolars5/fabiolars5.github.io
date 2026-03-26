@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proyectos · Desarrollo y scripts seguros</title>
+  <title>Desarrollo y scripts seguros · Fabiola RS</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -57,9 +63,38 @@
       font-size:.9rem;
       color:var(--muted);
     }
+
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +108,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,18 +124,24 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
-    summary::-webkit-details-marker{display:none;}
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     .subject-title{
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +155,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +172,42 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin:14px 0 16px;
+    }
+
+    .info-card{
+      background:var(--card-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:.92rem;
+      color:var(--acc);
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.88rem;
+      color:#d8dde7;
+      line-height:1.6;
     }
 
     .resource-list{
@@ -143,24 +216,29 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
       gap:6px 10px;
-      align-items:center;
+      align-items:flex-start;
       font-size:.9rem;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:3px 8px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
       color:var(--muted);
+      flex-shrink:0;
     }
 
     .resource-links{
@@ -168,6 +246,7 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
     }
 
     .resource-links a{
@@ -182,9 +261,28 @@
       text-decoration:underline;
     }
 
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
+    }
+
     .empty{
       font-style:italic;
       color:var(--muted);
+    }
+
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -193,7 +291,7 @@
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
-      gap:8px;
+      gap:10px;
     }
 
     .btn-next{
@@ -209,10 +307,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -223,37 +343,88 @@
       <span class="emoji">💻</span>
       Desarrollo y scripts seguros
     </h1>
+
     <p class="subtitle">
-      Scripts de automatización, pequeñas herramientas y prácticas de desarrollo seguro: 
-      validación de datos, gestión de credenciales, logging y buenas prácticas OWASP.
+      Proyectos centrados en automatización segura, desarrollo defensivo y buenas prácticas para crear scripts
+      y utilidades técnicas con validación, trazabilidad, manejo seguro de configuración y enfoque mantenible.
     </p>
+
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
-      <span>Automatización y Gestión de la Seguridad</span>
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
+      <span>Automatización y desarrollo</span>
     </div>
   </header>
+
+  <section class="intro-box">
+    <p>
+      Esta sección reúne trabajos donde el foco no está solo en que el script “funcione”, sino en que lo haga
+      con <span class="intro-highlight">criterio seguro, estructura limpia, validación, control de errores y reutilización</span>.
+    </p>
+    <p>
+      El objetivo es demostrar que sé desarrollar automatizaciones y pequeñas herramientas sin perder de vista
+      aspectos clave como la exposición de secretos, la calidad del dato, la trazabilidad, la documentación
+      y la facilidad de mantenimiento.
+    </p>
+  </section>
 
   <main class="subject-grid">
 
     <!-- 1. Scripts de automatización seguros -->
-    <details class="subject">
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
           <span class="subject-name">Scripts de automatización con enfoque de seguridad</span>
           <span class="subject-tags">
             <span class="chip">Python</span>
             <span class="chip">PowerShell</span>
-            <span class="chip">Hardening</span>
+            <span class="chip">Validación</span>
+            <span class="chip">Logging</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Scripts que automatizan tareas de IT (copias de seguridad, inventario de equipos, revisión de logs),
-          aplicando buenas prácticas: variables de entorno para credenciales, validación de parámetros
-          y registros de actividad.
+          Scripts orientados a automatizar tareas técnicas frecuentes aplicando buenas prácticas de seguridad:
+          validación de parámetros, separación de configuración, uso prudente de credenciales,
+          logging útil y control de errores.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Automatizar tareas repetitivas sin introducir riesgos innecesarios y dejando una base
+              más robusta, clara y reutilizable.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Validación de entradas, variables de entorno, configuración externa, logs, manejo de excepciones,
+              modularidad y documentación básica de uso.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Scripts comentados, ejemplos de uso, README, capturas del funcionamiento,
+              salidas generadas y explicación del control de errores aplicado.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para mostrar que entiendes que la automatización también puede introducir riesgo
+              si no se diseña con cuidado.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">🐍 Python</span>
@@ -266,6 +437,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">🪟 PowerShell</span>
             <div class="resource-links">
@@ -274,28 +446,80 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí quedan muy bien scripts con logs estructurados, parámetros seguros,
+                validación de rutas, control de errores y configuración fuera del código.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> explica siempre qué riesgo evitaste al diseñar el script,
+          no solo qué automatizaste.
+        </div>
       </div>
     </details>
 
-    <!-- 2. Utilidades internas con desarrollo seguro -->
+    <!-- 2. Utilidades internas -->
     <details class="subject">
       <summary>
         <div class="subject-title">
           <span class="subject-name">Pequeñas utilidades internas con desarrollo seguro</span>
           <span class="subject-tags">
-            <span class="chip">CLI / Apps</span>
-            <span class="chip">Validación de entrada</span>
+            <span class="chip">CLI</span>
+            <span class="chip">Apps ligeras</span>
+            <span class="chip">Validación</span>
+            <span class="chip">Errores</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Herramientas sencillas (CLI o pequeñas aplicaciones) donde aplico principios de desarrollo seguro:
-          validación estricta de entrada, gestión de errores sin filtrar información sensible
-          y separación de configuración/código.
+          Herramientas sencillas de consola o utilidades internas donde aplico principios de desarrollo seguro:
+          validación estricta de entrada, mensajes de error controlados, separación entre lógica y configuración
+          y tratamiento prudente de datos sensibles.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Diseñar utilidades pequeñas pero sólidas, fáciles de mantener y menos propensas
+              a fallos derivados de entradas inesperadas o configuraciones inseguras.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              CLI básica, validación de inputs, mensajes de error seguros, estructuras simples,
+              modularidad, separación de configuración y organización del código.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Código fuente, ejemplos de ejecución, README, pruebas funcionales sencillas
+              y explicación de decisiones de diseño seguro.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque ayuda a demostrar criterio de diseño y no solo capacidad de picar código.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">🔧 Utilidad 1</span>
@@ -305,17 +529,35 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">🔧 Utilidad 2</span>
             <div class="resource-links">
-              <span class="empty">Pendiente de subir otra utilidad de consola/documentación.</span>
+              <span class="empty">
+                Pendiente de subir otra utilidad de consola con documentación y validaciones.
+              </span>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encajan generadores de contraseñas, validadores de archivos, comprobadores de configuración
+                o pequeñas utilidades CLI muy bien documentadas.
+              </span>
             </div>
           </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> aquí interesa explicar por qué validas, limitas y controlas errores,
+          no solo qué hace la utilidad.
+        </div>
       </div>
     </details>
 
-    <!-- 3. Checklists y guías de desarrollo seguro -->
+    <!-- 3. Checklists y guías -->
     <details class="subject">
       <summary>
         <div class="subject-title">
@@ -323,15 +565,52 @@
           <span class="subject-tags">
             <span class="chip">OWASP</span>
             <span class="chip">Buenas prácticas</span>
+            <span class="chip">Revisión</span>
+            <span class="chip">Calidad</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Material que utilizo para revisar mis propios proyectos: listas de comprobación inspiradas 
-          en OWASP, plantillas para revisión de código y pequeños recordatorios para no olvidar puntos clave.
+          Material de apoyo para revisar scripts y proyectos propios: listas de comprobación,
+          recordatorios técnicos y guías breves inspiradas en buenas prácticas de desarrollo seguro.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Reducir olvidos comunes y convertir la revisión de seguridad en un proceso más sistemático
+              y repetible.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Checklist de revisión, gestión de errores, tratamiento de secretos,
+              logging, permisos, validación y controles mínimos antes de publicar o reutilizar un script.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Checklist propia, guía resumida, plantillas de revisión y notas prácticas
+              aplicables a distintos proyectos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Refuerza mucho tu perfil porque demuestra orden, criterio y conciencia de calidad técnica.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📋 Checklist</span>
@@ -341,6 +620,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📄 Guía</span>
             <div class="resource-links">
@@ -349,27 +629,80 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes crear una checklist propia muy alineada con tu forma de trabajar:
+                inputs, errores, logs, secretos, permisos, documentación y versionado.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta sección transmite madurez técnica,
+          porque enseña que tienes criterio incluso antes de ejecutar el código.
+        </div>
       </div>
     </details>
 
-    <!-- 4. Integración en el ciclo de vida -->
+    <!-- 4. Seguridad en el ciclo de vida -->
     <details class="subject">
       <summary>
         <div class="subject-title">
           <span class="subject-name">Seguridad integrada en el ciclo de vida del script</span>
           <span class="subject-tags">
-            <span class="chip">Ciclo de vida</span>
-            <span class="chip">DevSecOps</span>
+            <span class="chip">Git</span>
+            <span class="chip">Versionado</span>
+            <span class="chip">Documentación</span>
+            <span class="chip">Mantenibilidad</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Cómo integro la seguridad desde el inicio: control de versiones en Git, revisiones,
-          pruebas básicas y documentación mínima para que otros puedan revisar y reutilizar los scripts.
+          Cómo integro seguridad y orden desde el inicio: control de versiones, documentación mínima,
+          trazabilidad de cambios, estructura del proyecto y preparación para reutilización o revisión por terceros.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Evitar que los scripts queden como piezas aisladas y difíciles de mantener,
+              favoreciendo una evolución controlada y entendible.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Git, README, changelog, estructura de carpetas, notas de uso, dependencias,
+              variables de configuración y trazabilidad de cambios.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Plantillas de README, registro de cambios, estructura estándar de proyecto
+              y ejemplos de repositorio bien organizado.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy importante para mostrar que entiendes la diferencia entre “script que funciona”
+              y “script mantenible y profesional”.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📁 Plantillas</span>
@@ -382,22 +715,132 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">🌐 Repositorio</span>
             <div class="resource-links">
-              <span class="empty">Puedes enlazar aquí un repo de GitHub con ejemplos de scripts cuando lo tengas listo.</span>
+              <span class="empty">
+                Pendiente de enlazar repositorio de GitHub con ejemplos bien documentados.
+              </span>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes enseñar cómo estructuras un pequeño proyecto, cómo documentas su uso
+                y cómo controlas cambios sin perder trazabilidad.
+              </span>
             </div>
           </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta sección te ayuda mucho a demostrar profesionalidad,
+          aunque el proyecto sea pequeño.
+        </div>
+      </div>
+    </details>
+
+    <!-- 5. Revisión y refactorización segura -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Revisión y refactorización con enfoque seguro</span>
+          <span class="subject-tags">
+            <span class="chip">Refactor</span>
+            <span class="chip">Mantenibilidad</span>
+            <span class="chip">Errores</span>
+            <span class="chip">Mejora continua</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Ejercicios orientados a revisar scripts propios o antiguos para mejorar estructura,
+          legibilidad, manejo de errores, control de entradas y separación de responsabilidades.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Mostrar que también sé mejorar código existente, no solo crear uno nuevo,
+              reduciendo deuda técnica y riesgos evitables.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Refactorización, limpieza de lógica, modularidad, errores, validación,
+              nombres claros, reducción de duplicidad y mejora general del flujo.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Comparativa antes/después, notas de refactor, código revisado,
+              justificación de cambios y mejoras aplicadas.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Esto suma mucho porque en trabajos reales casi siempre se hereda o se mejora código,
+              no se empieza siempre desde cero.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">🛠️ Refactor</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/caso-refactor-script.zip" target="_blank">
+                Caso de refactorización segura de script (ZIP)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📘 Comparativa</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/antes-despues-refactor.pdf" target="_blank">
+                Comparativa antes / después (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Muy buena zona para enseñar cómo mejoras un script desordenado:
+                validaciones, logs, funciones, control de errores y documentación.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta categoría suele destacar mucho porque demuestra criterio,
+          autocrítica técnica y capacidad de mejora continua.
+        </div>
       </div>
     </details>
 
   </main>
 
   <footer class="footer-nav">
-    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+    <a class="btn-next" href="2E-automatizacion-informes.html">⬅ Anterior</a>
+    <a class="btn-next" href="2G-gestion-riesgos.html">Siguiente ➜</a>
   </footer>
 
 </body>
 </html>
-
