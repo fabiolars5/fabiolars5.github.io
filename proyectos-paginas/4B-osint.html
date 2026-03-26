@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -57,9 +63,38 @@
       font-size:.9rem;
       color:var(--muted);
     }
+
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +108,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,18 +124,24 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
-    summary::-webkit-details-marker{display:none;}
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     .subject-title{
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +155,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +172,42 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin:14px 0 16px;
+    }
+
+    .info-card{
+      background:var(--card-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:.92rem;
+      color:var(--acc);
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.88rem;
+      color:#d8dde7;
+      line-height:1.6;
     }
 
     .resource-list{
@@ -143,24 +216,29 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
       gap:6px 10px;
-      align-items:center;
+      align-items:flex-start;
       font-size:.9rem;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:3px 8px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
       color:var(--muted);
+      flex-shrink:0;
     }
 
     .resource-links{
@@ -168,6 +246,7 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
     }
 
     .resource-links a{
@@ -182,9 +261,28 @@
       text-decoration:underline;
     }
 
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
+    }
+
     .empty{
       font-style:italic;
       color:var(--muted);
+    }
+
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -193,7 +291,7 @@
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
-      gap:8px;
+      gap:10px;
     }
 
     .btn-next{
@@ -209,10 +307,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -223,35 +343,89 @@
       <span class="emoji">🔍</span>
       Investigación OSINT
     </h1>
+
     <p class="subtitle">
-      Proyectos de inteligencia de fuentes abiertas: recopilación, análisis y correlación de información pública
-      aplicada a investigaciones de ciberseguridad.
+      Proyectos de inteligencia de fuentes abiertas orientados a recopilar, contrastar,
+      correlacionar y documentar información pública útil para análisis de exposición,
+      perfiles, infraestructura y ciberseguridad.
     </p>
+
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
       <span>Ciberinteligencia y análisis de amenazas</span>
     </div>
   </header>
 
+  <section class="intro-box">
+    <p>
+      Esta sección reúne trabajos enfocados en <span class="intro-highlight">investigar con fuentes abiertas de forma estructurada</span>,
+      validando hallazgos, reduciendo ruido y construyendo conclusiones útiles a partir de datos públicos.
+    </p>
+    <p>
+      El objetivo no es solo “encontrar cosas”, sino demostrar metodología, contraste de información,
+      trazabilidad de la investigación y capacidad para convertir hallazgos OSINT en exposición real,
+      hipótesis razonables o recomendaciones defensivas.
+    </p>
+  </section>
+
   <main class="subject-grid">
 
-    <!-- 1. Análisis de dominio sospechoso -->
-    <details class="subject">
+    <!-- 1. Dominio sospechoso -->
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
           <span class="subject-name">Informe OSINT: análisis de dominio sospechoso</span>
           <span class="subject-tags">
             <span class="chip">Dominios</span>
+            <span class="chip">DNS</span>
             <span class="chip">Infraestructura</span>
+            <span class="chip">Reputación</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Investigación completa de un dominio potencialmente malicioso: WHOIS, DNS, historial, hosting,
-          certificados, relación con otros dominios e IPs y reputación.
+          Investigación completa de un dominio potencialmente malicioso o sospechoso:
+          WHOIS, DNS, historial, hosting, certificados, infraestructura relacionada
+          y reputación pública asociada.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Entender qué señales públicas permiten evaluar si un dominio merece revisión,
+              seguimiento o tratamiento como infraestructura sospechosa.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              WHOIS, DNS, passive DNS, certificados, hosting, IPs relacionadas,
+              historial, reputación y correlación con otros activos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe OSINT, anexos de evidencias, capturas, cronología básica
+              y notas de correlación entre dominios e infraestructura.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para demostrar pensamiento analítico, investigación técnica
+              y criterio al valorar señales públicas.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Informe</span>
@@ -261,6 +435,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📊 Anexos</span>
             <div class="resource-links">
@@ -269,11 +444,26 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes analizar dominios recién creados, infraestructura dudosa,
+                certificados llamativos o relaciones entre varios activos sospechosos.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> explica cómo distinguirías entre una señal sospechosa real
+          y una coincidencia poco relevante.
+        </div>
       </div>
     </details>
 
-    <!-- 2. Investigación de perfiles en redes sociales -->
+    <!-- 2. Redes sociales -->
     <details class="subject">
       <summary>
         <div class="subject-title">
@@ -281,15 +471,54 @@
           <span class="subject-tags">
             <span class="chip">SOCMINT</span>
             <span class="chip">Perfiles públicos</span>
+            <span class="chip">Alias</span>
+            <span class="chip">Huella digital</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Caso práctico de análisis de huella digital de un perfil: actividad, conexiones, alias,
-          correlación entre plataformas y posibles riesgos de exposición.
+          Casos prácticos de análisis de huella digital pública: actividad,
+          conexiones, alias, correlación entre plataformas y exposición
+          potencial de información sensible o útil para una investigación.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Comprender cómo la presencia pública en redes puede aportar contexto,
+              pistas de correlación y riesgos de exposición.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Alias, patrones públicos, correlación entre plataformas,
+              huella digital, exposición de hábitos o relaciones visibles.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de caso, esquema metodológico, hallazgos públicos,
+              relaciones observadas y notas de exposición potencial.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para demostrar capacidad de correlación entre fuentes
+              y análisis de exposición no puramente técnica.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📑 Caso práctico</span>
@@ -299,33 +528,88 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">🧠 Notas</span>
             <div class="resource-links">
               <span class="empty">Pendiente de subir notas internas y esquema metodológico.</span>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encajan casos de alias reutilizados, perfiles públicos expuestos,
+                correlación de actividad y análisis de huella digital.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta parte gana mucho si la cuentas con enfoque metodológico
+          y no como mera curiosidad sobre redes sociales.
+        </div>
       </div>
     </details>
 
-    <!-- 3. Google Dorks para entornos empresariales -->
+    <!-- 3. Google Dorks -->
     <details class="subject">
       <summary>
         <div class="subject-title">
           <span class="subject-name">Google Dorks en entornos empresariales</span>
           <span class="subject-tags">
             <span class="chip">Dorks</span>
-            <span class="chip">Superficie de exposición</span>
+            <span class="chip">Exposición</span>
+            <span class="chip">Documentos</span>
+            <span class="chip">Paneles</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Colección de dorks orientados a localizar información expuesta de forma accidental:
-          documentos internos, paneles de administración, repositorios y configuraciones públicas.
+          Colección de dorks orientados a identificar exposición accidental de documentos,
+          paneles, repositorios, configuraciones públicas o información sensible
+          accesible a través de buscadores.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Localizar información públicamente accesible que pueda suponer
+              una señal de exposición o una oportunidad de revisión defensiva.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Dorks, lógica de búsqueda, hallazgos públicos, clasificación
+              por criticidad y documentación de exposición observable.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Cheat sheet, plantilla de hallazgos, ejemplos de búsqueda
+              y criterios de clasificación o seguimiento.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para demostrar análisis de superficie pública
+              y capacidad de detectar exposición sin necesidad de interacción intrusiva.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📜 Cheat sheet</span>
@@ -335,6 +619,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📂 Plantilla</span>
             <div class="resource-links">
@@ -343,27 +628,81 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí te puede quedar muy bien una clasificación de hallazgos:
+                documentos expuestos, paneles visibles, listados o configuraciones indexadas.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta sección mejora mucho si explicas
+          cómo pasarías de un hallazgo indexado a una recomendación defensiva prudente.
+        </div>
       </div>
     </details>
 
-    <!-- 4. Detección de fuga de datos -->
+    <!-- 4. Fuga de datos -->
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Detección de fuga de datos (data leak)</span>
+          <span class="subject-name">Detección de fuga de datos y exposición pública</span>
           <span class="subject-tags">
             <span class="chip">Brechas</span>
             <span class="chip">Credenciales</span>
+            <span class="chip">Repositorios</span>
+            <span class="chip">Paste sites</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Caso OSINT enfocado a identificar si credenciales o información sensible de una organización
-          han sido filtradas en repositorios públicos, foros o paste sites.
+          Casos de investigación orientados a identificar si credenciales,
+          documentos o información sensible de una organización aparecen
+          en fuentes públicas, repositorios, paste sites o entornos accesibles.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Detectar señales tempranas de exposición pública de información sensible
+              y estructurar una revisión prudente de fugas potenciales.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Credenciales expuestas, menciones públicas, repositorios, paste sites,
+              clasificación de hallazgos y lectura de riesgo asociada.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Caso práctico, checklist de búsqueda, hallazgos documentados
+              y criterios de priorización o verificación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para enseñar un enfoque práctico sobre exposición pública
+              y su traducción a riesgo real.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">🧠 Caso práctico</span>
@@ -373,6 +712,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📋 Checklist</span>
             <div class="resource-links">
@@ -381,14 +721,123 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes enlazar esta página con exposición externa, riesgo reputacional,
+                credenciales reutilizadas o hallazgos de terceros.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> aquí puedes lucirte explicando
+          cómo priorizarías una fuga potencial y qué pasos seguirías después del hallazgo.
+        </div>
+      </div>
+    </details>
+
+    <!-- 5. De OSINT a inteligencia útil -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">De hallazgos OSINT a inteligencia útil</span>
+          <span class="subject-tags">
+            <span class="chip">Correlación</span>
+            <span class="chip">Priorización</span>
+            <span class="chip">Exposición</span>
+            <span class="chip">Defensa</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Enfoque orientado a transformar hallazgos aislados en conclusiones accionables:
+          qué información es relevante, cómo se correlaciona, qué supone un riesgo
+          y qué revisiones o medidas pueden derivarse.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Pasar de la simple recopilación de datos a una inteligencia
+              más estructurada, priorizada y útil para seguridad.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Correlación, validación cruzada, priorización de hallazgos,
+              síntesis, exposición e interpretación de riesgo.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Resúmenes ejecutivos, recomendaciones, tablas priorizadas,
+              hallazgos correlacionados y propuestas de revisión.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque te puede diferenciar mucho porque demuestra
+              que entiendes el OSINT como análisis y no solo como búsqueda.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Resumen</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/osint/resumen-hallazgos-osint.pdf" target="_blank">
+                Resumen de hallazgos correlacionados (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📋 Priorización</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/osint/priorizacion-hallazgos-osint.xlsx" target="_blank">
+                Priorización de exposición y hallazgos (XLSX)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Este puede ser uno de tus mejores bloques si enseñas cómo pasas
+                de varios datos públicos a una conclusión con utilidad real.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta es probablemente la parte más potente
+          si la orientas a “qué hice con la información y por qué importaba”.
+        </div>
       </div>
     </details>
 
   </main>
 
   <footer class="footer-nav">
-    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+    <a class="btn-next" href="../index.html">⬅ Volver al portfolio</a>
+    <a class="btn-next" href="4B-herramientas-inteligencia.html">Siguiente ➜</a>
   </footer>
 
 </body>
