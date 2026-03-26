@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Herramientas Ofensivas y Explotación · Fabiola RS</title>
+  <title>Herramientas Ofensivas y Pruebas de Explotación · Fabiola RS</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -57,9 +63,38 @@
       font-size:.9rem;
       color:var(--muted);
     }
+
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +108,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,18 +124,24 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
-    summary::-webkit-details-marker{display:none;}
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     .subject-title{
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +155,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +172,42 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin:14px 0 16px;
+    }
+
+    .info-card{
+      background:var(--card-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:.92rem;
+      color:var(--acc);
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.88rem;
+      color:#d8dde7;
+      line-height:1.6;
     }
 
     .resource-list{
@@ -143,24 +216,29 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
       gap:6px 10px;
-      align-items:center;
+      align-items:flex-start;
       font-size:.9rem;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:3px 8px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
       color:var(--muted);
+      flex-shrink:0;
     }
 
     .resource-links{
@@ -168,6 +246,7 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
     }
 
     .resource-links a{
@@ -182,9 +261,23 @@
       text-decoration:underline;
     }
 
-    .empty{
-      font-style:italic;
-      color:var(--muted);
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
+    }
+
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -193,7 +286,7 @@
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
-      gap:8px;
+      gap:10px;
     }
 
     .btn-next{
@@ -209,10 +302,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -221,38 +336,90 @@
   <header class="page-header">
     <h1>
       <span class="emoji">💣</span>
-      Herramientas Ofensivas y Pruebas de Explotación
+      Herramientas ofensivas y pruebas de explotación
     </h1>
+
     <p class="subtitle">
-      Laboratorios y prácticas donde utilizo herramientas de pentesting (de forma ética) para 
-      descubrir vulnerabilidades, explotarlas en entornos controlados y documentar evidencias 
-      para negocio y equipo técnico.
+      Laboratorios y prácticas de pentesting ético orientados a identificar vulnerabilidades,
+      validar exposición real en entornos controlados y documentar hallazgos técnicos con impacto,
+      evidencia y propuestas de mitigación.
     </p>
+
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
-      <span>Ciberseguridad técnica y operativa</span>
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
+      <span>Protección y defensa</span>
     </div>
   </header>
+
+  <section class="intro-box">
+    <p>
+      Esta sección reúne proyectos enfocados en <span class="intro-highlight">reconocimiento, explotación controlada
+      y validación técnica de debilidades</span>, siempre desde un enfoque ético y defensivo.
+    </p>
+    <p>
+      El valor de estos trabajos no está solo en “usar herramientas”, sino en demostrar metodología,
+      interpretación de resultados, documentación clara y capacidad para traducir un hallazgo técnico
+      en riesgo real y medida correctiva.
+    </p>
+  </section>
 
   <main class="subject-grid">
 
     <!-- 1. Reconocimiento y escaneo -->
-    <details class="subject">
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Reconocimiento y Escaneo</span>
+          <span class="subject-name">Reconocimiento y escaneo</span>
           <span class="subject-tags">
             <span class="chip">Nmap</span>
-            <span class="chip">Enum4linux / Nikto</span>
+            <span class="chip">Nikto</span>
+            <span class="chip">Enum4linux</span>
+            <span class="chip">Enumeración</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Fase de reconocimiento y enumeración de servicios: detección de puertos abiertos,
-          versiones de servicios, sistemas operativos y posibles vectores de ataque.
+          Fase de reconocimiento y enumeración orientada a detectar puertos expuestos, servicios,
+          versiones, superficie de ataque visible y posibles vectores iniciales de acceso.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Obtener visibilidad técnica inicial sobre un objetivo de laboratorio y generar una base
+              sólida para priorizar pruebas posteriores de validación o explotación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Escaneo de puertos, banners, versiones, fingerprinting, servicios web, SMB,
+              enumeración básica de usuarios, shares y exposición de servicios inseguros.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de escaneo, tabla de servicios detectados, comandos utilizados,
+              priorización de objetivos y posibles hipótesis de ataque.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para explicar metodología, pensamiento analítico, reducción de ruido
+              y cómo pasas de datos técnicos a una hipótesis razonable de riesgo.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Informe</span>
@@ -262,6 +429,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">💻 Scripts</span>
             <div class="resource-links">
@@ -270,27 +438,80 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Más adelante puedes añadir una matriz “servicio detectado → riesgo potencial → siguiente prueba”
+                o una comparativa entre escaneo básico y escaneo afinado.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> prepara cómo explicarías la diferencia entre
+          escanear “por escanear” y escanear con un objetivo técnico claro.
+        </div>
       </div>
     </details>
 
-    <!-- 2. Explotación con Metasploit / manual -->
+    <!-- 2. Explotación -->
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Explotación de Vulnerabilidades</span>
+          <span class="subject-name">Explotación de vulnerabilidades</span>
           <span class="subject-tags">
             <span class="chip">Metasploit</span>
             <span class="chip">Exploits manuales</span>
+            <span class="chip">Validación</span>
+            <span class="chip">Impacto</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Uso de Metasploit y exploits manuales para comprometer servicios vulnerables en entornos
-          de laboratorio, siempre documentando vectores, impacto y medidas de mitigación.
+          Uso de Metasploit y pruebas manuales para validar vulnerabilidades en entornos de laboratorio,
+          siempre documentando vector, condiciones necesarias, alcance, impacto y mitigación.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Confirmar si una debilidad identificada es realmente explotable y cuál sería su
+              repercusión técnica u operativa en un entorno controlado.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Selección de módulos, validación manual, explotación guiada, interpretación de errores,
+              identificación de prerequisitos y limitaciones de explotación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de explotación, PoC documentada, capturas de ejecución, condiciones del entorno,
+              descripción del impacto y recomendaciones de remediación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Ayuda a demostrar que sabes diferenciar entre vulnerabilidad teórica y vulnerabilidad
+              realmente explotable, que es una distinción muy valiosa.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Informe</span>
@@ -300,6 +521,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">💻 Exploits</span>
             <div class="resource-links">
@@ -308,7 +530,22 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Puedes añadir después un caso de CVE concreta, explotación manual de una app vulnerable
+                o un mini informe ejecutivo con riesgo, impacto y prioridad.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> explica siempre qué validaste, qué no validaste,
+          por qué el entorno era controlado y cómo traducirías ese hallazgo a remediación.
+        </div>
       </div>
     </details>
 
@@ -316,17 +553,284 @@
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Post-explotación y Persistencia</span>
+          <span class="subject-name">Post-explotación y escalada de privilegios</span>
           <span class="subject-tags">
             <span class="chip">Privilege Escalation</span>
-            <span class="chip">Movimiento lateral</span>
+            <span class="chip">Enumeración interna</span>
+            <span class="chip">Persistencia controlada</span>
+            <span class="chip">Impacto</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Actividades posteriores a la explotación: elevación de privilegios, enumeración interna
-          del sistema, movimiento lateral controlado y recolección de evidencias para el informe.
+          Actividades posteriores al acceso inicial orientadas a evaluar el nivel real de compromiso:
+          escalada de privilegios, enumeración interna, persistencia controlada y análisis del alcance.
         </p>
-        <ul clas
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Entender hasta dónde podría llegar un atacante tras una intrusión inicial y qué controles
+              fallan o faltan para limitar el movimiento y la escalada.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Enumeración interna, privilegios, credenciales expuestas, configuraciones inseguras,
+              malas prácticas locales, movimiento lateral controlado y persistencia en laboratorio.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe técnico, diagrama de pasos, hallazgos de escalada, controles ausentes,
+              impacto potencial y recomendaciones para contención o hardening posterior.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy potente para mostrar que entiendes el ataque completo, no solo el punto de entrada,
+              y que sabes relacionarlo con medidas defensivas reales.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Informe</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/post/informe-post-explotacion.pdf" target="_blank">
+                Informe de post-explotación (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🛠️ Evidencias</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/post/evidencias-post-explotacion.zip" target="_blank">
+                Evidencias y comandos usados (ZIP)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encajan muy bien labs de privilege escalation en Linux o Windows, análisis de rutas
+                de escalada y explicación de qué controles lo habrían evitado.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> cuando hables de post-explotación, enfócalo en
+          “qué aprendí sobre la debilidad del entorno” y no en la parte espectacular del ataque.
+        </div>
+      </div>
+    </details>
+
+    <!-- 4. Validación web -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Pruebas básicas sobre aplicaciones web</span>
+          <span class="subject-tags">
+            <span class="chip">Burp Suite</span>
+            <span class="chip">OWASP</span>
+            <span class="chip">Validación</span>
+            <span class="chip">HTTP</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Evaluación básica de aplicaciones web en laboratorio mediante interceptación de tráfico,
+          análisis de peticiones y validación de fallos comunes alineados con OWASP.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Identificar debilidades frecuentes en aplicaciones web y documentarlas con claridad
+              para que puedan entenderse tanto desde negocio como desde desarrollo o seguridad.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Interceptación de tráfico, modificación de peticiones, autenticación, control de sesión,
+              validación de inputs, errores de exposición y pruebas básicas de seguridad web.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe técnico, capturas de Burp, petición/respuesta relevante, descripción del hallazgo,
+              riesgo asociado y propuesta de remediación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy interesante para puestos junior porque demuestra comprensión práctica de HTTP,
+              análisis web y documentación de vulnerabilidades comunes.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Informe</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/web/informe-pruebas-web-burp.pdf" target="_blank">
+                Informe de pruebas web con Burp Suite (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧪 Evidencias</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/web/capturas-pruebas-web.zip" target="_blank">
+                Capturas y evidencias de validación (ZIP)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Puedes añadir más adelante labs de DVWA, OWASP Juice Shop o PortSwigger Academy
+                con hallazgos explicados en tu propio estilo.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> lleva preparado cómo explicarías una vulnerabilidad web
+          a alguien técnico y a alguien no técnico, sin depender de jerga excesiva.
+        </div>
+      </div>
+    </details>
+
+    <!-- 5. Informes ofensivos -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Documentación de hallazgos y remediación</span>
+          <span class="subject-tags">
+            <span class="chip">Reporting</span>
+            <span class="chip">Hallazgos</span>
+            <span class="chip">Remediación</span>
+            <span class="chip">Riesgo</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Parte centrada en transformar pruebas ofensivas en documentación útil: hallazgos claros,
+          evidencia suficiente, impacto comprensible, severidad razonada y recomendaciones accionables.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Traducir resultados técnicos a informes que aporten valor real y permitan priorizar
+              decisiones de corrección, hardening o seguimiento.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Redacción de hallazgos, severidad, impacto, evidencia mínima, pasos de reproducción,
+              remediación propuesta y trazabilidad de acciones.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Plantilla de informe, ejemplos de hallazgos, tabla de severidad, resumen ejecutivo,
+              plan de remediación y registro de seguimiento.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque te diferencia mucho porque demuestra que no solo haces pruebas,
+              sino que sabes comunicar resultados y convertirlos en mejoras.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Plantilla</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/reporting/plantilla-informe-pentest.pdf" target="_blank">
+                Plantilla de informe de pentest (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📊 Hallazgos</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/reporting/matriz-hallazgos-remediacion.xlsx" target="_blank">
+                Matriz de hallazgos y remediación (XLSX)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Este apartado puede convertirse en uno de tus puntos fuertes si subes informes claros,
+                limpios y orientados a riesgo y remediación.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> aquí puedes lucirte muchísimo explicando cómo
+          redactarías un hallazgo para que negocio lo entienda y técnico lo pueda corregir.
+        </div>
+      </div>
+    </details>
+
+  </main>
+
+  <footer class="footer-nav">
+    <a class="btn-next" href="2A-configuracion-segura.html">⬅ Anterior</a>
+    <a class="btn-next" href="2C-retos-ctf.html">Siguiente ➜</a>
+  </footer>
+
+</body>
+</html>
