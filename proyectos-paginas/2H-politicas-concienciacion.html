@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proyectos · Políticas y concienciación</title>
+  <title>Políticas y concienciación de seguridad · Fabiola RS</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -57,9 +63,38 @@
       font-size:.9rem;
       color:var(--muted);
     }
+
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +108,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,18 +124,24 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
-    summary::-webkit-details-marker{display:none;}
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     .subject-title{
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +155,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +172,42 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin:14px 0 16px;
+    }
+
+    .info-card{
+      background:var(--card-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:.92rem;
+      color:var(--acc);
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.88rem;
+      color:#d8dde7;
+      line-height:1.6;
     }
 
     .resource-list{
@@ -143,24 +216,29 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
       gap:6px 10px;
-      align-items:center;
+      align-items:flex-start;
       font-size:.9rem;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:3px 8px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
       color:var(--muted);
+      flex-shrink:0;
     }
 
     .resource-links{
@@ -168,6 +246,7 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
     }
 
     .resource-links a{
@@ -182,9 +261,28 @@
       text-decoration:underline;
     }
 
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
+    }
+
     .empty{
       font-style:italic;
       color:var(--muted);
+    }
+
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -193,7 +291,7 @@
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
-      gap:8px;
+      gap:10px;
     }
 
     .btn-next{
@@ -209,10 +307,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -223,35 +343,88 @@
       <span class="emoji">📜</span>
       Políticas y concienciación de seguridad
     </h1>
+
     <p class="subtitle">
-      Documentos, guías y materiales de formación que he creado para aterrizar la seguridad 
-      en el día a día: políticas claras, normas de uso y campañas de concienciación.
+      Documentos, normas, guías y materiales de formación diseñados para traducir la seguridad
+      a prácticas claras, aplicables y comprensibles dentro de la organización.
     </p>
+
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
-      <span>Automatización y Gestión de la Seguridad</span>
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
+      <span>Gobierno, riesgo y cultura de seguridad</span>
     </div>
   </header>
 
+  <section class="intro-box">
+    <p>
+      Esta sección reúne trabajos enfocados en <span class="intro-highlight">documentar la seguridad de forma útil</span>,
+      convertir requisitos en normas claras y reforzar la cultura de seguridad mediante materiales
+      de concienciación prácticos y fáciles de aplicar.
+    </p>
+    <p>
+      El valor de estos proyectos está en demostrar que sé conectar políticas, procesos, usuarios
+      y comunicación interna, algo muy relevante en entornos de <strong>SGSI, ISO 27001, compliance,
+      seguridad corporativa y concienciación</strong>.
+    </p>
+  </section>
+
   <main class="subject-grid">
 
-    <!-- 1. Política general de seguridad -->
-    <details class="subject">
+    <!-- 1. Política general -->
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
           <span class="subject-name">Política general de seguridad de la información</span>
           <span class="subject-tags">
             <span class="chip">Gobierno</span>
             <span class="chip">ISO 27001</span>
+            <span class="chip">Marco general</span>
+            <span class="chip">Roles</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Documento de alto nivel que define objetivos de seguridad, alcance, principios y roles 
-          dentro de la organización, alineado con buenas prácticas como ISO&nbsp;27001.
+          Documento de alto nivel que establece principios, objetivos, alcance, responsabilidades
+          y compromisos generales de seguridad, alineado con un marco de gestión como ISO 27001.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Definir una base común de gobierno que marque el tono de la seguridad
+              dentro de la organización y sirva como referencia para el resto de documentos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Alcance, liderazgo, compromiso, objetivos, roles, principios de seguridad,
+              cumplimiento y marco general de actuación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Política aprobada, versión controlada, estructura documental y relación
+              con otros procedimientos o normas internas.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para demostrar que entiendes la diferencia entre un documento estratégico
+              de alto nivel y una norma operativa más detallada.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Política</span>
@@ -261,27 +434,81 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí te vendría muy bien mostrar una política breve, clara y bien estructurada,
+                con propósito, alcance, roles y compromiso de mejora continua.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> explica siempre qué debe contener una política general
+          y qué cosas no deberían bajarse a ese documento.
+        </div>
       </div>
     </details>
 
-    <!-- 2. Normas de uso aceptable -->
+    <!-- 2. Normas de uso -->
     <details class="subject">
       <summary>
         <div class="subject-title">
           <span class="subject-name">Normas de uso aceptable de equipos y cuentas</span>
           <span class="subject-tags">
             <span class="chip">Uso aceptable</span>
-            <span class="chip">Trabajo remoto</span>
+            <span class="chip">Correo</span>
+            <span class="chip">Teletrabajo</span>
+            <span class="chip">BYOD</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Reglas prácticas para el uso de portátiles, correo, aplicaciones SaaS y dispositivos móviles 
-          (incluyendo teletrabajo y BYOD), escritas en lenguaje claro para usuarios no técnicos.
+          Reglas prácticas para el uso de equipos, correo corporativo, aplicaciones, cuentas,
+          trabajo remoto y dispositivos personales, redactadas en lenguaje claro y entendible
+          para usuarios no técnicos.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Traducir requisitos de seguridad a normas simples que los usuarios puedan aplicar
+              en el día a día sin ambigüedad.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Uso aceptable, responsabilidades de usuario, correo, navegación, teletrabajo,
+              dispositivos móviles, SaaS, contraseñas y comportamiento esperado.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Norma principal, versión resumida para usuarios, control documental
+              y relación con políticas o procedimientos internos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para enseñar que sabes redactar documentos que la gente pueda entender
+              y aplicar de verdad.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Normativa</span>
@@ -291,6 +518,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📝 Resumen 1 página</span>
             <div class="resource-links">
@@ -299,27 +527,81 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí quedan muy bien normas breves sobre correo, dispositivos, teletrabajo
+                o uso de herramientas corporativas con lenguaje claro y accionable.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> puedes explicar cómo adaptarías una norma técnica
+          para que un usuario no técnico realmente la entienda.
+        </div>
       </div>
     </details>
 
-    <!-- 3. Guías rápidas y cartelería -->
+    <!-- 3. Guías rápidas -->
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Guías rápidas y cartelería de concienciación</span>
+          <span class="subject-name">Guías rápidas y materiales visuales de concienciación</span>
           <span class="subject-tags">
             <span class="chip">Phishing</span>
             <span class="chip">Contraseñas</span>
+            <span class="chip">Teletrabajo</span>
+            <span class="chip">Cartelería</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Material visual y fichas rápidas que explican en pocos pasos cómo detectar correos maliciosos,
-          crear contraseñas seguras o proteger dispositivos cuando se trabaja fuera de la oficina.
+          Material visual y fichas rápidas pensadas para reforzar hábitos seguros:
+          detección de phishing, contraseñas seguras, protección del dispositivo
+          y buenas prácticas fuera de la oficina.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Convertir mensajes de seguridad en contenidos breves, memorables
+              y fáciles de consumir por cualquier usuario.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Diseño de mensajes clave, síntesis de recomendaciones, formato visual,
+              claridad del lenguaje y enfoque práctico orientado a comportamiento.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Pósters, fichas rápidas, infografías, guías de una página
+              y piezas visuales reutilizables para campañas.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Demuestra que sabes comunicar seguridad sin recurrir siempre
+              a documentos largos o complejos.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📌 Carteles</span>
@@ -332,6 +614,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📄 Guías rápidas</span>
             <div class="resource-links">
@@ -340,7 +623,22 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encajan genial guías de phishing, smishing, contraseñas, MFA,
+                seguridad física o uso seguro del correo y de dispositivos.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta sección te ayuda mucho a demostrar
+          que sabes adaptar el mensaje de seguridad al formato y al público.
+        </div>
       </div>
     </details>
 
@@ -351,16 +649,54 @@
           <span class="subject-name">Campañas de concienciación y formación interna</span>
           <span class="subject-tags">
             <span class="chip">Formación</span>
-            <span class="chip">Quiz / Juegos</span>
+            <span class="chip">Quiz</span>
+            <span class="chip">Dinámicas</span>
+            <span class="chip">Awareness</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Presentaciones, cuestionarios y pequeñas dinámicas (tipo quiz/juego) para sesiones de formación
-          con el equipo: introducción a ciberseguridad, buenas prácticas y simulaciones de phishing.
+          Presentaciones, cuestionarios, microcontenidos y dinámicas sencillas para reforzar
+          conocimientos básicos de ciberseguridad y promover hábitos más seguros en el equipo.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Transformar la concienciación en una actividad útil, cercana y continua,
+              no solo en una obligación documental.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Diseño de sesiones, mensajes clave, participación, cuestionarios,
+              refuerzo por temas y materiales de apoyo a la formación interna.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Presentaciones, quizzes, piezas de apoyo, plan de campaña
+              y materiales adaptados a distintos temas o públicos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Esta parte te posiciona muy bien para seguridad corporativa,
+              SGSI y cultura de seguridad, porque demuestra impacto sobre usuarios.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📊 Presentación</span>
@@ -370,6 +706,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">❓ Quiz</span>
             <div class="resource-links">
@@ -378,22 +715,130 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">🎯 Plan anual</span>
             <div class="resource-links">
               <span class="empty">Pendiente de subir el plan anual de campañas de concienciación.</span>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes enseñar campañas por tema, pequeñas sesiones interactivas,
+                materiales mensuales o un plan anual de concienciación con foco realista.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> puedes explicar cómo harías que una campaña
+          no fuese solo “mandar un PDF”, sino algo que realmente mejore el comportamiento del usuario.
+        </div>
+      </div>
+    </details>
+
+    <!-- 5. Medición y mejora -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Medición de campañas y mejora continua</span>
+          <span class="subject-tags">
+            <span class="chip">Métricas</span>
+            <span class="chip">Seguimiento</span>
+            <span class="chip">Mejora continua</span>
+            <span class="chip">SGSI</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Enfoque orientado a medir la eficacia de campañas, materiales y sesiones formativas
+          para ajustar mensajes, detectar carencias y sostener una mejora continua en cultura de seguridad.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Pasar de acciones puntuales a un enfoque medible que permita revisar
+              qué funciona, qué no y dónde reforzar la concienciación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Métricas simples, participación, resultados de quiz, feedback,
+              seguimiento por tema y revisión periódica de campañas.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Cuadro de métricas, resumen de participación, evaluación de resultados
+              y propuestas de ajuste o refuerzo.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque suma mucho porque demuestra enfoque práctico y capacidad
+              para cerrar el ciclo entre acción, medición y mejora.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📊 Métricas</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/metricas-campanas-concienciacion.xlsx" target="_blank">
+                Cuadro de métricas de campañas (XLSX)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📄 Seguimiento</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/seguimiento-mejora-concienciacion.pdf" target="_blank">
+                Seguimiento y mejora de campañas (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes construir un apartado muy bueno con indicadores simples:
+                sesiones impartidas, participación, resultados y acciones de mejora.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta sección te da mucha fuerza porque demuestra
+          que entiendes la concienciación como un proceso continuo y no como una acción aislada.
+        </div>
       </div>
     </details>
 
   </main>
 
   <footer class="footer-nav">
-    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+    <a class="btn-next" href="2G-gestion-riesgos.html">⬅ Anterior</a>
+    <a class="btn-next" href="../index.html">Volver al portfolio ➜</a>
   </footer>
 
 </body>
 </html>
-
