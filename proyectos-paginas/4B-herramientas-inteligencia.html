@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -57,9 +63,38 @@
       font-size:.9rem;
       color:var(--muted);
     }
+
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +108,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,18 +124,24 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
-    summary::-webkit-details-marker{display:none;}
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     .subject-title{
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +155,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +172,42 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin:14px 0 16px;
+    }
+
+    .info-card{
+      background:var(--card-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:.92rem;
+      color:var(--acc);
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.88rem;
+      color:#d8dde7;
+      line-height:1.6;
     }
 
     .resource-list{
@@ -143,24 +216,29 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
       gap:6px 10px;
-      align-items:center;
+      align-items:flex-start;
       font-size:.9rem;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:3px 8px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
       color:var(--muted);
+      flex-shrink:0;
     }
 
     .resource-links{
@@ -168,6 +246,7 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
     }
 
     .resource-links a{
@@ -182,9 +261,28 @@
       text-decoration:underline;
     }
 
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
+    }
+
     .empty{
       font-style:italic;
       color:var(--muted);
+    }
+
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -193,7 +291,7 @@
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
-      gap:8px;
+      gap:10px;
     }
 
     .btn-next{
@@ -209,10 +307,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -221,37 +341,91 @@
   <header class="page-header">
     <h1>
       <span class="emoji">🛠️</span>
-      Herramientas de Inteligencia
+      Herramientas de inteligencia
     </h1>
+
     <p class="subtitle">
-      Uso práctico de herramientas OSINT y SOCMINT para construir grafos de relaciones, automatizar
-      la recolección de datos y analizar la superficie de exposición de organizaciones y objetivos.
+      Uso práctico de herramientas OSINT y SOCMINT para recolectar, organizar,
+      filtrar y analizar información útil sobre objetivos, exposición, relaciones
+      e infraestructura con enfoque de ciberinteligencia.
     </p>
+
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
       <span>Ciberinteligencia y análisis de amenazas</span>
     </div>
   </header>
 
+  <section class="intro-box">
+    <p>
+      Esta sección reúne trabajos orientados a <span class="intro-highlight">usar herramientas de inteligencia con método</span>,
+      no solo a ejecutarlas. El foco está en saber qué buscar, cómo interpretar resultados,
+      cómo reducir ruido y cómo convertir los hallazgos en algo útil para análisis o defensa.
+    </p>
+    <p>
+      El valor de estos proyectos está en demostrar criterio de investigación, capacidad de síntesis,
+      relación entre fuentes y visión práctica sobre exposición, infraestructura, vínculos y señales relevantes.
+    </p>
+  </section>
+
   <main class="subject-grid">
 
     <!-- 1. Maltego -->
-    <details class="subject">
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
           <span class="subject-name">Análisis de relaciones con Maltego</span>
           <span class="subject-tags">
             <span class="chip">Maltego</span>
             <span class="chip">Grafos</span>
+            <span class="chip">Relaciones</span>
+            <span class="chip">Infraestructura</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Caso práctico de construcción de un grafo de relaciones entre dominios, correos, IPs y
-          organizaciones usando Maltego, con enfoque en la visualización de infraestructura maliciosa.
+          Casos prácticos de construcción de grafos de relaciones entre dominios,
+          correos, IPs, organizaciones, infraestructura o activos relacionados,
+          con foco en visualización y análisis de vínculos.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Entender cómo una investigación puede enriquecerse al visualizar conexiones
+              entre entidades y detectar relaciones no evidentes a simple vista.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Entidades, transforms, grafos, relaciones entre infraestructura,
+              pivoteo entre indicadores y lectura contextual de conexiones.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de análisis, grafo exportado, notas de hallazgos
+              y explicación del razonamiento seguido durante la investigación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para demostrar pensamiento relacional, capacidad de pivoteo
+              y análisis visual de infraestructura o actores.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Informe</span>
@@ -261,6 +435,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">🗺️ Grafo</span>
             <div class="resource-links">
@@ -269,7 +444,22 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes analizar infraestructura sospechosa, relaciones entre dominios,
+                correo e IPs o pequeños casos de perfilado de entidad.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> explica qué aporta un grafo frente a una lista de datos
+          y cómo decides qué relaciones merecen más atención.
+        </div>
       </div>
     </details>
 
@@ -281,15 +471,54 @@
           <span class="subject-tags">
             <span class="chip">SpiderFoot</span>
             <span class="chip">Automatización</span>
+            <span class="chip">Descubrimiento</span>
+            <span class="chip">Filtrado</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Escaneo automatizado de un objetivo (dominio/empresa) con SpiderFoot, selección de módulos,
-          análisis de resultados y filtrado de hallazgos relevantes para ciberseguridad.
+          Escaneos automatizados sobre dominios, empresas u objetivos concretos
+          para identificar exposición, metadatos, fugas de información y señales
+          potencialmente útiles para una investigación.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Aprovechar la automatización sin perder criterio, separando hallazgos
+              útiles de resultados ruidosos o poco relevantes.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Selección de módulos, recogida automatizada, interpretación de resultados,
+              filtrado de hallazgos y priorización de exposición relevante.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de escaneo, export CSV, resumen de hallazgos,
+              clasificación por relevancia y notas metodológicas.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para demostrar que entiendes la diferencia entre recolectar datos
+              y producir inteligencia útil.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📊 Informe</span>
@@ -299,6 +528,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📁 Export</span>
             <div class="resource-links">
@@ -307,7 +537,22 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encajan muy bien casos de exposición de dominio, huella digital de empresa
+                o descubrimiento de información pública útil para análisis posterior.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> queda muy bien explicar cómo filtras resultados
+          y qué criterios usarías para no ahogarte en ruido.
+        </div>
       </div>
     </details>
 
@@ -319,15 +564,54 @@
           <span class="subject-tags">
             <span class="chip">Shodan</span>
             <span class="chip">Servicios expuestos</span>
+            <span class="chip">Fingerprinting</span>
+            <span class="chip">Exposición</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Uso de Shodan para identificar servicios expuestos, tecnologías utilizadas y posibles
-          vectores de entrada en una organización o rango de IPs determinado.
+          Uso de Shodan para revisar servicios expuestos, tecnologías visibles,
+          configuraciones potencialmente arriesgadas y superficie accesible
+          desde Internet de una organización o rango determinado.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Evaluar la exposición externa visible públicamente
+              y entender qué señales pueden alertar sobre una superficie innecesaria o débil.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Servicios expuestos, banners, tecnologías, versiones, queries avanzadas,
+              huella externa y análisis preliminar de riesgos de exposición.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de exposición, queries comentadas, ejemplos de hallazgos
+              y notas sobre posibles vectores o recomendaciones de revisión.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy potente para explicar reconocimiento pasivo, análisis de exposición
+              y traducción de hallazgos a riesgo técnico.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Informe</span>
@@ -337,6 +621,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📂 Consultas</span>
             <div class="resource-links">
@@ -345,27 +630,80 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes meter revisiones de exposición de un dominio, ejemplos de servicios abiertos,
+                detección de tecnologías antiguas o casos de mala configuración visible.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta sección queda aún mejor si explicas
+          cómo pasarías de un hallazgo en Shodan a una recomendación defensiva.
+        </div>
       </div>
     </details>
 
-    <!-- 4. Stack de herramientas OSINT integrado -->
+    <!-- 4. Búsqueda avanzada y pivoteo -->
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Uso combinado de herramientas OSINT</span>
+          <span class="subject-name">Búsqueda avanzada, pivoteo y recolección dirigida</span>
           <span class="subject-tags">
-            <span class="chip">Playbook</span>
+            <span class="chip">Dorks</span>
+            <span class="chip">Pivoteo</span>
+            <span class="chip">Fuentes abiertas</span>
             <span class="chip">Metodología</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Playbook donde combino diferentes herramientas (Maltego, SpiderFoot, Shodan, buscadores,
-          etc.) para construir una visión completa del objetivo en una investigación de inteligencia.
+          Metodologías de búsqueda avanzada en fuentes abiertas para localizar información relevante,
+          validar pistas, pivotar entre hallazgos y construir una investigación de forma progresiva.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Desarrollar una forma de investigar ordenada, replicable y basada en preguntas,
+              no solo en el uso aislado de herramientas.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Dorks, pivoteo, verificación cruzada, selección de fuentes,
+              priorización de hipótesis y trazabilidad de la investigación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Playbook de búsqueda, checklist de investigación,
+              rutas de pivoteo y ejemplos de cadenas de consulta.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque te ayuda mucho porque demuestra método,
+              no solo manejo de herramientas concretas.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📑 Playbook</span>
@@ -375,6 +713,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📋 Checklist</span>
             <div class="resource-links">
@@ -383,14 +722,122 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes enseñar cómo partes de un dominio, un correo, una IP o una marca
+                y vas pivotando hasta obtener una imagen mucho más completa.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta parte te da mucha fuerza si la cuentas
+          como metodología y no solo como lista de búsquedas.
+        </div>
+      </div>
+    </details>
+
+    <!-- 5. Inteligencia accionable -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">De hallazgo OSINT a inteligencia accionable</span>
+          <span class="subject-tags">
+            <span class="chip">Priorización</span>
+            <span class="chip">Exposición</span>
+            <span class="chip">Riesgo</span>
+            <span class="chip">Utilidad defensiva</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Enfoque orientado a convertir hallazgos de herramientas OSINT en conclusiones útiles:
+          qué importa, qué no, qué supone un riesgo real y qué debería revisarse o priorizarse.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Pasar de la recolección y observación a una lectura más útil
+              para apoyo a defensa, exposición o análisis de riesgo.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Priorización, clasificación de hallazgos, contexto, impacto potencial,
+              exposición externa y utilidad operativa del análisis.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Resúmenes ejecutivos, recomendaciones, listados priorizados
+              y propuestas de revisión o vigilancia adicional.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque te puede diferenciar mucho porque demuestra que no te quedas
+              en “usar herramientas”, sino en interpretar y decidir.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Resumen</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/herramientas-inteligencia/resumen-hallazgos-priorizados.pdf" target="_blank">
+                Resumen de hallazgos priorizados (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📋 Revisión</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/herramientas-inteligencia/revision-exposicion-osint.xlsx" target="_blank">
+                Revisión de exposición y utilidad defensiva (XLSX)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Este bloque puede quedar muy fuerte si muestras cómo conviertes un hallazgo público
+                en una recomendación realista y accionable.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta es probablemente la parte más potente
+          si la orientas a “qué haría yo con esta información”.
+        </div>
       </div>
     </details>
 
   </main>
 
   <footer class="footer-nav">
-    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+    <a class="btn-next" href="4B-osint.html">⬅ Anterior</a>
+    <a class="btn-next" href="4B-amenazas-apts.html">Siguiente ➜</a>
   </footer>
 
 </body>
