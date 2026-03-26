@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -57,9 +63,38 @@
       font-size:.9rem;
       color:var(--muted);
     }
+
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +108,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,18 +124,24 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
-    summary::-webkit-details-marker{display:none;}
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     .subject-title{
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +155,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +172,42 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin:14px 0 16px;
+    }
+
+    .info-card{
+      background:var(--card-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:.92rem;
+      color:var(--acc);
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.88rem;
+      color:#d8dde7;
+      line-height:1.6;
     }
 
     .resource-list{
@@ -143,24 +216,29 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
       gap:6px 10px;
-      align-items:center;
+      align-items:flex-start;
       font-size:.9rem;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:3px 8px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
       color:var(--muted);
+      flex-shrink:0;
     }
 
     .resource-links{
@@ -168,6 +246,7 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
     }
 
     .resource-links a{
@@ -182,9 +261,28 @@
       text-decoration:underline;
     }
 
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
+    }
+
     .empty{
       font-style:italic;
       color:var(--muted);
+    }
+
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -193,7 +291,7 @@
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
-      gap:8px;
+      gap:10px;
     }
 
     .btn-next{
@@ -209,10 +307,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -223,36 +343,87 @@
       <span class="emoji">⚔️</span>
       APTs y campañas de amenazas
     </h1>
+
     <p class="subtitle">
-      Perfiles de grupos de Amenaza Persistente Avanzada (APT), análisis de campañas,
-      TTPs mapeadas a MITRE ATT&CK e indicadores de compromiso (IoCs).
+      Perfiles de grupos APT, análisis de campañas, estudio de TTPs, mapeo a MITRE ATT&amp;CK
+      e inteligencia útil para detección, priorización y defensa.
     </p>
+
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
       <span>Ciberinteligencia y análisis de amenazas</span>
     </div>
   </header>
 
+  <section class="intro-box">
+    <p>
+      Esta sección reúne trabajos orientados a entender <span class="intro-highlight">quién ataca, cómo opera,
+      qué busca y cómo traducir esa inteligencia a decisiones defensivas</span>.
+    </p>
+    <p>
+      El objetivo no es solo describir actores o campañas, sino convertir esa información en perfiles útiles,
+      TTPs accionables, detecciones potenciales e indicadores que puedan apoyar labores de análisis,
+      monitorización o priorización del riesgo.
+    </p>
+  </section>
+
   <main class="subject-grid">
 
-    <!-- 1. Perfiles de grupos APT -->
-    <details class="subject">
+    <!-- 1. Perfiles APT -->
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
           <span class="subject-name">Perfiles de grupos APT</span>
           <span class="subject-tags">
             <span class="chip">APT28</span>
             <span class="chip">APT29</span>
-            <span class="chip">GRU / PLA</span>
+            <span class="chip">Objetivos</span>
+            <span class="chip">Sectores</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Fichas de grupos APT donde resumo su origen, objetivos, sectores atacados
-          y principales técnicas conocidas según MITRE ATT&amp;CK.
+          Fichas de grupos APT donde se resume su atribución conocida, objetivos,
+          sectores atacados, patrones de actividad y técnicas más representativas.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Construir perfiles claros de actores de amenaza que permitan entender
+              motivaciones, foco de actividad y comportamientos recurrentes.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Atribución, sectores objetivo, campañas asociadas, infraestructura,
+              patrones operativos, TTPs frecuentes y evolución del actor.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Fichas de actor, resúmenes comparativos, tablas de técnicas
+              y síntesis orientadas a consumo rápido por analistas o defensores.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para demostrar capacidad de síntesis, análisis de amenazas
+              y comprensión de actores más allá del indicador suelto.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Perfil APT28</span>
@@ -262,6 +433,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📄 Perfil APT29</span>
             <div class="resource-links">
@@ -270,11 +442,26 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes añadir comparativas entre grupos, diferencias de objetivos,
+                sectores preferidos y técnicas más repetidas.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> explica qué diferencia a un simple resumen de un actor
+          de un perfil realmente útil para defensa o inteligencia.
+        </div>
       </div>
     </details>
 
-    <!-- 2. Campañas y casos de estudio -->
+    <!-- 2. Campañas -->
     <details class="subject">
       <summary>
         <div class="subject-title">
@@ -282,15 +469,54 @@
           <span class="subject-tags">
             <span class="chip">Spear phishing</span>
             <span class="chip">Supply chain</span>
+            <span class="chip">Cronología</span>
+            <span class="chip">Objetivos</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Análisis de campañas específicas atribuidas a APTs: cronología, vectores de entrada,
-          técnicas de movimiento lateral y objetivos finales.
+          Análisis de campañas atribuidas o asociadas a grupos avanzados:
+          cronología, vector de entrada, fases de intrusión, movimiento interno
+          y objetivo final de la operación.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Entender cómo se desarrolla una campaña realista de extremo a extremo
+              y qué señales deja en cada fase.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Cadena de ataque, cronología, acceso inicial, payload, persistencia,
+              movimiento lateral, objetivos operativos e impacto potencial.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de caso, línea temporal, mapa de fases, resumen ejecutivo
+              y notas de aprendizaje aplicables a defensa.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para demostrar que entiendes las campañas como procesos completos,
+              no solo como listas de IoCs o noticias.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📊 Caso 1</span>
@@ -300,22 +526,39 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📊 Caso 2</span>
             <div class="resource-links">
               <span class="empty">Pendiente de subir segundo caso de estudio.</span>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encajan muy bien casos de spear phishing, acceso a proveedores,
+                campañas sectoriales o análisis de intrusiones públicas conocidas.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> una buena campaña explicada con orden
+          puede darte mucho juego para hablar de detección, respuesta y priorización.
+        </div>
       </div>
     </details>
 
-    <!-- 3. TTPs y MITRE ATT&CK -->
+    <!-- 3. TTPs y MITRE -->
     <details class="subject">
       <summary>
         <div class="subject-title">
           <span class="subject-name">TTPs mapeadas a MITRE ATT&amp;CK</span>
           <span class="subject-tags">
+            <span class="chip">MITRE ATT&amp;CK</span>
             <span class="chip">Tácticas</span>
             <span class="chip">Técnicas</span>
             <span class="chip">Subtécnicas</span>
@@ -323,11 +566,46 @@
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Tablas donde relaciono las técnicas usadas por cada grupo con las matrices de MITRE,
-          para ayudar a planificar detecciones y medidas defensivas.
+          Relación de técnicas observadas o atribuidas a grupos y campañas, mapeadas
+          a MITRE ATT&amp;CK para facilitar comprensión, comparación y posibles casos de uso defensivos.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Traducir inteligencia de amenazas a un marco estructurado que ayude
+              a entender mejor el comportamiento del adversario.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              MITRE ATT&amp;CK, tácticas, técnicas, subtécnicas, frecuencia de uso,
+              relación entre actor y comportamiento y lectura defensiva del mapeo.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Tabla TTPs por grupo o campaña, resúmenes tácticos y posibles líneas
+              de detección o revisión de cobertura.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para mostrar que sabes usar MITRE con sentido y no solo como una referencia teórica.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📚 Tabla TTPs</span>
@@ -337,6 +615,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📌 Resumen táctico</span>
             <div class="resource-links">
@@ -345,28 +624,79 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes construir uno de tus mejores bloques: actor → campaña → TTP → posible detección.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> queda muy bien explicar cómo usarías MITRE
+          para revisar cobertura defensiva o detectar huecos de visibilidad.
+        </div>
       </div>
     </details>
 
-    <!-- 4. IoCs y reglas de detección -->
+    <!-- 4. IoCs -->
     <details class="subject">
       <summary>
         <div class="subject-title">
           <span class="subject-name">IoCs y reglas de detección</span>
           <span class="subject-tags">
             <span class="chip">IoCs</span>
-            <span class="chip">Sigma / YARA</span>
+            <span class="chip">Sigma</span>
+            <span class="chip">YARA</span>
             <span class="chip">Detección</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Listas de indicadores de compromiso (dominios, IPs, hashes) y ejemplos de reglas de detección
-          para SIEM/EDR basadas en el comportamiento de distintos grupos APT.
+          Indicadores de compromiso y ejemplos de reglas orientadas a SIEM, EDR o análisis de malware,
+          construidos a partir de campañas o comportamientos observados.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Traducir inteligencia a artefactos más accionables que puedan servir
+              como apoyo a detección o hunting básico.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              IoCs, dominios, IPs, hashes, patrones, Sigma, YARA, utilidad y limitaciones
+              de la detección basada en indicadores.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Listados de IoCs, reglas de ejemplo, lógica de detección,
+              notas de contexto y advertencias sobre vigencia o falsos positivos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para enseñar que entiendes la diferencia entre inteligencia contextual
+              y detección basada en señales concretas.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">🧩 IoCs</span>
@@ -376,6 +706,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">⚙️ Reglas</span>
             <div class="resource-links">
@@ -384,14 +715,122 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí te puede quedar muy bien un bloque explicando cuándo un IoC ayuda,
+                cuándo se queda corto y cómo combinarlo con TTPs o contexto.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> si explicas bien las limitaciones de los IoCs,
+          esta sección gana mucho nivel.
+        </div>
+      </div>
+    </details>
+
+    <!-- 5. Inteligencia aplicada a defensa -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Inteligencia aplicada a priorización y defensa</span>
+          <span class="subject-tags">
+            <span class="chip">Priorización</span>
+            <span class="chip">Defensa</span>
+            <span class="chip">Cobertura</span>
+            <span class="chip">Use cases</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Enfoque orientado a convertir inteligencia de amenazas en decisiones prácticas:
+          priorizar controles, ajustar monitorización, revisar exposición o proponer casos de uso.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Demostrar que la inteligencia no se queda en análisis pasivo,
+              sino que puede apoyar decisiones defensivas concretas.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Priorización por sector, exposición, controles relevantes, detecciones sugeridas,
+              cobertura ATT&amp;CK y ajuste de monitorización.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Resumen defensivo, recomendaciones priorizadas, casos de uso,
+              revisión de cobertura y propuestas de mejora.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque te puede diferenciar mucho porque demuestra que conviertes análisis
+              en decisiones útiles para seguridad.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Resumen</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/amenazas-apts/recomendaciones-defensa-apts.pdf" target="_blank">
+                Recomendaciones defensivas basadas en campañas APT (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📋 Cobertura</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/amenazas-apts/revision-cobertura-deteccion.xlsx" target="_blank">
+                Revisión de cobertura y casos de uso (XLSX)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes conectar esta página con SIEM, detección, SGSI o priorización de riesgos,
+                y eso te dará muchísimo valor.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> este puede ser uno de los bloques más fuertes
+          si lo orientas a “qué haría yo con esta inteligencia en un entorno real”.
+        </div>
       </div>
     </details>
 
   </main>
 
   <footer class="footer-nav">
-    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+    <a class="btn-next" href="4B-herramientas-inteligencia.html">⬅ Anterior</a>
+    <a class="btn-next" href="4B-ciberconflictos.html">Siguiente ➜</a>
   </footer>
 
 </body>
