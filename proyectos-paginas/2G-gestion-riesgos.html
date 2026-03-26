@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proyectos · Análisis y gestión de riesgos</title>
+  <title>Análisis y gestión de riesgos · Fabiola RS</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -57,9 +63,38 @@
       font-size:.9rem;
       color:var(--muted);
     }
+
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +108,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,18 +124,24 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
-    summary::-webkit-details-marker{display:none;}
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     .subject-title{
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +155,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +172,42 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin:14px 0 16px;
+    }
+
+    .info-card{
+      background:var(--card-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:.92rem;
+      color:var(--acc);
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.88rem;
+      color:#d8dde7;
+      line-height:1.6;
     }
 
     .resource-list{
@@ -143,24 +216,29 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
       gap:6px 10px;
-      align-items:center;
+      align-items:flex-start;
       font-size:.9rem;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:3px 8px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
       color:var(--muted);
+      flex-shrink:0;
     }
 
     .resource-links{
@@ -168,6 +246,7 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
     }
 
     .resource-links a{
@@ -182,9 +261,28 @@
       text-decoration:underline;
     }
 
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
+    }
+
     .empty{
       font-style:italic;
       color:var(--muted);
+    }
+
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -193,7 +291,7 @@
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
-      gap:8px;
+      gap:10px;
     }
 
     .btn-next{
@@ -209,10 +307,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -223,35 +343,89 @@
       <span class="emoji">📉</span>
       Análisis y gestión de riesgos
     </h1>
+
     <p class="subtitle">
-      Proyectos donde identifico activos, amenazas y vulnerabilidades, calculo el nivel de riesgo 
-      y defino planes de tratamiento siguiendo buenas prácticas (ISO&nbsp;27005, NIST, etc.).
+      Proyectos centrados en identificar activos, amenazas, vulnerabilidades y escenarios de riesgo,
+      priorizar su impacto y definir planes de tratamiento alineados con buenas prácticas como
+      ISO 27005, ISO 27001 o NIST.
     </p>
+
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
-      <span>Automatización y Gestión de la Seguridad</span>
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
+      <span>Gobierno, riesgo y cultura de seguridad</span>
     </div>
   </header>
 
+  <section class="intro-box">
+    <p>
+      Esta sección reúne trabajos enfocados en <span class="intro-highlight">entender el riesgo de forma estructurada</span>,
+      conectando activos, amenazas, vulnerabilidades, impacto y decisiones de tratamiento.
+    </p>
+    <p>
+      El valor de estos proyectos está en demostrar que sé aterrizar el riesgo a escenarios comprensibles,
+      priorizar con criterio, documentar decisiones y conectar el análisis con controles, responsables
+      y seguimiento posterior.
+    </p>
+  </section>
+
   <main class="subject-grid">
 
-    <!-- 1. Inventario de activos y contexto -->
-    <details class="subject">
+    <!-- 1. Inventario y contexto -->
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
           <span class="subject-name">Inventario de activos y análisis de contexto</span>
           <span class="subject-tags">
             <span class="chip">Activos</span>
-            <span class="chip">Impacto</span>
+            <span class="chip">CIA</span>
+            <span class="chip">Contexto</span>
+            <span class="chip">Valoración</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Identificación de activos de negocio y tecnológicos, valoración de impacto (confidencialidad, integridad y 
-          disponibilidad) y definición del contexto organizativo antes de iniciar el análisis de riesgos.
+          Identificación y clasificación de activos de negocio y tecnológicos, valoración de impacto
+          en confidencialidad, integridad y disponibilidad, y definición del contexto organizativo
+          previo al análisis de riesgos.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Construir una base clara antes de analizar riesgos, entendiendo qué se protege,
+              por qué es importante y qué impacto tendría su afectación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Inventario de activos, propietarios, clasificación, impacto CIA, dependencias,
+              contexto de negocio, criticidad y alcance del análisis.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Inventario estructurado, documento de contexto, clasificación de activos,
+              criterios de criticidad y base para escenarios de riesgo.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para mostrar que entiendes que el riesgo no empieza en la amenaza,
+              sino en conocer bien qué activos importan y por qué.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Documento</span>
@@ -261,27 +435,80 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encajan muy bien un inventario simple de activos críticos, mapa de dependencias,
+                valoración CIA o una mini definición de alcance para SGSI.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> explica cómo priorizarías activos si una organización
+          pequeña no puede analizar todo a la vez.
+        </div>
       </div>
     </details>
 
-    <!-- 2. Matriz de riesgos -->
+    <!-- 2. Metodología y matriz -->
     <details class="subject">
       <summary>
         <div class="subject-title">
           <span class="subject-name">Matriz de riesgos y metodología de valoración</span>
           <span class="subject-tags">
-            <span class="chip">ISO&nbsp;27005</span>
-            <span class="chip">Probabilidad · Impacto</span>
+            <span class="chip">ISO 27005</span>
+            <span class="chip">Probabilidad</span>
+            <span class="chip">Impacto</span>
+            <span class="chip">Priorización</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Definición de criterios de riesgo, escalas de probabilidad/impacto y construcción de una matriz de riesgos para 
-          priorizar amenazas sobre los activos críticos.
+          Definición de criterios de valoración, escalas de probabilidad e impacto y construcción
+          de una matriz de riesgos para priorizar escenarios sobre los activos más relevantes.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Crear una metodología razonable, repetible y defendible para valorar riesgos
+              sin depender de intuiciones poco consistentes.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Escalas, criterios, fórmulas simples, riesgo inherente, riesgo residual,
+              niveles de criticidad, apetito de riesgo y priorización.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Matriz en Excel, documento metodológico, criterios de valoración,
+              ejemplos de cálculo y justificación de las escalas elegidas.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque te ayuda mucho a demostrar criterio y capacidad para traducir conceptos
+              de riesgo a algo operativo y entendible.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📊 Hoja de cálculo</span>
@@ -291,6 +518,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📄 Guía</span>
             <div class="resource-links">
@@ -299,27 +527,81 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes subir una metodología propia sencilla, una heatmap de riesgo,
+                ejemplos de riesgo inherente/residual o una escala razonada de probabilidad.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> queda muy bien explicar cómo evitarías que una matriz
+          se convierta en algo arbitrario o puramente “de papel”.
+        </div>
       </div>
     </details>
 
-    <!-- 3. Caso práctico -->
+    <!-- 3. Escenarios -->
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Caso práctico: análisis de riesgos en una pyme</span>
+          <span class="subject-name">Escenarios de riesgo y caso práctico aplicado</span>
           <span class="subject-tags">
-            <span class="chip">Caso realista</span>
+            <span class="chip">Pyme</span>
+            <span class="chip">Escenarios</span>
+            <span class="chip">Riesgo inherente / residual</span>
             <span class="chip">Informe ejecutivo</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Aplicación de la metodología a una organización ficticia: identificación de escenarios de riesgo, cálculo del 
-          riesgo inherente y residual, y recomendaciones priorizadas.
+          Aplicación de la metodología a una organización ficticia o caso realista:
+          identificación de escenarios, valoración del riesgo, análisis antes y después
+          de controles y priorización de recomendaciones.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Demostrar que la metodología puede aplicarse a un contexto concreto
+              y generar decisiones útiles más allá de la teoría.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Escenarios activo-amenaza-vulnerabilidad-impacto, riesgo inherente,
+              controles existentes, riesgo residual, priorización y resumen ejecutivo.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de análisis, fichas de riesgo, resumen para dirección,
+              valoración antes/después y recomendaciones ordenadas por prioridad.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para explicar un caso “de principio a fin” y enseñar cómo conviertes
+              metodología en decisiones concretas.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Informe</span>
@@ -329,19 +611,35 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📑 Presentación</span>
             <div class="resource-links">
               <a href="../assets-archivos/automatizacion/riesgos/caso-practico-pyme-presentacion.pdf" target="_blank">
-                Resumen ejecutivo para dirección
+                Resumen ejecutivo para dirección (PDF)
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encaja genial una pyme con pocos activos clave, escenarios como phishing,
+                indisponibilidad, fuga de información o fallo de backups.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> este tipo de caso práctico te puede servir muchísimo
+          para contar una historia completa y muy defendible.
+        </div>
       </div>
     </details>
 
-    <!-- 4. Plan de tratamiento y seguimiento -->
+    <!-- 4. Tratamiento -->
     <details class="subject">
       <summary>
         <div class="subject-title">
@@ -349,15 +647,53 @@
           <span class="subject-tags">
             <span class="chip">Tratamiento</span>
             <span class="chip">Controles</span>
+            <span class="chip">Responsables</span>
+            <span class="chip">Seguimiento</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Diseño de un plan de tratamiento (evitar, reducir, transferir, aceptar), asignación de responsables,
-          fechas objetivo y métricas de seguimiento para la mejora continua.
+          Diseño del plan de tratamiento posterior al análisis: evitar, reducir, transferir o aceptar,
+          asignando responsables, fechas objetivo, controles propuestos y seguimiento de avance.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Aterrizar el análisis en acciones concretas para que el riesgo no quede solo
+              documentado, sino gestionado.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Opciones de tratamiento, priorización, responsables, fechas, acciones,
+              relación con controles y revisión periódica del riesgo.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Plan de tratamiento, registro de acciones, responsables, estado,
+              métricas de seguimiento y documentación de decisiones.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque es muy importante porque demuestra que entiendes que el análisis
+              solo tiene sentido si termina en decisiones y seguimiento real.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Plan</span>
@@ -367,22 +703,130 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📊 Dashboard</span>
             <div class="resource-links">
               <span class="empty">Pendiente de subir ejemplo de dashboard de seguimiento.</span>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí te vendría genial un registro de acciones de tratamiento, estado de avance,
+                fecha objetivo, control asociado y evidencia de cierre.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> puedes lucirte explicando por qué no todo riesgo
+          se mitiga igual y cómo decidir entre reducir, aceptar o transferir.
+        </div>
+      </div>
+    </details>
+
+    <!-- 5. Vinculación con controles -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Vinculación entre riesgos, controles y SGSI</span>
+          <span class="subject-tags">
+            <span class="chip">ISO 27001</span>
+            <span class="chip">Controles</span>
+            <span class="chip">SoA</span>
+            <span class="chip">Trazabilidad</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Relación entre escenarios de riesgo, controles aplicables y documentación del SGSI
+          para reforzar la trazabilidad entre análisis, tratamiento y evidencias de cumplimiento.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Conectar el análisis de riesgos con decisiones reales de control y con
+              la documentación exigida en un SGSI.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Riesgos, controles, SoA, políticas, procedimientos, evidencias,
+              justificación de aplicabilidad y trazabilidad documental.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Mapeo riesgo-control, tabla de trazabilidad, relación con controles ISO 27001
+              y soporte para revisión o auditoría interna.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque te diferencia muchísimo porque conecta tu parte GRC con tu parte
+              técnica y documental.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Mapeo</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/riesgos/mapeo-riesgos-controles-sgsi.pdf" target="_blank">
+                Mapeo de riesgos, controles y SGSI (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📋 Trazabilidad</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/riesgos/trazabilidad-riesgos-soa.xlsx" target="_blank">
+                Tabla de trazabilidad riesgo-control-SoA (XLSX)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes construir uno de tus mejores apartados: cómo pasas de un riesgo
+                identificado a un control, una acción y una evidencia del SGSI.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta sección puede ser de las más potentes de todo tu portfolio
+          para puestos de GRC, ISO 27001 o seguridad corporativa.
+        </div>
       </div>
     </details>
 
   </main>
 
   <footer class="footer-nav">
-    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+    <a class="btn-next" href="2F-desarrollo-seguro.html">⬅ Anterior</a>
+    <a class="btn-next" href="2H-politicas-concienciacion.html">Siguiente ➜</a>
   </footer>
 
 </body>
 </html>
-
