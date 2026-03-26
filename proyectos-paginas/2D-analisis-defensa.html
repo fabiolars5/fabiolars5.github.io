@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -57,9 +63,38 @@
       font-size:.9rem;
       color:var(--muted);
     }
+
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +108,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,18 +124,24 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
-    summary::-webkit-details-marker{display:none;}
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     .subject-title{
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +155,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +172,42 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin:14px 0 16px;
+    }
+
+    .info-card{
+      background:var(--card-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:.92rem;
+      color:var(--acc);
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.88rem;
+      color:#d8dde7;
+      line-height:1.6;
     }
 
     .resource-list{
@@ -143,24 +216,29 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
       gap:6px 10px;
-      align-items:center;
+      align-items:flex-start;
       font-size:.9rem;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:3px 8px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
       color:var(--muted);
+      flex-shrink:0;
     }
 
     .resource-links{
@@ -168,6 +246,7 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
     }
 
     .resource-links a{
@@ -182,9 +261,23 @@
       text-decoration:underline;
     }
 
-    .empty{
-      font-style:italic;
-      color:var(--muted);
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
+    }
+
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -193,7 +286,7 @@
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
-      gap:8px;
+      gap:10px;
     }
 
     .btn-next{
@@ -209,10 +302,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -223,35 +338,89 @@
       <span class="emoji">🔍</span>
       Análisis técnico y defensa
     </h1>
+
     <p class="subtitle">
-      Proyectos de seguridad defensiva, detección de amenazas y respuesta ante incidentes
-      en entornos simulados y de laboratorio.
+      Proyectos orientados al análisis de eventos, detección de actividad sospechosa,
+      investigación técnica y respuesta defensiva ante incidentes en entornos de laboratorio
+      y escenarios simulados.
     </p>
+
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
-      <span>Ciberseguridad técnica y operativa</span>
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
+      <span>Análisis, detección y respuesta</span>
     </div>
   </header>
+
+  <section class="intro-box">
+    <p>
+      Esta sección reúne trabajos enfocados en <span class="intro-highlight">observar, detectar, interpretar y responder</span>
+      ante comportamientos anómalos o incidentes de seguridad desde un enfoque defensivo.
+    </p>
+    <p>
+      El valor de estos proyectos está en demostrar capacidad de análisis, criterio técnico,
+      priorización, trazabilidad y documentación útil: competencias muy relevantes para puestos de
+      <strong>Security Analyst, SOC junior, Blue Team, IT Security o respuesta a incidentes</strong>.
+    </p>
+  </section>
 
   <main class="subject-grid">
 
     <!-- 1. Análisis de logs -->
-    <details class="subject">
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
           <span class="subject-name">Análisis de logs y correlación de eventos</span>
           <span class="subject-tags">
-            <span class="chip">Windows / Linux</span>
-            <span class="chip">Event Viewer / Syslog</span>
+            <span class="chip">Windows</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Event Viewer</span>
+            <span class="chip">Syslog</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Revisión y análisis de registros de eventos en Windows y Linux para identificar
-          comportamientos sospechosos, intentos de intrusión y actividad no autorizada.
+          Revisión de registros en Windows y Linux para identificar actividad sospechosa,
+          accesos anómalos, errores relevantes, intentos de intrusión y eventos que puedan
+          tener valor para la investigación técnica.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Aprender a extraer señales útiles de grandes volúmenes de eventos y construir
+              hipótesis razonables a partir de evidencias técnicas.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Event Viewer, syslog, autenticación, errores críticos, logs de seguridad, trazas
+              de actividad administrativa, correlación básica y lectura contextual de eventos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de análisis, timeline resumida, eventos relevantes, interpretación del hallazgo
+              y posibles medidas de contención o revisión adicional.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy potente para explicar pensamiento analítico, lectura de evidencias y capacidad
+              para separar ruido de señales relevantes.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Informe</span>
@@ -261,6 +430,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📁 Dataset</span>
             <div class="resource-links">
@@ -269,7 +439,22 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí te puede venir muy bien añadir casos de inicio de sesión anómalo, actividad administrativa
+                inesperada, fallos de autenticación masivos o eventos sospechosos en Windows y Linux.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> prepara cómo explicarías qué eventos mirarías primero
+          si sospecharas de un acceso no autorizado o de una ejecución anómala.
+        </div>
       </div>
     </details>
 
@@ -277,19 +462,57 @@
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Configuración de IDS/IPS</span>
+          <span class="subject-name">Detección con IDS / IPS</span>
           <span class="subject-tags">
             <span class="chip">Snort</span>
             <span class="chip">Suricata</span>
+            <span class="chip">Reglas</span>
+            <span class="chip">Alertas</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Implementación y ajuste de reglas en sistemas de detección y prevención de intrusos
-          (IDS/IPS) para detectar patrones de ataque y tráfico anómalo.
+          Implementación y ajuste de reglas en sistemas IDS/IPS para detectar tráfico anómalo,
+          patrones de ataque y comportamientos que requieran análisis adicional o respuesta.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Comprender cómo traducir comportamientos sospechosos de red en reglas de detección
+              útiles y cómo ajustar señales para reducir falsos positivos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Reglas Snort/Suricata, firmas, patrones de tráfico, tuning básico, validación de alertas,
+              ruido frente a detección útil y revisión de tráfico sospechoso.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Guía de configuración, reglas de ejemplo, capturas de alertas, notas de ajuste
+              y explicación de por qué una regla aporta valor defensivo.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Refuerza tu perfil defensivo y te permite explicar conceptos muy útiles como
+              tuning, falsos positivos y priorización de alertas.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Guía</span>
@@ -299,6 +522,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">💻 Reglas</span>
             <div class="resource-links">
@@ -307,27 +531,80 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Más adelante puedes incluir una regla propia, tuning de firmas, un caso de detección
+                de escaneo o una validación sencilla con tráfico generado en laboratorio.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> queda muy bien explicar por qué una alerta por sí sola
+          no basta y cómo validarías si se trata de un falso positivo o de una señal real.
+        </div>
       </div>
     </details>
 
-    <!-- 3. Simulación ataque / respuesta -->
+    <!-- 3. Simulación de ataque y respuesta -->
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Simulación de ataque y respuesta</span>
+          <span class="subject-name">Simulación de incidente y respuesta</span>
           <span class="subject-tags">
             <span class="chip">Blue Team</span>
             <span class="chip">Incident Response</span>
+            <span class="chip">Contención</span>
+            <span class="chip">Playbooks</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Laboratorios donde se simula un ataque (phishing, explotación web, movimiento lateral)
-          y se documentan los pasos de detección, contención, erradicación y recuperación.
+          Laboratorios donde se simula un ataque o evento sospechoso y se documentan las fases
+          de detección, análisis, contención, erradicación, recuperación y lecciones aprendidas.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Practicar una respuesta ordenada y razonada ante incidentes, entendiendo no solo qué
+              ha pasado, sino qué hacer, en qué orden y con qué evidencias.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Clasificación inicial, triage, validación del incidente, contención, erradicación,
+              recuperación, comunicación interna y aprendizaje posterior.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de simulación, timeline de actuación, decisiones tomadas, impacto estimado,
+              playbook y puntos de mejora detectados.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque te ayuda mucho a demostrar criterio, orden, calma y enfoque práctico,
+              que son cualidades muy valoradas en respuesta a incidentes.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Informe</span>
@@ -337,6 +614,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📜 Playbook</span>
             <div class="resource-links">
@@ -345,7 +623,22 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encajan genial escenarios como phishing, malware, acceso sospechoso,
+                cuenta comprometida o movimiento lateral básico en laboratorio.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> este apartado es ideal para explicar cómo priorizarías
+          entre investigar, contener y recuperar, y por qué el orden importa.
+        </div>
       </div>
     </details>
 
@@ -353,19 +646,57 @@
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Monitorización con SIEM</span>
+          <span class="subject-name">Monitorización y casos de uso en SIEM</span>
           <span class="subject-tags">
             <span class="chip">SIEM</span>
-            <span class="chip">Alertas / Dashboards</span>
+            <span class="chip">Alertas</span>
+            <span class="chip">Dashboards</span>
+            <span class="chip">Use Cases</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Creación de reglas de correlación, dashboards y alertas en plataformas tipo SIEM
-          para centralizar eventos y detectar comportamientos anómalos.
+          Creación de casos de uso, reglas de correlación, dashboards y alertas para centralizar eventos
+          y mejorar la visibilidad sobre comportamientos anómalos en un entorno monitorizado.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Diseñar una monitorización que no solo recoja eventos, sino que ayude de verdad
+              a detectar actividad relevante y a priorizar revisión.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Casos de uso, reglas de correlación, dashboards, severidad, fuentes de datos,
+              alertas accionables y seguimiento de señales relevantes.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Caso práctico, capturas de dashboards, reglas de alerta, descripción de lógica
+              de detección y criterios de priorización.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy interesante para demostrar que entiendes la diferencia entre “tener logs”
+              y “tener detección útil”, algo muy importante en entornos reales.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Caso práctico</span>
@@ -375,6 +706,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📊 Dashboards</span>
             <div class="resource-links">
@@ -383,16 +715,123 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes subir más adelante un mini caso de uso tipo “multiple failed logons”,
+                “new admin account”, “suspicious PowerShell” o “log source health”.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> si explicas bien tus casos de uso, esta sección
+          puede ser de las más potentes del portfolio.
+        </div>
+      </div>
+    </details>
+
+    <!-- 5. Análisis de phishing y evidencias -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Análisis de phishing y revisión de evidencias</span>
+          <span class="subject-tags">
+            <span class="chip">Email Security</span>
+            <span class="chip">Headers</span>
+            <span class="chip">URLs</span>
+            <span class="chip">Triage</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Revisión de correos sospechosos, cabeceras, enlaces, adjuntos y señales de suplantación
+          para clasificar el riesgo, documentar el análisis y proponer acciones de contención.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Aprender a analizar correos sospechosos con criterio técnico y a separar campañas reales,
+              ruido, errores de configuración y falsos positivos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Headers, remitentes, SPF/DKIM/DMARC a nivel interpretativo, URLs, adjuntos, indicadores
+              de phishing y documentación del triage inicial.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de análisis, cabeceras revisadas, URLs extraídas, clasificación del correo,
+              recomendaciones y decisión de escalado o cierre.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Esta parte encaja muy bien con tu experiencia real y demuestra capacidad de análisis
+              aplicada a un caso frecuente y muy reconocible en empresas.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Informe</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/tecnica/analisis-defensa/phishing/informe-analisis-phishing.pdf" target="_blank">
+                Informe de análisis de phishing (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧪 Evidencias</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/tecnica/analisis-defensa/phishing/evidencias-phishing.zip" target="_blank">
+                Cabeceras, URLs y evidencias de triage (ZIP)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí te puede encajar perfecto un caso práctico basado en emails sospechosos,
+                revisión manual de headers o clasificación de mensajes en legítimo / sospechoso / malicioso.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> este apartado conecta muy bien con experiencia real
+          y te permite enseñar análisis técnico sin necesidad de irte a escenarios demasiado complejos.
+        </div>
       </div>
     </details>
 
   </main>
 
   <footer class="footer-nav">
-    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+    <a class="btn-next" href="2C-retos-ctf.html">⬅ Anterior</a>
+    <a class="btn-next" href="2E-automatizacion-informes.html">Siguiente ➜</a>
   </footer>
 
 </body>
 </html>
-
