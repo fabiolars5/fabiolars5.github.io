@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -57,9 +63,38 @@
       font-size:.9rem;
       color:var(--muted);
     }
+
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +108,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,18 +124,24 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
-    summary::-webkit-details-marker{display:none;}
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     .subject-title{
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +155,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +172,42 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin:14px 0 16px;
+    }
+
+    .info-card{
+      background:var(--card-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:.92rem;
+      color:var(--acc);
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.88rem;
+      color:#d8dde7;
+      line-height:1.6;
     }
 
     .resource-list{
@@ -143,24 +216,29 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
       gap:6px 10px;
-      align-items:center;
+      align-items:flex-start;
       font-size:.9rem;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:3px 8px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
       color:var(--muted);
+      flex-shrink:0;
     }
 
     .resource-links{
@@ -168,6 +246,7 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
     }
 
     .resource-links a{
@@ -182,9 +261,28 @@
       text-decoration:underline;
     }
 
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
+    }
+
     .empty{
       font-style:italic;
       color:var(--muted);
+    }
+
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -193,7 +291,7 @@
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
-      gap:8px;
+      gap:10px;
     }
 
     .btn-next{
@@ -209,10 +307,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -223,35 +343,89 @@
       <span class="emoji">🌍</span>
       Ciberconflictos y geopolítica
     </h1>
+
     <p class="subtitle">
-      Análisis de conflictos en el ciberespacio, operaciones de influencia, desinformación
-      y riesgos geopolíticos asociados a la ciberseguridad.
+      Análisis de conflictos en el ciberespacio, operaciones de influencia,
+      campañas vinculadas a intereses estatales y riesgos geopolíticos con impacto
+      sobre la ciberseguridad de organizaciones y sectores.
     </p>
+
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
       <span>Ciberinteligencia y análisis de amenazas</span>
     </div>
   </header>
 
+  <section class="intro-box">
+    <p>
+      Esta sección reúne trabajos orientados a entender <span class="intro-highlight">cómo el contexto internacional,
+      los intereses estatales y la competencia geopolítica influyen en las amenazas cibernéticas</span>.
+    </p>
+    <p>
+      El objetivo no es solo describir conflictos o campañas, sino analizar su impacto,
+      identificar patrones relevantes y traducir el contexto geopolítico en exposición,
+      riesgo sectorial y decisiones defensivas más informadas.
+    </p>
+  </section>
+
   <main class="subject-grid">
 
-    <!-- 1. Conflictos cibernéticos recientes -->
-    <details class="subject">
+    <!-- 1. Conflictos recientes -->
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
           <span class="subject-name">Conflictos cibernéticos recientes</span>
           <span class="subject-tags">
             <span class="chip">Estado vs Estado</span>
             <span class="chip">Infraestructuras críticas</span>
+            <span class="chip">Cronología</span>
+            <span class="chip">Impacto</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Resúmenes de incidentes donde estados o actores patrocinados por estados
-          han llevado a cabo operaciones ofensivas en el ciberespacio.
+          Resúmenes de incidentes y campañas donde estados o actores patrocinados
+          han llevado a cabo operaciones ofensivas, de sabotaje, espionaje o presión
+          sobre infraestructuras, administraciones o sectores estratégicos.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Comprender cómo evolucionan los conflictos en el ciberespacio
+              y qué impacto operativo o estratégico pueden tener.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Cronología de incidentes, atribución pública, objetivos,
+              sectores afectados, tipos de operación e impacto asociado.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informes, líneas temporales, resúmenes comparativos y notas
+              sobre implicaciones para defensa o resiliencia.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para mostrar análisis estructurado, contexto internacional
+              y capacidad para aterrizar la ciberamenaza en algo más amplio.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">🌐 Informe 1</span>
@@ -261,6 +435,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📊 Cronología</span>
             <div class="resource-links">
@@ -269,27 +444,82 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes comparar varios conflictos, campañas o tensiones
+                para explicar cambios en objetivos, intensidad o sectores impactados.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta sección te permite destacar
+          tu capacidad de conectar seguridad con contexto internacional, algo poco común.
+        </div>
       </div>
     </details>
 
-    <!-- 2. Operaciones de desinformación -->
+    <!-- 2. Desinformación -->
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Operaciones de desinformación</span>
+          <span class="subject-name">Operaciones de desinformación e influencia</span>
           <span class="subject-tags">
             <span class="chip">Influence ops</span>
             <span class="chip">Redes sociales</span>
+            <span class="chip">Narrativas</span>
+            <span class="chip">Deepfakes</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Estudios de campañas de desinformación, manipulación de la opinión pública
-          y uso coordinado de bots, trolls y deepfakes.
+          Estudios sobre campañas de manipulación informativa, operaciones de influencia,
+          amplificación artificial de mensajes y uso de recursos digitales para alterar
+          percepciones, confianza o estabilidad.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Analizar cómo la dimensión informativa se cruza con la seguridad
+              y cómo ciertas campañas pueden tener efectos reales sobre usuarios,
+              organizaciones o instituciones.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Narrativas, bots, cuentas coordinadas, viralización, deepfakes,
+              manipulación del discurso y conexión entre influencia y conflicto.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informes de caso, fichas de campaña, análisis de narrativas
+              y resúmenes de señales observables o patrones recurrentes.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy interesante para mostrar visión amplia de la amenaza
+              y comprensión de riesgos no puramente técnicos.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📑 Estudio</span>
@@ -299,33 +529,87 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">🧩 Casos</span>
             <div class="resource-links">
               <span class="empty">Pendiente de subir fichas de casos concretos.</span>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes analizar campañas mediáticas, narrativas repetidas
+                o ejemplos de manipulación coordinada con impacto reputacional o político.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta sección te da mucha personalidad
+          porque conecta ciberseguridad con análisis estratégico y comunicación.
+        </div>
       </div>
     </details>
 
-    <!-- 3. Actores estatales en el ciberespacio -->
+    <!-- 3. Actores estatales -->
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Actores estatales y patrocinados</span>
+          <span class="subject-name">Actores estatales y patrocinados en el ciberespacio</span>
           <span class="subject-tags">
             <span class="chip">State-sponsored</span>
+            <span class="chip">Capacidades</span>
             <span class="chip">Estrategia</span>
+            <span class="chip">Ecosistema</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Análisis de cómo distintos estados estructuran sus capacidades ofensivas y defensivas,
-          así como su papel en el ecosistema de ciberamenazas.
+          Análisis de cómo distintos estados estructuran capacidades ofensivas y defensivas,
+          patrocinan actores, proyectan influencia y participan en el ecosistema de amenazas.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Comprender el papel de los estados en la ciberseguridad contemporánea
+              y las diferencias entre estrategias, capacidades y objetivos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Doctrinas, capacidades, actores vinculados, sectores objetivo,
+              finalidades estratégicas y posicionamiento en el ecosistema global.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informes comparativos, mapas visuales, fichas por país o actor
+              y resúmenes con lectura operativa o estratégica.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para demostrar profundidad analítica y una visión
+              más madura del panorama de amenazas.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">🧠 Análisis</span>
@@ -335,6 +619,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📌 Mapa</span>
             <div class="resource-links">
@@ -343,27 +628,81 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes construir comparativas entre países, modelos de proyección
+                o relación entre intereses estratégicos y comportamiento cibernético.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta sección te diferencia mucho
+          si la explicas con claridad y sin quedarte en teoría abstracta.
+        </div>
       </div>
     </details>
 
-    <!-- 4. Evaluación de riesgos geopolíticos -->
+    <!-- 4. Riesgo geopolítico -->
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Riesgos geopolíticos y ciberseguridad</span>
+          <span class="subject-name">Riesgos geopolíticos aplicados a ciberseguridad</span>
           <span class="subject-tags">
             <span class="chip">Riesgo país</span>
             <span class="chip">Sectorial</span>
+            <span class="chip">Exposición</span>
+            <span class="chip">Prioridad</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Evaluaciones de riesgo que combinan contexto geopolítico y exposición cibernética,
-          útiles para organizaciones con presencia internacional.
+          Evaluaciones que combinan contexto geopolítico, exposición organizativa
+          y superficie digital para estimar riesgos más relevantes por país,
+          sector o cadena de suministro.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Traducir el contexto internacional a riesgos concretos
+              que puedan afectar a organizaciones con actividad o dependencia exterior.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Riesgo país, exposición por sector, supply chain, dependencias,
+              geografía, superficie de ataque e impacto potencial.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Matrices de riesgo, informes de evaluación, priorización por exposición
+              y recomendaciones orientadas a resiliencia o monitorización.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy potente para demostrar pensamiento estratégico y capacidad
+              de traducir contexto a decisiones de riesgo.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📉 Matriz de riesgo</span>
@@ -373,6 +712,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📄 Informe</span>
             <div class="resource-links">
@@ -381,14 +721,123 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes conectar esta página con riesgo, SGSI, supply chain,
+                continuidad o priorización de controles.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta sección puede ser muy potente
+          si la orientas a “qué significaría esto para una empresa concreta”.
+        </div>
+      </div>
+    </details>
+
+    <!-- 5. Inteligencia geopolítica aplicada -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Lectura geopolítica aplicada a defensa y resiliencia</span>
+          <span class="subject-tags">
+            <span class="chip">Priorización</span>
+            <span class="chip">Resiliencia</span>
+            <span class="chip">Continuidad</span>
+            <span class="chip">Decisión</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Enfoque orientado a convertir análisis geopolítico en decisiones prácticas:
+          priorización de vigilancia, protección de activos, revisión de dependencia externa
+          y apoyo a la resiliencia organizativa.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Demostrar que el análisis geopolítico puede apoyar decisiones reales
+              de seguridad, continuidad y preparación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Priorización, vigilancia, cadenas de suministro, exposición internacional,
+              resiliencia, continuidad y relación entre amenaza y preparación interna.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Resúmenes defensivos, recomendaciones, mapas de exposición,
+              escenarios de impacto y propuestas de revisión de controles.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque puede ser muy diferencial porque aprovecha muy bien
+              tu base de Relaciones Internacionales y la conecta con ciberseguridad.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">📄 Resumen</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/ciberconflictos/recomendaciones-resiliencia-geopolitica.pdf" target="_blank">
+                Recomendaciones de resiliencia y priorización (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📋 Escenarios</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/intel/ciberconflictos/escenarios-riesgo-geopolitico.xlsx" target="_blank">
+                Escenarios de riesgo geopolítico-ciber (XLSX)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Este bloque te puede diferenciar muchísimo si lo presentas como
+                contexto internacional convertido en decisiones defensivas.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta es probablemente una de las páginas
+          donde más puedes destacar tu combinación de ciberseguridad + relaciones internacionales.
+        </div>
       </div>
     </details>
 
   </main>
 
   <footer class="footer-nav">
-    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+    <a class="btn-next" href="4B-amenazas-apts.html">⬅ Anterior</a>
+    <a class="btn-next" href="../index.html">Volver al portfolio ➜</a>
   </footer>
 
 </body>
