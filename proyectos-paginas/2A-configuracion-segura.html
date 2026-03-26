@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -57,9 +63,38 @@
       font-size:.9rem;
       color:var(--muted);
     }
+
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +108,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,18 +124,24 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
-    summary::-webkit-details-marker{display:none;}
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     .subject-title{
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +155,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +172,42 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin:14px 0 16px;
+    }
+
+    .info-card{
+      background:var(--card-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:.92rem;
+      color:var(--acc);
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.88rem;
+      color:#d8dde7;
+      line-height:1.6;
     }
 
     .resource-list{
@@ -143,24 +216,29 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
       gap:6px 10px;
-      align-items:center;
+      align-items:flex-start;
       font-size:.9rem;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:3px 8px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
       color:var(--muted);
+      flex-shrink:0;
     }
 
     .resource-links{
@@ -168,6 +246,7 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
     }
 
     .resource-links a{
@@ -182,9 +261,23 @@
       text-decoration:underline;
     }
 
-    .empty{
-      font-style:italic;
-      color:var(--muted);
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
+    }
+
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -193,7 +286,7 @@
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
-      gap:8px;
+      gap:10px;
     }
 
     .btn-next{
@@ -209,10 +302,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -223,35 +338,89 @@
       <span class="emoji">🛡️</span>
       Configuración segura de sistemas y redes
     </h1>
+
     <p class="subtitle">
-      Hardening de servidores y estaciones de trabajo, configuración segura de redes
-      y listas de comprobación para reducir la superficie de ataque en entornos reales.
+      Proyectos orientados al hardening de sistemas Windows y Linux, la configuración segura de redes
+      y la validación técnica mediante checklists, controles de referencia y documentación reutilizable.
     </p>
+
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
-      <span>Ciberseguridad técnica y operativa</span>
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
+      <span>Protección y defensa</span>
     </div>
   </header>
+
+  <section class="intro-box">
+    <p>
+      Esta sección reúne proyectos pensados para demostrar capacidad técnica en
+      <span class="intro-highlight">reducción de superficie de ataque</span>,
+      configuración segura, revisión de controles base y documentación útil para entornos reales.
+    </p>
+    <p>
+      El objetivo no es solo “configurar”, sino evidenciar criterio técnico, capacidad de validación,
+      enfoque defensivo y trazabilidad: exactamente el tipo de cosas que pueden resultar útiles
+      en entrevistas para puestos de <strong>Security Analyst, IT Security, hardening, compliance técnico o soporte de seguridad</strong>.
+    </p>
+  </section>
 
   <main class="subject-grid">
 
     <!-- 1. Hardening Windows -->
-    <details class="subject">
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
           <span class="subject-name">Hardening en Windows</span>
           <span class="subject-tags">
             <span class="chip">Windows Server</span>
             <span class="chip">GPO</span>
+            <span class="chip">Eventos</span>
+            <span class="chip">Cuentas</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Aplicación de políticas de seguridad, endurecimiento de servicios, gestión de cuentas y
-          registro de eventos en sistemas Windows Server y estaciones de trabajo.
+          Proyecto orientado al endurecimiento de sistemas Windows mediante políticas de seguridad,
+          revisión de servicios, control de cuentas, configuración base, eventos y medidas de reducción
+          de exposición en servidores y estaciones de trabajo.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Definir y validar una línea base de seguridad en Windows que ayude a minimizar riesgos
+              comunes relacionados con cuentas, servicios, configuración local, políticas y registros.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              GPO, políticas locales, cuentas privilegiadas, RDP, firewall, servicios innecesarios,
+              auditoría de eventos, contraseñas, bloqueo de sesión y configuración del sistema.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Guía de hardening, checklist de validación, capturas de configuración, matriz de controles
+              aplicados y notas de desviaciones detectadas.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Permite explicar criterio técnico, priorización de controles, revisión de configuración
+              segura y relación entre operación IT y seguridad defensiva.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Guía</span>
@@ -261,6 +430,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📋 Checklist</span>
             <div class="resource-links">
@@ -269,7 +439,22 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Puedes incluir más adelante una baseline CIS simplificada, una comparativa antes/después
+                y un caso práctico de endurecimiento de un equipo corporativo.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> prepara una explicación simple de por qué deshabilitas
+          servicios innecesarios, endureces cuentas administrativas, revisas auditoría y aplicas una baseline.
+        </div>
       </div>
     </details>
 
@@ -279,17 +464,55 @@
         <div class="subject-title">
           <span class="subject-name">Hardening en Linux</span>
           <span class="subject-tags">
+            <span class="chip">SSH</span>
+            <span class="chip">Permisos</span>
             <span class="chip">Servicios</span>
-            <span class="chip">SSH / Permisos</span>
+            <span class="chip">Logs</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Endurecimiento de sistemas Linux: configuración segura de SSH, gestión de servicios,
-          permisos de ficheros, logs y control de acceso.
+          Proyecto centrado en la revisión y refuerzo de sistemas Linux: configuración segura de SSH,
+          endurecimiento de servicios, permisos, logging, autenticación y control de acceso.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Mejorar la postura de seguridad de servidores Linux mediante una configuración base segura
+              y un proceso de validación técnica repetible.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              SSH, sudoers, permisos de ficheros, usuarios y grupos, servicios activos, cron, logs,
+              banners, actualizaciones y minimización de superficie expuesta.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de auditoría, scripts de revisión, checklist Linux, comandos comentados,
+              capturas de configuración y guía de remediación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Refuerza tu perfil técnico al mostrar criterio en administración segura, revisión de sistemas,
+              permisos, accesos y buenas prácticas de exposición mínima.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Auditoría</span>
@@ -299,6 +522,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">💻 Scripts</span>
             <div class="resource-links">
@@ -307,7 +531,22 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Más adelante puedes añadir una validación de SSH seguro, revisión de permisos críticos,
+                hardening básico de Ubuntu Server y checklist de evidencias.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> explica cómo revisarías un servidor Linux recién desplegado
+          antes de ponerlo en producción y qué controles considerarías imprescindibles.
+        </div>
       </div>
     </details>
 
@@ -315,19 +554,57 @@
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Seguridad en Redes y Dispositivos</span>
+          <span class="subject-name">Seguridad en redes y dispositivos</span>
           <span class="subject-tags">
+            <span class="chip">ACL</span>
             <span class="chip">Firewalls</span>
             <span class="chip">Segmentación</span>
+            <span class="chip">Switching / Routing</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Configuración segura de routers, switches y firewalls: segmentación de redes,
-          filtrado de tráfico, listas de control de acceso (ACL) y buenas prácticas.
+          Proyecto enfocado en la protección de redes mediante segmentación, filtrado de tráfico,
+          uso de ACL y revisión de configuraciones seguras en dispositivos de red.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Diseñar o revisar configuraciones de red que reduzcan accesos innecesarios y mejoren
+              la separación entre zonas, servicios y usuarios.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Segmentación por VLAN, ACL, principios de mínimo privilegio en red, reglas base de firewall,
+              exposición de servicios, puertos administrativos y documentación de topologías.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informe de revisión, topología comentada, configuraciones de ejemplo, tabla de reglas,
+              checklist de seguridad y justificación técnica de segmentación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Demuestra que entiendes cómo traducir el principio de mínimo privilegio a nivel de red,
+              no solo a nivel de usuario o sistema.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📄 Informe</span>
@@ -337,6 +614,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📁 Configuración</span>
             <div class="resource-links">
@@ -345,7 +623,22 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí te puede venir muy bien añadir más adelante labs de Packet Tracer,
+                ejemplos de ACL, endurecimiento básico de dispositivos y segmentación de una pequeña oficina.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> prepara un ejemplo de cómo separarías red corporativa,
+          invitados, administración y servidores en un entorno pequeño o mediano.
+        </div>
       </div>
     </details>
 
@@ -353,19 +646,57 @@
     <details class="subject">
       <summary>
         <div class="subject-title">
-          <span class="subject-name">Checklists y Cumplimiento</span>
+          <span class="subject-name">Checklists técnicos y cumplimiento</span>
           <span class="subject-tags">
             <span class="chip">CIS Benchmarks</span>
             <span class="chip">ISO 27001</span>
+            <span class="chip">Trazabilidad</span>
+            <span class="chip">Validación</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Listas de comprobación basadas en CIS Benchmarks y controles de ISO 27001 para
-          validar que los sistemas cumplen los requisitos mínimos de seguridad definidos.
+          Uso de checklists técnicos basados en CIS Benchmarks y controles alineados con ISO 27001
+          para validar configuraciones, detectar desviaciones y reforzar la trazabilidad técnica.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Convertir requisitos técnicos y de seguridad en revisiones ordenadas, repetibles y útiles
+              tanto para operación como para auditoría o seguimiento interno.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Checklists, mapeo de controles, evidencia, validación de configuración, desviaciones,
+              remediación priorizada y relación entre hardening e ISO 27001.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Checklist CIS, matriz de hallazgos, mapeo técnico a controles, resumen ejecutivo
+              y registro de acciones de mejora.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy potente para tu perfil, porque une parte técnica y parte documental:
+              justo el puente entre operación de seguridad y cumplimiento.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📋 Checklist</span>
@@ -375,6 +706,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📄 Mapeo</span>
             <div class="resource-links">
@@ -383,14 +715,30 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encajan genial una plantilla de hallazgos, una priorización de remediación,
+                una mini SoA técnica o un ejemplo de revisión de baseline con evidencias.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> este apartado te permite explicar cómo conectas
+          una revisión técnica real con evidencias, controles y mejora continua.
+        </div>
       </div>
     </details>
 
   </main>
 
   <footer class="footer-nav">
-    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+    <a class="btn-next" href="../index.html">⬅ Volver al portfolio</a>
+    <a class="btn-next" href="2B-herramientas-ofensivas.html">Siguiente ➜</a>
   </footer>
 
 </body>
