@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proyectos · Automatización e informes</title>
+  <title>Automatización e informes · Fabiola RS</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -57,9 +63,38 @@
       font-size:.9rem;
       color:var(--muted);
     }
+
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +108,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,18 +124,24 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
-    summary::-webkit-details-marker{display:none;}
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
 
     .subject-title{
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +155,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +172,42 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin:14px 0 16px;
+    }
+
+    .info-card{
+      background:var(--card-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .info-card h3{
+      margin:0 0 8px;
+      font-size:.92rem;
+      color:var(--acc);
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.88rem;
+      color:#d8dde7;
+      line-height:1.6;
     }
 
     .resource-list{
@@ -143,24 +216,29 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
       gap:6px 10px;
-      align-items:center;
+      align-items:flex-start;
       font-size:.9rem;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:3px 8px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
       color:var(--muted);
+      flex-shrink:0;
     }
 
     .resource-links{
@@ -168,6 +246,7 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
     }
 
     .resource-links a{
@@ -182,9 +261,28 @@
       text-decoration:underline;
     }
 
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
+    }
+
     .empty{
       font-style:italic;
       color:var(--muted);
+    }
+
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -193,7 +291,7 @@
       display:flex;
       justify-content:space-between;
       flex-wrap:wrap;
-      gap:8px;
+      gap:10px;
     }
 
     .btn-next{
@@ -209,10 +307,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -223,36 +343,88 @@
       <span class="emoji">🧾</span>
       Automatización e informes
     </h1>
+
     <p class="subtitle">
-      Scripts y procesos para generar informes automáticos: datos de inventario, actividad de sistemas,
-      métricas de seguridad y reporting para negocio y TI.
+      Proyectos orientados a automatizar tareas repetitivas, transformar datos en información útil
+      y generar informes técnicos claros para operación, seguridad, seguimiento y toma de decisiones.
     </p>
+
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
-      <span>Automatización y Gestión de la Seguridad</span>
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
+      <span>Automatización y desarrollo</span>
     </div>
   </header>
 
+  <section class="intro-box">
+    <p>
+      Esta sección reúne trabajos centrados en <span class="intro-highlight">reducir trabajo manual, mejorar la trazabilidad,
+      estructurar datos y generar reporting útil</span> para equipos técnicos, seguridad o negocio.
+    </p>
+    <p>
+      El valor de estos proyectos está en demostrar que no solo programo, sino que sé usar la automatización
+      para resolver problemas reales: consolidar información, limpiar datos, detectar patrones,
+      estandarizar plantillas y ahorrar tiempo operativo.
+    </p>
+  </section>
+
   <main class="subject-grid">
 
-    <!-- 1. Informes operativos de IT -->
-    <details class="subject">
+    <!-- 1. Informes operativos IT -->
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
           <span class="subject-name">Informes operativos de IT</span>
           <span class="subject-tags">
             <span class="chip">Inventario</span>
-            <span class="chip">Tickets / Soporte</span>
-            <span class="chip">Automatización</span>
+            <span class="chip">Soporte</span>
+            <span class="chip">Estado de equipos</span>
+            <span class="chip">Reporting</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Scripts para generar informes periódicos de inventario, tickets de soporte y estado de los equipos,
-          listos para enviar a responsables técnicos o dirección.
+          Scripts y procesos para generar informes periódicos sobre inventario, soporte,
+          estado de equipos, actividad operativa o seguimientos internos listos para compartir
+          con responsables técnicos o áreas de gestión.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Automatizar tareas repetitivas de recopilación y presentación de datos operativos
+              para ahorrar tiempo y reducir errores manuales.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Inventario, activos, tickets, estados, consolidación de información, estructura de reportes,
+              filtros, exportación y entrega en formatos reutilizables.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Informes en Excel, scripts de generación, datasets de ejemplo, tablas resumen
+              y documentación del flujo automatizado.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy útil para mostrar mentalidad práctica, capacidad de mejora operativa y conexión
+              entre soporte, sistemas y automatización.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📊 Inventario</span>
@@ -265,6 +437,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">🎫 Tickets</span>
             <div class="resource-links">
@@ -273,7 +446,22 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encajan genial inventarios automáticos, reporte de incidencias por estado,
+                resumen de equipos pendientes o consolidados semanales para responsables.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> explica qué problema manual resolvía el script,
+          cuánto tiempo ahorraba y cómo evitabas errores o duplicidades.
+        </div>
       </div>
     </details>
 
@@ -284,17 +472,55 @@
           <span class="subject-name">Informes de seguridad y cumplimiento</span>
           <span class="subject-tags">
             <span class="chip">Logs</span>
-            <span class="chip">Compliance</span>
-            <span class="chip">Dashboards</span>
+            <span class="chip">Controles</span>
+            <span class="chip">ISO 27001</span>
+            <span class="chip">Trazabilidad</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Automatización de informes de seguridad: consolidación de logs, detección de eventos recurrentes
-          y generación de resúmenes para auditoría interna o ISO 27001.
+          Automatización de informes relacionados con seguridad, controles, actividad técnica
+          y seguimiento documental, con foco en consolidar evidencias y facilitar revisiones
+          periódicas o internas.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Convertir datos técnicos y evidencias dispersas en resúmenes claros,
+              reutilizables y útiles para seguimiento, auditoría o revisión interna.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Consolidación de logs, resúmenes de actividad, controles revisados,
+              hallazgos, evidencias, plantillas de revisión y reporting alineado con cumplimiento.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Scripts de consolidación, plantillas de informe, cuadros resumen,
+              matriz de controles y documentación del flujo de generación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Este bloque encaja muy bien con tu perfil porque une automatización,
+              documentación y visión de SGSI / cumplimiento.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">🧾 Logs</span>
@@ -304,6 +530,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">✅ Compliance</span>
             <div class="resource-links">
@@ -312,11 +539,26 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí te puede quedar muy bien un informe periódico de revisión de controles,
+                consolidación de evidencias o resúmenes automáticos para auditoría interna.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> este apartado te ayuda a explicar cómo conectas
+          datos técnicos con reporting útil para seguridad y cumplimiento.
+        </div>
       </div>
     </details>
 
-    <!-- 3. Limpieza y transformación de datos para informes -->
+    <!-- 3. Limpieza y transformación -->
     <details class="subject">
       <summary>
         <div class="subject-title">
@@ -325,15 +567,53 @@
             <span class="chip">ETL ligero</span>
             <span class="chip">Excel / CSV</span>
             <span class="chip">Python</span>
+            <span class="chip">Normalización</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Pequeños procesos tipo ETL para coger datos “sucios” (CSV, exportaciones de herramientas),
-          limpiarlos y dejarlos listos para usarlos en informes o dashboards.
+          Procesos ligeros de transformación para tomar exportaciones desordenadas,
+          datos inconsistentes o múltiples fuentes y convertirlos en bases limpias
+          para informes, cuadros de mando o revisión operativa.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Mejorar la calidad del dato antes del reporting y evitar errores derivados
+              de columnas inconsistentes, formatos distintos o registros duplicados.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Lectura de CSV y Excel, limpieza de campos, normalización de formatos,
+              unificación de columnas, deduplicación y preparación para análisis posterior.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Script de limpieza, dataset antes/después, reglas de transformación,
+              ejemplo de salida limpia y notas de validación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy bueno para demostrar orden mental, cuidado por el detalle y capacidad
+              para trabajar con información real, imperfecta y no siempre bien estructurada.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📂 Normalización</span>
@@ -343,6 +623,7 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">📈 Dataset ejemplo</span>
             <div class="resource-links">
@@ -351,27 +632,80 @@
               </a>
             </div>
           </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes subir más adelante procesos de normalización de fechas,
+                consolidación de varias hojas o limpieza de datos exportados desde herramientas IT.
+              </span>
+            </div>
+          </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> este tipo de proyectos transmite madurez,
+          porque enseña que entiendes que sin datos limpios no hay análisis fiable.
+        </div>
       </div>
     </details>
 
-    <!-- 4. Plantillas y automatización de reporting -->
+    <!-- 4. Plantillas y reporting -->
     <details class="subject">
       <summary>
         <div class="subject-title">
           <span class="subject-name">Plantillas y automatización del reporting</span>
           <span class="subject-tags">
             <span class="chip">Plantillas</span>
-            <span class="chip">PowerPoint / Excel</span>
+            <span class="chip">Excel</span>
+            <span class="chip">PowerPoint</span>
+            <span class="chip">Estandarización</span>
           </span>
         </div>
         <span class="subject-arrow">▶</span>
       </summary>
+
       <div class="subject-body">
         <p>
-          Plantillas y documentos que uso para estandarizar los informes:
-          estructura fija, métricas clave y pequeños scripts que rellenan partes del reporte de forma automática.
+          Diseño de plantillas reutilizables y automatización parcial del reporting para que
+          los informes mantengan estructura, consistencia y presentación homogénea.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Estandarizar la forma de reportar información técnica para facilitar lectura,
+              comparación entre periodos y reutilización de formatos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Plantillas, métricas fijas, secciones repetibles, automatización parcial,
+              estructura visual y preparación de informes para distintas audiencias.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Plantillas en Excel o PowerPoint, ejemplos de salida, documentación del flujo
+              y automatizaciones ligadas a esas plantillas.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Muy interesante para demostrar que sabes comunicar información técnica
+              de manera ordenada y útil, no solo generarla.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
           <li>
             <span class="resource-type">📑 Plantillas</span>
@@ -384,22 +718,133 @@
               </a>
             </div>
           </li>
+
           <li>
             <span class="resource-type">⚙️ Automatización</span>
             <div class="resource-links">
-              <span class="empty">Pendiente de subir script que rellena estas plantillas a partir de datos reales.</span>
+              <span class="empty">
+                Pendiente de subir script que rellena estas plantillas a partir de datos reales.
+              </span>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí encajan muy bien un generador automático de resúmenes, plantillas mensuales,
+                cuadros de mando o reportes preparados para responsables no técnicos.
+              </span>
             </div>
           </li>
         </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> si explicas bien cómo conviertes datos técnicos
+          en reporting claro, esta sección puede darte muchos puntos.
+        </div>
+      </div>
+    </details>
+
+    <!-- 5. Automatización de tareas repetitivas -->
+    <details class="subject">
+      <summary>
+        <div class="subject-title">
+          <span class="subject-name">Automatización de tareas repetitivas</span>
+          <span class="subject-tags">
+            <span class="chip">Python</span>
+            <span class="chip">PowerShell</span>
+            <span class="chip">Batch</span>
+            <span class="chip">Ahorro de tiempo</span>
+          </span>
+        </div>
+        <span class="subject-arrow">▶</span>
+      </summary>
+
+      <div class="subject-body">
+        <p>
+          Scripts pensados para reducir tareas manuales frecuentes: renombrado,
+          tratamiento masivo de ficheros, generación de salidas, validaciones sencillas
+          o pequeñas automatizaciones de apoyo a la operativa diaria.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Objetivo</h3>
+            <p>
+              Ahorrar tiempo, reducir errores humanos y documentar procesos sencillos
+              que pueden repetirse muchas veces en el día a día.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Qué se trabaja</h3>
+            <p>
+              Scripts cortos, lógica de automatización, manejo de archivos, validaciones,
+              entradas y salidas, documentación y reutilización.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Evidencias / entregables</h3>
+            <p>
+              Scripts comentados, ejemplos de uso, capturas del antes/después,
+              documentación breve y casos de uso reales o simulados.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Valor en entrevista</h3>
+            <p>
+              Esta parte transmite iniciativa, mentalidad de mejora y capacidad
+              para detectar fricciones del día a día y resolverlas con código.
+            </p>
+          </div>
+        </div>
+
+        <ul class="resource-list">
+          <li>
+            <span class="resource-type">💻 Scripts</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/scripts-tareas-repetitivas.zip" target="_blank">
+                Scripts de automatización operativa (ZIP)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">📘 Casos de uso</span>
+            <div class="resource-links">
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/casos-uso-automatizacion.pdf" target="_blank">
+                Casos de uso y mejoras aplicadas (PDF)
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="resource-type">🧩 Ideas útiles</span>
+            <div class="resource-links">
+              <span class="plain-text">
+                Aquí puedes meter scripts de renombrado, validación de ficheros, consolidación de carpetas,
+                tratamiento de listas o procesos pequeños pero muy explicables.
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="section-note">
+          <strong>Muy útil para entrevistas:</strong> esta categoría suele gustar mucho porque muestra
+          una mentalidad resolutiva y muy aterrizada.
+        </div>
       </div>
     </details>
 
   </main>
 
   <footer class="footer-nav">
-    <a class="btn-next" href="../index.html">⬅ Volver a Proyectos</a>
+    <a class="btn-next" href="2D-analisis-defensa.html">⬅ Anterior</a>
+    <a class="btn-next" href="2F-desarrollo-seguro.html">Siguiente ➜</a>
   </footer>
 
 </body>
 </html>
-
