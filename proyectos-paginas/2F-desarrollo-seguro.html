@@ -216,16 +216,16 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:8px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
-      align-items:flex-start;
+      gap:8px 14px;
+      align-items:center;
       font-size:.9rem;
-      padding:10px 12px;
+      padding:12px 16px;
       background:rgba(255,255,255,.02);
       border:1px solid rgba(255,255,255,.07);
       border-radius:10px;
@@ -233,12 +233,27 @@
 
     .resource-type{
       font-size:.8rem;
-      padding:3px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
-      color:var(--muted);
+      color:#cbd6ef;
+      font-weight:700;
       flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
+      color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -247,18 +262,31 @@
       gap:6px 10px;
       align-items:center;
       min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
     }
 
     .plain-text{
@@ -407,61 +435,26 @@
               modularidad y documentación básica de uso.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Scripts comentados, ejemplos de uso, README, capturas del funcionamiento,
-              salidas generadas y explicación del control de errores aplicado.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para mostrar que entiendes que la automatización también puede introducir riesgo
-              si no se diseña con cuidado.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">🐍 Python</span>
+                    <li>
+            <span class="resource-type">Python</span>
+            <span class="practice-title">Script de backup seguro de carpetas (ZIP) · Script para consolidar logs de auditoría (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/script-backup-seguro.zip" target="_blank">
-                Script de backup seguro de carpetas (ZIP)
-              </a>
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/script-logs-auditoria.zip" target="_blank">
-                Script para consolidar logs de auditoría (ZIP)
-              </a>
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/script-backup-seguro.zip" target="_blank">Abrir recurso 1</a>
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/script-logs-auditoria.zip" target="_blank">Abrir recurso 2</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">🪟 PowerShell</span>
+                    <li>
+            <span class="resource-type">PowerShell</span>
+            <span class="practice-title">Inventario de equipos y software instalado (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/ps-inventario-equipos.zip" target="_blank">
-                Inventario de equipos y software instalado (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí quedan muy bien scripts con logs estructurados, parámetros seguros,
-                validación de rutas, control de errores y configuración fuera del código.
-              </span>
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/ps-inventario-equipos.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> explica siempre qué riesgo evitaste al diseñar el script,
-          no solo qué automatizaste.
-        </div>
       </div>
     </details>
 
@@ -503,57 +496,17 @@
               modularidad, separación de configuración y organización del código.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Código fuente, ejemplos de ejecución, README, pruebas funcionales sencillas
-              y explicación de decisiones de diseño seguro.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Este bloque ayuda a demostrar criterio de diseño y no solo capacidad de picar código.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">🔧 Utilidad 1</span>
+                    <li>
+            <span class="resource-type">Utilidad 1</span>
+            <span class="practice-title">Utilidad de gestión básica de usuarios (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/app-gestion-usuarios.zip" target="_blank">
-                Utilidad de gestión básica de usuarios (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🔧 Utilidad 2</span>
-            <div class="resource-links">
-              <span class="empty">
-                Pendiente de subir otra utilidad de consola con documentación y validaciones.
-              </span>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí encajan generadores de contraseñas, validadores de archivos, comprobadores de configuración
-                o pequeñas utilidades CLI muy bien documentadas.
-              </span>
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/app-gestion-usuarios.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> aquí interesa explicar por qué validas, limitas y controlas errores,
-          no solo qué hace la utilidad.
-        </div>
       </div>
     </details>
 
@@ -594,57 +547,25 @@
               logging, permisos, validación y controles mínimos antes de publicar o reutilizar un script.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Checklist propia, guía resumida, plantillas de revisión y notas prácticas
-              aplicables a distintos proyectos.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Refuerza mucho tu perfil porque demuestra orden, criterio y conciencia de calidad técnica.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📋 Checklist</span>
+                    <li>
+            <span class="resource-type">Checklist</span>
+            <span class="practice-title">Checklist de desarrollo seguro (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/checklist-desarrollo-seguro.pdf" target="_blank">
-                Checklist de desarrollo seguro (PDF)
-              </a>
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/checklist-desarrollo-seguro.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📄 Guía</span>
+                    <li>
+            <span class="resource-type">Guía</span>
+            <span class="practice-title">Guía de buenas prácticas en scripts de automatización (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/guia-buenas-practicas-scripts.pdf" target="_blank">
-                Guía de buenas prácticas en scripts de automatización (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes crear una checklist propia muy alineada con tu forma de trabajar:
-                inputs, errores, logs, secretos, permisos, documentación y versionado.
-              </span>
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/guia-buenas-practicas-scripts.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta sección transmite madurez técnica,
-          porque enseña que tienes criterio incluso antes de ejecutar el código.
-        </div>
       </div>
     </details>
 
@@ -685,61 +606,18 @@
               variables de configuración y trazabilidad de cambios.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Plantillas de README, registro de cambios, estructura estándar de proyecto
-              y ejemplos de repositorio bien organizado.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy importante para mostrar que entiendes la diferencia entre “script que funciona”
-              y “script mantenible y profesional”.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Plantillas</span>
+                    <li>
+            <span class="resource-type">Plantillas</span>
+            <span class="practice-title">Plantilla de README para scripts (MD) · Registro de cambios / control de versiones (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/plantilla-readme-script.md" target="_blank">
-                Plantilla de README para scripts (MD)
-              </a>
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/plantilla-registro-cambios.xlsx" target="_blank">
-                Registro de cambios / control de versiones (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🌐 Repositorio</span>
-            <div class="resource-links">
-              <span class="empty">
-                Pendiente de enlazar repositorio de GitHub con ejemplos bien documentados.
-              </span>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes enseñar cómo estructuras un pequeño proyecto, cómo documentas su uso
-                y cómo controlas cambios sin perder trazabilidad.
-              </span>
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/plantilla-readme-script.md" target="_blank">Abrir recurso 1</a>
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/plantilla-registro-cambios.xlsx" target="_blank">Abrir recurso 2</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta sección te ayuda mucho a demostrar profesionalidad,
-          aunque el proyecto sea pequeño.
-        </div>
       </div>
     </details>
 
@@ -780,58 +658,25 @@
               nombres claros, reducción de duplicidad y mejora general del flujo.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Comparativa antes/después, notas de refactor, código revisado,
-              justificación de cambios y mejoras aplicadas.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Esto suma mucho porque en trabajos reales casi siempre se hereda o se mejora código,
-              no se empieza siempre desde cero.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">🛠️ Refactor</span>
+                    <li>
+            <span class="resource-type">Refactor</span>
+            <span class="practice-title">Caso de refactorización segura de script (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/caso-refactor-script.zip" target="_blank">
-                Caso de refactorización segura de script (ZIP)
-              </a>
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/caso-refactor-script.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📘 Comparativa</span>
+                    <li>
+            <span class="resource-type">Comparativa</span>
+            <span class="practice-title">Comparativa antes / después (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/antes-despues-refactor.pdf" target="_blank">
-                Comparativa antes / después (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Muy buena zona para enseñar cómo mejoras un script desordenado:
-                validaciones, logs, funciones, control de errores y documentación.
-              </span>
+              <a href="../assets-archivos/automatizacion/desarrollo-seguro/antes-despues-refactor.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta categoría suele destacar mucho porque demuestra criterio,
-          autocrítica técnica y capacidad de mejora continua.
-        </div>
       </div>
     </details>
 

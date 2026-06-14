@@ -216,16 +216,16 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:8px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
-      align-items:flex-start;
+      gap:8px 14px;
+      align-items:center;
       font-size:.9rem;
-      padding:10px 12px;
+      padding:12px 16px;
       background:rgba(255,255,255,.02);
       border:1px solid rgba(255,255,255,.07);
       border-radius:10px;
@@ -233,12 +233,27 @@
 
     .resource-type{
       font-size:.8rem;
-      padding:3px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
-      color:var(--muted);
+      color:#cbd6ef;
+      font-weight:700;
       flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
+      color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -247,18 +262,31 @@
       gap:6px 10px;
       align-items:center;
       min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
     }
 
     .plain-text{
@@ -408,58 +436,25 @@
               historial, reputación y correlación con otros activos.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe OSINT, anexos de evidencias, capturas, cronología básica
-              y notas de correlación entre dominios e infraestructura.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para demostrar pensamiento analítico, investigación técnica
-              y criterio al valorar señales públicas.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Informe</span>
+                    <li>
+            <span class="resource-type">Informe</span>
+            <span class="practice-title">Informe OSINT dominio sospechoso (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/informe-dominio-sospechoso.pdf" target="_blank">
-                Informe OSINT dominio sospechoso (PDF)
-              </a>
+              <a href="../assets-archivos/intel/osint/informe-dominio-sospechoso.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📊 Anexos</span>
+                    <li>
+            <span class="resource-type">Anexos</span>
+            <span class="practice-title">Evidencias y capturas (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/evidencias-dominio.xlsx" target="_blank">
-                Evidencias y capturas (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes analizar dominios recién creados, infraestructura dudosa,
-                certificados llamativos o relaciones entre varios activos sospechosos.
-              </span>
+              <a href="../assets-archivos/intel/osint/evidencias-dominio.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> explica cómo distinguirías entre una señal sospechosa real
-          y una coincidencia poco relevante.
-        </div>
       </div>
     </details>
 
@@ -501,56 +496,17 @@
               huella digital, exposición de hábitos o relaciones visibles.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe de caso, esquema metodológico, hallazgos públicos,
-              relaciones observadas y notas de exposición potencial.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para demostrar capacidad de correlación entre fuentes
-              y análisis de exposición no puramente técnica.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📑 Caso práctico</span>
+                    <li>
+            <span class="resource-type">Caso práctico</span>
+            <span class="practice-title">Informe de investigación en redes sociales (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/investigacion-perfiles-redes.pdf" target="_blank">
-                Informe de investigación en redes sociales (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧠 Notas</span>
-            <div class="resource-links">
-              <span class="empty">Pendiente de subir notas internas y esquema metodológico.</span>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí encajan casos de alias reutilizados, perfiles públicos expuestos,
-                correlación de actividad y análisis de huella digital.
-              </span>
+              <a href="../assets-archivos/intel/osint/investigacion-perfiles-redes.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta parte gana mucho si la cuentas con enfoque metodológico
-          y no como mera curiosidad sobre redes sociales.
-        </div>
       </div>
     </details>
 
@@ -592,58 +548,25 @@
               por criticidad y documentación de exposición observable.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Cheat sheet, plantilla de hallazgos, ejemplos de búsqueda
-              y criterios de clasificación o seguimiento.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para demostrar análisis de superficie pública
-              y capacidad de detectar exposición sin necesidad de interacción intrusiva.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📜 Cheat sheet</span>
+                    <li>
+            <span class="resource-type">Cheat sheet</span>
+            <span class="practice-title">Google Dorks para empresas (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/google-dorks-empresas.pdf" target="_blank">
-                Google Dorks para empresas (PDF)
-              </a>
+              <a href="../assets-archivos/intel/osint/google-dorks-empresas.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📂 Plantilla</span>
+                    <li>
+            <span class="resource-type">Plantilla</span>
+            <span class="practice-title">Plantilla para registrar hallazgos (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/plantilla-dorks.xlsx" target="_blank">
-                Plantilla para registrar hallazgos (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí te puede quedar muy bien una clasificación de hallazgos:
-                documentos expuestos, paneles visibles, listados o configuraciones indexadas.
-              </span>
+              <a href="../assets-archivos/intel/osint/plantilla-dorks.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta sección mejora mucho si explicas
-          cómo pasarías de un hallazgo indexado a una recomendación defensiva prudente.
-        </div>
       </div>
     </details>
 
@@ -685,58 +608,25 @@
               clasificación de hallazgos y lectura de riesgo asociada.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Caso práctico, checklist de búsqueda, hallazgos documentados
-              y criterios de priorización o verificación.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para enseñar un enfoque práctico sobre exposición pública
-              y su traducción a riesgo real.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">🧠 Caso práctico</span>
+                    <li>
+            <span class="resource-type">Caso práctico</span>
+            <span class="practice-title">Caso práctico: detección de fuga de datos (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/caso-fuga-datos.pdf" target="_blank">
-                Caso práctico: detección de fuga de datos (PDF)
-              </a>
+              <a href="../assets-archivos/intel/osint/caso-fuga-datos.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📋 Checklist</span>
+                    <li>
+            <span class="resource-type">Checklist</span>
+            <span class="practice-title">Checklist de búsqueda de fugas (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/checklist-fuga-datos.pdf" target="_blank">
-                Checklist de búsqueda de fugas (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes enlazar esta página con exposición externa, riesgo reputacional,
-                credenciales reutilizadas o hallazgos de terceros.
-              </span>
+              <a href="../assets-archivos/intel/osint/checklist-fuga-datos.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> aquí puedes lucirte explicando
-          cómo priorizarías una fuga potencial y qué pasos seguirías después del hallazgo.
-        </div>
       </div>
     </details>
 
@@ -778,58 +668,25 @@
               síntesis, exposición e interpretación de riesgo.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Resúmenes ejecutivos, recomendaciones, tablas priorizadas,
-              hallazgos correlacionados y propuestas de revisión.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Este bloque te puede diferenciar mucho porque demuestra
-              que entiendes el OSINT como análisis y no solo como búsqueda.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Resumen</span>
+                    <li>
+            <span class="resource-type">Resumen</span>
+            <span class="practice-title">Resumen de hallazgos correlacionados (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/resumen-hallazgos-osint.pdf" target="_blank">
-                Resumen de hallazgos correlacionados (PDF)
-              </a>
+              <a href="../assets-archivos/intel/osint/resumen-hallazgos-osint.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📋 Priorización</span>
+                    <li>
+            <span class="resource-type">Priorización</span>
+            <span class="practice-title">Priorización de exposición y hallazgos (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/priorizacion-hallazgos-osint.xlsx" target="_blank">
-                Priorización de exposición y hallazgos (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Este puede ser uno de tus mejores bloques si enseñas cómo pasas
-                de varios datos públicos a una conclusión con utilidad real.
-              </span>
+              <a href="../assets-archivos/intel/osint/priorizacion-hallazgos-osint.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta es probablemente la parte más potente
-          si la orientas a “qué hice con la información y por qué importaba”.
-        </div>
       </div>
     </details>
 

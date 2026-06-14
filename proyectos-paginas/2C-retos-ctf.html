@@ -143,24 +143,44 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
+      gap:8px 14px;
       align-items:center;
       font-size:.9rem;
+      padding:12px 16px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
+      color:#cbd6ef;
+      font-weight:700;
+      flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
       color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -168,18 +188,32 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
     }
 
     .empty{
@@ -228,7 +262,7 @@
       habilidades en explotación, análisis forense, criptografía y resolución de problemas bajo presión.
     </p>
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
       <span>Ciberseguridad técnica y operativa</span>
     </div>
   </header>
@@ -253,23 +287,19 @@
           control de acceso inseguro y enumeración de aplicaciones.
         </p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Write-up</span>
+                    <li>
+            <span class="resource-type">Write-up</span>
+            <span class="practice-title">Write-up CTF Web #1 (PDF) · Write-up CTF Web #2 (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/web/ctf-web-writeup-01.pdf" target="_blank">
-                Write-up CTF Web #1 (PDF)
-              </a>
-              <a href="../assets-archivos/tecnica/retos-ctf/web/ctf-web-writeup-02.pdf" target="_blank">
-                Write-up CTF Web #2 (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/retos-ctf/web/ctf-web-writeup-01.pdf" target="_blank">Abrir recurso 1</a>
+              <a href="../assets-archivos/tecnica/retos-ctf/web/ctf-web-writeup-02.pdf" target="_blank">Abrir recurso 2</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">💻 Código</span>
+                    <li>
+            <span class="resource-type">Código</span>
+            <span class="practice-title">Scripts y exploits web (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/web/exploits-web.zip" target="_blank">
-                Scripts y exploits web (ZIP)
-              </a>
+              <a href="../assets-archivos/tecnica/retos-ctf/web/exploits-web.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
@@ -294,23 +324,19 @@
           incidentes, extraer evidencias y recuperar indicadores de compromiso.
         </p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Informe</span>
+                    <li>
+            <span class="resource-type">Informe</span>
+            <span class="practice-title">Informe reto forense (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/forense/ctf-forense-informe.pdf" target="_blank">
-                Informe reto forense (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/retos-ctf/forense/ctf-forense-informe.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">📁 Muestras</span>
+                    <li>
+            <span class="resource-type">Muestras</span>
+            <span class="practice-title">Captura de red (PCAP) · Imagen de disco / artefactos (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/forense/captura-red.pcap" target="_blank">
-                Captura de red (PCAP)
-              </a>
-              <a href="../assets-archivos/tecnica/retos-ctf/forense/imagen-disco.zip" target="_blank">
-                Imagen de disco / artefactos (ZIP)
-              </a>
+              <a href="../assets-archivos/tecnica/retos-ctf/forense/captura-red.pcap" target="_blank">Abrir recurso 1</a>
+              <a href="../assets-archivos/tecnica/retos-ctf/forense/imagen-disco.zip" target="_blank">Abrir recurso 2</a>
             </div>
           </li>
         </ul>
@@ -335,20 +361,18 @@
           básica y desarrollo de pequeños exploits para vulnerabilidades simples.
         </p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Write-up</span>
+                    <li>
+            <span class="resource-type">Write-up</span>
+            <span class="practice-title">Write-up reto de reversing (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/reverse/ctf-reverse-writeup.pdf" target="_blank">
-                Write-up reto de reversing (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/retos-ctf/reverse/ctf-reverse-writeup.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">💻 Binarios</span>
+                    <li>
+            <span class="resource-type">Binarios</span>
+            <span class="practice-title">Binarios y scripts de apoyo (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/reverse/binarios-retos.zip" target="_blank">
-                Binarios y scripts de apoyo (ZIP)
-              </a>
+              <a href="../assets-archivos/tecnica/retos-ctf/reverse/binarios-retos.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
@@ -373,20 +397,18 @@
           los aprendizajes clave y su aplicación a proyectos reales de seguridad.
         </p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📊 Resumen</span>
+                    <li>
+            <span class="resource-type">Resumen</span>
+            <span class="practice-title">Actividad en plataformas CTF (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/resumen/actividad-plataformas-ctf.pdf" target="_blank">
-                Actividad en plataformas CTF (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/retos-ctf/resumen/actividad-plataformas-ctf.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">📋 Checklist</span>
+                    <li>
+            <span class="resource-type">Checklist</span>
+            <span class="practice-title">Checklist de aprendizajes y skills (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/resumen/checklist-aprendizajes-ctf.pdf" target="_blank">
-                Checklist de aprendizajes y skills (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/retos-ctf/resumen/checklist-aprendizajes-ctf.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>

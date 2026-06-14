@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -153,24 +153,44 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
+      gap:8px 14px;
       align-items:center;
       font-size:.9rem;
+      padding:12px 16px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
+      color:#cbd6ef;
+      font-weight:700;
+      flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
       color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -178,33 +198,33 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
     }
-
-    .private-badge{
+    .request-link{
       display:inline-flex;
       align-items:center;
       gap:6px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(0,191,174,.08);
-      border:1px solid rgba(0,191,174,.35);
-      color:var(--acc-soft);
-      font-size:.85rem;
-      font-weight:600;
+      white-space:nowrap;
     }
-
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
     .request-link{
       color:var(--acc);
       text-decoration:none;
@@ -270,7 +290,7 @@
       Aquí muestro una selección representativa del curso. La documentación completa y el código fuente permanecen en acceso restringido.
     </p>
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
     </div>
   </header>
 
@@ -298,43 +318,35 @@
         </p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Actividad 1 — Análisis recursivo de credenciales comprometidas</span>
+                    <li>
+            <span class="resource-type">Actividad 1</span>
+            <span class="practice-title">Análisis recursivo de credenciales comprometidas</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Código e informe privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%201%20T%C3%A9cnicas%20de%20Programaci%C3%B3n%20Avanzadas" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%201%20T%C3%A9cnicas%20de%20Programaci%C3%B3n%20Avanzadas" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Actividad 2 — Implementación del algoritmo StoogeSort</span>
+                    <li>
+            <span class="resource-type">Actividad 2</span>
+            <span class="practice-title">Implementación del algoritmo StoogeSort</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Código e informe privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%202%20T%C3%A9cnicas%20de%20Programaci%C3%B3n%20Avanzadas" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%202%20T%C3%A9cnicas%20de%20Programaci%C3%B3n%20Avanzadas" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Actividad 3 — Análisis de conexiones en una red social</span>
+                    <li>
+            <span class="resource-type">Actividad 3</span>
+            <span class="practice-title">Análisis de conexiones en una red social</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%203%20T%C3%A9cnicas%20de%20Programaci%C3%B3n%20Avanzadas" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%203%20T%C3%A9cnicas%20de%20Programaci%C3%B3n%20Avanzadas" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Actividad 4 — Análisis de redes de ataque con algoritmos voraces</span>
+                    <li>
+            <span class="resource-type">Actividad 4</span>
+            <span class="practice-title">Análisis de redes de ataque con algoritmos voraces</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%204%20T%C3%A9cnicas%20de%20Programaci%C3%B3n%20Avanzadas" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%204%20T%C3%A9cnicas%20de%20Programaci%C3%B3n%20Avanzadas" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -367,55 +379,45 @@
 
     <ul class="resource-list">
 
-      <li>
-        <span class="resource-type">📁 Práctica 1 — Programa básico en Java (menú y operaciones)</span>
-        <div class="resource-links">
-          <span class="private-badge">🔒 Código privado</span>
-          <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20POO%20Practica%201" class="request-link">
-            Solicitar acceso
-          </a>
-        </div>
-      </li>
+                <li>
+            <span class="resource-type">Práctica 1</span>
+            <span class="practice-title">Programa básico en Java (menú y operaciones)</span>
+            <div class="resource-links">
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20POO%20Practica%201" class="request-link">🔒 Solicitar acceso</a>
+            </div>
+          </li>
 
-      <li>
-        <span class="resource-type">📁 Práctica 2 — Modelado UML de sistema académico</span>
-        <div class="resource-links">
-          <span class="private-badge">🔒 Diagramas y memoria privada</span>
-          <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20POO%20Practica%202" class="request-link">
-            Solicitar acceso
-          </a>
-        </div>
-      </li>
+                <li>
+            <span class="resource-type">Práctica 2</span>
+            <span class="practice-title">Modelado UML de sistema académico</span>
+            <div class="resource-links">
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20POO%20Practica%202" class="request-link">🔒 Solicitar acceso</a>
+            </div>
+          </li>
 
-      <li>
-        <span class="resource-type">📁 Práctica 3 — Refactorización a modelo orientado a objetos</span>
-        <div class="resource-links">
-          <span class="private-badge">🔒 Análisis y diseño privado</span>
-          <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20POO%20Practica%203" class="request-link">
-            Solicitar acceso
-          </a>
-        </div>
-      </li>
+                <li>
+            <span class="resource-type">Práctica 3</span>
+            <span class="practice-title">Refactorización a modelo orientado a objetos</span>
+            <div class="resource-links">
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20POO%20Practica%203" class="request-link">🔒 Solicitar acceso</a>
+            </div>
+          </li>
 
-      <li>
-        <span class="resource-type">📁 Práctica 4 — Calculadora de números complejos (OO + UML)</span>
-        <div class="resource-links">
-          <span class="private-badge">🔒 Código y diagramas privados</span>
-          <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20POO%20Practica%204" class="request-link">
-            Solicitar acceso
-          </a>
-        </div>
-      </li>
+                <li>
+            <span class="resource-type">Práctica 4</span>
+            <span class="practice-title">Calculadora de números complejos (OO + UML)</span>
+            <div class="resource-links">
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20POO%20Practica%204" class="request-link">🔒 Solicitar acceso</a>
+            </div>
+          </li>
 
-      <li>
-        <span class="resource-type">🏠 Proyecto final — SmartHome Hub (POO + GUI en Java)</span>
-        <div class="resource-links">
-          <span class="private-badge">🔒 Proyecto completo privado</span>
-          <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20POO%20Proyecto%20Final" class="request-link">
-            Solicitar acceso
-          </a>
-        </div>
-      </li>
+                <li>
+            <span class="resource-type">Proyecto final</span>
+            <span class="practice-title">SmartHome Hub (POO + GUI en Java)</span>
+            <div class="resource-links">
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20POO%20Proyecto%20Final" class="request-link">🔒 Solicitar acceso</a>
+            </div>
+          </li>
 
     </ul>
   </div>
@@ -444,43 +446,35 @@
         </p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Actividad 1 — Creación y gestión de hilos en Java</span>
+                    <li>
+            <span class="resource-type">Actividad 1</span>
+            <span class="practice-title">Creación y gestión de hilos en Java</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Código e informe privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%201%20Programaci%C3%B3n%20Concurrente%20y%20Distribuida" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%201%20Programaci%C3%B3n%20Concurrente%20y%20Distribuida" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Actividad 2 — Sincronización y exclusión mutua</span>
+                    <li>
+            <span class="resource-type">Actividad 2</span>
+            <span class="practice-title">Sincronización y exclusión mutua</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Código e informe privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%202%20Programaci%C3%B3n%20Concurrente%20y%20Distribuida" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%202%20Programaci%C3%B3n%20Concurrente%20y%20Distribuida" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Actividad 3 — Comunicación cliente-servidor con sockets</span>
+                    <li>
+            <span class="resource-type">Actividad 3</span>
+            <span class="practice-title">Comunicación cliente-servidor con sockets</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Código e informe privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%203%20Programaci%C3%B3n%20Concurrente%20y%20Distribuida" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%203%20Programaci%C3%B3n%20Concurrente%20y%20Distribuida" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Actividad 4 — Aplicación distribuida multihilo</span>
+                    <li>
+            <span class="resource-type">Actividad 4</span>
+            <span class="practice-title">Aplicación distribuida multihilo</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Código fuente privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%204%20Programaci%C3%B3n%20Concurrente%20y%20Distribuida" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Actividad%204%20Programaci%C3%B3n%20Concurrente%20y%20Distribuida" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -507,19 +501,13 @@
         </p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">🏁 Proyecto final · ESP32</span>
+                    <li>
+            <span class="resource-type">Proyecto final</span>
+            <span class="practice-title">ESP32</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Documentación y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%20final%20ESP32%20Arquitectura%20de%20Computadores" class="request-link">
-                Solicitar acceso
-              </a>
-              <a href="https://youtu.be/X0RyGSRV5M8" target="_blank" rel="noopener">
-                ▶️ Vídeo demostración (YouTube)
-              </a>
-              <a href="https://youtube.com/shorts/wmAIrs2cMsg?feature=share" target="_blank" rel="noopener">
-                ✅ Short · Dispositivo funcionando (YouTube)
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%20final%20ESP32%20Arquitectura%20de%20Computadores" class="request-link">🔒 Solicitar acceso</a>
+              <a href="https://youtu.be/X0RyGSRV5M8" target="_blank" rel="noopener">Abrir recurso 2</a>
+              <a href="https://youtube.com/shorts/wmAIrs2cMsg?feature=share" target="_blank" rel="noopener">Abrir recurso 3</a>
             </div>
           </li>
         </ul>
@@ -546,43 +534,35 @@
         <p>Cuadernos de laboratorio y prácticas: cifrado/descifrado, claves y certificados, criptoanálisis y una práctica grupal de criptografía post-cuántica.</p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Práctica 1 — Laboratorio + GPG4Win/Kleopatra</span>
+                    <li>
+            <span class="resource-type">Práctica 1</span>
+            <span class="practice-title">Laboratorio + GPG4Win/Kleopatra</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Documentación privada</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Criptograf%C3%ADa" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Criptograf%C3%ADa" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 2 — Criptoanálisis y tipos de cifrados</span>
+                    <li>
+            <span class="resource-type">Práctica 2</span>
+            <span class="practice-title">Criptoanálisis y tipos de cifrados</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Documentación privada</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Criptograf%C3%ADa" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Criptograf%C3%ADa" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 3 — Cifrado de archivos, claves y certificados</span>
+                    <li>
+            <span class="resource-type">Práctica 3</span>
+            <span class="practice-title">Cifrado de archivos, claves y certificados</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Documentación privada</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Criptograf%C3%ADa" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Criptograf%C3%ADa" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 4 — Grupal: Criptografía post-cuántica</span>
+                    <li>
+            <span class="resource-type">Práctica 4</span>
+            <span class="practice-title">Grupal: Criptografía post-cuántica</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Criptograf%C3%ADa" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Criptograf%C3%ADa" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -609,43 +589,35 @@
         <p>Prácticas de Linux y fundamentos de SO: planificación, concurrencia, gestión de memoria y ejercicios tipo laboratorio.</p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Práctica 1 — Planificadores</span>
+                    <li>
+            <span class="resource-type">Práctica 1</span>
+            <span class="practice-title">Planificadores</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Sistemas%20Operativos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Sistemas%20Operativos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 2 — Concurrencia</span>
+                    <li>
+            <span class="resource-type">Práctica 2</span>
+            <span class="practice-title">Concurrencia</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Sistemas%20Operativos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Sistemas%20Operativos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 3 — Gestión de memoria</span>
+                    <li>
+            <span class="resource-type">Práctica 3</span>
+            <span class="practice-title">Gestión de memoria</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Sistemas%20Operativos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Sistemas%20Operativos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 4 — Linux</span>
+                    <li>
+            <span class="resource-type">Práctica 4</span>
+            <span class="practice-title">Linux</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Material privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Sistemas%20Operativos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Sistemas%20Operativos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -671,43 +643,35 @@
         <p>Modelado (Entidad-Relación), diseño relacional, creación de tablas/vistas y resolución de ejercicios con scripts SQL.</p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Práctica 1 — Diagramas Entidad-Relación</span>
+                    <li>
+            <span class="resource-type">Práctica 1</span>
+            <span class="practice-title">Diagramas Entidad-Relación</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Bases%20de%20Datos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Bases%20de%20Datos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 2 — Sentencias SQL</span>
+                    <li>
+            <span class="resource-type">Práctica 2</span>
+            <span class="practice-title">Sentencias SQL</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Bases%20de%20Datos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Bases%20de%20Datos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 3 — Tablas, vistas y ejercicios (SQL)</span>
+                    <li>
+            <span class="resource-type">Práctica 3</span>
+            <span class="practice-title">Tablas, vistas y ejercicios (SQL)</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe y scripts privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Bases%20de%20Datos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Bases%20de%20Datos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 4 — Grupal</span>
+                    <li>
+            <span class="resource-type">Práctica 4</span>
+            <span class="practice-title">Grupal</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe y scripts privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Bases%20de%20Datos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Bases%20de%20Datos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -736,43 +700,35 @@
         <p>Informes de laboratorio y entregables: reconocimiento (Nmap), pentesting web/móvil, análisis de firmware (ESP32), sniffing en red local e ingeniería inversa.</p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Práctica 1 — Scanner de puertos (Nmap)</span>
+                    <li>
+            <span class="resource-type">Práctica 1</span>
+            <span class="practice-title">Scanner de puertos (Nmap)</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20T%C3%A9cnicas%20de%20Hacking" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20T%C3%A9cnicas%20de%20Hacking" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 2 — Ataques a firmware (ESP32)</span>
+                    <li>
+            <span class="resource-type">Práctica 2</span>
+            <span class="practice-title">Ataques a firmware (ESP32)</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe y archivo privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20T%C3%A9cnicas%20de%20Hacking" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20T%C3%A9cnicas%20de%20Hacking" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 3 — Ingeniería inversa</span>
+                    <li>
+            <span class="resource-type">Práctica 3</span>
+            <span class="practice-title">Ingeniería inversa</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20T%C3%A9cnicas%20de%20Hacking" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20T%C3%A9cnicas%20de%20Hacking" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 4 — Grupal: Pentesting + Sniffing</span>
+                    <li>
+            <span class="resource-type">Práctica 4</span>
+            <span class="practice-title">Grupal: Pentesting + Sniffing</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20T%C3%A9cnicas%20de%20Hacking" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20T%C3%A9cnicas%20de%20Hacking" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -795,27 +751,31 @@
         <p>Documentación de análisis de riesgos, modelos de amenazas y buenas prácticas de seguridad en el ciclo de vida del software.</p>
         <ul class="resource-list">
           <li>
-            <span class="resource-type">📁 Proyecto 1</span>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title">SDLC seguro y análisis de riesgos</span>
             <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Metodologias%20Desarrollo%20Seguro%20Proyecto%201" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
           <li>
-            <span class="resource-type">📁 Proyecto 2</span>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title">SDLC y DevSecOps aplicado a prototipo</span>
             <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Metodologias%20Desarrollo%20Seguro%20Proyecto%202" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
           <li>
-            <span class="resource-type">📁 Proyecto 3</span>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title">Evaluación de seguridad con herramientas automáticas</span>
             <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Metodologias%20Desarrollo%20Seguro%20Proyecto%203" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
           <li>
-            <span class="resource-type">📁 Proyecto 4</span>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title">Decálogo de seguridad y OWASP Top 10</span>
             <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Metodologias%20Desarrollo%20Seguro%20Proyecto%204" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -838,27 +798,17 @@
         <p>Trabajos sobre gestión ágil, planificación y seguimiento de proyectos tecnológicos.</p>
         <ul class="resource-list">
           <li>
-            <span class="resource-type">📁 Proyecto 1</span>
+            <span class="resource-type">Archivo 1</span>
+            <span class="practice-title">Memoria Project 365 Security</span>
             <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Metodologias%20Gestion%20Proyectos%20Memoria%20Project%20365%20Security" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
           <li>
-            <span class="resource-type">📁 Proyecto 2</span>
+            <span class="resource-type">Archivo 2</span>
+            <span class="practice-title">Daily Scrum - Reunión Equipo 4</span>
             <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
-          </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
-          </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Metodologias%20Gestion%20Proyectos%20Daily%20Scrum%20Equipo%204" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>

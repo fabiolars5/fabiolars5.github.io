@@ -216,16 +216,16 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:8px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
-      align-items:flex-start;
+      gap:8px 14px;
+      align-items:center;
       font-size:.9rem;
-      padding:10px 12px;
+      padding:12px 16px;
       background:rgba(255,255,255,.02);
       border:1px solid rgba(255,255,255,.07);
       border-radius:10px;
@@ -233,12 +233,27 @@
 
     .resource-type{
       font-size:.8rem;
-      padding:3px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
-      color:var(--muted);
+      color:#cbd6ef;
+      font-weight:700;
       flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
+      color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -247,18 +262,31 @@
       gap:6px 10px;
       align-items:center;
       min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
     }
 
     .plain-text{
@@ -358,8 +386,8 @@
     </p>
     <p>
       El objetivo no es solo “configurar”, sino evidenciar criterio técnico, capacidad de validación,
-      enfoque defensivo y trazabilidad: exactamente el tipo de cosas que pueden resultar útiles
-      en entrevistas para puestos de <strong>Security Analyst, IT Security, hardening, compliance técnico o soporte de seguridad</strong>.
+      enfoque defensivo y trazabilidad para puestos de <strong>Security Analyst, IT Security, hardening,
+      compliance técnico o soporte de seguridad</strong>.
     </p>
   </section>
 
@@ -403,58 +431,25 @@
               auditoría de eventos, contraseñas, bloqueo de sesión y configuración del sistema.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Guía de hardening, checklist de validación, capturas de configuración, matriz de controles
-              aplicados y notas de desviaciones detectadas.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Permite explicar criterio técnico, priorización de controles, revisión de configuración
-              segura y relación entre operación IT y seguridad defensiva.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Guía</span>
+                    <li>
+            <span class="resource-type">Guía</span>
+            <span class="practice-title">Guía de hardening en Windows (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/configuracion-segura/windows/guia-hardening-windows.pdf" target="_blank">
-                Guía de hardening en Windows (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/configuracion-segura/windows/guia-hardening-windows.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📋 Checklist</span>
+                    <li>
+            <span class="resource-type">Checklist</span>
+            <span class="practice-title">Checklist de configuración segura (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/configuracion-segura/windows/checklist-windows.xlsx" target="_blank">
-                Checklist de configuración segura (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Puedes incluir más adelante una baseline CIS simplificada, una comparativa antes/después
-                y un caso práctico de endurecimiento de un equipo corporativo.
-              </span>
+              <a href="../assets-archivos/tecnica/configuracion-segura/windows/checklist-windows.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> prepara una explicación simple de por qué deshabilitas
-          servicios innecesarios, endureces cuentas administrativas, revisas auditoría y aplicas una baseline.
-        </div>
       </div>
     </details>
 
@@ -495,58 +490,25 @@
               banners, actualizaciones y minimización de superficie expuesta.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe de auditoría, scripts de revisión, checklist Linux, comandos comentados,
-              capturas de configuración y guía de remediación.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Refuerza tu perfil técnico al mostrar criterio en administración segura, revisión de sistemas,
-              permisos, accesos y buenas prácticas de exposición mínima.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Auditoría</span>
+                    <li>
+            <span class="resource-type">Auditoría</span>
+            <span class="practice-title">Auditoría de configuración en Linux (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/configuracion-segura/linux/informe-auditoria-linux.pdf" target="_blank">
-                Auditoría de configuración en Linux (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/configuracion-segura/linux/informe-auditoria-linux.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">💻 Scripts</span>
+                    <li>
+            <span class="resource-type">Scripts</span>
+            <span class="practice-title">Scripts de hardening (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/configuracion-segura/linux/scripts-hardening-linux.zip" target="_blank">
-                Scripts de hardening (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Más adelante puedes añadir una validación de SSH seguro, revisión de permisos críticos,
-                hardening básico de Ubuntu Server y checklist de evidencias.
-              </span>
+              <a href="../assets-archivos/tecnica/configuracion-segura/linux/scripts-hardening-linux.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> explica cómo revisarías un servidor Linux recién desplegado
-          antes de ponerlo en producción y qué controles considerarías imprescindibles.
-        </div>
       </div>
     </details>
 
@@ -587,58 +549,25 @@
               exposición de servicios, puertos administrativos y documentación de topologías.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe de revisión, topología comentada, configuraciones de ejemplo, tabla de reglas,
-              checklist de seguridad y justificación técnica de segmentación.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Demuestra que entiendes cómo traducir el principio de mínimo privilegio a nivel de red,
-              no solo a nivel de usuario o sistema.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Informe</span>
+                    <li>
+            <span class="resource-type">Informe</span>
+            <span class="practice-title">Informe de seguridad en redes (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/configuracion-segura/redes/informe-seguridad-redes.pdf" target="_blank">
-                Informe de seguridad en redes (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/configuracion-segura/redes/informe-seguridad-redes.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Configuración</span>
+                    <li>
+            <span class="resource-type">Configuración</span>
+            <span class="practice-title">Configuraciones de ejemplo (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/configuracion-segura/redes/config-ejemplo-firewall.zip" target="_blank">
-                Configuraciones de ejemplo (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí te puede venir muy bien añadir más adelante labs de Packet Tracer,
-                ejemplos de ACL, endurecimiento básico de dispositivos y segmentación de una pequeña oficina.
-              </span>
+              <a href="../assets-archivos/tecnica/configuracion-segura/redes/config-ejemplo-firewall.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> prepara un ejemplo de cómo separarías red corporativa,
-          invitados, administración y servidores en un entorno pequeño o mediano.
-        </div>
       </div>
     </details>
 
@@ -679,58 +608,25 @@
               remediación priorizada y relación entre hardening e ISO 27001.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Checklist CIS, matriz de hallazgos, mapeo técnico a controles, resumen ejecutivo
-              y registro de acciones de mejora.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy potente para tu perfil, porque une parte técnica y parte documental:
-              justo el puente entre operación de seguridad y cumplimiento.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📋 Checklist</span>
+                    <li>
+            <span class="resource-type">Checklist</span>
+            <span class="practice-title">Checklist CIS para servidores (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/configuracion-segura/compliance/checklist-cis.xlsx" target="_blank">
-                Checklist CIS para servidores (XLSX)
-              </a>
+              <a href="../assets-archivos/tecnica/configuracion-segura/compliance/checklist-cis.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📄 Mapeo</span>
+                    <li>
+            <span class="resource-type">Mapeo</span>
+            <span class="practice-title">Mapeo de controles técnicos a ISO 27001 (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/configuracion-segura/compliance/mapeo-controles-iso27001.pdf" target="_blank">
-                Mapeo de controles técnicos a ISO 27001 (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí encajan genial una plantilla de hallazgos, una priorización de remediación,
-                una mini SoA técnica o un ejemplo de revisión de baseline con evidencias.
-              </span>
+              <a href="../assets-archivos/tecnica/configuracion-segura/compliance/mapeo-controles-iso27001.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> este apartado te permite explicar cómo conectas
-          una revisión técnica real con evidencias, controles y mejora continua.
-        </div>
       </div>
     </details>
 
