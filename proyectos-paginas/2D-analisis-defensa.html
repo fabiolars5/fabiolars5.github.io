@@ -216,16 +216,16 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:8px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
-      align-items:flex-start;
+      gap:8px 14px;
+      align-items:center;
       font-size:.9rem;
-      padding:10px 12px;
+      padding:12px 16px;
       background:rgba(255,255,255,.02);
       border:1px solid rgba(255,255,255,.07);
       border-radius:10px;
@@ -233,12 +233,27 @@
 
     .resource-type{
       font-size:.8rem;
-      padding:3px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
-      color:var(--muted);
+      color:#cbd6ef;
+      font-weight:700;
       flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
+      color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -247,18 +262,31 @@
       gap:6px 10px;
       align-items:center;
       min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
     }
 
     .plain-text{
@@ -403,58 +431,25 @@
               de actividad administrativa, correlación básica y lectura contextual de eventos.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe de análisis, timeline resumida, eventos relevantes, interpretación del hallazgo
-              y posibles medidas de contención o revisión adicional.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy potente para explicar pensamiento analítico, lectura de evidencias y capacidad
-              para separar ruido de señales relevantes.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Informe</span>
+                    <li>
+            <span class="resource-type">Informe</span>
+            <span class="practice-title">Análisis de logs en Windows y Linux (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/logs/informe-analisis-logs.pdf" target="_blank">
-                Análisis de logs en Windows y Linux (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/analisis-defensa/logs/informe-analisis-logs.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Dataset</span>
+                    <li>
+            <span class="resource-type">Dataset</span>
+            <span class="practice-title">Conjunto de logs de práctica (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/logs/logs-ejemplo.zip" target="_blank">
-                Conjunto de logs de práctica (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí te puede venir muy bien añadir casos de inicio de sesión anómalo, actividad administrativa
-                inesperada, fallos de autenticación masivos o eventos sospechosos en Windows y Linux.
-              </span>
+              <a href="../assets-archivos/tecnica/analisis-defensa/logs/logs-ejemplo.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> prepara cómo explicarías qué eventos mirarías primero
-          si sospecharas de un acceso no autorizado o de una ejecución anómala.
-        </div>
       </div>
     </details>
 
@@ -495,58 +490,25 @@
               ruido frente a detección útil y revisión de tráfico sospechoso.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Guía de configuración, reglas de ejemplo, capturas de alertas, notas de ajuste
-              y explicación de por qué una regla aporta valor defensivo.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Refuerza tu perfil defensivo y te permite explicar conceptos muy útiles como
-              tuning, falsos positivos y priorización de alertas.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Guía</span>
+                    <li>
+            <span class="resource-type">Guía</span>
+            <span class="practice-title">Guía de configuración Snort / Suricata (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/ids/guia-snort-suricata.pdf" target="_blank">
-                Guía de configuración Snort / Suricata (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/analisis-defensa/ids/guia-snort-suricata.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">💻 Reglas</span>
+                    <li>
+            <span class="resource-type">Reglas</span>
+            <span class="practice-title">Reglas IDS/IPS de ejemplo (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/ids/reglas-ejemplo-ids.zip" target="_blank">
-                Reglas IDS/IPS de ejemplo (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Más adelante puedes incluir una regla propia, tuning de firmas, un caso de detección
-                de escaneo o una validación sencilla con tráfico generado en laboratorio.
-              </span>
+              <a href="../assets-archivos/tecnica/analisis-defensa/ids/reglas-ejemplo-ids.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> queda muy bien explicar por qué una alerta por sí sola
-          no basta y cómo validarías si se trata de un falso positivo o de una señal real.
-        </div>
       </div>
     </details>
 
@@ -587,58 +549,25 @@
               recuperación, comunicación interna y aprendizaje posterior.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe de simulación, timeline de actuación, decisiones tomadas, impacto estimado,
-              playbook y puntos de mejora detectados.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Este bloque te ayuda mucho a demostrar criterio, orden, calma y enfoque práctico,
-              que son cualidades muy valoradas en respuesta a incidentes.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Informe</span>
+                    <li>
+            <span class="resource-type">Informe</span>
+            <span class="practice-title">Informe de simulación de incidente (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/incident/informe-respuesta-incidentes.pdf" target="_blank">
-                Informe de simulación de incidente (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/analisis-defensa/incident/informe-respuesta-incidentes.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📜 Playbook</span>
+                    <li>
+            <span class="resource-type">Playbook</span>
+            <span class="practice-title">Playbook de respuesta ante incidentes (DOCX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/incident/playbook-respuesta.docx" target="_blank">
-                Playbook de respuesta ante incidentes (DOCX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí encajan genial escenarios como phishing, malware, acceso sospechoso,
-                cuenta comprometida o movimiento lateral básico en laboratorio.
-              </span>
+              <a href="../assets-archivos/tecnica/analisis-defensa/incident/playbook-respuesta.docx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> este apartado es ideal para explicar cómo priorizarías
-          entre investigar, contener y recuperar, y por qué el orden importa.
-        </div>
       </div>
     </details>
 
@@ -679,58 +608,25 @@
               alertas accionables y seguimiento de señales relevantes.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Caso práctico, capturas de dashboards, reglas de alerta, descripción de lógica
-              de detección y criterios de priorización.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy interesante para demostrar que entiendes la diferencia entre “tener logs”
-              y “tener detección útil”, algo muy importante en entornos reales.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Caso práctico</span>
+                    <li>
+            <span class="resource-type">Caso práctico</span>
+            <span class="practice-title">Caso práctico de monitorización con SIEM (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/siem/caso-practico-siem.pdf" target="_blank">
-                Caso práctico de monitorización con SIEM (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/analisis-defensa/siem/caso-practico-siem.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📊 Dashboards</span>
+                    <li>
+            <span class="resource-type">Dashboards</span>
+            <span class="practice-title">Dashboards y reglas de alerta (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/siem/dashboards-alertas.zip" target="_blank">
-                Dashboards y reglas de alerta (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes subir más adelante un mini caso de uso tipo “multiple failed logons”,
-                “new admin account”, “suspicious PowerShell” o “log source health”.
-              </span>
+              <a href="../assets-archivos/tecnica/analisis-defensa/siem/dashboards-alertas.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> si explicas bien tus casos de uso, esta sección
-          puede ser de las más potentes del portfolio.
-        </div>
       </div>
     </details>
 
@@ -771,58 +667,25 @@
               de phishing y documentación del triage inicial.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe de análisis, cabeceras revisadas, URLs extraídas, clasificación del correo,
-              recomendaciones y decisión de escalado o cierre.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Esta parte encaja muy bien con tu experiencia real y demuestra capacidad de análisis
-              aplicada a un caso frecuente y muy reconocible en empresas.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Informe</span>
+                    <li>
+            <span class="resource-type">Informe</span>
+            <span class="practice-title">Informe de análisis de phishing (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/phishing/informe-analisis-phishing.pdf" target="_blank">
-                Informe de análisis de phishing (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/analisis-defensa/phishing/informe-analisis-phishing.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">🧪 Evidencias</span>
+                    <li>
+            <span class="resource-type">Evidencias</span>
+            <span class="practice-title">Cabeceras, URLs y evidencias de triage (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/phishing/evidencias-phishing.zip" target="_blank">
-                Cabeceras, URLs y evidencias de triage (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí te puede encajar perfecto un caso práctico basado en emails sospechosos,
-                revisión manual de headers o clasificación de mensajes en legítimo / sospechoso / malicioso.
-              </span>
+              <a href="../assets-archivos/tecnica/analisis-defensa/phishing/evidencias-phishing.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> este apartado conecta muy bien con experiencia real
-          y te permite enseñar análisis técnico sin necesidad de irte a escenarios demasiado complejos.
-        </div>
       </div>
     </details>
 

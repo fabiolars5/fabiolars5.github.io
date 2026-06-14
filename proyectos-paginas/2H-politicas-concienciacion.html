@@ -216,16 +216,16 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:8px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
-      align-items:flex-start;
+      gap:8px 14px;
+      align-items:center;
       font-size:.9rem;
-      padding:10px 12px;
+      padding:12px 16px;
       background:rgba(255,255,255,.02);
       border:1px solid rgba(255,255,255,.07);
       border-radius:10px;
@@ -233,12 +233,27 @@
 
     .resource-type{
       font-size:.8rem;
-      padding:3px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
-      color:var(--muted);
+      color:#cbd6ef;
+      font-weight:700;
       flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
+      color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -247,18 +262,31 @@
       gap:6px 10px;
       align-items:center;
       min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
     }
 
     .plain-text{
@@ -407,49 +435,17 @@
               cumplimiento y marco general de actuación.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Política aprobada, versión controlada, estructura documental y relación
-              con otros procedimientos o normas internas.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para demostrar que entiendes la diferencia entre un documento estratégico
-              de alto nivel y una norma operativa más detallada.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Política</span>
+                    <li>
+            <span class="resource-type">Política</span>
+            <span class="practice-title">Política de seguridad de la información (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/politicas-concienciacion/politica-seguridad-informacion.pdf" target="_blank">
-                Política de seguridad de la información (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí te vendría muy bien mostrar una política breve, clara y bien estructurada,
-                con propósito, alcance, roles y compromiso de mejora continua.
-              </span>
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/politica-seguridad-informacion.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> explica siempre qué debe contener una política general
-          y qué cosas no deberían bajarse a ese documento.
-        </div>
       </div>
     </details>
 
@@ -491,58 +487,25 @@
               dispositivos móviles, SaaS, contraseñas y comportamiento esperado.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Norma principal, versión resumida para usuarios, control documental
-              y relación con políticas o procedimientos internos.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para enseñar que sabes redactar documentos que la gente pueda entender
-              y aplicar de verdad.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Normativa</span>
+                    <li>
+            <span class="resource-type">Normativa</span>
+            <span class="practice-title">Normas de uso aceptable (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/politicas-concienciacion/normas-uso-aceptable.pdf" target="_blank">
-                Normas de uso aceptable (PDF)
-              </a>
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/normas-uso-aceptable.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📝 Resumen 1 página</span>
+                    <li>
+            <span class="resource-type">Resumen 1 página</span>
+            <span class="practice-title">Versión resumida para usuarios (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/politicas-concienciacion/normas-uso-aceptable-resumen.pdf" target="_blank">
-                Versión resumida para usuarios (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí quedan muy bien normas breves sobre correo, dispositivos, teletrabajo
-                o uso de herramientas corporativas con lenguaje claro y accionable.
-              </span>
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/normas-uso-aceptable-resumen.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> puedes explicar cómo adaptarías una norma técnica
-          para que un usuario no técnico realmente la entienda.
-        </div>
       </div>
     </details>
 
@@ -584,61 +547,26 @@
               claridad del lenguaje y enfoque práctico orientado a comportamiento.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Pósters, fichas rápidas, infografías, guías de una página
-              y piezas visuales reutilizables para campañas.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Demuestra que sabes comunicar seguridad sin recurrir siempre
-              a documentos largos o complejos.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📌 Carteles</span>
+                    <li>
+            <span class="resource-type">Carteles</span>
+            <span class="practice-title">Póster «Cuidado con el phishing» (PDF) · Póster «Buenas prácticas de contraseñas» (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/politicas-concienciacion/poster-phishing.pdf" target="_blank">
-                Póster «Cuidado con el phishing» (PDF)
-              </a>
-              <a href="../assets-archivos/automatizacion/politicas-concienciacion/poster-passwords.pdf" target="_blank">
-                Póster «Buenas prácticas de contraseñas» (PDF)
-              </a>
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/poster-phishing.pdf" target="_blank">Abrir recurso 1</a>
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/poster-passwords.pdf" target="_blank">Abrir recurso 2</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📄 Guías rápidas</span>
+                    <li>
+            <span class="resource-type">Guías rápidas</span>
+            <span class="practice-title">Guía rápida de teletrabajo seguro (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/politicas-concienciacion/guia-teletrabajo-seguro.pdf" target="_blank">
-                Guía rápida de teletrabajo seguro (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí encajan genial guías de phishing, smishing, contraseñas, MFA,
-                seguridad física o uso seguro del correo y de dispositivos.
-              </span>
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/guia-teletrabajo-seguro.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta sección te ayuda mucho a demostrar
-          que sabes adaptar el mensaje de seguridad al formato y al público.
-        </div>
       </div>
     </details>
 
@@ -679,65 +607,25 @@
               refuerzo por temas y materiales de apoyo a la formación interna.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Presentaciones, quizzes, piezas de apoyo, plan de campaña
-              y materiales adaptados a distintos temas o públicos.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Esta parte te posiciona muy bien para seguridad corporativa,
-              SGSI y cultura de seguridad, porque demuestra impacto sobre usuarios.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📊 Presentación</span>
+                    <li>
+            <span class="resource-type">Presentación</span>
+            <span class="practice-title">Formación básica de ciberseguridad (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/politicas-concienciacion/formacion-basica-ciberseguridad.pdf" target="_blank">
-                Formación básica de ciberseguridad (PDF)
-              </a>
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/formacion-basica-ciberseguridad.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">❓ Quiz</span>
+                    <li>
+            <span class="resource-type">Quiz</span>
+            <span class="practice-title">Preguntas tipo test para empleados (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/politicas-concienciacion/quiz-concienciacion.xlsx" target="_blank">
-                Preguntas tipo test para empleados (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🎯 Plan anual</span>
-            <div class="resource-links">
-              <span class="empty">Pendiente de subir el plan anual de campañas de concienciación.</span>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes enseñar campañas por tema, pequeñas sesiones interactivas,
-                materiales mensuales o un plan anual de concienciación con foco realista.
-              </span>
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/quiz-concienciacion.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> puedes explicar cómo harías que una campaña
-          no fuese solo “mandar un PDF”, sino algo que realmente mejore el comportamiento del usuario.
-        </div>
       </div>
     </details>
 
@@ -778,58 +666,25 @@
               seguimiento por tema y revisión periódica de campañas.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Cuadro de métricas, resumen de participación, evaluación de resultados
-              y propuestas de ajuste o refuerzo.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Este bloque suma mucho porque demuestra enfoque práctico y capacidad
-              para cerrar el ciclo entre acción, medición y mejora.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📊 Métricas</span>
+                    <li>
+            <span class="resource-type">Métricas</span>
+            <span class="practice-title">Cuadro de métricas de campañas (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/politicas-concienciacion/metricas-campanas-concienciacion.xlsx" target="_blank">
-                Cuadro de métricas de campañas (XLSX)
-              </a>
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/metricas-campanas-concienciacion.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📄 Seguimiento</span>
+                    <li>
+            <span class="resource-type">Seguimiento</span>
+            <span class="practice-title">Seguimiento y mejora de campañas (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/politicas-concienciacion/seguimiento-mejora-concienciacion.pdf" target="_blank">
-                Seguimiento y mejora de campañas (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes construir un apartado muy bueno con indicadores simples:
-                sesiones impartidas, participación, resultados y acciones de mejora.
-              </span>
+              <a href="../assets-archivos/automatizacion/politicas-concienciacion/seguimiento-mejora-concienciacion.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta sección te da mucha fuerza porque demuestra
-          que entiendes la concienciación como un proceso continuo y no como una acción aislada.
-        </div>
       </div>
     </details>
 
@@ -837,7 +692,7 @@
 
   <footer class="footer-nav">
     <a class="btn-next" href="2G-gestion-riesgos.html">⬅ Anterior</a>
-    <a class="btn-next" href="../index.html">Volver al portfolio ➜</a>
+    <a class="btn-next" href="2I-formacion-aenor-iso27001.html">Siguiente ➜</a>
   </footer>
 
 </body>

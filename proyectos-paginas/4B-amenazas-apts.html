@@ -216,16 +216,16 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:8px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
-      align-items:flex-start;
+      gap:8px 14px;
+      align-items:center;
       font-size:.9rem;
-      padding:10px 12px;
+      padding:12px 16px;
       background:rgba(255,255,255,.02);
       border:1px solid rgba(255,255,255,.07);
       border-radius:10px;
@@ -233,12 +233,27 @@
 
     .resource-type{
       font-size:.8rem;
-      padding:3px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
-      color:var(--muted);
+      color:#cbd6ef;
+      font-weight:700;
       flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
+      color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -247,18 +262,31 @@
       gap:6px 10px;
       align-items:center;
       min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
     }
 
     .plain-text{
@@ -406,58 +434,25 @@
               patrones operativos, TTPs frecuentes y evolución del actor.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Fichas de actor, resúmenes comparativos, tablas de técnicas
-              y síntesis orientadas a consumo rápido por analistas o defensores.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para demostrar capacidad de síntesis, análisis de amenazas
-              y comprensión de actores más allá del indicador suelto.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Perfil APT28</span>
+                    <li>
+            <span class="resource-type">Perfil APT28</span>
+            <span class="practice-title">Informe de perfil APT28 (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/perfil-apt28.pdf" target="_blank">
-                Informe de perfil APT28 (PDF)
-              </a>
+              <a href="../assets-archivos/intel/amenazas-apts/perfil-apt28.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📄 Perfil APT29</span>
+                    <li>
+            <span class="resource-type">Perfil APT29</span>
+            <span class="practice-title">Informe de perfil APT29 (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/perfil-apt29.pdf" target="_blank">
-                Informe de perfil APT29 (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes añadir comparativas entre grupos, diferencias de objetivos,
-                sectores preferidos y técnicas más repetidas.
-              </span>
+              <a href="../assets-archivos/intel/amenazas-apts/perfil-apt29.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> explica qué diferencia a un simple resumen de un actor
-          de un perfil realmente útil para defensa o inteligencia.
-        </div>
       </div>
     </details>
 
@@ -499,56 +494,17 @@
               movimiento lateral, objetivos operativos e impacto potencial.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe de caso, línea temporal, mapa de fases, resumen ejecutivo
-              y notas de aprendizaje aplicables a defensa.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para demostrar que entiendes las campañas como procesos completos,
-              no solo como listas de IoCs o noticias.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📊 Caso 1</span>
+                    <li>
+            <span class="resource-type">Caso 1</span>
+            <span class="practice-title">Informe de campaña de spear phishing (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/caso-campana-phishing-apt.pdf" target="_blank">
-                Informe de campaña de spear phishing (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">📊 Caso 2</span>
-            <div class="resource-links">
-              <span class="empty">Pendiente de subir segundo caso de estudio.</span>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí encajan muy bien casos de spear phishing, acceso a proveedores,
-                campañas sectoriales o análisis de intrusiones públicas conocidas.
-              </span>
+              <a href="../assets-archivos/intel/amenazas-apts/caso-campana-phishing-apt.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> una buena campaña explicada con orden
-          puede darte mucho juego para hablar de detección, respuesta y priorización.
-        </div>
       </div>
     </details>
 
@@ -589,56 +545,25 @@
               relación entre actor y comportamiento y lectura defensiva del mapeo.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Tabla TTPs por grupo o campaña, resúmenes tácticos y posibles líneas
-              de detección o revisión de cobertura.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para mostrar que sabes usar MITRE con sentido y no solo como una referencia teórica.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📚 Tabla TTPs</span>
+                    <li>
+            <span class="resource-type">Tabla TTPs</span>
+            <span class="practice-title">Hoja de TTPs por grupo APT (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/ttps-mitre-apt.xlsx" target="_blank">
-                Hoja de TTPs por grupo APT (XLSX)
-              </a>
+              <a href="../assets-archivos/intel/amenazas-apts/ttps-mitre-apt.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📌 Resumen táctico</span>
+                    <li>
+            <span class="resource-type">Resumen táctico</span>
+            <span class="practice-title">Resumen táctico para defensores (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/resumen-tactico.pdf" target="_blank">
-                Resumen táctico para defensores (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes construir uno de tus mejores bloques: actor → campaña → TTP → posible detección.
-              </span>
+              <a href="../assets-archivos/intel/amenazas-apts/resumen-tactico.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> queda muy bien explicar cómo usarías MITRE
-          para revisar cobertura defensiva o detectar huecos de visibilidad.
-        </div>
       </div>
     </details>
 
@@ -679,58 +604,25 @@
               de la detección basada en indicadores.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Listados de IoCs, reglas de ejemplo, lógica de detección,
-              notas de contexto y advertencias sobre vigencia o falsos positivos.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para enseñar que entiendes la diferencia entre inteligencia contextual
-              y detección basada en señales concretas.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">🧩 IoCs</span>
+                    <li>
+            <span class="resource-type">IoCs</span>
+            <span class="practice-title">Listado de IoCs por campaña (CSV)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/iocs-apt.csv" target="_blank">
-                Listado de IoCs por campaña (CSV)
-              </a>
+              <a href="../assets-archivos/intel/amenazas-apts/iocs-apt.csv" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">⚙️ Reglas</span>
+                    <li>
+            <span class="resource-type">Reglas</span>
+            <span class="practice-title">Reglas Sigma / YARA de ejemplo (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/reglas-sigma-yara.zip" target="_blank">
-                Reglas Sigma / YARA de ejemplo (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí te puede quedar muy bien un bloque explicando cuándo un IoC ayuda,
-                cuándo se queda corto y cómo combinarlo con TTPs o contexto.
-              </span>
+              <a href="../assets-archivos/intel/amenazas-apts/reglas-sigma-yara.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> si explicas bien las limitaciones de los IoCs,
-          esta sección gana mucho nivel.
-        </div>
       </div>
     </details>
 
@@ -771,58 +663,25 @@
               cobertura ATT&amp;CK y ajuste de monitorización.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Resumen defensivo, recomendaciones priorizadas, casos de uso,
-              revisión de cobertura y propuestas de mejora.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Este bloque te puede diferenciar mucho porque demuestra que conviertes análisis
-              en decisiones útiles para seguridad.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Resumen</span>
+                    <li>
+            <span class="resource-type">Resumen</span>
+            <span class="practice-title">Recomendaciones defensivas basadas en campañas APT (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/recomendaciones-defensa-apts.pdf" target="_blank">
-                Recomendaciones defensivas basadas en campañas APT (PDF)
-              </a>
+              <a href="../assets-archivos/intel/amenazas-apts/recomendaciones-defensa-apts.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📋 Cobertura</span>
+                    <li>
+            <span class="resource-type">Cobertura</span>
+            <span class="practice-title">Revisión de cobertura y casos de uso (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/revision-cobertura-deteccion.xlsx" target="_blank">
-                Revisión de cobertura y casos de uso (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes conectar esta página con SIEM, detección, SGSI o priorización de riesgos,
-                y eso te dará muchísimo valor.
-              </span>
+              <a href="../assets-archivos/intel/amenazas-apts/revision-cobertura-deteccion.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> este puede ser uno de los bloques más fuertes
-          si lo orientas a “qué haría yo con esta inteligencia en un entorno real”.
-        </div>
       </div>
     </details>
 

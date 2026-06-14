@@ -565,6 +565,60 @@
     /* ============================================================
        SECCIÓN CERTIFICADOS / CONTACTO / FOOTER
     ============================================================ */
+    .cert-timeline {
+      position: relative;
+      margin: 8px 0 18px;
+      padding-left: 28px;
+      border-left: 2px solid var(--accent);
+    }
+
+    .cert-item {
+      position: relative;
+      margin-bottom: 26px;
+    }
+
+    .cert-item::before {
+      content: "";
+      position: absolute;
+      left: -35px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid #0f1625;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .cert-name {
+      margin: 0 0 6px;
+      color: #7dd3fc;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .cert-meta,
+    .cert-registry {
+      margin: 0;
+      color: #d1d5db;
+      line-height: 1.55;
+      font-size: 0.95rem;
+    }
+
+    .cert-registry {
+      margin-top: 12px;
+    }
+
+    .cert-number {
+      color: #ff4d4d;
+      font-weight: 700;
+    }
+
+    .cert-link {
+      color: var(--accent-soft);
+      font-weight: 600;
+    }
+
     .cert-block h4 {
       margin-top: 0;
       color: #00bcd4;
@@ -741,12 +795,11 @@
       <h2>🚀 Proyectos</h2>
 
       <div class="project-container">
-        <p>Explora mis proyectos académicos, de ciberseguridad aplicada y de ciberinteligencia.</p>
+        <p>Explora mis proyectos académicos y de ciberseguridad aplicada, incluyendo ciberinteligencia y análisis de amenazas.</p>
 
         <div class="project-tabs">
           <button class="project-tab active" onclick="showProjectBlock('uni', this)">Universitarios</button>
-          <button class="project-tab" onclick="showProjectBlock('cyber', this)">Ciberseguridad</button>
-          <button class="project-tab" onclick="showProjectBlock('intel', this)">Ciberinteligencia</button>
+          <button class="project-tab" onclick="showProjectBlock('cyber', this)">Ciberseguridad e Inteligencia</button>
         </div>
 
         <div id="proj-uni" class="project-block visible">
@@ -762,11 +815,11 @@
         </div>
 
         <div id="proj-cyber" class="project-block hidden">
-          <h3>🛡️Proyectos de Ciberseguridad</h3>
+          <h3>🛡️ Ciberseguridad e Inteligencia</h3>
           <p>
             Proyectos orientados a la aplicación práctica de la ciberseguridad,
             organizados por su función dentro de la seguridad: proteger,
-            detectar, automatizar y gobernar.
+            detectar, automatizar, gobernar y analizar amenazas.
           </p>
 
           <div class="project-structure-note">
@@ -776,6 +829,7 @@
               <li><strong>Análisis, detección y respuesta:</strong> proyectos enfocados en investigar, detectar, revisar e interpretar amenazas, eventos o comportamientos técnicos.</li>
               <li><strong>Automatización y desarrollo:</strong> scripts, utilidades y mejoras técnicas para agilizar procesos de seguridad y reducir trabajo manual.</li>
               <li><strong>Gobierno, riesgo y cultura de seguridad:</strong> proyectos relacionados con riesgos, políticas, cumplimiento y concienciación.</li>
+              <li><strong>Ciberinteligencia y amenazas:</strong> proyectos de OSINT, herramientas de inteligencia, APTs, campañas y contexto geopolítico.</li>
             </ul>
           </div>
 
@@ -824,19 +878,22 @@
             <div class="mini-projects">
               <div><span>📉 Análisis y gestión de riesgos</span><a href="proyectos-paginas/2G-gestion-riesgos.html" class="project-btn">Entrar</a></div>
               <div><span>📜 Políticas y concienciación</span><a href="proyectos-paginas/2H-politicas-concienciacion.html" class="project-btn">Entrar</a></div>
+              <div><span>🎓 Formación AENOR ISO 27001</span><a href="proyectos-paginas/2I-formacion-aenor-iso27001.html" class="project-btn">Entrar</a></div>
             </div>
           </div>
-        </div>
 
-        <div id="proj-intel" class="project-block hidden">
-          <h3>🧠 Ciberinteligencia y Análisis de Amenazas</h3>
-          <p>OSINT, dark web, dorks, actores de amenaza y APTs.</p>
+          <div class="cyber-group">
+            <h4>🧠 Ciberinteligencia y análisis de amenazas</h4>
+            <p class="subblock-note">
+              Integra proyectos de OSINT, herramientas de inteligencia, seguimiento de actores de amenaza, APTs y contexto geopolítico aplicado a la seguridad.
+            </p>
 
-          <div class="mini-projects">
-            <div><span>🔍 Investigación OSINT</span><a href="proyectos-paginas/4B-osint.html" class="project-btn">Entrar</a></div>
-            <div><span>🕵️ Herramientas de inteligencia</span><a href="proyectos-paginas/4B-herramientas-inteligencia.html" class="project-btn">Entrar</a></div>
-            <div><span>⚔️ APTs y campañas de amenazas</span><a href="proyectos-paginas/4B-amenazas-apts.html" class="project-btn">Entrar</a></div>
-            <div><span>🌍 Ciberconflictos y geopolítica</span><a href="proyectos-paginas/4B-ciberconflictos.html" class="project-btn">Entrar</a></div>
+            <div class="mini-projects">
+              <div><span>🔍 Investigación OSINT</span><a href="proyectos-paginas/4B-osint.html" class="project-btn">Entrar</a></div>
+              <div><span>🕵️ Herramientas de inteligencia</span><a href="proyectos-paginas/4B-herramientas-inteligencia.html" class="project-btn">Entrar</a></div>
+              <div><span>⚔️ APTs y campañas de amenazas</span><a href="proyectos-paginas/4B-amenazas-apts.html" class="project-btn">Entrar</a></div>
+              <div><span>🌍 Ciberconflictos y geopolítica</span><a href="proyectos-paginas/4B-ciberconflictos.html" class="project-btn">Entrar</a></div>
+            </div>
           </div>
         </div>
 
@@ -1081,16 +1138,27 @@
   <h2 class="section-title">✅ Certificados</h2>
 
   <div class="cert-block">
-    <ul>
-      <li>Especialista Implantador ISO 27001 (Titulación Propia) — AENOR · 2026</li>
-      <li>
-        Information Security Management Systems Professional — IQNET Academy · 2026 ·
-        <a href="https://academy.iqnet-certification.com/content/professionals-offer" target="_blank" rel="noopener noreferrer">
-             Web oficial de profesionales certificados registados
-        </a>
-      </li>
-    </ul>
-    <p class="cv-note"><i>Certificados disponibles bajo solicitud.</i></p>
+    <div class="cert-timeline">
+      <article class="cert-item">
+        <p class="cert-name">Titulación Propia de Especialista Implantador ISO/IEC 27001 · AENOR · 2026</p>
+        <p class="cert-registry">Registro: ISO 27001 Information Security Management Systems Professional · IQNET Registered Professional</p>
+      </article>
+
+      <article class="cert-item">
+        <p class="cert-name">Titulación Propia de Auditor Líder ISO/IEC 27001 · AENOR · 2026</p>
+        <p class="cert-meta">Diploma adicional: IQNET ISO 27001 Lead Auditor</p>
+        <p class="cert-registry">Registro: ISO 27001 Lead Auditor · IQNET Registered Professional</p>
+      </article>
+
+      <article class="cert-item">
+        <p class="cert-meta">Verificación online IQNET Professionals Registry:</p>
+        <p class="cert-number">PONER NUMERO CERTIFICACION</p>
+      </article>
+    </div>
+
+    <a class="cert-link" href="https://academy.iqnet-certification.com/content/professionals-offer" target="_blank" rel="noopener noreferrer">
+      https://academy.iqnet-certification.com/content/professionals-offer
+    </a>
   </div>
 </section>
 

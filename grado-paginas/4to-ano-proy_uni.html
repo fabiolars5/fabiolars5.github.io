@@ -153,24 +153,44 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
+      gap:8px 14px;
       align-items:center;
       font-size:.9rem;
+      padding:12px 16px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
+      color:#cbd6ef;
+      font-weight:700;
+      flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
       color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -178,33 +198,33 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
     }
-
-    .private-badge{
+    .request-link{
       display:inline-flex;
       align-items:center;
       gap:6px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(0,191,174,.08);
-      border:1px solid rgba(0,191,174,.35);
-      color:var(--acc-soft);
-      font-size:.85rem;
-      font-weight:600;
+      white-space:nowrap;
     }
-
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
     .request-link{
       color:var(--acc);
       text-decoration:none;
@@ -269,7 +289,7 @@
       Aquí muestro una selección representativa del curso. La documentación completa, material de defensa y código fuente permanecen en acceso restringido.
     </p>
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
     </div>
   </header>
 
@@ -290,29 +310,21 @@
       <div class="subject-body">
         <p>Metodologías de análisis de riesgos, valoración de activos, amenazas y planes de tratamiento.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -333,32 +345,24 @@
       <div class="subject-body">
         <p>Análisis de muestras, comportamiento de malware y estudio de campañas avanzadas (APTs).</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title">Informe privado</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Malware%20y%20Amenazas%20Dirigidas" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Malware%20y%20Amenazas%20Dirigidas" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -379,29 +383,21 @@
       <div class="subject-body">
         <p>Planificación y ejecución de auditorías de seguridad, revisión documental y evidencias.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -422,32 +418,24 @@
       <div class="subject-body">
         <p>Metodologías de pentest, ejecución de pruebas y elaboración de informes para negocio y técnico.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title">Informe privado</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Pentesting" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Pentesting" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -468,32 +456,24 @@
       <div class="subject-body">
         <p>Proyecto de ingeniería avanzado, integrando redes, sistemas, desarrollo y seguridad en un caso práctico.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title">Memoria y demo privadas</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria y demo privadas</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Proyecto%20Ingenier%C3%ADa%20III" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Proyecto%20Ingenier%C3%ADa%20III" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -514,29 +494,21 @@
       <div class="subject-body">
         <p>Trabajos sobre marcos normativos, políticas internas, comités de seguridad y gobierno de la ciberseguridad.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -557,32 +529,24 @@
       <div class="subject-body">
         <p>Resumen de las prácticas, funciones desempeñadas, herramientas usadas y logros clave.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title">Memoria privada</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria privada</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Pr%C3%A1cticas%20Externas" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Pr%C3%A1cticas%20Externas" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -603,32 +567,24 @@
       <div class="subject-body">
         <p>Documentación del TFG: memoria, anexos técnicos, código y material de la defensa.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title">Memoria, código y defensa privados</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria, código y defensa privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20TFG" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20TFG" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -649,29 +605,21 @@
       <div class="subject-body">
         <p>Reflexiones y trabajos sobre ética en el uso de la tecnología y responsabilidad profesional en ciberseguridad.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>

@@ -153,24 +153,44 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
+      gap:8px 14px;
       align-items:center;
       font-size:.9rem;
+      padding:12px 16px;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:10px;
     }
 
     .resource-type{
       font-size:.8rem;
-      padding:2px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
+      color:#cbd6ef;
+      font-weight:700;
+      flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
       color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -178,33 +198,33 @@
       flex-wrap:wrap;
       gap:6px 10px;
       align-items:center;
+      min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
     }
-
-    .private-badge{
+    .request-link{
       display:inline-flex;
       align-items:center;
       gap:6px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(0,191,174,.08);
-      border:1px solid rgba(0,191,174,.35);
-      color:var(--acc-soft);
-      font-size:.85rem;
-      font-weight:600;
+      white-space:nowrap;
     }
-
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
     .request-link{
       color:var(--acc);
       text-decoration:none;
@@ -270,7 +290,7 @@
       Aquí muestro una selección representativa del curso. La documentación completa, demos y código fuente permanecen en acceso restringido.
     </p>
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> · 
+      <a href="../index.html">⬅ Volver al portfolio</a> ·
     </div>
   </header>
 
@@ -301,23 +321,19 @@
         </p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Entrega 1 — Elicitación, viabilidad, requisitos y bases de análisis</span>
+                    <li>
+            <span class="resource-type">Entrega 1</span>
+            <span class="practice-title">Elicitación, viabilidad, requisitos y bases de análisis</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Presentación, memoria y vídeo privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%201%20Ingenier%C3%ADa%20del%20Software" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%201%20Ingenier%C3%ADa%20del%20Software" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Entrega 2 — Arquitectura software, UML, diseño de implementación y pruebas</span>
+                    <li>
+            <span class="resource-type">Entrega 2</span>
+            <span class="practice-title">Arquitectura software, UML, diseño de implementación y pruebas</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Presentación, memoria, vídeo y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%202%20Ingenier%C3%ADa%20del%20Software" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%202%20Ingenier%C3%ADa%20del%20Software" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -350,43 +366,35 @@
         </p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Entrega 1 — Análisis de aplicaciones en redes de nueva generación (NGN)</span>
+                    <li>
+            <span class="resource-type">Entrega 1</span>
+            <span class="practice-title">Análisis de aplicaciones en redes de nueva generación (NGN)</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria privada</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%201%20Redes%20Avanzadas%20y%20Computaci%C3%B3n%20en%20la%20Nube" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%201%20Redes%20Avanzadas%20y%20Computaci%C3%B3n%20en%20la%20Nube" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Entrega 2 — Aplicaciones prácticas, uso y optimización de tráfico de red</span>
+                    <li>
+            <span class="resource-type">Entrega 2</span>
+            <span class="practice-title">Aplicaciones prácticas, uso y optimización de tráfico de red</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria privada</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%202%20Redes%20Avanzadas%20y%20Computaci%C3%B3n%20en%20la%20Nube" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%202%20Redes%20Avanzadas%20y%20Computaci%C3%B3n%20en%20la%20Nube" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Entrega 3 — Diseño de una red mediante protocolo MPLS</span>
+                    <li>
+            <span class="resource-type">Entrega 3</span>
+            <span class="practice-title">Diseño de una red mediante protocolo MPLS</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria y diseño privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%203%20Redes%20Avanzadas%20y%20Computaci%C3%B3n%20en%20la%20Nube" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%203%20Redes%20Avanzadas%20y%20Computaci%C3%B3n%20en%20la%20Nube" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Entrega 4 — Análisis de servicios de computación en la nube</span>
+                    <li>
+            <span class="resource-type">Entrega 4</span>
+            <span class="practice-title">Análisis de servicios de computación en la nube</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria privada</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%204%20Redes%20Avanzadas%20y%20Computaci%C3%B3n%20en%20la%20Nube" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%204%20Redes%20Avanzadas%20y%20Computaci%C3%B3n%20en%20la%20Nube" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -417,50 +425,42 @@
         </p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Entrega 1 — Configuración del entorno de trabajo con Docker</span>
+                    <li>
+            <span class="resource-type">Entrega 1</span>
+            <span class="practice-title">Configuración del entorno de trabajo con Docker</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria y archivos privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%201%20Grandes%20Vol%C3%BAmenes%20de%20Datos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%201%20Grandes%20Vol%C3%BAmenes%20de%20Datos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Entrega 2 — Sistema de biblioteca digital con MongoDB y Hasura</span>
+                    <li>
+            <span class="resource-type">Entrega 2</span>
+            <span class="practice-title">Sistema de biblioteca digital con MongoDB y Hasura</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria, API y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%202%20Grandes%20Vol%C3%BAmenes%20de%20Datos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%202%20Grandes%20Vol%C3%BAmenes%20de%20Datos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Entrega 3 — Hadoop, HDFS y operación MapReduce</span>
+                    <li>
+            <span class="resource-type">Entrega 3</span>
+            <span class="practice-title">Hadoop, HDFS y operación MapReduce</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria, JAR y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%203%20Grandes%20Vol%C3%BAmenes%20de%20Datos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%203%20Grandes%20Vol%C3%BAmenes%20de%20Datos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">🏁 Práctica final — Sistema Big Data de análisis de accidentes de tráfico</span>
+                    <li>
+            <span class="resource-type">Práctica final</span>
+            <span class="practice-title">Sistema Big Data de análisis de accidentes de tráfico</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria técnica, dashboards y proyecto privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%20Final%20Grandes%20Vol%C3%BAmenes%20de%20Datos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%20Final%20Grandes%20Vol%C3%BAmenes%20de%20Datos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
       </div>
     </details>
 
-    
+
 
     <!-- Diseño y Análisis de Algoritmos -->
     <details class="subject">
@@ -485,43 +485,35 @@
         </p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Práctica 1 — Análisis de complejidad de algoritmos de ordenación</span>
+                    <li>
+            <span class="resource-type">Práctica 1</span>
+            <span class="practice-title">Análisis de complejidad de algoritmos de ordenación</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria, resultados y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Dise%C3%B1o%20y%20An%C3%A1lisis%20de%20Algoritmos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%201%20Dise%C3%B1o%20y%20An%C3%A1lisis%20de%20Algoritmos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 2 — Iteración, recursividad y memoización</span>
+                    <li>
+            <span class="resource-type">Práctica 2</span>
+            <span class="practice-title">Iteración, recursividad y memoización</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Dise%C3%B1o%20y%20An%C3%A1lisis%20de%20Algoritmos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%202%20Dise%C3%B1o%20y%20An%C3%A1lisis%20de%20Algoritmos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 3 — Divide y vencerás aplicado a potencia rápida</span>
+                    <li>
+            <span class="resource-type">Práctica 3</span>
+            <span class="practice-title">Divide y vencerás aplicado a potencia rápida</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Dise%C3%B1o%20y%20An%C3%A1lisis%20de%20Algoritmos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%203%20Dise%C3%B1o%20y%20An%C3%A1lisis%20de%20Algoritmos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Práctica 4 — Uso avanzado de árboles</span>
+                    <li>
+            <span class="resource-type">Práctica 4</span>
+            <span class="practice-title">Uso avanzado de árboles</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria, pruebas y código privados</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Dise%C3%B1o%20y%20An%C3%A1lisis%20de%20Algoritmos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Pr%C3%A1ctica%204%20Dise%C3%B1o%20y%20An%C3%A1lisis%20de%20Algoritmos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -553,50 +545,42 @@
         </p>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Entrega 1 — Entrevista y obtención de requisitos</span>
+                    <li>
+            <span class="resource-type">Entrega 1</span>
+            <span class="practice-title">Entrevista y obtención de requisitos</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Documento privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%201%20Proyecto%20Ingenier%C3%ADa%20I" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%201%20Proyecto%20Ingenier%C3%ADa%20I" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Entrega 2 — Plan estratégico, modelo As-Is / To-Be y diseño técnico</span>
+                    <li>
+            <span class="resource-type">Entrega 2</span>
+            <span class="practice-title">Plan estratégico, modelo As-Is / To-Be y diseño técnico</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Documento privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%202%20Proyecto%20Ingenier%C3%ADa%20I" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%202%20Proyecto%20Ingenier%C3%ADa%20I" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📁 Entrega 3 — Business case del rediseño web y sistema de reservas</span>
+                    <li>
+            <span class="resource-type">Entrega 3</span>
+            <span class="practice-title">Business case del rediseño web y sistema de reservas</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Documento privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%203%20Proyecto%20Ingenier%C3%ADa%20I" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%203%20Proyecto%20Ingenier%C3%ADa%20I" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">🎤 Entrega 4 — Presentación del business case al product-owner</span>
+                    <li>
+            <span class="resource-type">Entrega 4</span>
+            <span class="practice-title">Presentación del business case al product-owner</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Presentación privada</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%204%20Proyecto%20Ingenier%C3%ADa%20I" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Entrega%204%20Proyecto%20Ingenier%C3%ADa%20I" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
       </div>
     </details>
 
-    
+
     <!-- Inteligencia Artificial -->
     <details class="subject">
       <summary>
@@ -612,29 +596,21 @@
       <div class="subject-body">
         <p>Proyectos introductorios de IA y posibles aplicaciones a detección de anomalías o análisis de amenazas.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -655,32 +631,24 @@
       <div class="subject-body">
         <p>Prácticas de control de acceso, cifrado, copias de seguridad y protección frente a SQL Injection.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title">Informe privado</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Informe privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Seguridad%20en%20Bases%20de%20Datos" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Seguridad%20en%20Bases%20de%20Datos" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -701,29 +669,21 @@
       <div class="subject-body">
         <p>Configuración de dispositivos de seguridad, segmentación, VPNs y análisis de tráfico.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -744,32 +704,24 @@
       <div class="subject-body">
         <p>Prácticas de desarrollo web y móvil aplicando principios de seguridad y mitigando vulnerabilidades OWASP.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title">Código fuente privado</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Código fuente privado</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Desarrollo%20Seguro%20Web%20y%20Apps" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Desarrollo%20Seguro%20Web%20y%20Apps" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>
@@ -790,32 +742,24 @@
       <div class="subject-body">
         <p>Segunda parte del proyecto de ingeniería: implementación, pruebas, documentación final y presentación.</p>
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📁 Proyecto 1</span>
+                    <li>
+            <span class="resource-type">Proyecto 1</span>
+            <span class="practice-title">Memoria y demo privadas</span>
             <div class="resource-links">
-              <span class="private-badge">🔒 Memoria y demo privadas</span>
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Proyecto%20Ingenier%C3%ADa%20II" class="request-link">
-                Solicitar acceso
-              </a>
+              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20Proyecto%201%20Proyecto%20Ingenier%C3%ADa%20II" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 2</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 2</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 3</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 3</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
-          <li>
-            <span class="resource-type">📁 Proyecto 4</span>
-            <div class="resource-links">
-              <span class="empty">Sin archivos subidos todavía.</span>
-            </div>
+                    <li>
+            <span class="resource-type">Proyecto 4</span>
+            <span class="practice-title empty">Sin archivos subidos todavía.</span>
           </li>
         </ul>
       </div>

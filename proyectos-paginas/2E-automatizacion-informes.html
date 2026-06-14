@@ -216,16 +216,16 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:8px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
-      align-items:flex-start;
+      gap:8px 14px;
+      align-items:center;
       font-size:.9rem;
-      padding:10px 12px;
+      padding:12px 16px;
       background:rgba(255,255,255,.02);
       border:1px solid rgba(255,255,255,.07);
       border-radius:10px;
@@ -233,12 +233,27 @@
 
     .resource-type{
       font-size:.8rem;
-      padding:3px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
-      color:var(--muted);
+      color:#cbd6ef;
+      font-weight:700;
       flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
+      color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -247,18 +262,31 @@
       gap:6px 10px;
       align-items:center;
       min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
     }
 
     .plain-text{
@@ -407,61 +435,26 @@
               filtros, exportación y entrega en formatos reutilizables.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informes en Excel, scripts de generación, datasets de ejemplo, tablas resumen
-              y documentación del flujo automatizado.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para mostrar mentalidad práctica, capacidad de mejora operativa y conexión
-              entre soporte, sistemas y automatización.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📊 Inventario</span>
+                    <li>
+            <span class="resource-type">Inventario</span>
+            <span class="practice-title">Informe de inventario de equipos (XLSX) · Script de generación de inventario (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/automatizacion-informes/informe-inventario-equipos.xlsx" target="_blank">
-                Informe de inventario de equipos (XLSX)
-              </a>
-              <a href="../assets-archivos/automatizacion/automatizacion-informes/script-inventario-equipos.zip" target="_blank">
-                Script de generación de inventario (ZIP)
-              </a>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/informe-inventario-equipos.xlsx" target="_blank">Abrir recurso 1</a>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/script-inventario-equipos.zip" target="_blank">Abrir recurso 2</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">🎫 Tickets</span>
+                    <li>
+            <span class="resource-type">Tickets</span>
+            <span class="practice-title">Informe de tickets de soporte (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/automatizacion-informes/informe-tickets-soporte.xlsx" target="_blank">
-                Informe de tickets de soporte (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí encajan genial inventarios automáticos, reporte de incidencias por estado,
-                resumen de equipos pendientes o consolidados semanales para responsables.
-              </span>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/informe-tickets-soporte.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> explica qué problema manual resolvía el script,
-          cuánto tiempo ahorraba y cómo evitabas errores o duplicidades.
-        </div>
       </div>
     </details>
 
@@ -503,58 +496,25 @@
               hallazgos, evidencias, plantillas de revisión y reporting alineado con cumplimiento.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Scripts de consolidación, plantillas de informe, cuadros resumen,
-              matriz de controles y documentación del flujo de generación.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Este bloque encaja muy bien con tu perfil porque une automatización,
-              documentación y visión de SGSI / cumplimiento.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">🧾 Logs</span>
+                    <li>
+            <span class="resource-type">Logs</span>
+            <span class="practice-title">Script para consolidar logs y métricas (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/automatizacion-informes/script-consolidar-logs.zip" target="_blank">
-                Script para consolidar logs y métricas (ZIP)
-              </a>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/script-consolidar-logs.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">✅ Compliance</span>
+                    <li>
+            <span class="resource-type">Compliance</span>
+            <span class="practice-title">Plantilla de informe de controles de seguridad (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/automatizacion-informes/plantilla-informe-controles.pdf" target="_blank">
-                Plantilla de informe de controles de seguridad (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí te puede quedar muy bien un informe periódico de revisión de controles,
-                consolidación de evidencias o resúmenes automáticos para auditoría interna.
-              </span>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/plantilla-informe-controles.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> este apartado te ayuda a explicar cómo conectas
-          datos técnicos con reporting útil para seguridad y cumplimiento.
-        </div>
       </div>
     </details>
 
@@ -596,58 +556,25 @@
               unificación de columnas, deduplicación y preparación para análisis posterior.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Script de limpieza, dataset antes/después, reglas de transformación,
-              ejemplo de salida limpia y notas de validación.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy bueno para demostrar orden mental, cuidado por el detalle y capacidad
-              para trabajar con información real, imperfecta y no siempre bien estructurada.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📂 Normalización</span>
+                    <li>
+            <span class="resource-type">Normalización</span>
+            <span class="practice-title">Script de limpieza y normalización de datos (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/automatizacion-informes/script-limpieza-datos.zip" target="_blank">
-                Script de limpieza y normalización de datos (ZIP)
-              </a>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/script-limpieza-datos.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📈 Dataset ejemplo</span>
+                    <li>
+            <span class="resource-type">Dataset ejemplo</span>
+            <span class="practice-title">Dataset limpio para informes (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/automatizacion-informes/dataset-ejemplo-limpio.xlsx" target="_blank">
-                Dataset limpio para informes (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes subir más adelante procesos de normalización de fechas,
-                consolidación de varias hojas o limpieza de datos exportados desde herramientas IT.
-              </span>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/dataset-ejemplo-limpio.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> este tipo de proyectos transmite madurez,
-          porque enseña que entiendes que sin datos limpios no hay análisis fiable.
-        </div>
       </div>
     </details>
 
@@ -688,61 +615,18 @@
               estructura visual y preparación de informes para distintas audiencias.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Plantillas en Excel o PowerPoint, ejemplos de salida, documentación del flujo
-              y automatizaciones ligadas a esas plantillas.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy interesante para demostrar que sabes comunicar información técnica
-              de manera ordenada y útil, no solo generarla.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📑 Plantillas</span>
+                    <li>
+            <span class="resource-type">Plantillas</span>
+            <span class="practice-title">Plantilla de informe mensual IT (PPTX) · Plantilla de métricas en Excel (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/automatizacion-informes/plantilla-informe-mensual-it.pptx" target="_blank">
-                Plantilla de informe mensual IT (PPTX)
-              </a>
-              <a href="../assets-archivos/automatizacion/automatizacion-informes/plantilla-dashboard-metricas.xlsx" target="_blank">
-                Plantilla de métricas en Excel (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">⚙️ Automatización</span>
-            <div class="resource-links">
-              <span class="empty">
-                Pendiente de subir script que rellena estas plantillas a partir de datos reales.
-              </span>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí encajan muy bien un generador automático de resúmenes, plantillas mensuales,
-                cuadros de mando o reportes preparados para responsables no técnicos.
-              </span>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/plantilla-informe-mensual-it.pptx" target="_blank">Abrir recurso 1</a>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/plantilla-dashboard-metricas.xlsx" target="_blank">Abrir recurso 2</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> si explicas bien cómo conviertes datos técnicos
-          en reporting claro, esta sección puede darte muchos puntos.
-        </div>
       </div>
     </details>
 
@@ -784,58 +668,25 @@
               entradas y salidas, documentación y reutilización.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Scripts comentados, ejemplos de uso, capturas del antes/después,
-              documentación breve y casos de uso reales o simulados.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Esta parte transmite iniciativa, mentalidad de mejora y capacidad
-              para detectar fricciones del día a día y resolverlas con código.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">💻 Scripts</span>
+                    <li>
+            <span class="resource-type">Scripts</span>
+            <span class="practice-title">Scripts de automatización operativa (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/automatizacion-informes/scripts-tareas-repetitivas.zip" target="_blank">
-                Scripts de automatización operativa (ZIP)
-              </a>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/scripts-tareas-repetitivas.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📘 Casos de uso</span>
+                    <li>
+            <span class="resource-type">Casos de uso</span>
+            <span class="practice-title">Casos de uso y mejoras aplicadas (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/automatizacion-informes/casos-uso-automatizacion.pdf" target="_blank">
-                Casos de uso y mejoras aplicadas (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes meter scripts de renombrado, validación de ficheros, consolidación de carpetas,
-                tratamiento de listas o procesos pequeños pero muy explicables.
-              </span>
+              <a href="../assets-archivos/automatizacion/automatizacion-informes/casos-uso-automatizacion.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta categoría suele gustar mucho porque muestra
-          una mentalidad resolutiva y muy aterrizada.
-        </div>
       </div>
     </details>
 

@@ -216,16 +216,16 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:8px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
-      align-items:flex-start;
+      gap:8px 14px;
+      align-items:center;
       font-size:.9rem;
-      padding:10px 12px;
+      padding:12px 16px;
       background:rgba(255,255,255,.02);
       border:1px solid rgba(255,255,255,.07);
       border-radius:10px;
@@ -233,12 +233,27 @@
 
     .resource-type{
       font-size:.8rem;
-      padding:3px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
-      color:var(--muted);
+      color:#cbd6ef;
+      font-weight:700;
       flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
+      color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -247,18 +262,31 @@
       gap:6px 10px;
       align-items:center;
       min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
     }
 
     .plain-text{
@@ -408,58 +436,25 @@
               sectores afectados, tipos de operación e impacto asociado.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informes, líneas temporales, resúmenes comparativos y notas
-              sobre implicaciones para defensa o resiliencia.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para mostrar análisis estructurado, contexto internacional
-              y capacidad para aterrizar la ciberamenaza en algo más amplio.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">🌐 Informe 1</span>
+                    <li>
+            <span class="resource-type">Informe 1</span>
+            <span class="practice-title">Informe sobre conflictos cibernéticos recientes (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/ciberconflictos/informe-conflictos-recientes.pdf" target="_blank">
-                Informe sobre conflictos cibernéticos recientes (PDF)
-              </a>
+              <a href="../assets-archivos/intel/ciberconflictos/informe-conflictos-recientes.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📊 Cronología</span>
+                    <li>
+            <span class="resource-type">Cronología</span>
+            <span class="practice-title">Línea temporal de incidentes (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/ciberconflictos/linea-tiempo-conflictos.xlsx" target="_blank">
-                Línea temporal de incidentes (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes comparar varios conflictos, campañas o tensiones
-                para explicar cambios en objetivos, intensidad o sectores impactados.
-              </span>
+              <a href="../assets-archivos/intel/ciberconflictos/linea-tiempo-conflictos.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta sección te permite destacar
-          tu capacidad de conectar seguridad con contexto internacional, algo poco común.
-        </div>
       </div>
     </details>
 
@@ -502,56 +497,17 @@
               manipulación del discurso y conexión entre influencia y conflicto.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informes de caso, fichas de campaña, análisis de narrativas
-              y resúmenes de señales observables o patrones recurrentes.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy interesante para mostrar visión amplia de la amenaza
-              y comprensión de riesgos no puramente técnicos.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📑 Estudio</span>
+                    <li>
+            <span class="resource-type">Estudio</span>
+            <span class="practice-title">Estudio de operaciones de desinformación (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/ciberconflictos/estudio-desinformacion.pdf" target="_blank">
-                Estudio de operaciones de desinformación (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Casos</span>
-            <div class="resource-links">
-              <span class="empty">Pendiente de subir fichas de casos concretos.</span>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes analizar campañas mediáticas, narrativas repetidas
-                o ejemplos de manipulación coordinada con impacto reputacional o político.
-              </span>
+              <a href="../assets-archivos/intel/ciberconflictos/estudio-desinformacion.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta sección te da mucha personalidad
-          porque conecta ciberseguridad con análisis estratégico y comunicación.
-        </div>
       </div>
     </details>
 
@@ -592,58 +548,25 @@
               finalidades estratégicas y posicionamiento en el ecosistema global.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informes comparativos, mapas visuales, fichas por país o actor
-              y resúmenes con lectura operativa o estratégica.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para demostrar profundidad analítica y una visión
-              más madura del panorama de amenazas.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">🧠 Análisis</span>
+                    <li>
+            <span class="resource-type">Análisis</span>
+            <span class="practice-title">Análisis de actores estatales en el ciberespacio (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/ciberconflictos/actores-estatales.pdf" target="_blank">
-                Análisis de actores estatales en el ciberespacio (PDF)
-              </a>
+              <a href="../assets-archivos/intel/ciberconflictos/actores-estatales.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📌 Mapa</span>
+                    <li>
+            <span class="resource-type">Mapa</span>
+            <span class="practice-title">Mapa visual de actores (PNG)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/ciberconflictos/mapa-actores-estatales.png" target="_blank">
-                Mapa visual de actores (PNG)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes construir comparativas entre países, modelos de proyección
-                o relación entre intereses estratégicos y comportamiento cibernético.
-              </span>
+              <a href="../assets-archivos/intel/ciberconflictos/mapa-actores-estatales.png" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta sección te diferencia mucho
-          si la explicas con claridad y sin quedarte en teoría abstracta.
-        </div>
       </div>
     </details>
 
@@ -685,58 +608,25 @@
               geografía, superficie de ataque e impacto potencial.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Matrices de riesgo, informes de evaluación, priorización por exposición
-              y recomendaciones orientadas a resiliencia o monitorización.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy potente para demostrar pensamiento estratégico y capacidad
-              de traducir contexto a decisiones de riesgo.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📉 Matriz de riesgo</span>
+                    <li>
+            <span class="resource-type">Matriz de riesgo</span>
+            <span class="practice-title">Matriz de riesgo geopolítico-ciber (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/ciberconflictos/matriz-riesgo-geopolitico.xlsx" target="_blank">
-                Matriz de riesgo geopolítico-ciber (XLSX)
-              </a>
+              <a href="../assets-archivos/intel/ciberconflictos/matriz-riesgo-geopolitico.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📄 Informe</span>
+                    <li>
+            <span class="resource-type">Informe</span>
+            <span class="practice-title">Evaluación de riesgos geopolíticos (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/ciberconflictos/evaluacion-riesgos-geopoliticos.pdf" target="_blank">
-                Evaluación de riesgos geopolíticos (PDF)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí puedes conectar esta página con riesgo, SGSI, supply chain,
-                continuidad o priorización de controles.
-              </span>
+              <a href="../assets-archivos/intel/ciberconflictos/evaluacion-riesgos-geopoliticos.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta sección puede ser muy potente
-          si la orientas a “qué significaría esto para una empresa concreta”.
-        </div>
       </div>
     </details>
 
@@ -778,58 +668,25 @@
               resiliencia, continuidad y relación entre amenaza y preparación interna.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Resúmenes defensivos, recomendaciones, mapas de exposición,
-              escenarios de impacto y propuestas de revisión de controles.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Este bloque puede ser muy diferencial porque aprovecha muy bien
-              tu base de Relaciones Internacionales y la conecta con ciberseguridad.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Resumen</span>
+                    <li>
+            <span class="resource-type">Resumen</span>
+            <span class="practice-title">Recomendaciones de resiliencia y priorización (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/ciberconflictos/recomendaciones-resiliencia-geopolitica.pdf" target="_blank">
-                Recomendaciones de resiliencia y priorización (PDF)
-              </a>
+              <a href="../assets-archivos/intel/ciberconflictos/recomendaciones-resiliencia-geopolitica.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📋 Escenarios</span>
+                    <li>
+            <span class="resource-type">Escenarios</span>
+            <span class="practice-title">Escenarios de riesgo geopolítico-ciber (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/ciberconflictos/escenarios-riesgo-geopolitico.xlsx" target="_blank">
-                Escenarios de riesgo geopolítico-ciber (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Este bloque te puede diferenciar muchísimo si lo presentas como
-                contexto internacional convertido en decisiones defensivas.
-              </span>
+              <a href="../assets-archivos/intel/ciberconflictos/escenarios-riesgo-geopolitico.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> esta es probablemente una de las páginas
-          donde más puedes destacar tu combinación de ciberseguridad + relaciones internacionales.
-        </div>
       </div>
     </details>
 

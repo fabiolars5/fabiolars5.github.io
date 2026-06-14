@@ -216,16 +216,16 @@
       margin:0;
       display:flex;
       flex-direction:column;
-      gap:8px;
+      gap:10px;
     }
 
     .resource-list li{
       display:flex;
       flex-wrap:wrap;
-      gap:6px 10px;
-      align-items:flex-start;
+      gap:8px 14px;
+      align-items:center;
       font-size:.9rem;
-      padding:10px 12px;
+      padding:12px 16px;
       background:rgba(255,255,255,.02);
       border:1px solid rgba(255,255,255,.07);
       border-radius:10px;
@@ -233,12 +233,27 @@
 
     .resource-type{
       font-size:.8rem;
-      padding:3px 8px;
+      padding:4px 10px;
       border-radius:999px;
       background:#121a2a;
       border:1px solid #283144;
-      color:var(--muted);
+      color:#cbd6ef;
+      font-weight:700;
       flex-shrink:0;
+    }
+
+    .practice-title{
+      color:#f5f7ff;
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.35;
+      flex:1 1 260px;
+    }
+
+    .practice-title.empty{
+      color:var(--muted);
+      font-style:italic;
+      font-weight:600;
     }
 
     .resource-links{
@@ -247,18 +262,31 @@
       gap:6px 10px;
       align-items:center;
       min-width:0;
+      margin-left:auto;
     }
 
     .resource-links a{
       color:var(--acc);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       margin-right:10px;
-      word-break:break-all;
+      word-break:break-word;
     }
 
     .resource-links a:hover{
       text-decoration:underline;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+    .request-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
     }
 
     .plain-text{
@@ -402,58 +430,25 @@
               enumeración básica de usuarios, shares y exposición de servicios inseguros.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe de escaneo, tabla de servicios detectados, comandos utilizados,
-              priorización de objetivos y posibles hipótesis de ataque.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy útil para explicar metodología, pensamiento analítico, reducción de ruido
-              y cómo pasas de datos técnicos a una hipótesis razonable de riesgo.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Informe</span>
+                    <li>
+            <span class="resource-type">Informe</span>
+            <span class="practice-title">Informe de escaneo con Nmap (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/recon/informe-escaneo-nmap.pdf" target="_blank">
-                Informe de escaneo con Nmap (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/recon/informe-escaneo-nmap.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">💻 Scripts</span>
+                    <li>
+            <span class="resource-type">Scripts</span>
+            <span class="practice-title">Scripts y comandos usados (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/recon/scripts-nmap.zip" target="_blank">
-                Scripts y comandos usados (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Más adelante puedes añadir una matriz “servicio detectado → riesgo potencial → siguiente prueba”
-                o una comparativa entre escaneo básico y escaneo afinado.
-              </span>
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/recon/scripts-nmap.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> prepara cómo explicarías la diferencia entre
-          escanear “por escanear” y escanear con un objetivo técnico claro.
-        </div>
       </div>
     </details>
 
@@ -494,58 +489,25 @@
               identificación de prerequisitos y limitaciones de explotación.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe de explotación, PoC documentada, capturas de ejecución, condiciones del entorno,
-              descripción del impacto y recomendaciones de remediación.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Ayuda a demostrar que sabes diferenciar entre vulnerabilidad teórica y vulnerabilidad
-              realmente explotable, que es una distinción muy valiosa.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Informe</span>
+                    <li>
+            <span class="resource-type">Informe</span>
+            <span class="practice-title">Informe de explotación con Metasploit (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/exploit/informe-explotacion-metasploit.pdf" target="_blank">
-                Informe de explotación con Metasploit (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/exploit/informe-explotacion-metasploit.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">💻 Exploits</span>
+                    <li>
+            <span class="resource-type">Exploits</span>
+            <span class="practice-title">Exploits y módulos utilizados (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/exploit/exploits-pruebas.zip" target="_blank">
-                Exploits y módulos utilizados (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Puedes añadir después un caso de CVE concreta, explotación manual de una app vulnerable
-                o un mini informe ejecutivo con riesgo, impacto y prioridad.
-              </span>
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/exploit/exploits-pruebas.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> explica siempre qué validaste, qué no validaste,
-          por qué el entorno era controlado y cómo traducirías ese hallazgo a remediación.
-        </div>
       </div>
     </details>
 
@@ -586,58 +548,25 @@
               malas prácticas locales, movimiento lateral controlado y persistencia en laboratorio.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe técnico, diagrama de pasos, hallazgos de escalada, controles ausentes,
-              impacto potencial y recomendaciones para contención o hardening posterior.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy potente para mostrar que entiendes el ataque completo, no solo el punto de entrada,
-              y que sabes relacionarlo con medidas defensivas reales.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Informe</span>
+                    <li>
+            <span class="resource-type">Informe</span>
+            <span class="practice-title">Informe de post-explotación (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/post/informe-post-explotacion.pdf" target="_blank">
-                Informe de post-explotación (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/post/informe-post-explotacion.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">🛠️ Evidencias</span>
+                    <li>
+            <span class="resource-type">Evidencias</span>
+            <span class="practice-title">Evidencias y comandos usados (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/post/evidencias-post-explotacion.zip" target="_blank">
-                Evidencias y comandos usados (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Aquí encajan muy bien labs de privilege escalation en Linux o Windows, análisis de rutas
-                de escalada y explicación de qué controles lo habrían evitado.
-              </span>
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/post/evidencias-post-explotacion.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> cuando hables de post-explotación, enfócalo en
-          “qué aprendí sobre la debilidad del entorno” y no en la parte espectacular del ataque.
-        </div>
       </div>
     </details>
 
@@ -678,58 +607,25 @@
               validación de inputs, errores de exposición y pruebas básicas de seguridad web.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Informe técnico, capturas de Burp, petición/respuesta relevante, descripción del hallazgo,
-              riesgo asociado y propuesta de remediación.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Muy interesante para puestos junior porque demuestra comprensión práctica de HTTP,
-              análisis web y documentación de vulnerabilidades comunes.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Informe</span>
+                    <li>
+            <span class="resource-type">Informe</span>
+            <span class="practice-title">Informe de pruebas web con Burp Suite (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/web/informe-pruebas-web-burp.pdf" target="_blank">
-                Informe de pruebas web con Burp Suite (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/web/informe-pruebas-web-burp.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">🧪 Evidencias</span>
+                    <li>
+            <span class="resource-type">Evidencias</span>
+            <span class="practice-title">Capturas y evidencias de validación (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/web/capturas-pruebas-web.zip" target="_blank">
-                Capturas y evidencias de validación (ZIP)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Puedes añadir más adelante labs de DVWA, OWASP Juice Shop o PortSwigger Academy
-                con hallazgos explicados en tu propio estilo.
-              </span>
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/web/capturas-pruebas-web.zip" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> lleva preparado cómo explicarías una vulnerabilidad web
-          a alguien técnico y a alguien no técnico, sin depender de jerga excesiva.
-        </div>
       </div>
     </details>
 
@@ -770,58 +666,25 @@
               remediación propuesta y trazabilidad de acciones.
             </p>
           </div>
-
-          <div class="info-card">
-            <h3>Evidencias / entregables</h3>
-            <p>
-              Plantilla de informe, ejemplos de hallazgos, tabla de severidad, resumen ejecutivo,
-              plan de remediación y registro de seguimiento.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Valor en entrevista</h3>
-            <p>
-              Este bloque te diferencia mucho porque demuestra que no solo haces pruebas,
-              sino que sabes comunicar resultados y convertirlos en mejoras.
-            </p>
-          </div>
         </div>
 
         <ul class="resource-list">
-          <li>
-            <span class="resource-type">📄 Plantilla</span>
+                    <li>
+            <span class="resource-type">Plantilla</span>
+            <span class="practice-title">Plantilla de informe de pentest (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/reporting/plantilla-informe-pentest.pdf" target="_blank">
-                Plantilla de informe de pentest (PDF)
-              </a>
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/reporting/plantilla-informe-pentest.pdf" target="_blank">Abrir recurso</a>
             </div>
           </li>
 
-          <li>
-            <span class="resource-type">📊 Hallazgos</span>
+                    <li>
+            <span class="resource-type">Hallazgos</span>
+            <span class="practice-title">Matriz de hallazgos y remediación (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/reporting/matriz-hallazgos-remediacion.xlsx" target="_blank">
-                Matriz de hallazgos y remediación (XLSX)
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">🧩 Ideas útiles</span>
-            <div class="resource-links">
-              <span class="plain-text">
-                Este apartado puede convertirse en uno de tus puntos fuertes si subes informes claros,
-                limpios y orientados a riesgo y remediación.
-              </span>
+              <a href="../assets-archivos/tecnica/herramientas-ofensivas/reporting/matriz-hallazgos-remediacion.xlsx" target="_blank">Abrir recurso</a>
             </div>
           </li>
         </ul>
-
-        <div class="section-note">
-          <strong>Muy útil para entrevistas:</strong> aquí puedes lucirte muchísimo explicando cómo
-          redactarías un hallazgo para que negocio lo entienda y técnico lo pueda corregir.
-        </div>
       </div>
     </details>
 
