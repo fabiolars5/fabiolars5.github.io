@@ -23,13 +23,15 @@
        - Aquí puedes cambiar la paleta general del portfolio
     ============================================================ */
     :root {
-      --main-bg: #0f1625;
+      --main-bg: #0b1220;
       --accent: #00bfae;
       --accent-soft: #14d1c5;
       --text: #f3f5fa;
       --muted: #a2a7b7;
       --card-bg: #111a2b;
+      --card-soft: #151e31;
       --border: #2b3349;
+      --line: rgba(255,255,255,.11);
     }
 
     /* ============================================================
@@ -43,54 +45,52 @@
     body {
       margin: 0;
       font-family: "Montserrat", sans-serif;
-      background: var(--main-bg);
+      background: linear-gradient(180deg, #08111f 0%, var(--main-bg) 45%, #0f1625 100%);
       color: var(--text);
     }
 
     /* ============================================================
        CABECERA SUPERIOR / MENÚ
        - Header fijo arriba
-       - Marca personal a la izquierda
-       - Navegación a la derecha
+       - Navegación centrada
     ============================================================ */
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      padding: 10px 6%;
-      background: #000a18;
+      padding: 18px 6%;
+      background: rgba(5, 12, 24, .94);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 10;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand-name {
-      color: var(--accent);
-      font-size: 1.2rem;
-      font-weight: 700;
-      line-height: 1.1;
-    }
-
-    .brand-role {
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.1;
+      backdrop-filter: blur(12px);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 0;
       margin: 0;
       padding: 0;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav li {
+      display: flex;
+      align-items: center;
+    }
+
+    nav li:not(:last-child)::after {
+      content: "";
+      width: 5px;
+      height: 5px;
+      margin: 0 20px;
+      border-radius: 999px;
+      background: rgba(0,191,174,.68);
+      box-shadow: 0 0 12px rgba(0,191,174,.35);
+      flex-shrink: 0;
     }
 
     nav a {
@@ -126,13 +126,15 @@
       align-items: center;
       justify-content: flex-start;
       text-align: left;
-      background: #0b0f1a;
+      background: #0a1324;
       overflow: hidden;
       min-height: 280px;
       padding: 30px 42px;
-      border-radius: 16px;
-      max-width: 900px;
+      border: 1px solid rgba(0,191,174,.24);
+      border-radius: 14px;
+      max-width: 980px;
       margin: 0 auto 34px;
+      box-shadow: 0 18px 48px rgba(0,0,0,.24);
     }
 
     /* Canvas de la red animada del fondo */
@@ -145,19 +147,32 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 680px;
+      max-width: 860px;
       padding: 4px 0;
     }
 
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: var(--accent-soft);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
     #hero h1 {
-      color: var(--accent);
+      color: #f7fbff;
       margin: 0 0 8px;
-      font-size: 1.75rem;
+      font-size: 2rem;
+      line-height: 1.2;
     }
 
     #hero h2 {
-      color: #d7dbe4;
-      font-size: 0.98rem;
+      color: #7dd3fc;
+      font-size: 1rem;
       margin: 0 0 12px;
       font-weight: 600;
     }
@@ -212,11 +227,57 @@
     ============================================================ */
     .section {
       background: var(--card-bg);
-      border: 1px solid rgba(255,255,255,.15);
+      border: 1px solid var(--line);
       border-radius: 12px;
       padding: 30px;
       margin-bottom: 60px;
-      box-shadow: 0 0 10px rgba(0,191,174,.10);
+      box-shadow: 0 12px 34px rgba(0,0,0,.18);
+    }
+
+    .hero-profile {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    .hero-profile h2 {
+      margin: 0 0 12px;
+      color: #f7fbff;
+      font-size: 1.12rem;
+    }
+
+    .profile-copy {
+      margin: 0 0 18px;
+      color: #cfd7e5;
+      line-height: 1.6;
+      max-width: 820px;
+    }
+
+    .profile-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .profile-point {
+      min-height: 102px;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 10px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .profile-point strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent-soft);
+      font-size: .95rem;
+    }
+
+    .profile-point span {
+      color: #d7deeb;
+      font-size: .86rem;
+      line-height: 1.55;
     }
 
     /* Título principal de sección */
@@ -245,10 +306,25 @@
     #proyectos > h2 {
       font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+
+    #proyectos {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #proyectos::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #7dd3fc, transparent);
     }
 
     .project-container > p {
@@ -257,39 +333,49 @@
     }
 
     .project-tabs {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 25px;
+      display: inline-flex;
+      gap: 4px;
+      margin-bottom: 24px;
       flex-wrap: wrap;
+      padding: 5px;
+      border: 1px solid rgba(0,191,174,.24);
+      border-radius: 999px;
+      background: rgba(255,255,255,.025);
     }
 
     .project-tab {
-      padding: 10px 18px;
-      border-radius: 8px;
+      padding: 9px 17px;
+      border-radius: 999px;
       background: transparent;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-      font-weight: 700;
+      border: 0;
+      color: #d6deeb;
+      font-weight: 800;
       cursor: pointer;
-      transition: 0.3s;
+      transition: .2s ease;
     }
 
     .project-tab:hover {
-      background: rgba(0,191,174,.1);
+      color: var(--accent-soft);
+      background: rgba(0,191,174,.08);
     }
 
     .project-tab.active {
       background: var(--accent);
       color: #0f1625;
+      box-shadow: 0 8px 22px rgba(0,191,174,.16);
     }
 
     .project-block {
       display: none;
-      background: rgba(255,255,255,.02);
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018)),
+        radial-gradient(circle at top right, rgba(0,191,174,.1), transparent 34%);
       border: 1px solid rgba(255,255,255,.1);
-      border-radius: 10px;
-      padding: 20px 25px;
+      border-radius: 14px;
+      padding: 24px 28px;
       margin-bottom: 25px;
+      overflow: hidden;
     }
 
     .project-block.visible {
@@ -302,13 +388,28 @@
 
     .project-block h3 {
       color: #00bcd4;
-      margin-bottom: 10px;
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      line-height: 1.25;
     }
 
     .project-block p {
       color: #bfc6d4;
       margin-bottom: 15px;
       line-height: 1.5em;
+    }
+
+    .project-block-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .project-block-header p {
+      max-width: 760px;
+      margin: 0;
     }
 
     .project-block h4 {
@@ -324,27 +425,46 @@
     }
 
     .project-structure-note {
-      background: rgba(0,191,174,.08);
-      border: 1px solid rgba(0,191,174,.25);
-      border-radius: 10px;
-      padding: 16px 18px;
-      margin: 18px 0 26px;
+      background: rgba(5, 15, 28, .36);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 18px;
+      margin: 18px 0 24px;
     }
 
     .project-structure-note p {
-      margin: 0 0 10px;
+      margin: 0 0 14px;
       color: #e5e7eb;
     }
 
-    .project-structure-note ul {
-      margin: 0;
-      padding-left: 18px;
-      color: #cfd3dd;
-      line-height: 1.55;
+    .cyber-pill-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
     }
 
-    .project-structure-note li {
-      margin-bottom: 8px;
+    .domain-pill {
+      min-height: 100px;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,191,174,.2);
+      background: linear-gradient(180deg, rgba(0,191,174,.08), rgba(125,211,252,.035));
+    }
+
+    .domain-label {
+      display: block;
+      margin-bottom: 6px;
+      color: #f4f7fb;
+      font-size: .86rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .domain-desc {
+      display: block;
+      color: #b7c0d0;
+      font-size: .78rem;
+      line-height: 1.45;
     }
 
     .subblock-note {
@@ -356,45 +476,113 @@
 
     /* NUEVO: separador entre bloques de ciberseguridad */
     .cyber-group {
-      padding: 8px 0 34px;
-      margin-bottom: 40px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding: 18px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      background: rgba(255,255,255,.018);
     }
 
     .cyber-group:last-of-type {
       margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
     }
 
-    .mini-projects div {
+    .mini-projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .mini-projects div,
+    .project-card {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(255,255,255,.02);
-      padding: 10px 14px;
-      border-radius: 8px;
-      margin: 8px 0;
+      background: rgba(8, 17, 32, .52);
+      padding: 13px 14px;
+      border-radius: 12px;
       border: 1px solid rgba(255,255,255,.08);
       gap: 12px;
+      transition: .2s ease;
+    }
+
+    .mini-projects div:hover,
+    .project-card:hover {
+      transform: translateY(-1px);
+      border-color: rgba(0,191,174,.32);
+      background: rgba(0,191,174,.045);
     }
 
     .mini-projects span {
       color: #e3e5e9;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .project-card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .project-card {
+      min-height: 210px;
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .project-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .project-card-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 26px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(125,211,252,.2);
+      background: rgba(125,211,252,.08);
+      color: #dff3ff;
+      font-size: .75rem;
+      font-weight: 800;
+    }
+
+    #proyectos .project-card h4 {
+      margin: 0;
+      color: #f7fbff;
+      font-size: 1.02rem;
+      line-height: 1.3;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: #bfc6d4;
+      font-size: .86rem;
+      line-height: 1.5;
     }
 
     .project-btn {
       background: var(--accent);
       color: #0f1625;
-      padding: 6px 14px;
-      border-radius: 8px;
-      font-weight: 700;
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 800;
       text-decoration: none;
       white-space: nowrap;
+      font-size: .88rem;
+      text-align: center;
     }
 
     .project-btn:hover {
       background: var(--accent-soft);
+    }
+
+    .project-card .project-btn {
+      align-self: flex-start;
     }
 
     /* ============================================================
@@ -404,32 +592,106 @@
        - Grid de 2 columnas
     ============================================================ */
     .exp-card {
-      background: rgba(255,255,255,.02);
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018));
       border: 1px solid rgba(255,255,255,.1);
       border-radius: 12px;
-      padding: 25px 30px;
+      padding: 28px 32px;
+    }
+
+    .exp-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #7dd3fc, transparent);
     }
 
     .exp-top {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       flex-wrap: wrap;
-      margin-bottom: 20px;
-      gap: 10px;
+      margin-bottom: 18px;
+      gap: 16px;
+    }
+
+    .exp-kicker {
+      display: inline-flex;
+      margin-bottom: 6px;
+      color: #7dd3fc;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
     .exp-role {
       color: var(--accent);
-      font-size: 1.3rem;
+      font-size: 1.45rem;
       font-weight: 700;
+      line-height: 1.2;
     }
 
     .exp-company {
       color: #cfd3dd;
+      font-size: 1rem;
+      margin-top: 2px;
     }
 
     .exp-date {
-      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(125,211,252,.24);
+      background: rgba(125,211,252,.08);
+      color: #d7e6f6;
+      font-size: .92rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .exp-summary {
+      max-width: 980px;
+      margin: 0 0 18px;
+      color: #d7deeb;
+      font-size: .98rem;
+      line-height: 1.58;
+    }
+
+    .exp-focus-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 20px 0 18px;
+    }
+
+    .exp-focus-card {
+      min-height: 116px;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,191,174,.18);
+      background: rgba(0,191,174,.055);
+    }
+
+    .exp-focus-card strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #f7fbff;
+      font-size: .9rem;
+      line-height: 1.35;
+    }
+
+    .exp-focus-card span {
+      color: #c8d2df;
+      font-size: .84rem;
+      line-height: 1.5;
     }
 
     .exp-toggle-btn {
@@ -451,11 +713,18 @@
       display: none;
       margin-top: 20px;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 14px;
     }
 
     .exp-columns.show {
       display: grid;
+    }
+
+    .exp-col {
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.025);
     }
 
     .exp-col h5 {
@@ -472,6 +741,7 @@
 
     .exp-col li {
       margin-bottom: 10px;
+      color: #d8deea;
     }
 
     .cv-note {
@@ -484,37 +754,84 @@
        SECCIÓN FORMACIÓN ACADÉMICA
     ============================================================ */
     .edu-block {
-      background: rgba(255,255,255,.02);
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018));
       border: 1px solid rgba(255,255,255,.1);
-      padding: 22px 26px;
-      border-radius: 10px;
-      margin-bottom: 40px;
+      padding: 24px 26px;
+      border-radius: 12px;
+      margin-bottom: 28px;
+    }
+
+    .edu-block::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), transparent);
+    }
+
+    .edu-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 14px;
     }
 
     .edu-title {
       color: #00bcd4;
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-size: 1.22rem;
+      font-weight: 800;
+      line-height: 1.25;
     }
 
     .edu-sub {
-      color: #9ca3af;
-      margin-bottom: 18px;
+      color: #c3ccda;
+      margin-top: 4px;
+      font-size: .92rem;
+    }
+
+    .edu-status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(125,211,252,.22);
+      background: rgba(125,211,252,.08);
+      color: #d7e6f6;
+      font-size: .78rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .edu-focus {
+      margin: 0 0 16px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,191,174,.16);
+      background: rgba(0,191,174,.045);
+      color: #d7deeb;
+      font-size: .9rem;
+      line-height: 1.55;
     }
 
     .assign-toggle-btn {
-      background: var(--accent);
-      color: #0f1625;
-      padding: 10px 18px;
-      border-radius: 8px;
+      background: rgba(0,191,174,.1);
+      color: var(--accent-soft);
+      padding: 8px 12px;
+      border-radius: 999px;
       font-weight: 700;
       cursor: pointer;
-      margin-bottom: 15px;
-      border: none;
+      margin-bottom: 14px;
+      border: 1px solid rgba(0,191,174,.28);
     }
 
     .assign-toggle-btn:hover {
-      background: var(--accent-soft);
+      background: rgba(0,191,174,.18);
     }
 
     .assign-container {
@@ -529,112 +846,289 @@
     .courses-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px 26px;
+      gap: 10px 14px;
     }
 
     .course-item {
-      background: rgba(255,255,255,.02);
-      border: 1px solid rgba(255,255,255,.1);
-      padding: 12px 16px;
-      border-radius: 8px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.09);
+      padding: 10px 12px;
+      border-radius: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
       gap: 12px;
+      transition: .2s ease;
+    }
+
+    .course-item:hover {
+      border-color: rgba(0,191,174,.3);
+      background: rgba(0,191,174,.05);
     }
 
     .course-item span {
       color: #e5e7eb;
     }
 
+    .course-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .course-year {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 30px;
+      border-radius: 8px;
+      background: rgba(125,211,252,.1);
+      border: 1px solid rgba(125,211,252,.18);
+      color: #7dd3fc;
+      font-weight: 800;
+      font-size: .82rem;
+      flex-shrink: 0;
+    }
+
+    .course-action {
+      background: var(--accent);
+      color: #0f1625;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 11px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
     .edu-list {
       display: none;
       grid-column: 1 / -1;
-      border-left: 2px solid var(--accent);
-      padding: 12px 22px;
+      border-left: 2px solid rgba(0,191,174,.75);
+      padding: 12px 18px;
+      border-radius: 0 10px 10px 0;
+      background: rgba(255,255,255,.018);
       color: #d1d5db;
       line-height: 1.45em;
-      margin: 4px 0 10px;
+      margin: 2px 0 10px;
     }
 
     .edu-list.show {
-      display: block;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 7px 18px;
+    }
+
+    .edu-list li {
+      margin-left: 12px;
+      color: #d8deea;
+      font-size: .9rem;
     }
 
     /* ============================================================
        SECCIÓN CERTIFICADOS / CONTACTO / FOOTER
     ============================================================ */
-    .cert-timeline {
-      position: relative;
-      margin: 8px 0 18px;
-      padding-left: 28px;
-      border-left: 2px solid var(--accent);
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
     }
 
-    .cert-item {
+    .cert-card {
       position: relative;
-      margin-bottom: 26px;
+      min-height: 190px;
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018));
+      overflow: hidden;
     }
 
-    .cert-item::before {
+    .cert-card::before {
       content: "";
       position: absolute;
-      left: -35px;
-      top: 4px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      border: 3px solid #0f1625;
-      box-shadow: 0 0 0 2px var(--accent);
+      inset: 0 auto 0 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), transparent);
     }
 
-    .cert-name {
-      margin: 0 0 6px;
-      color: #7dd3fc;
-      font-weight: 700;
-      line-height: 1.45;
+    .cert-card h3 {
+      margin: 0 0 12px;
+      color: #f7fbff;
+      font-size: 1.05rem;
+      line-height: 1.35;
     }
 
-    .cert-meta,
-    .cert-registry {
-      margin: 0;
-      color: #d1d5db;
+    .cert-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .cert-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,191,174,.2);
+      background: rgba(0,191,174,.06);
+      color: #d7f9f5;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .cert-line {
+      margin: 0 0 8px;
+      color: #d8deea;
       line-height: 1.55;
-      font-size: 0.95rem;
+      font-size: .9rem;
     }
 
-    .cert-registry {
-      margin-top: 12px;
+    .cert-line strong {
+      color: #7dd3fc;
     }
 
-    .cert-number {
-      color: #ff4d4d;
-      font-weight: 700;
+    .cert-verify {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(125,211,252,.14);
+      background: rgba(125,211,252,.045);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .cert-verify p {
+      margin: 0;
+      color: #d8deea;
+      line-height: 1.5;
     }
 
     .cert-link {
-      color: var(--accent-soft);
-      font-weight: 600;
-    }
-
-    .cert-block h4 {
-      margin-top: 0;
-      color: #00bcd4;
-    }
-
-    .cert-block ul {
-      padding-left: 18px;
-    }
-
-    .contact-content a {
-      color: var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #0f1625;
       text-decoration: none;
+      font-weight: 800;
+      font-size: .9rem;
+      white-space: nowrap;
     }
 
-    .contact-content a:hover {
-      text-decoration: underline;
+    .cert-link:hover {
+      background: var(--accent-soft);
+    }
+
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018));
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #7dd3fc, transparent);
+    }
+
+    .contact-lead {
+      margin: 0 0 6px;
+      color: #f7fbff;
+      font-size: 1.12rem;
+      font-weight: 800;
+    }
+
+    .contact-text {
+      margin: 0;
+      max-width: 760px;
+      color: #cfd7e5;
+      line-height: 1.6;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .contact-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: .92rem;
+      transition: .2s ease;
+    }
+
+    .contact-action.primary {
+      background: var(--accent);
+      color: #0f1625;
+    }
+
+    .contact-action.secondary {
+      border: 1px solid rgba(0,191,174,.3);
+      background: rgba(0,191,174,.08);
+      color: var(--accent-soft);
+    }
+
+    .contact-action:hover {
+      transform: translateY(-1px);
+    }
+
+    .availability {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.09);
+    }
+
+    .availability-label {
+      display: block;
+      margin-bottom: 10px;
+      color: #d7e6f6;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .availability-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .availability-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.025);
+      color: #cbd5e1;
+      font-size: .76rem;
+      font-weight: 700;
     }
 
     .profile-summary {
@@ -663,14 +1157,24 @@
     /* ============================================================
        RESPONSIVE
     ============================================================ */
+    @media (max-width: 980px) {
+      .project-card-grid,
+      .cyber-pill-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mini-projects {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 768px) {
       main.page-wrapper {
         padding: 24px 5% 40px;
       }
 
       header {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 16px 5%;
       }
 
       #hero {
@@ -714,14 +1218,64 @@
         grid-template-columns: 1fr;
       }
 
+      .exp-focus-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .courses-grid {
         grid-template-columns: 1fr;
       }
 
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .edu-heading {
+        flex-direction: column;
+      }
+
+      .edu-list.show {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-points,
+      .project-card-grid,
+      .mini-projects,
+      .cyber-pill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-tabs {
+        width: 100%;
+      }
+
+      .project-tab {
+        flex: 1 1 160px;
+      }
+
+      .project-block {
+        padding: 20px 16px;
+      }
+
+      .project-block-header {
+        flex-direction: column;
+      }
+
       nav ul {
-        gap: 12px;
+        gap: 0;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: center;
+      }
+
+      nav li:not(:last-child)::after {
+        width: 4px;
+        height: 4px;
+        margin: 0 10px;
+        opacity: .75;
+      }
+
+      .exp-focus-grid {
+        grid-template-columns: 1fr;
       }
 
       .mini-projects div {
@@ -734,8 +1288,8 @@
       }
 
       .cyber-group {
-        padding: 6px 0 26px;
-        margin-bottom: 30px;
+        padding: 15px;
+        margin-bottom: 14px;
       }
     }
   </style>
@@ -747,11 +1301,6 @@
        CABECERA / NAVEGACIÓN
   ============================================================= -->
   <header>
-    <div class="brand">
-      <span class="brand-name">Fabiola RS</span>
-      <span class="brand-role">Especialista en Ciberseguridad</span>
-    </div>
-
     <nav>
       <ul>
         <li><a href="#proyectos">Proyectos</a></li>
@@ -775,14 +1324,34 @@
       <canvas id="network-bg"></canvas>
 
       <div class="hero-content">
-        <h1>💻 Sobre mí</h1>
-        <h2>Ingeniera de Ciberseguridad en formación</h2>
+        <span class="hero-eyebrow">Portfolio de ciberseguridad</span>
+        <h1>Fabiola Rueda</h1>
+        <h2>Ingeniera de Ciberseguridad en formación · IT Security Specialist</h2>
         <p>Mi experiencia combina seguridad informática y soporte IT con una forma de trabajo organizada y metódica.</p>
         <p>Destaco por aportar estructura y análisis allí donde la tecnología exige seguridad, orden y confianza.</p>
 
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/fabiolars5" target="_blank" class="btn">🔗 LinkedIn</a>
           <a href="mailto:frsciberseguridad@gmail.com?subject=Consulta%20desde%20portfolio" class="btn btn-outline">📩 Contactar</a>
+        </div>
+
+        <div class="hero-profile" id="perfil-profesional">
+          <h2>Perfil profesional</h2>
+
+          <div class="profile-points">
+            <div class="profile-point">
+              <strong>GRC e ISO 27001</strong>
+              <span>Riesgos, controles, SGSI, evidencias, políticas, auditoría interna y mejora continua.</span>
+            </div>
+            <div class="profile-point">
+              <strong>Seguridad técnica</strong>
+              <span>Hardening, revisión de sistemas, análisis defensivo, scripting, redes y validación de configuraciones.</span>
+            </div>
+            <div class="profile-point">
+              <strong>Inteligencia y análisis</strong>
+              <span>OSINT, contexto de amenazas, APTs, campañas, geopolítica y reporting orientado a decisión.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -795,64 +1364,98 @@
       <h2>🚀 Proyectos</h2>
 
       <div class="project-container">
-        <p>Explora mis proyectos académicos y de ciberseguridad aplicada, incluyendo ciberinteligencia y análisis de amenazas.</p>
-
         <div class="project-tabs">
           <button class="project-tab active" onclick="showProjectBlock('uni', this)">Universitarios</button>
           <button class="project-tab" onclick="showProjectBlock('cyber', this)">Ciberseguridad e Inteligencia</button>
         </div>
 
         <div id="proj-uni" class="project-block visible">
-          <h3>📘 Proyectos Universitarios</h3>
-          <p>Trabajos destacados del grado en Ciberseguridad, organizados por curso académico.</p>
+          <div class="project-block-header">
+            <div>
+              <h3>📘 Proyectos Universitarios</h3>
+              <p>Trabajos destacados del grado en Ciberseguridad, organizados por curso académico.</p>
+            </div>
+          </div>
 
-          <div class="mini-projects">
-            <div><span>📘 Primer Año</span><a href="grado-paginas/1er-ano-proy_uni.html" class="project-btn">Entrar</a></div>
-            <div><span>📘 Segundo Año</span><a href="grado-paginas/2do-ano-proy_uni.html" class="project-btn">Entrar</a></div>
-            <div><span>📘 Tercer Año</span><a href="grado-paginas/3er-ano-proy_uni.html" class="project-btn">Entrar</a></div>
-            <div><span>📘 Cuarto Año</span><a href="grado-paginas/4to-ano-proy_uni.html" class="project-btn">Entrar</a></div>
+          <div class="project-card-grid">
+            <article class="project-card">
+              <div class="project-card-content">
+                <span class="project-card-badge">1º año</span>
+                <h4>Primer Año</h4>
+                <p>Fundamentos técnicos, programación, redes y bases de seguridad.</p>
+              </div>
+              <a href="grado-paginas/1er-ano-proy_uni.html" class="project-btn">Entrar</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card-content">
+                <span class="project-card-badge">2º año</span>
+                <h4>Segundo Año</h4>
+                <p>Sistemas, bases de datos, criptografía, hacking y desarrollo seguro.</p>
+              </div>
+              <a href="grado-paginas/2do-ano-proy_uni.html" class="project-btn">Entrar</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card-content">
+                <span class="project-card-badge">3º año</span>
+                <h4>Tercer Año</h4>
+                <p>Cloud, IA, redes avanzadas, seguridad aplicada y proyectos técnicos.</p>
+              </div>
+              <a href="grado-paginas/3er-ano-proy_uni.html" class="project-btn">Entrar</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card-content">
+                <span class="project-card-badge">4º año</span>
+                <h4>Cuarto Año</h4>
+                <p>Riesgo, auditoría, gobernanza, pentesting y trabajo final de grado.</p>
+              </div>
+              <a href="grado-paginas/4to-ano-proy_uni.html" class="project-btn">Entrar</a>
+            </article>
           </div>
         </div>
 
         <div id="proj-cyber" class="project-block hidden">
-          <h3>🛡️ Ciberseguridad e Inteligencia</h3>
-          <p>
-            Proyectos orientados a la aplicación práctica de la ciberseguridad,
-            organizados por su función dentro de la seguridad: proteger,
-            detectar, automatizar, gobernar y analizar amenazas.
-          </p>
+          <div class="project-block-header">
+            <div>
+              <h3>🛡️ Ciberseguridad e Inteligencia</h3>
+            </div>
+          </div>
 
           <div class="project-structure-note">
-            <p><strong>Cómo está organizado este bloque:</strong></p>
-            <ul>
-              <li><strong>Protección y defensa:</strong> proyectos para asegurar, endurecer o validar la seguridad de sistemas y redes.</li>
-              <li><strong>Análisis, detección y respuesta:</strong> proyectos enfocados en investigar, detectar, revisar e interpretar amenazas, eventos o comportamientos técnicos.</li>
-              <li><strong>Automatización y desarrollo:</strong> scripts, utilidades y mejoras técnicas para agilizar procesos de seguridad y reducir trabajo manual.</li>
-              <li><strong>Gobierno, riesgo y cultura de seguridad:</strong> proyectos relacionados con riesgos, políticas, cumplimiento y concienciación.</li>
-              <li><strong>Ciberinteligencia y amenazas:</strong> proyectos de OSINT, herramientas de inteligencia, APTs, campañas y contexto geopolítico.</li>
-            </ul>
+            <p><strong>Mapa rápido de competencias:</strong></p>
+            <div class="cyber-pill-grid">
+              <span class="domain-pill">
+                <span class="domain-label">Protección y defensa</span>
+                <span class="domain-desc">Hardening, análisis técnico y validación.</span>
+              </span>
+              <span class="domain-pill">
+                <span class="domain-label">Automatización</span>
+                <span class="domain-desc">Scripts, informes y soporte operativo.</span>
+              </span>
+              <span class="domain-pill">
+                <span class="domain-label">GRC</span>
+                <span class="domain-desc">Riesgos, políticas, ISO 27001 y cultura.</span>
+              </span>
+              <span class="domain-pill">
+                <span class="domain-label">Inteligencia</span>
+                <span class="domain-desc">OSINT, APTs y contexto de amenazas.</span>
+              </span>
+            </div>
           </div>
 
           <div class="cyber-group">
-            <h4>🛡️ Protección y defensa</h4>
+            <h4>🛡️ Protección, análisis y defensa</h4>
             <p class="subblock-note">
-              Incluye proyectos centrados en proteger sistemas, reforzar configuraciones y poner a prueba la seguridad mediante prácticas ofensivas controladas.
+              Incluye proyectos centrados en proteger sistemas, reforzar configuraciones,
+              analizar evidencias técnicas y validar la seguridad mediante prácticas controladas.
             </p>
 
             <div class="mini-projects">
               <div><span>🛡️ Configuración segura de sistemas y redes</span><a href="proyectos-paginas/2A-configuracion-segura.html" class="project-btn">Entrar</a></div>
               <div><span>💣 Herramientas ofensivas y pruebas de explotación</span><a href="proyectos-paginas/2B-herramientas-ofensivas.html" class="project-btn">Entrar</a></div>
               <div><span>🏁 Retos CTF y write-ups</span><a href="proyectos-paginas/2C-retos-ctf.html" class="project-btn">Entrar</a></div>
-            </div>
-          </div>
-
-          <div class="cyber-group">
-            <h4>🔍 Análisis, detección y respuesta</h4>
-            <p class="subblock-note">
-              Reúne proyectos orientados al análisis técnico, la detección, la interpretación de evidencias y la respuesta defensiva ante eventos o incidentes.
-            </p>
-
-            <div class="mini-projects">
               <div><span>🔍 Análisis técnico y defensa</span><a href="proyectos-paginas/2D-analisis-defensa.html" class="project-btn">Entrar</a></div>
             </div>
           </div>
@@ -910,17 +1513,37 @@
       <div class="exp-card">
         <div class="exp-top">
           <div>
-            <div class="exp-role">💼 IT Security Specialist</div>
+            <span class="exp-kicker">Experiencia actual</span>
+            <div class="exp-role">IT Security Specialist</div>
             <div class="exp-company">Manheim Cox Automotive</div>
           </div>
           <div class="exp-date">Abril 2024 — 2027</div>
         </div>
 
-        <p class="cv-note" style="margin-top:0; margin-bottom:18px; font-size:1rem; color:#cfd3dd;">
+        <p class="exp-summary">
           Soporte IT integral a usuarios y colaboración en administración de sistemas, con foco en ciberseguridad corporativa e ISO/IEC 27001 (SGSI). Trabajo diario combinando soporte técnico (L1–L3), gestión de accesos, automatización, operación de seguridad y soporte a aplicaciones internas.
         </p>
 
-        <button class="exp-toggle-btn" onclick="toggleExp()">Funciones y Responsabilidades</button>
+        <div class="exp-focus-grid">
+          <div class="exp-focus-card">
+            <strong>Ciberseguridad corporativa</strong>
+            <span>Monitorización EDR, vulnerabilidades, phishing, evidencias y concienciación.</span>
+          </div>
+          <div class="exp-focus-card">
+            <strong>ISO/IEC 27001 y SGSI</strong>
+            <span>Políticas, procedimientos, trazabilidad, controles y apoyo en auditorías internas.</span>
+          </div>
+          <div class="exp-focus-card">
+            <strong>Soporte y sistemas L1-L3</strong>
+            <span>Usuarios, equipos, red, VPN, AD, Microsoft 365, Entra ID y aplicaciones internas.</span>
+          </div>
+          <div class="exp-focus-card">
+            <strong>Automatización y datos</strong>
+            <span>Scripts, SQL Server, cargas masivas, reporting y mejora de procesos IT.</span>
+          </div>
+        </div>
+
+        <button class="exp-toggle-btn" onclick="toggleExp(this)" aria-expanded="false">Ver responsabilidades detalladas</button>
 
         <div id="exp-columns" class="exp-columns">
           <div class="exp-col">
@@ -964,11 +1587,6 @@
           </div>
         </div>
 
-        <p class="cv-note" style="margin-top:24px; line-height:1.6;">
-          <strong>Tecnologías:</strong> ISO/IEC 27001 (SGSI), políticas y procedimientos, evidencias y trazabilidad, auditoría interna, gestión de incidencias, gestión de vulnerabilidades (N-able N-sight), SentinelOne (EDR), monitorización de alertas y logs, gestión de activos IT, IAM (Active Directory / Microsoft 365 / Microsoft Entra ID), Windows Server, GPO, DHCP/DNS, Microsoft 365 Admin Center, AnyDesk, TeamViewer, RDP, SQL Server (SSMS, T-SQL), Python, PowerShell, Bash/CMD (.bat), Java, VMware, VirtualBox, Docker Desktop, Docker Compose, Kali Linux, Cisco Packet Tracer, Wireshark, Nmap, Burp Suite, Metasploit, OpenVAS (GVM), Trivy, Ghidra, Hydra, Binwalk, Salesforce, SAP ERP, Power BI, QlikView, DF Server EVO, MongoDB, Hadoop/HDFS y Apache Spark.
-        </p>
-
-        <p class="cv-note">CV completo disponible bajo solicitud.</p>
       </div>
     </section>
 
@@ -979,16 +1597,25 @@
       <h2 class="section-title">🎓 Formación Académica</h2>
 
       <div class="edu-block">
-        <div class="edu-title">🌍 Grado en Relaciones Internacionales</div>
-        <div class="edu-sub">Universidad Rey Juan Carlos | 2014 – 2019 (Finalizado)</div>
+        <div class="edu-heading">
+          <div>
+            <div class="edu-title">🌍 Grado en Relaciones Internacionales</div>
+            <div class="edu-sub">Universidad Rey Juan Carlos | 2014 – 2019</div>
+          </div>
+          <span class="edu-status">Finalizado</span>
+        </div>
 
-        <button class="assign-toggle-btn" onclick="toggleAssign(this)">Asignaturas ▼</button>
+        <p class="edu-focus">
+          Base en análisis geopolítico, derecho internacional, seguridad, relaciones institucionales y contexto estratégico.
+        </p>
+
+        <button class="assign-toggle-btn" onclick="toggleAssign(this)">Ver asignaturas ▼</button>
 
         <div class="assign-container">
           <div class="courses-grid">
 
             <div class="course-item" onclick="toggleEduList(this)">
-              <span>📘 Primer curso</span><button class="project-btn" type="button">Ver</button>
+              <span class="course-label"><span class="course-year">1º</span><span>Primer curso</span></span><button class="course-action" type="button">Ver</button>
             </div>
             <ul class="edu-list">
               <li>Historia de las RRII</li>
@@ -1004,7 +1631,7 @@
             </ul>
 
             <div class="course-item" onclick="toggleEduList(this)">
-              <span>📗 Segundo curso</span><button class="project-btn" type="button">Ver</button>
+              <span class="course-label"><span class="course-year">2º</span><span>Segundo curso</span></span><button class="course-action" type="button">Ver</button>
             </div>
             <ul class="edu-list">
               <li>Marketing Internacional</li>
@@ -1019,7 +1646,7 @@
             </ul>
 
             <div class="course-item" onclick="toggleEduList(this)">
-              <span>📙 Tercer curso</span><button class="project-btn" type="button">Ver</button>
+              <span class="course-label"><span class="course-year">3º</span><span>Tercer curso</span></span><button class="course-action" type="button">Ver</button>
             </div>
             <ul class="edu-list">
               <li>Culturas, Religiones y Fundamentalismos</li>
@@ -1035,7 +1662,7 @@
             </ul>
 
             <div class="course-item" onclick="toggleEduList(this)">
-              <span>📕 Cuarto curso</span><button class="project-btn" type="button">Ver</button>
+              <span class="course-label"><span class="course-year">4º</span><span>Cuarto curso</span></span><button class="course-action" type="button">Ver</button>
             </div>
             <ul class="edu-list">
               <li>Protocolo y Ceremonial</li>
@@ -1052,16 +1679,25 @@
       </div>
 
       <div class="edu-block">
-        <div class="edu-title">🛡️ Grado en Ingeniería de la Ciberseguridad</div>
-        <div class="edu-sub">Universidad Europea Madrid | 2023 — Actualmente</div>
+        <div class="edu-heading">
+          <div>
+            <div class="edu-title">🛡️ Grado en Ingeniería de la Ciberseguridad</div>
+            <div class="edu-sub">Universidad Europea Madrid | 2023 — Actualmente</div>
+          </div>
+          <span class="edu-status">En curso</span>
+        </div>
 
-        <button class="assign-toggle-btn" onclick="toggleAssign(this)">Asignaturas ▼</button>
+        <p class="edu-focus">
+          Formación técnica en seguridad, redes, sistemas, programación, riesgos, auditoría y gobernanza de la seguridad.
+        </p>
+
+        <button class="assign-toggle-btn" onclick="toggleAssign(this)">Ver asignaturas ▼</button>
 
         <div class="assign-container">
           <div class="courses-grid">
 
             <div class="course-item" onclick="toggleEduList(this)">
-              <span>📘 Primer curso</span><button class="project-btn" type="button">Ver</button>
+              <span class="course-label"><span class="course-year">1º</span><span>Primer curso</span></span><button class="course-action" type="button">Ver</button>
             </div>
             <ul class="edu-list">
               <li>Álgebra</li>
@@ -1077,7 +1713,7 @@
             </ul>
 
             <div class="course-item" onclick="toggleEduList(this)">
-              <span>📗 Segundo curso</span><button class="project-btn" type="button">Ver</button>
+              <span class="course-label"><span class="course-year">2º</span><span>Segundo curso</span></span><button class="course-action" type="button">Ver</button>
             </div>
             <ul class="edu-list">
               <li>Técnicas de Programación Avanzadas</li>
@@ -1093,7 +1729,7 @@
             </ul>
 
             <div class="course-item" onclick="toggleEduList(this)">
-              <span>📙 Tercer curso</span><button class="project-btn" type="button">Ver</button>
+              <span class="course-label"><span class="course-year">3º</span><span>Tercer curso</span></span><button class="course-action" type="button">Ver</button>
             </div>
             <ul class="edu-list">
               <li>Ingeniería del Software</li>
@@ -1109,7 +1745,7 @@
             </ul>
 
             <div class="course-item" onclick="toggleEduList(this)">
-              <span>📕 Cuarto curso</span><button class="project-btn" type="button">Ver</button>
+              <span class="course-label"><span class="course-year">4º</span><span>Cuarto curso</span></span><button class="course-action" type="button">Ver</button>
             </div>
             <ul class="edu-list">
               <li>Análisis y Gestión del Riesgo</li>
@@ -1138,27 +1774,39 @@
   <h2 class="section-title">✅ Certificados</h2>
 
   <div class="cert-block">
-    <div class="cert-timeline">
-      <article class="cert-item">
-        <p class="cert-name">Titulación Propia de Especialista Implantador ISO/IEC 27001 · AENOR · 2026</p>
-        <p class="cert-registry">Registro: ISO 27001 Information Security Management Systems Professional · IQNET Registered Professional</p>
+    <div class="cert-grid">
+      <article class="cert-card">
+        <h3>Titulación Propia de Especialista Implantador ISO/IEC 27001</h3>
+        <div class="cert-tags">
+          <span class="cert-tag">AENOR</span>
+          <span class="cert-tag">ISO/IEC 27001</span>
+          <span class="cert-tag">IQNET</span>
+          <span class="cert-tag">2026</span>
+        </div>
+        <p class="cert-line"><strong>Registro:</strong> ISO 27001 Information Security Management Systems Professional</p>
+        <p class="cert-line"><strong>Reconocimiento:</strong> IQNET Registered Professional</p>
       </article>
 
-      <article class="cert-item">
-        <p class="cert-name">Titulación Propia de Auditor Líder ISO/IEC 27001 · AENOR · 2026</p>
-        <p class="cert-meta">Diploma adicional: IQNET ISO 27001 Lead Auditor</p>
-        <p class="cert-registry">Registro: ISO 27001 Lead Auditor · IQNET Registered Professional</p>
-      </article>
-
-      <article class="cert-item">
-        <p class="cert-meta">Verificación online IQNET Professionals Registry:</p>
-        <p class="cert-number">PONER NUMERO CERTIFICACION</p>
+      <article class="cert-card">
+        <h3>Titulación Propia de Auditor Líder ISO/IEC 27001</h3>
+        <div class="cert-tags">
+          <span class="cert-tag">AENOR</span>
+          <span class="cert-tag">ISO/IEC 27001</span>
+          <span class="cert-tag">Lead Auditor</span>
+          <span class="cert-tag">2026</span>
+        </div>
+        <p class="cert-line"><strong>Diploma adicional:</strong> IQNET ISO 27001 Lead Auditor</p>
+        <p class="cert-line"><strong>Registro:</strong> ISO 27001 Lead Auditor</p>
+        <p class="cert-line"><strong>Reconocimiento:</strong> IQNET Registered Professional</p>
       </article>
     </div>
 
-    <a class="cert-link" href="https://academy.iqnet-certification.com/content/professionals-offer" target="_blank" rel="noopener noreferrer">
-      https://academy.iqnet-certification.com/content/professionals-offer
-    </a>
+    <div class="cert-verify">
+      <p><strong>Verificación online IQNET Professionals Registry:</strong><br>Número de registro pendiente de emisión.</p>
+      <a class="cert-link" href="https://academy.iqnet-certification.com/content/professionals-offer" target="_blank" rel="noopener noreferrer">
+        Abrir registro IQNET
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1168,16 +1816,29 @@
     <section id="contacto" class="section contact-box">
       <h2 class="section-title">📬 Contacto</h2>
 
-      <div class="contact-content">
-        <p><b>¿Quieres colaborar o tienes una propuesta?</b></p>
-
-        <p>Escríbeme a:
-          <a href="mailto:frsciberseguridad@gmail.com">frsciberseguridad@gmail.com</a>
+      <div class="contact-card">
+        <p class="contact-lead">¿Quieres colaborar o tienes una propuesta?</p>
+        <p class="contact-text">
+          Estoy abierta a oportunidades y conversaciones relacionadas con ciberseguridad, GRC, ISO 27001,
+          soporte IT de seguridad y proyectos donde pueda aportar estructura, análisis y criterio técnico.
         </p>
 
-        <p><b>LinkedIn:</b>
-          <a href="https://www.linkedin.com/in/fabiolars5" target="_blank">linkedin.com/in/fabiolars5</a>
-        </p>
+        <div class="contact-actions">
+          <a class="contact-action primary" href="mailto:frsciberseguridad@gmail.com?subject=Consulta%20desde%20portfolio">📩 Enviar email</a>
+          <a class="contact-action secondary" href="https://www.linkedin.com/in/fabiolars5" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+        </div>
+
+        <div class="availability">
+          <span class="availability-label">Disponible para</span>
+          <div class="availability-tags">
+            <span class="availability-tag">Ciberseguridad</span>
+            <span class="availability-tag">GRC</span>
+            <span class="availability-tag">ISO 27001</span>
+            <span class="availability-tag">Soporte IT</span>
+            <span class="availability-tag">Riesgos y auditoría</span>
+            <span class="availability-tag">Roles junior / prácticas</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1297,9 +1958,15 @@
        SCRIPT 3: DESPLEGAR / OCULTAR EXPERIENCIA
   ============================================================= -->
   <script>
-    function toggleExp() {
+    function toggleExp(btn) {
       const cols = document.getElementById("exp-columns");
-      if (cols) cols.classList.toggle("show");
+      if (!cols) return;
+      cols.classList.toggle("show");
+      if (btn) {
+        const isOpen = cols.classList.contains("show");
+        btn.textContent = isOpen ? "Ocultar responsabilidades detalladas" : "Ver responsabilidades detalladas";
+        btn.setAttribute("aria-expanded", String(isOpen));
+      }
     }
   </script>
 
@@ -1314,8 +1981,8 @@
       container.classList.toggle("show");
 
       btn.textContent = container.classList.contains("show")
-        ? "Asignaturas ▲"
-        : "Asignaturas ▼";
+        ? "Ocultar asignaturas ▲"
+        : "Ver asignaturas ▼";
     }
   </script>
 

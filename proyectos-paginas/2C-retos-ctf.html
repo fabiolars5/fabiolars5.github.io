@@ -13,12 +13,18 @@
       --tx:#f3f5fa;
       --muted:#a2a7b7;
       --card:#1a2234;
+      --card-soft:#131b2c;
       --bd:#2b3349;
       --acc:#00bfae;
       --acc-soft:#14d1c5;
+      --accent-box:rgba(0,191,174,.08);
     }
 
     *{box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
@@ -60,6 +66,34 @@
     .breadcrumb a{
       color:var(--acc);
       text-decoration:none;
+      font-weight:600;
+    }
+
+    .breadcrumb a:hover{
+      text-decoration:underline;
+    }
+
+    .intro-box{
+      max-width:980px;
+      margin:0 auto 24px;
+      background:var(--accent-box);
+      border:1px solid rgba(0,191,174,.25);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    .intro-box p{
+      margin:0 0 10px;
+      color:#dfe5ee;
+    }
+
+    .intro-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .intro-highlight{
+      color:var(--acc-soft);
+      font-weight:700;
     }
 
     .subject-grid{
@@ -73,12 +107,14 @@
       background:var(--card);
       border:1.5px solid var(--bd);
       border-radius:14px;
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
+      transition:.2s ease;
     }
 
     details.subject[open]{
       border-color:var(--acc-soft);
       box-shadow:0 0 0 1px rgba(0,191,174,.2);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
     }
 
     summary{
@@ -87,6 +123,7 @@
       align-items:center;
       justify-content:space-between;
       cursor:pointer;
+      gap:16px;
     }
     summary::-webkit-details-marker{display:none;}
 
@@ -94,11 +131,13 @@
       display:flex;
       flex-direction:column;
       gap:4px;
+      min-width:0;
     }
 
     .subject-name{
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
+      color:#f6f8fc;
     }
 
     .subject-tags{
@@ -112,12 +151,15 @@
       border-radius:999px;
       border:1px solid #2b3349;
       margin-right:4px;
+      margin-bottom:4px;
+      background:#131b2c;
     }
 
     .subject-arrow{
       font-size:1.1rem;
       color:var(--muted);
       transition:transform .2s ease;
+      flex-shrink:0;
     }
 
     details[open] .subject-arrow{
@@ -126,15 +168,45 @@
     }
 
     .subject-body{
-      margin-top:10px;
-      padding-top:8px;
+      margin-top:12px;
+      padding-top:14px;
       border-top:1px solid #252c40;
       font-size:.93rem;
     }
 
     .subject-body p{
-      margin:0 0 10px;
-      color:var(--muted);
+      margin:0 0 14px;
+      color:#c9d0dc;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr);
+      gap:10px;
+      margin:12px 0 16px;
+    }
+
+    .info-card{
+      background:rgba(255,255,255,.022);
+      border:1px solid rgba(255,255,255,.075);
+      border-left:3px solid rgba(0,191,174,.72);
+      border-radius:10px;
+      padding:10px 12px;
+    }
+
+    .info-card h3{
+      margin:0 0 6px;
+      font-size:.74rem;
+      color:var(--acc-soft);
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .info-card p{
+      margin:0;
+      font-size:.86rem;
+      color:#d8dde7;
+      line-height:1.55;
     }
 
     .resource-list{
@@ -209,16 +281,24 @@
       gap:6px;
       white-space:nowrap;
     }
-    .request-link{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
+
+    .plain-text{
+      color:#dbe1ea;
+      font-size:.92rem;
     }
 
-    .empty{
-      font-style:italic;
-      color:var(--muted);
+    .section-note{
+      margin-top:14px;
+      padding:12px 14px;
+      background:rgba(0,191,174,.05);
+      border:1px solid rgba(0,191,174,.18);
+      border-radius:10px;
+      color:#dfe5ee;
+      font-size:.88rem;
+    }
+
+    .section-note strong{
+      color:var(--acc-soft);
     }
 
     .footer-nav{
@@ -243,10 +323,32 @@
       cursor:pointer;
       background:var(--acc);
       color:#0f1625;
+      transition:.2s ease;
+    }
+
+    .btn-next:hover{
+      background:var(--acc-soft);
+      transform:translateY(-1px);
+    }
+
+    @media (max-width:768px){
+      .info-grid{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:640px){
-      body{padding:40px 5%;}
+      body{
+        padding:40px 5%;
+      }
+
+      h1{
+        font-size:1.75rem;
+      }
+
+      .subtitle{
+        font-size:.94rem;
+      }
     }
   </style>
 </head>
@@ -257,20 +359,27 @@
       <span class="emoji">🏁</span>
       Retos CTF y Laboratorios Técnicos
     </h1>
-    <p class="subtitle">
-      Participación en CTFs, laboratorios prácticos y simulaciones de ataque/defensa para reforzar
-      habilidades en explotación, análisis forense, criptografía y resolución de problemas bajo presión.
-    </p>
     <div class="breadcrumb">
       <a href="../index.html">⬅ Volver al portfolio</a> ·
-      <span>Ciberseguridad técnica y operativa</span>
+      <span>Protección y defensa</span>
     </div>
   </header>
+
+  <section class="intro-box">
+    <p>
+      Esta sección reúne retos CTF y laboratorios técnicos orientados a practicar
+      <span class="intro-highlight">análisis de vulnerabilidades, explotación controlada y documentación de hallazgos</span>.
+    </p>
+    <p>
+      El objetivo es demostrar razonamiento técnico, metodología de resolución y capacidad para transformar ejercicios prácticos
+      en aprendizajes útiles para entornos reales de seguridad defensiva y ofensiva controlada.
+    </p>
+  </section>
 
   <main class="subject-grid">
 
     <!-- 1. Web Exploitation -->
-    <details class="subject">
+    <details class="subject" open>
       <summary>
         <div class="subject-title">
           <span class="subject-name">CTFs de Web Exploitation</span>
@@ -286,20 +395,38 @@
           Retos centrados en vulnerabilidades web: inyección SQL, XSS, malas configuraciones,
           control de acceso inseguro y enumeración de aplicaciones.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Resultado profesional</h3>
+            <p>
+              Identificar, explotar y documentar vulnerabilidades web comunes, explicando impacto,
+              evidencia técnica y medidas de mitigación.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Competencias aplicadas</h3>
+            <p>
+              Enumeración, análisis de parámetros, SQLi, XSS, control de acceso, lectura de errores,
+              validación de hallazgos y redacción de write-ups.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
                     <li>
             <span class="resource-type">Write-up</span>
             <span class="practice-title">Write-up CTF Web #1 (PDF) · Write-up CTF Web #2 (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/web/ctf-web-writeup-01.pdf" target="_blank">Abrir recurso 1</a>
-              <a href="../assets-archivos/tecnica/retos-ctf/web/ctf-web-writeup-02.pdf" target="_blank">Abrir recurso 2</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
                     <li>
             <span class="resource-type">Código</span>
             <span class="practice-title">Scripts y exploits web (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/web/exploits-web.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -323,20 +450,38 @@
           Análisis de capturas de red, imágenes de disco y volcados de memoria para reconstruir
           incidentes, extraer evidencias y recuperar indicadores de compromiso.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Resultado profesional</h3>
+            <p>
+              Reconstruir actividad sospechosa a partir de evidencias técnicas y presentar conclusiones
+              de forma ordenada y verificable.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Competencias aplicadas</h3>
+            <p>
+              Análisis de PCAP, revisión de artefactos, extracción de IOCs, línea temporal,
+              correlación de evidencias y documentación forense.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
                     <li>
             <span class="resource-type">Informe</span>
             <span class="practice-title">Informe reto forense (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/forense/ctf-forense-informe.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
                     <li>
             <span class="resource-type">Muestras</span>
             <span class="practice-title">Captura de red (PCAP) · Imagen de disco / artefactos (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/forense/captura-red.pcap" target="_blank">Abrir recurso 1</a>
-              <a href="../assets-archivos/tecnica/retos-ctf/forense/imagen-disco.zip" target="_blank">Abrir recurso 2</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -360,19 +505,38 @@
           Retos de reversing y explotación de binarios: análisis estático y dinámico, ingeniería inversa
           básica y desarrollo de pequeños exploits para vulnerabilidades simples.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Resultado profesional</h3>
+            <p>
+              Analizar binarios y comprender su comportamiento para detectar lógica vulnerable,
+              condiciones de explotación y posibles controles defensivos.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Competencias aplicadas</h3>
+            <p>
+              Reversing básico, análisis estático y dinámico, depuración, interpretación de flujo,
+              explotación controlada y soporte con scripts.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
                     <li>
             <span class="resource-type">Write-up</span>
             <span class="practice-title">Write-up reto de reversing (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/reverse/ctf-reverse-writeup.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
                     <li>
             <span class="resource-type">Binarios</span>
             <span class="practice-title">Binarios y scripts de apoyo (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/reverse/binarios-retos.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -396,19 +560,38 @@
           Resumen de actividad en plataformas como Hack The Box, TryHackMe u otras, con foco en
           los aprendizajes clave y su aplicación a proyectos reales de seguridad.
         </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Resultado profesional</h3>
+            <p>
+              Consolidar aprendizajes técnicos y evidenciar progreso práctico en laboratorios,
+              relacionando cada reto con competencias de seguridad aplicables.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Competencias aplicadas</h3>
+            <p>
+              Resolución de retos, gestión del tiempo, documentación, transferencia de conocimiento,
+              priorización de técnicas y mejora continua.
+            </p>
+          </div>
+        </div>
+
         <ul class="resource-list">
                     <li>
             <span class="resource-type">Resumen</span>
             <span class="practice-title">Actividad en plataformas CTF (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/resumen/actividad-plataformas-ctf.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
                     <li>
             <span class="resource-type">Checklist</span>
             <span class="practice-title">Checklist de aprendizajes y skills (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/retos-ctf/resumen/checklist-aprendizajes-ctf.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>

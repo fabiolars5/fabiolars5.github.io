@@ -185,29 +185,32 @@
 
     .info-grid{
       display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:12px;
-      margin:14px 0 16px;
+      grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr);
+      gap:10px;
+      margin:12px 0 16px;
     }
 
     .info-card{
-      background:var(--card-soft);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:12px;
-      padding:12px 14px;
+      background:rgba(255,255,255,.022);
+      border:1px solid rgba(255,255,255,.075);
+      border-left:3px solid rgba(0,191,174,.72);
+      border-radius:10px;
+      padding:10px 12px;
     }
 
     .info-card h3{
-      margin:0 0 8px;
-      font-size:.92rem;
-      color:var(--acc);
+      margin:0 0 6px;
+      font-size:.74rem;
+      color:var(--acc-soft);
+      letter-spacing:.06em;
+      text-transform:uppercase;
     }
 
     .info-card p{
       margin:0;
-      font-size:.88rem;
+      font-size:.86rem;
       color:#d8dde7;
-      line-height:1.6;
+      line-height:1.55;
     }
 
     .resource-list{
@@ -275,12 +278,6 @@
 
     .resource-links a:hover{
       text-decoration:underline;
-    }
-    .request-link{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
     }
     .request-link{
       display:inline-flex;
@@ -372,11 +369,6 @@
       Desarrollo y scripts seguros
     </h1>
 
-    <p class="subtitle">
-      Proyectos centrados en automatización segura, desarrollo defensivo y buenas prácticas para crear scripts
-      y utilidades técnicas con validación, trazabilidad, manejo seguro de configuración y enfoque mantenible.
-    </p>
-
     <div class="breadcrumb">
       <a href="../index.html">⬅ Volver al portfolio</a> ·
       <span>Automatización y desarrollo</span>
@@ -421,7 +413,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Automatizar tareas repetitivas sin introducir riesgos innecesarios y dejando una base
               más robusta, clara y reutilizable.
@@ -429,7 +421,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Validación de entradas, variables de entorno, configuración externa, logs, manejo de excepciones,
               modularidad y documentación básica de uso.
@@ -442,8 +434,7 @@
             <span class="resource-type">Python</span>
             <span class="practice-title">Script de backup seguro de carpetas (ZIP) · Script para consolidar logs de auditoría (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/script-backup-seguro.zip" target="_blank">Abrir recurso 1</a>
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/script-logs-auditoria.zip" target="_blank">Abrir recurso 2</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -451,7 +442,7 @@
             <span class="resource-type">PowerShell</span>
             <span class="practice-title">Inventario de equipos y software instalado (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/ps-inventario-equipos.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -482,7 +473,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Diseñar utilidades pequeñas pero sólidas, fáciles de mantener y menos propensas
               a fallos derivados de entradas inesperadas o configuraciones inseguras.
@@ -490,7 +481,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               CLI básica, validación de inputs, mensajes de error seguros, estructuras simples,
               modularidad, separación de configuración y organización del código.
@@ -503,7 +494,7 @@
             <span class="resource-type">Utilidad 1</span>
             <span class="practice-title">Utilidad de gestión básica de usuarios (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/app-gestion-usuarios.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -533,7 +524,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Reducir olvidos comunes y convertir la revisión de seguridad en un proceso más sistemático
               y repetible.
@@ -541,7 +532,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Checklist de revisión, gestión de errores, tratamiento de secretos,
               logging, permisos, validación y controles mínimos antes de publicar o reutilizar un script.
@@ -554,7 +545,7 @@
             <span class="resource-type">Checklist</span>
             <span class="practice-title">Checklist de desarrollo seguro (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/checklist-desarrollo-seguro.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -562,7 +553,7 @@
             <span class="resource-type">Guía</span>
             <span class="practice-title">Guía de buenas prácticas en scripts de automatización (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/guia-buenas-practicas-scripts.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -592,7 +583,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Evitar que los scripts queden como piezas aisladas y difíciles de mantener,
               favoreciendo una evolución controlada y entendible.
@@ -600,7 +591,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Git, README, changelog, estructura de carpetas, notas de uso, dependencias,
               variables de configuración y trazabilidad de cambios.
@@ -613,8 +604,7 @@
             <span class="resource-type">Plantillas</span>
             <span class="practice-title">Plantilla de README para scripts (MD) · Registro de cambios / control de versiones (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/plantilla-readme-script.md" target="_blank">Abrir recurso 1</a>
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/plantilla-registro-cambios.xlsx" target="_blank">Abrir recurso 2</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -644,7 +634,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Mostrar que también sé mejorar código existente, no solo crear uno nuevo,
               reduciendo deuda técnica y riesgos evitables.
@@ -652,7 +642,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Refactorización, limpieza de lógica, modularidad, errores, validación,
               nombres claros, reducción de duplicidad y mejora general del flujo.
@@ -665,7 +655,7 @@
             <span class="resource-type">Refactor</span>
             <span class="practice-title">Caso de refactorización segura de script (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/caso-refactor-script.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -673,7 +663,7 @@
             <span class="resource-type">Comparativa</span>
             <span class="practice-title">Comparativa antes / después (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/automatizacion/desarrollo-seguro/antes-despues-refactor.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>

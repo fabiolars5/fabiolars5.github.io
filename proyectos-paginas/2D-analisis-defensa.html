@@ -185,29 +185,32 @@
 
     .info-grid{
       display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:12px;
-      margin:14px 0 16px;
+      grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr);
+      gap:10px;
+      margin:12px 0 16px;
     }
 
     .info-card{
-      background:var(--card-soft);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:12px;
-      padding:12px 14px;
+      background:rgba(255,255,255,.022);
+      border:1px solid rgba(255,255,255,.075);
+      border-left:3px solid rgba(0,191,174,.72);
+      border-radius:10px;
+      padding:10px 12px;
     }
 
     .info-card h3{
-      margin:0 0 8px;
-      font-size:.92rem;
-      color:var(--acc);
+      margin:0 0 6px;
+      font-size:.74rem;
+      color:var(--acc-soft);
+      letter-spacing:.06em;
+      text-transform:uppercase;
     }
 
     .info-card p{
       margin:0;
-      font-size:.88rem;
+      font-size:.86rem;
       color:#d8dde7;
-      line-height:1.6;
+      line-height:1.55;
     }
 
     .resource-list{
@@ -275,12 +278,6 @@
 
     .resource-links a:hover{
       text-decoration:underline;
-    }
-    .request-link{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
     }
     .request-link{
       display:inline-flex;
@@ -367,12 +364,6 @@
       Análisis técnico y defensa
     </h1>
 
-    <p class="subtitle">
-      Proyectos orientados al análisis de eventos, detección de actividad sospechosa,
-      investigación técnica y respuesta defensiva ante incidentes en entornos de laboratorio
-      y escenarios simulados.
-    </p>
-
     <div class="breadcrumb">
       <a href="../index.html">⬅ Volver al portfolio</a> ·
       <span>Análisis, detección y respuesta</span>
@@ -417,7 +408,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Aprender a extraer señales útiles de grandes volúmenes de eventos y construir
               hipótesis razonables a partir de evidencias técnicas.
@@ -425,7 +416,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Event Viewer, syslog, autenticación, errores críticos, logs de seguridad, trazas
               de actividad administrativa, correlación básica y lectura contextual de eventos.
@@ -438,7 +429,7 @@
             <span class="resource-type">Informe</span>
             <span class="practice-title">Análisis de logs en Windows y Linux (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/logs/informe-analisis-logs.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -446,7 +437,7 @@
             <span class="resource-type">Dataset</span>
             <span class="practice-title">Conjunto de logs de práctica (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/logs/logs-ejemplo.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -476,7 +467,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Comprender cómo traducir comportamientos sospechosos de red en reglas de detección
               útiles y cómo ajustar señales para reducir falsos positivos.
@@ -484,7 +475,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Reglas Snort/Suricata, firmas, patrones de tráfico, tuning básico, validación de alertas,
               ruido frente a detección útil y revisión de tráfico sospechoso.
@@ -497,7 +488,7 @@
             <span class="resource-type">Guía</span>
             <span class="practice-title">Guía de configuración Snort / Suricata (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/ids/guia-snort-suricata.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -505,7 +496,7 @@
             <span class="resource-type">Reglas</span>
             <span class="practice-title">Reglas IDS/IPS de ejemplo (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/ids/reglas-ejemplo-ids.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -535,7 +526,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Practicar una respuesta ordenada y razonada ante incidentes, entendiendo no solo qué
               ha pasado, sino qué hacer, en qué orden y con qué evidencias.
@@ -543,7 +534,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Clasificación inicial, triage, validación del incidente, contención, erradicación,
               recuperación, comunicación interna y aprendizaje posterior.
@@ -556,7 +547,7 @@
             <span class="resource-type">Informe</span>
             <span class="practice-title">Informe de simulación de incidente (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/incident/informe-respuesta-incidentes.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -564,7 +555,7 @@
             <span class="resource-type">Playbook</span>
             <span class="practice-title">Playbook de respuesta ante incidentes (DOCX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/incident/playbook-respuesta.docx" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -594,7 +585,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Diseñar una monitorización que no solo recoja eventos, sino que ayude de verdad
               a detectar actividad relevante y a priorizar revisión.
@@ -602,7 +593,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Casos de uso, reglas de correlación, dashboards, severidad, fuentes de datos,
               alertas accionables y seguimiento de señales relevantes.
@@ -615,7 +606,7 @@
             <span class="resource-type">Caso práctico</span>
             <span class="practice-title">Caso práctico de monitorización con SIEM (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/siem/caso-practico-siem.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -623,7 +614,7 @@
             <span class="resource-type">Dashboards</span>
             <span class="practice-title">Dashboards y reglas de alerta (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/siem/dashboards-alertas.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -653,7 +644,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Aprender a analizar correos sospechosos con criterio técnico y a separar campañas reales,
               ruido, errores de configuración y falsos positivos.
@@ -661,7 +652,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Headers, remitentes, SPF/DKIM/DMARC a nivel interpretativo, URLs, adjuntos, indicadores
               de phishing y documentación del triage inicial.
@@ -674,7 +665,7 @@
             <span class="resource-type">Informe</span>
             <span class="practice-title">Informe de análisis de phishing (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/phishing/informe-analisis-phishing.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -682,7 +673,7 @@
             <span class="resource-type">Evidencias</span>
             <span class="practice-title">Cabeceras, URLs y evidencias de triage (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/analisis-defensa/phishing/evidencias-phishing.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>

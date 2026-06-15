@@ -185,29 +185,32 @@
 
     .info-grid{
       display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:12px;
-      margin:14px 0 16px;
+      grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr);
+      gap:10px;
+      margin:12px 0 16px;
     }
 
     .info-card{
-      background:var(--card-soft);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:12px;
-      padding:12px 14px;
+      background:rgba(255,255,255,.022);
+      border:1px solid rgba(255,255,255,.075);
+      border-left:3px solid rgba(0,191,174,.72);
+      border-radius:10px;
+      padding:10px 12px;
     }
 
     .info-card h3{
-      margin:0 0 8px;
-      font-size:.92rem;
-      color:var(--acc);
+      margin:0 0 6px;
+      font-size:.74rem;
+      color:var(--acc-soft);
+      letter-spacing:.06em;
+      text-transform:uppercase;
     }
 
     .info-card p{
       margin:0;
-      font-size:.88rem;
+      font-size:.86rem;
       color:#d8dde7;
-      line-height:1.6;
+      line-height:1.55;
     }
 
     .resource-list{
@@ -275,12 +278,6 @@
 
     .resource-links a:hover{
       text-decoration:underline;
-    }
-    .request-link{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
     }
     .request-link{
       display:inline-flex;
@@ -372,11 +369,6 @@
       APTs y campañas de amenazas
     </h1>
 
-    <p class="subtitle">
-      Perfiles de grupos APT, análisis de campañas, estudio de TTPs, mapeo a MITRE ATT&amp;CK
-      e inteligencia útil para detección, priorización y defensa.
-    </p>
-
     <div class="breadcrumb">
       <a href="../index.html">⬅ Volver al portfolio</a> ·
       <span>Ciberinteligencia y análisis de amenazas</span>
@@ -420,7 +412,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Construir perfiles claros de actores de amenaza que permitan entender
               motivaciones, foco de actividad y comportamientos recurrentes.
@@ -428,7 +420,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Atribución, sectores objetivo, campañas asociadas, infraestructura,
               patrones operativos, TTPs frecuentes y evolución del actor.
@@ -441,7 +433,7 @@
             <span class="resource-type">Perfil APT28</span>
             <span class="practice-title">Informe de perfil APT28 (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/perfil-apt28.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -449,7 +441,7 @@
             <span class="resource-type">Perfil APT29</span>
             <span class="practice-title">Informe de perfil APT29 (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/perfil-apt29.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -480,7 +472,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Entender cómo se desarrolla una campaña realista de extremo a extremo
               y qué señales deja en cada fase.
@@ -488,7 +480,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Cadena de ataque, cronología, acceso inicial, payload, persistencia,
               movimiento lateral, objetivos operativos e impacto potencial.
@@ -501,7 +493,7 @@
             <span class="resource-type">Caso 1</span>
             <span class="practice-title">Informe de campaña de spear phishing (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/caso-campana-phishing-apt.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -531,7 +523,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Traducir inteligencia de amenazas a un marco estructurado que ayude
               a entender mejor el comportamiento del adversario.
@@ -539,7 +531,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               MITRE ATT&amp;CK, tácticas, técnicas, subtécnicas, frecuencia de uso,
               relación entre actor y comportamiento y lectura defensiva del mapeo.
@@ -552,7 +544,7 @@
             <span class="resource-type">Tabla TTPs</span>
             <span class="practice-title">Hoja de TTPs por grupo APT (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/ttps-mitre-apt.xlsx" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -560,7 +552,7 @@
             <span class="resource-type">Resumen táctico</span>
             <span class="practice-title">Resumen táctico para defensores (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/resumen-tactico.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -590,7 +582,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Traducir inteligencia a artefactos más accionables que puedan servir
               como apoyo a detección o hunting básico.
@@ -598,7 +590,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               IoCs, dominios, IPs, hashes, patrones, Sigma, YARA, utilidad y limitaciones
               de la detección basada en indicadores.
@@ -611,7 +603,7 @@
             <span class="resource-type">IoCs</span>
             <span class="practice-title">Listado de IoCs por campaña (CSV)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/iocs-apt.csv" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -619,7 +611,7 @@
             <span class="resource-type">Reglas</span>
             <span class="practice-title">Reglas Sigma / YARA de ejemplo (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/reglas-sigma-yara.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -649,7 +641,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Demostrar que la inteligencia no se queda en análisis pasivo,
               sino que puede apoyar decisiones defensivas concretas.
@@ -657,7 +649,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Priorización por sector, exposición, controles relevantes, detecciones sugeridas,
               cobertura ATT&amp;CK y ajuste de monitorización.
@@ -670,7 +662,7 @@
             <span class="resource-type">Resumen</span>
             <span class="practice-title">Recomendaciones defensivas basadas en campañas APT (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/recomendaciones-defensa-apts.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -678,7 +670,7 @@
             <span class="resource-type">Cobertura</span>
             <span class="practice-title">Revisión de cobertura y casos de uso (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/amenazas-apts/revision-cobertura-deteccion.xlsx" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
