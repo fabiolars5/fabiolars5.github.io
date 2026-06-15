@@ -185,29 +185,32 @@
 
     .info-grid{
       display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:12px;
-      margin:14px 0 16px;
+      grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr);
+      gap:10px;
+      margin:12px 0 16px;
     }
 
     .info-card{
-      background:var(--card-soft);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:12px;
-      padding:12px 14px;
+      background:rgba(255,255,255,.022);
+      border:1px solid rgba(255,255,255,.075);
+      border-left:3px solid rgba(0,191,174,.72);
+      border-radius:10px;
+      padding:10px 12px;
     }
 
     .info-card h3{
-      margin:0 0 8px;
-      font-size:.92rem;
-      color:var(--acc);
+      margin:0 0 6px;
+      font-size:.74rem;
+      color:var(--acc-soft);
+      letter-spacing:.06em;
+      text-transform:uppercase;
     }
 
     .info-card p{
       margin:0;
-      font-size:.88rem;
+      font-size:.86rem;
       color:#d8dde7;
-      line-height:1.6;
+      line-height:1.55;
     }
 
     .resource-list{
@@ -275,12 +278,6 @@
 
     .resource-links a:hover{
       text-decoration:underline;
-    }
-    .request-link{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
     }
     .request-link{
       display:inline-flex;
@@ -367,12 +364,6 @@
       Herramientas ofensivas y pruebas de explotación
     </h1>
 
-    <p class="subtitle">
-      Laboratorios y prácticas de pentesting ético orientados a identificar vulnerabilidades,
-      validar exposición real en entornos controlados y documentar hallazgos técnicos con impacto,
-      evidencia y propuestas de mitigación.
-    </p>
-
     <div class="breadcrumb">
       <a href="../index.html">⬅ Volver al portfolio</a> ·
       <span>Protección y defensa</span>
@@ -416,7 +407,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Obtener visibilidad técnica inicial sobre un objetivo de laboratorio y generar una base
               sólida para priorizar pruebas posteriores de validación o explotación.
@@ -424,7 +415,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Escaneo de puertos, banners, versiones, fingerprinting, servicios web, SMB,
               enumeración básica de usuarios, shares y exposición de servicios inseguros.
@@ -437,7 +428,7 @@
             <span class="resource-type">Informe</span>
             <span class="practice-title">Informe de escaneo con Nmap (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/recon/informe-escaneo-nmap.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -445,7 +436,7 @@
             <span class="resource-type">Scripts</span>
             <span class="practice-title">Scripts y comandos usados (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/recon/scripts-nmap.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -475,7 +466,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Confirmar si una debilidad identificada es realmente explotable y cuál sería su
               repercusión técnica u operativa en un entorno controlado.
@@ -483,7 +474,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Selección de módulos, validación manual, explotación guiada, interpretación de errores,
               identificación de prerequisitos y limitaciones de explotación.
@@ -496,7 +487,7 @@
             <span class="resource-type">Informe</span>
             <span class="practice-title">Informe de explotación con Metasploit (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/exploit/informe-explotacion-metasploit.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -504,7 +495,7 @@
             <span class="resource-type">Exploits</span>
             <span class="practice-title">Exploits y módulos utilizados (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/exploit/exploits-pruebas.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -534,7 +525,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Entender hasta dónde podría llegar un atacante tras una intrusión inicial y qué controles
               fallan o faltan para limitar el movimiento y la escalada.
@@ -542,7 +533,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Enumeración interna, privilegios, credenciales expuestas, configuraciones inseguras,
               malas prácticas locales, movimiento lateral controlado y persistencia en laboratorio.
@@ -555,7 +546,7 @@
             <span class="resource-type">Informe</span>
             <span class="practice-title">Informe de post-explotación (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/post/informe-post-explotacion.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -563,7 +554,7 @@
             <span class="resource-type">Evidencias</span>
             <span class="practice-title">Evidencias y comandos usados (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/post/evidencias-post-explotacion.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -593,7 +584,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Identificar debilidades frecuentes en aplicaciones web y documentarlas con claridad
               para que puedan entenderse tanto desde negocio como desde desarrollo o seguridad.
@@ -601,7 +592,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Interceptación de tráfico, modificación de peticiones, autenticación, control de sesión,
               validación de inputs, errores de exposición y pruebas básicas de seguridad web.
@@ -614,7 +605,7 @@
             <span class="resource-type">Informe</span>
             <span class="practice-title">Informe de pruebas web con Burp Suite (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/web/informe-pruebas-web-burp.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -622,7 +613,7 @@
             <span class="resource-type">Evidencias</span>
             <span class="practice-title">Capturas y evidencias de validación (ZIP)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/web/capturas-pruebas-web.zip" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -652,7 +643,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Traducir resultados técnicos a informes que aporten valor real y permitan priorizar
               decisiones de corrección, hardening o seguimiento.
@@ -660,7 +651,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Redacción de hallazgos, severidad, impacto, evidencia mínima, pasos de reproducción,
               remediación propuesta y trazabilidad de acciones.
@@ -673,7 +664,7 @@
             <span class="resource-type">Plantilla</span>
             <span class="practice-title">Plantilla de informe de pentest (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/reporting/plantilla-informe-pentest.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -681,7 +672,7 @@
             <span class="resource-type">Hallazgos</span>
             <span class="practice-title">Matriz de hallazgos y remediación (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/tecnica/herramientas-ofensivas/reporting/matriz-hallazgos-remediacion.xlsx" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>

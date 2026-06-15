@@ -185,29 +185,32 @@
 
     .info-grid{
       display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:12px;
-      margin:14px 0 16px;
+      grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr);
+      gap:10px;
+      margin:12px 0 16px;
     }
 
     .info-card{
-      background:var(--card-soft);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:12px;
-      padding:12px 14px;
+      background:rgba(255,255,255,.022);
+      border:1px solid rgba(255,255,255,.075);
+      border-left:3px solid rgba(0,191,174,.72);
+      border-radius:10px;
+      padding:10px 12px;
     }
 
     .info-card h3{
-      margin:0 0 8px;
-      font-size:.92rem;
-      color:var(--acc);
+      margin:0 0 6px;
+      font-size:.74rem;
+      color:var(--acc-soft);
+      letter-spacing:.06em;
+      text-transform:uppercase;
     }
 
     .info-card p{
       margin:0;
-      font-size:.88rem;
+      font-size:.86rem;
       color:#d8dde7;
-      line-height:1.6;
+      line-height:1.55;
     }
 
     .resource-list{
@@ -275,12 +278,6 @@
 
     .resource-links a:hover{
       text-decoration:underline;
-    }
-    .request-link{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
     }
     .request-link{
       display:inline-flex;
@@ -372,12 +369,6 @@
       Investigación OSINT
     </h1>
 
-    <p class="subtitle">
-      Proyectos de inteligencia de fuentes abiertas orientados a recopilar, contrastar,
-      correlacionar y documentar información pública útil para análisis de exposición,
-      perfiles, infraestructura y ciberseguridad.
-    </p>
-
     <div class="breadcrumb">
       <a href="../index.html">⬅ Volver al portfolio</a> ·
       <span>Ciberinteligencia y análisis de amenazas</span>
@@ -422,7 +413,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Entender qué señales públicas permiten evaluar si un dominio merece revisión,
               seguimiento o tratamiento como infraestructura sospechosa.
@@ -430,7 +421,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               WHOIS, DNS, passive DNS, certificados, hosting, IPs relacionadas,
               historial, reputación y correlación con otros activos.
@@ -443,7 +434,7 @@
             <span class="resource-type">Informe</span>
             <span class="practice-title">Informe OSINT dominio sospechoso (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/informe-dominio-sospechoso.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -451,7 +442,7 @@
             <span class="resource-type">Anexos</span>
             <span class="practice-title">Evidencias y capturas (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/evidencias-dominio.xlsx" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -482,7 +473,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Comprender cómo la presencia pública en redes puede aportar contexto,
               pistas de correlación y riesgos de exposición.
@@ -490,7 +481,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Alias, patrones públicos, correlación entre plataformas,
               huella digital, exposición de hábitos o relaciones visibles.
@@ -503,7 +494,7 @@
             <span class="resource-type">Caso práctico</span>
             <span class="practice-title">Informe de investigación en redes sociales (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/investigacion-perfiles-redes.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -534,7 +525,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Localizar información públicamente accesible que pueda suponer
               una señal de exposición o una oportunidad de revisión defensiva.
@@ -542,7 +533,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Dorks, lógica de búsqueda, hallazgos públicos, clasificación
               por criticidad y documentación de exposición observable.
@@ -555,7 +546,7 @@
             <span class="resource-type">Cheat sheet</span>
             <span class="practice-title">Google Dorks para empresas (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/google-dorks-empresas.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -563,7 +554,7 @@
             <span class="resource-type">Plantilla</span>
             <span class="practice-title">Plantilla para registrar hallazgos (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/plantilla-dorks.xlsx" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -594,7 +585,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Detectar señales tempranas de exposición pública de información sensible
               y estructurar una revisión prudente de fugas potenciales.
@@ -602,7 +593,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Credenciales expuestas, menciones públicas, repositorios, paste sites,
               clasificación de hallazgos y lectura de riesgo asociada.
@@ -615,7 +606,7 @@
             <span class="resource-type">Caso práctico</span>
             <span class="practice-title">Caso práctico: detección de fuga de datos (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/caso-fuga-datos.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -623,7 +614,7 @@
             <span class="resource-type">Checklist</span>
             <span class="practice-title">Checklist de búsqueda de fugas (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/checklist-fuga-datos.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
@@ -654,7 +645,7 @@
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Objetivo</h3>
+            <h3>Resultado profesional</h3>
             <p>
               Pasar de la simple recopilación de datos a una inteligencia
               más estructurada, priorizada y útil para seguridad.
@@ -662,7 +653,7 @@
           </div>
 
           <div class="info-card">
-            <h3>Qué se trabaja</h3>
+            <h3>Competencias aplicadas</h3>
             <p>
               Correlación, validación cruzada, priorización de hallazgos,
               síntesis, exposición e interpretación de riesgo.
@@ -675,7 +666,7 @@
             <span class="resource-type">Resumen</span>
             <span class="practice-title">Resumen de hallazgos correlacionados (PDF)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/resumen-hallazgos-osint.pdf" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
 
@@ -683,7 +674,7 @@
             <span class="resource-type">Priorización</span>
             <span class="practice-title">Priorización de exposición y hallazgos (XLSX)</span>
             <div class="resource-links">
-              <a href="../assets-archivos/intel/osint/priorizacion-hallazgos-osint.xlsx" target="_blank">Abrir recurso</a>
+              <a href="mailto:frsciberseguridad@gmail.com?subject=Solicitud%20de%20acceso%20-%20Portfolio%20ciberseguridad" class="request-link">🔒 Solicitar acceso</a>
             </div>
           </li>
         </ul>
