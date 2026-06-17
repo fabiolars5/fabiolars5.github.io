@@ -9,7 +9,18 @@
   ============================================================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fabiola RS | Cybersecurity Engineer Portfolio</title>
+  <title>Fabiola RS | Portfolio de Ciberseguridad y GRC</title>
+  <meta name="description" content="Portfolio profesional de Fabiola RS centrado en seguridad de la información, GRC, ISO/IEC 27001, operaciones IT, hardening, automatización e inteligencia de amenazas." />
+  <meta name="author" content="Fabiola RS" />
+  <link rel="canonical" href="https://fabiolars5.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fabiola RS | Portfolio de Ciberseguridad y GRC" />
+  <meta property="og:description" content="Proyectos y experiencia en seguridad de la información, GRC, ISO/IEC 27001, operaciones IT, hardening e inteligencia de amenazas." />
+  <meta property="og:url" content="https://fabiolars5.github.io/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Fabiola RS | Portfolio de Ciberseguridad y GRC" />
+  <meta name="twitter:description" content="Portfolio profesional centrado en seguridad de la información, GRC, ISO/IEC 27001 y operaciones IT." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
   <!-- ============================================================
        FUENTE EXTERNA
@@ -1117,22 +1128,6 @@
       font-weight: 700;
     }
 
-    .profile-summary {
-      margin: 0 auto 40px;
-      text-align: center;
-      color: #d1d5db;
-    }
-
-    .profile-summary ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
     footer {
       text-align: center;
       padding: 18px 0 24px;
@@ -1311,11 +1306,11 @@
 
       <div class="hero-content">
         <span class="hero-eyebrow">Portfolio de ciberseguridad</span>
-        <h1>Fabiola Rueda</h1>
+        <h1>Fabiola RS</h1>
 
         <div class="contact-links">
-          <a href="https://www.linkedin.com/in/fabiolars5" target="_blank" class="btn">🔗 LinkedIn</a>
-          <a href="mailto:frsciberseguridad@gmail.com?subject=Consulta%20desde%20portfolio" class="btn btn-outline">📩 Contactar</a>
+          <a href="https://www.linkedin.com/in/fabiolars5" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Abrir perfil de LinkedIn de Fabiola RS">🔗 LinkedIn</a>
+          <a href="mailto:frsciberseguridad@gmail.com?subject=Consulta%20desde%20portfolio" class="btn btn-outline" aria-label="Enviar email a Fabiola RS">📩 Contactar</a>
         </div>
 
         <div class="hero-profile" id="perfil-profesional">
@@ -1347,12 +1342,12 @@
       <h2>Proyectos</h2>
 
       <div class="project-container">
-        <div class="project-tabs">
-          <button class="project-tab active" onclick="showProjectBlock('uni', this)">Universitarios</button>
-          <button class="project-tab" onclick="showProjectBlock('cyber', this)">Ciberseguridad e Inteligencia</button>
+        <div class="project-tabs" role="tablist" aria-label="Tipos de proyectos">
+          <button id="tab-cyber" type="button" class="project-tab active" onclick="showProjectBlock('cyber', this)" role="tab" aria-controls="proj-cyber" aria-selected="true">Ciberseguridad</button>
+          <button id="tab-uni" type="button" class="project-tab" onclick="showProjectBlock('uni', this)" role="tab" aria-controls="proj-uni" aria-selected="false">Universitarios</button>
         </div>
 
-        <div id="proj-uni" class="project-block visible">
+        <div id="proj-uni" class="project-block hidden" role="tabpanel" aria-labelledby="tab-uni">
           <div class="project-block-header">
             <div>
               <h3>Proyectos Universitarios</h3>
@@ -1395,10 +1390,10 @@
           </div>
         </div>
 
-        <div id="proj-cyber" class="project-block hidden">
+        <div id="proj-cyber" class="project-block visible" role="tabpanel" aria-labelledby="tab-cyber">
           <div class="project-block-header">
             <div>
-              <h3>Ciberseguridad e Inteligencia</h3>
+              <h3>Ciberseguridad</h3>
             </div>
           </div>
 
@@ -1406,21 +1401,47 @@
             <p><strong>Mapa rápido de competencias:</strong></p>
             <div class="cyber-pill-grid">
               <span class="domain-pill">
+                <span class="domain-label">Seguridad de la información</span>
+                <span class="domain-desc">SGSI, ISO/IEC 27001, riesgos y evidencias.</span>
+              </span>
+              <span class="domain-pill">
                 <span class="domain-label">Protección y defensa</span>
                 <span class="domain-desc">Hardening, análisis técnico y validación.</span>
+              </span>
+              <span class="domain-pill">
+                <span class="domain-label">Ciberinteligencia</span>
+                <span class="domain-desc">OSINT, APTs y contexto de amenazas.</span>
               </span>
               <span class="domain-pill">
                 <span class="domain-label">Automatización</span>
                 <span class="domain-desc">Scripts, informes y soporte operativo.</span>
               </span>
-              <span class="domain-pill">
-                <span class="domain-label">GRC</span>
-                <span class="domain-desc">Riesgos, políticas, ISO 27001 y cultura.</span>
-              </span>
-              <span class="domain-pill">
-                <span class="domain-label">Inteligencia</span>
-                <span class="domain-desc">OSINT, APTs y contexto de amenazas.</span>
-              </span>
+            </div>
+          </div>
+
+          <div class="cyber-group">
+            <h4>Seguridad de la información y GRC</h4>
+            <p class="subblock-note">
+              Agrupa proyectos relacionados con SGSI, ISO/IEC 27001, gestión de riesgos, políticas internas, auditoría, evidencias y concienciación en seguridad.
+            </p>
+
+            <div class="mini-projects">
+              <div><span>Seguridad de la información</span><a href="proyectos-paginas/2G-gestion-riesgos.html" class="project-btn">Entrar</a></div>
+              <div><span>Políticas y concienciación</span><a href="proyectos-paginas/2H-politicas-concienciacion.html" class="project-btn">Entrar</a></div>
+            </div>
+          </div>
+
+          <div class="cyber-group">
+            <h4>Ciberinteligencia y análisis de amenazas</h4>
+            <p class="subblock-note">
+              Integra proyectos de OSINT, herramientas de inteligencia, seguimiento de actores de amenaza, APTs y contexto geopolítico aplicado a la seguridad.
+            </p>
+
+            <div class="mini-projects">
+              <div><span>Investigación OSINT</span><a href="proyectos-paginas/4B-osint.html" class="project-btn">Entrar</a></div>
+              <div><span>Herramientas de inteligencia</span><a href="proyectos-paginas/4B-herramientas-inteligencia.html" class="project-btn">Entrar</a></div>
+              <div><span>APTs y campañas de amenazas</span><a href="proyectos-paginas/4B-amenazas-apts.html" class="project-btn">Entrar</a></div>
+              <div><span>Ciberconflictos y geopolítica</span><a href="proyectos-paginas/4B-ciberconflictos.html" class="project-btn">Entrar</a></div>
             </div>
           </div>
 
@@ -1448,32 +1469,6 @@
             <div class="mini-projects">
               <div><span>Automatización e informes</span><a href="proyectos-paginas/2E-automatizacion-informes.html" class="project-btn">Entrar</a></div>
               <div><span>Desarrollo y scripts seguros</span><a href="proyectos-paginas/2F-desarrollo-seguro.html" class="project-btn">Entrar</a></div>
-            </div>
-          </div>
-
-          <div class="cyber-group">
-            <h4>Seguridad de la información y GRC</h4>
-            <p class="subblock-note">
-              Agrupa proyectos relacionados con SGSI, ISO/IEC 27001, gestión de riesgos, políticas internas, auditoría, evidencias y concienciación en seguridad.
-            </p>
-
-            <div class="mini-projects">
-              <div><span>Seguridad de la información</span><a href="proyectos-paginas/2G-gestion-riesgos.html" class="project-btn">Entrar</a></div>
-              <div><span>Políticas y concienciación</span><a href="proyectos-paginas/2H-politicas-concienciacion.html" class="project-btn">Entrar</a></div>
-            </div>
-          </div>
-
-          <div class="cyber-group">
-            <h4>Ciberinteligencia y análisis de amenazas</h4>
-            <p class="subblock-note">
-              Integra proyectos de OSINT, herramientas de inteligencia, seguimiento de actores de amenaza, APTs y contexto geopolítico aplicado a la seguridad.
-            </p>
-
-            <div class="mini-projects">
-              <div><span>Investigación OSINT</span><a href="proyectos-paginas/4B-osint.html" class="project-btn">Entrar</a></div>
-              <div><span>Herramientas de inteligencia</span><a href="proyectos-paginas/4B-herramientas-inteligencia.html" class="project-btn">Entrar</a></div>
-              <div><span>APTs y campañas de amenazas</span><a href="proyectos-paginas/4B-amenazas-apts.html" class="project-btn">Entrar</a></div>
-              <div><span>Ciberconflictos y geopolítica</span><a href="proyectos-paginas/4B-ciberconflictos.html" class="project-btn">Entrar</a></div>
             </div>
           </div>
         </div>
@@ -1597,12 +1592,12 @@
             </div>
             <ul class="edu-list">
               <li>Historia de las RRII</li>
-              <li>Sistemas y Modelos Constitucionales En El Ambito Internacional</li>
-              <li>Geografía Humana, Economica y Politica</li>
+              <li>Sistemas y modelos constitucionales en el ámbito internacional</li>
+              <li>Geografía humana, económica y política</li>
               <li>Nuevas Tecnologías en las RRII</li>
               <li>Teoría y Fundamentos de las RRII</li>
               <li>Principios de Economía</li>
-              <li>Historia Del Mundo Contemporáneo y los Movimientos Sociales</li>
+              <li>Historia del mundo contemporáneo y los movimientos sociales</li>
               <li>Organizaciones e Instituciones Internacionales</li>
               <li>Introducción al Derecho</li>
               <li>Derecho Internacional Público</li>
@@ -1630,7 +1625,7 @@
               <li>Culturas, Religiones y Fundamentalismos</li>
               <li>Procesos de Democratización, Transiciones y Comunidad Internacional</li>
               <li>Derecho Penal Internacional</li>
-              <li>Comunidad Iberoamericana de Naciones y Procesos de Integración En América</li>
+              <li>Comunidad Iberoamericana de Naciones y procesos de integración en América</li>
               <li>Comercio y Arbitraje Internacional</li>
               <li>UE y Derecho Comunitario</li>
               <li>Terrorismo Internacional</li>
@@ -1727,10 +1722,10 @@
             </div>
             <ul class="edu-list">
               <li>Análisis y Gestión del Riesgo</li>
-              <li>Malware y Amenazadas Dirigidas</li>
+              <li>Malware y Amenazas Dirigidas</li>
               <li>Auditoría</li>
               <li>Pentesting</li>
-              <li>Proyecto Ingenieria III</li>
+              <li>Proyecto Ingeniería III</li>
               <li>Regulación y Gobernanza de la Seguridad</li>
               <li>Prácticas Externas</li>
               <li>TFG</li>
@@ -1761,7 +1756,7 @@
           <span class="cert-tag">IQNET</span>
           <span class="cert-tag">2026</span>
         </div>
-        <p class="cert-line"><strong>Registro:</strong> ISO 27001 Information Security Management Systems Professional</p>
+        <p class="cert-line"><strong>Registro:</strong> ISO/IEC 27001 Information Security Management Systems Professional</p>
         <p class="cert-line"><strong>Reconocimiento:</strong> IQNET Registered Professional</p>
       </article>
 
@@ -1773,8 +1768,8 @@
           <span class="cert-tag">Lead Auditor</span>
           <span class="cert-tag">2026</span>
         </div>
-        <p class="cert-line"><strong>Diploma adicional:</strong> IQNET ISO 27001 Lead Auditor</p>
-        <p class="cert-line"><strong>Registro:</strong> ISO 27001 Lead Auditor</p>
+        <p class="cert-line"><strong>Diploma adicional:</strong> IQNET ISO/IEC 27001 Lead Auditor</p>
+        <p class="cert-line"><strong>Registro:</strong> ISO/IEC 27001 Lead Auditor</p>
         <p class="cert-line"><strong>Reconocimiento:</strong> IQNET Registered Professional</p>
       </article>
     </div>
@@ -1796,13 +1791,10 @@
 
       <div class="contact-card">
         <p class="contact-lead">¿Hablamos?</p>
-        <p class="contact-text">
-          Busco oportunidades y colaboraciones en ciberseguridad, seguridad de la información y operaciones IT.
-        </p>
 
         <div class="contact-actions">
-          <a class="contact-action primary" href="mailto:frsciberseguridad@gmail.com?subject=Consulta%20desde%20portfolio">📩 Enviar email</a>
-          <a class="contact-action secondary" href="https://www.linkedin.com/in/fabiolars5" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+          <a class="contact-action primary" href="mailto:frsciberseguridad@gmail.com?subject=Consulta%20desde%20portfolio" aria-label="Enviar email a Fabiola RS">📩 Enviar email</a>
+          <a class="contact-action secondary" href="https://www.linkedin.com/in/fabiolars5" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de LinkedIn de Fabiola RS">🔗 LinkedIn</a>
         </div>
 
         <div class="availability">
@@ -1820,21 +1812,10 @@
     </section>
 
     <!-- =============================================================
-         RESUMEN FINAL DE CUALIDADES
-    ============================================================= -->
-    <div class="profile-summary">
-      <ul>
-        <li>✔ Adaptabilidad</li>
-        <li>✔ Integridad</li>
-        <li>✔ Trabajo en equipo</li>
-      </ul>
-    </div>
-
-    <!-- =============================================================
          FOOTER
     ============================================================= -->
     <footer>
-      &copy; 2025 Fabiola RS · Portfolio de Ciberseguridad · Hecho con GitHub Pages
+      &copy; 2026 Fabiola RS · Portfolio de Ciberseguridad · Hecho con GitHub Pages
     </footer>
 
   </main>
@@ -1919,9 +1900,13 @@
         b.classList.remove("visible");
       });
 
-      document.querySelectorAll(".project-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".project-tab").forEach(t => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
 
       btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
 
       const block = document.getElementById("proj-" + target);
       if (block) {

@@ -3,574 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formación AENOR ISO 27001 · Fabiola RS</title>
+  <meta http-equiv="refresh" content="0; url=2G-gestion-riesgos.html" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://fabiolars5.github.io/proyectos-paginas/2G-gestion-riesgos.html" />
+  <title>Formación AENOR ISO/IEC 27001 · Fabiola RS</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    :root{
-      --bg:#0f1625;
-      --tx:#f3f5fa;
-      --muted:#a2a7b7;
-      --card:#1a2234;
-      --card-soft:#131b2c;
-      --bd:#2b3349;
-      --acc:#00bfae;
-      --acc-soft:#14d1c5;
-      --accent-box:rgba(0,191,174,.08);
+    :root {
+      --bg: #0f1625;
+      --tx: #f3f5fa;
+      --muted: #a2a7b7;
+      --card: #1a2234;
+      --bd: #2b3349;
+      --acc: #00bfae;
+      --acc-soft: #14d1c5;
     }
 
-    *{box-sizing:border-box;}
-
-    html{
-      scroll-behavior:smooth;
+    * {
+      box-sizing: border-box;
     }
 
-    body{
-      margin:0;
-      padding:56px 8%;
-      font-family:Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:var(--bg);
-      color:var(--tx);
-      line-height:1.7;
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--tx);
+      line-height: 1.6;
     }
 
-    .page-header{
-      max-width:980px;
-      margin:0 auto 24px;
+    main {
+      max-width: 680px;
+      padding: 28px;
+      border-radius: 14px;
+      border: 1px solid var(--bd);
+      background: var(--card);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
     }
 
-    h1{
-      margin:0 0 8px;
-      font-size:2.1rem;
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .kicker {
+      margin: 0 0 8px;
+      color: var(--acc-soft);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
-    h1 span.emoji{
-      font-size:1.9rem;
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.55rem, 4vw, 2rem);
+      line-height: 1.25;
     }
 
-    .subtitle{
-      margin:0;
-      color:var(--muted);
-      font-size:.98rem;
+    p {
+      margin: 0 0 18px;
+      color: var(--muted);
     }
 
-    .breadcrumb{
-      margin-top:10px;
-      font-size:.9rem;
-      color:var(--muted);
+    a {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--acc);
+      color: #0f1625;
+      text-decoration: none;
+      font-weight: 800;
     }
 
-    .breadcrumb a{
-      color:var(--acc);
-      text-decoration:none;
-      font-weight:600;
-    }
-
-    .breadcrumb a:hover{
-      text-decoration:underline;
-    }
-
-    .intro-box{
-      max-width:980px;
-      margin:0 auto 24px;
-      background:var(--accent-box);
-      border:1px solid rgba(0,191,174,.25);
-      border-radius:14px;
-      padding:18px 20px;
-    }
-
-    .intro-box p{
-      margin:0 0 10px;
-      color:#dfe5ee;
-    }
-
-    .intro-box p:last-child{
-      margin-bottom:0;
-    }
-
-    .intro-highlight{
-      color:var(--acc-soft);
-      font-weight:700;
-    }
-
-    .subject-grid{
-      max-width:980px;
-      margin:24px auto 0;
-      display:grid;
-      gap:16px;
-    }
-
-    details.subject{
-      background:var(--card);
-      border:1.5px solid var(--bd);
-      border-radius:14px;
-      padding:14px 16px 12px;
-      transition:.2s ease;
-    }
-
-    details.subject[open]{
-      border-color:var(--acc-soft);
-      box-shadow:0 0 0 1px rgba(0,191,174,.2);
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-    }
-
-    summary{
-      list-style:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      cursor:pointer;
-      gap:16px;
-    }
-
-    summary::-webkit-details-marker{
-      display:none;
-    }
-
-    .subject-title{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-      min-width:0;
-    }
-
-    .subject-name{
-      font-weight:700;
-      font-size:1rem;
-      color:#f6f8fc;
-    }
-
-    .subject-tags{
-      font-size:.8rem;
-      color:var(--muted);
-    }
-
-    .chip{
-      display:inline-block;
-      padding:2px 8px;
-      border-radius:999px;
-      border:1px solid #2b3349;
-      margin-right:4px;
-      margin-bottom:4px;
-      background:#131b2c;
-    }
-
-    .subject-arrow{
-      font-size:1.1rem;
-      color:var(--muted);
-      transition:transform .2s ease;
-      flex-shrink:0;
-    }
-
-    details[open] .subject-arrow{
-      transform:rotate(90deg);
-      color:var(--acc);
-    }
-
-    .subject-body{
-      margin-top:12px;
-      padding-top:14px;
-      border-top:1px solid #252c40;
-      font-size:.93rem;
-    }
-
-    .subject-body p{
-      margin:0 0 14px;
-      color:#c9d0dc;
-    }
-
-    .info-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:12px;
-      margin:14px 0 16px;
-    }
-
-    .info-card{
-      background:var(--card-soft);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:12px;
-      padding:12px 14px;
-    }
-
-    .info-card h3{
-      margin:0 0 8px;
-      font-size:.92rem;
-      color:var(--acc);
-    }
-
-    .info-card p{
-      margin:0;
-      font-size:.88rem;
-      color:#d8dde7;
-      line-height:1.6;
-    }
-
-    .resource-list{
-      list-style:none;
-      padding:0;
-      margin:0;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .resource-list li{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px 14px;
-      align-items:center;
-      font-size:.9rem;
-      padding:12px 16px;
-      background:rgba(255,255,255,.02);
-      border:1px solid rgba(255,255,255,.07);
-      border-radius:10px;
-    }
-
-    .resource-type{
-      font-size:.8rem;
-      padding:4px 10px;
-      border-radius:999px;
-      background:#121a2a;
-      border:1px solid #283144;
-      color:#cbd6ef;
-      font-weight:700;
-      flex-shrink:0;
-    }
-
-    .practice-title{
-      color:#f5f7ff;
-      font-size:1rem;
-      font-weight:800;
-      line-height:1.35;
-      flex:1 1 260px;
-    }
-
-    .practice-title.empty{
-      color:var(--muted);
-      font-style:italic;
-      font-weight:600;
-    }
-
-    .resource-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px 10px;
-      align-items:center;
-      min-width:0;
-      margin-left:auto;
-    }
-
-    .resource-links a{
-      color:var(--acc);
-      text-decoration:none;
-      font-weight:800;
-      margin-right:10px;
-      word-break:break-word;
-    }
-
-    .resource-links a:hover{
-      text-decoration:underline;
-    }
-    .request-link{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
-    }
-    .request-link{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
-    }.footer-nav{
-      max-width:980px;
-      margin:32px auto 0;
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .btn-next{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:10px 16px;
-      border-radius:10px;
-      border:none;
-      text-decoration:none;
-      font-weight:700;
-      font-size:.93rem;
-      cursor:pointer;
-      background:var(--acc);
-      color:#0f1625;
-      transition:.2s ease;
-    }
-
-    .btn-next:hover{
-      background:var(--acc-soft);
-      transform:translateY(-1px);
-    }
-
-    @media (max-width:768px){
-      .info-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media (max-width:640px){
-      body{
-        padding:40px 5%;
-      }
-
-      h1{
-        font-size:1.75rem;
-      }
-
-      .subtitle{
-        font-size:.94rem;
-      }
+    a:hover {
+      background: var(--acc-soft);
     }
   </style>
 </head>
 <body>
-
-  <header class="page-header">
-    <h1>
-      <span class="emoji">🎓</span>
-      Formación AENOR ISO 27001
-    </h1>
-
-    <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> ·
-      <span>Gobierno, riesgo y cultura de seguridad</span>
-    </div>
-  </header>
-
-  <section class="intro-box">
+  <main>
+    <p class="kicker">Contenido consolidado</p>
+    <h1>Formación AENOR integrada en Seguridad de la información</h1>
     <p>
-      Esta sección recoge el avance en dos cursos completos de AENOR orientados a <span class="intro-highlight">ISO/IEC 27001</span>:
-      especialista implantador y auditor interno.
+      Esta página se ha unificado con la sección de Seguridad de la información para evitar contenido duplicado en el portfolio.
     </p>
-    <p>
-      El material se mantiene privado, pero la estructura permite mostrar el tipo de prácticas trabajadas:
-      fundamentos del SGSI, implantación, análisis de riesgos y auditoría.
-    </p>
-  </section>
-
-  <main class="subject-grid">
-
-    <details class="subject" open>
-      <summary>
-        <div class="subject-title">
-          <span class="subject-name">Especialista Implantador · Fundamentos según ISO 27002</span>
-          <span class="subject-tags">
-            <span class="chip">ISO 27001</span>
-            <span class="chip">ISO 27002</span>
-            <span class="chip">SGSI</span>
-          </span>
-        </div>
-        <span class="subject-arrow">▶</span>
-      </summary>
-
-      <div class="subject-body">
-        <p>
-          Estudio aplicado de fundamentos del SGSI y marco de controles, orientado a comprender su propósito, estructura y aplicación práctica en medidas organizativas y técnicas.
-        </p>
-
-        <ul class="resource-list">
-          <li>
-            <span class="resource-type">Práctica 1</span>
-            <span class="practice-title">Identificación de controles</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20S-01%20CP01%20Identificacion%20de%20controles%20ISO%2027002" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">Práctica 2</span>
-            <span class="practice-title">Capas de seguridad</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20S-01%20CP02%20Capas%20Fundamentos%20ISO%2027002" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="subject">
-      <summary>
-        <div class="subject-title">
-          <span class="subject-name">Especialista Implantador ISO/IEC 27001 · Implantación del SGSI</span>
-          <span class="subject-tags">
-            <span class="chip">Implantación</span>
-            <span class="chip">Contexto</span>
-            <span class="chip">Alcance</span>
-          </span>
-        </div>
-        <span class="subject-arrow">▶</span>
-      </summary>
-
-      <div class="subject-body">
-        <p>
-          Trabajo práctico sobre implantación de un SGSI, desde análisis de contexto y alcance hasta gestión de riesgos y revisión del grado de cumplimiento.
-        </p>
-
-        <ul class="resource-list">
-          <li>
-            <span class="resource-type">Práctica 1</span>
-            <span class="practice-title">Contexto del SGSI</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20S-02%20CP01%20Contexto%20SGSI%20ISO%2027001" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">Práctica 2</span>
-            <span class="practice-title">Alcance del SGSI</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20S-02%20CP02%20Alcance%20SGSI%20ISO%2027001" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">Práctica 3</span>
-            <span class="practice-title">Gestión de riesgos</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20S-02%20CP03%20Gestion%20de%20riesgos%20SGSI%20ISO%2027001" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">Práctica 4</span>
-            <span class="practice-title">An?lisis diferencial</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20S-02%20CP04%20Analisis%20diferencial%20SGSI%20ISO%2027001" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="subject">
-      <summary>
-        <div class="subject-title">
-          <span class="subject-name">Especialista Implantador ISO/IEC 27001 · Gestión de riesgos</span>
-          <span class="subject-tags">
-            <span class="chip">Riesgo</span>
-            <span class="chip">Tratamiento</span>
-            <span class="chip">ISO 27005</span>
-          </span>
-        </div>
-        <span class="subject-arrow">▶</span>
-      </summary>
-
-      <div class="subject-body">
-        <p>
-          Aplicación del ciclo de riesgos de seguridad de la información para identificar activos, valorar escenarios, definir tratamiento y mantener trazabilidad con controles.
-        </p>
-
-        <ul class="resource-list">
-          <li>
-            <span class="resource-type">Práctica 1</span>
-            <span class="practice-title">Identificación de activos, amenazas y vulnerabilidades</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20Gesti%C3%B3n%20de%20Riesgos%20Pr%C3%A1ctica%201" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">Práctica 2</span>
-            <span class="practice-title">Valoración y priorización de riesgos</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20Gesti%C3%B3n%20de%20Riesgos%20Pr%C3%A1ctica%202" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">Práctica 3</span>
-            <span class="practice-title">Plan de tratamiento de riesgos</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20Gesti%C3%B3n%20de%20Riesgos%20Pr%C3%A1ctica%203" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">Práctica 4</span>
-            <span class="practice-title">Seguimiento, riesgo residual y mejora</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20Gesti%C3%B3n%20de%20Riesgos%20Pr%C3%A1ctica%204" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="subject">
-      <summary>
-        <div class="subject-title">
-          <span class="subject-name">Auditor Interno ISO/IEC 27001</span>
-          <span class="subject-tags">
-            <span class="chip">Auditoría interna</span>
-            <span class="chip">Evidencias</span>
-            <span class="chip">No conformidades</span>
-          </span>
-        </div>
-        <span class="subject-arrow">▶</span>
-      </summary>
-
-      <div class="subject-body">
-        <p>
-          Preparación y documentación de auditoría interna de un SGSI, revisando alcance, evidencias, hallazgos, acciones correctivas y controles asociados.
-        </p>
-
-        <ul class="resource-list">
-          <li>
-            <span class="resource-type">Práctica 1</span>
-            <span class="practice-title">Evaluación del ?mbito de auditoría</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20S-05%20CP01%20Auditor%20Interno%20ISO%2027001" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">Práctica 2</span>
-            <span class="practice-title">Revisión de la documentación y PAC</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20S-05%20CP02%20Auditor%20Interno%20PAC%20ISO%2027001" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">Práctica 3</span>
-            <span class="practice-title">Forma de auditar controles ISO 27002</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20S-05%20CP03%20Auditor%20Interno%20ISO%2027002" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-
-          <li>
-            <span class="resource-type">Práctica 4</span>
-            <span class="practice-title">Planificación de auditoría ISO 27001/27002</span>
-            <div class="resource-links">
-              <a href="mailto:fabiolars5@gmail.com?subject=Solicitud%20de%20acceso%20-%20AENOR%20S-05%20CP04%20Auditor%20Interno%20ISO%2027001" class="request-link">🔒 Solicitar acceso</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </details>
-
+    <a href="2G-gestion-riesgos.html">Ir a Seguridad de la información</a>
   </main>
 
-  <footer class="footer-nav">
-    <a class="btn-next" href="2H-politicas-concienciacion.html">⬅ Anterior</a>
-    <a class="btn-next" href="../index.html">Volver al portfolio ➜</a>
-  </footer>
-
+  <script>
+    window.location.replace("2G-gestion-riesgos.html");
+  </script>
 </body>
 </html>
