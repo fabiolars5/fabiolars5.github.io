@@ -1,0 +1,47 @@
+.archive-body { padding-bottom: 60px; }
+.archive-nav { width: min(1000px, calc(100% - 44px)); padding: 20px 0; margin: 0 auto 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 15px 25px; border-bottom: 1px solid var(--line); }
+.archive-nav .brand { margin-right: auto; }
+.archive-nav > a:not(.brand) { font-size: 12px; color: var(--accent); }
+.archive-notice { color: #9fb7c7; font-size: 11px; width: min(1000px, calc(100% - 44px)); margin: 0 auto 18px; }
+.archive-body .page-header, .archive-body .intro-box, .archive-body .subject-grid, .archive-body .footer-nav { width: min(1000px, calc(100% - 44px)); margin-inline: auto; }
+.archive-body .page-header { margin-bottom: 35px; }
+.archive-body h1 { font-size: 38px; line-height: 1.25; margin-bottom: 18px; overflow-wrap: anywhere; }
+.archive-body .emoji { display: none; }
+.archive-body .breadcrumb { margin: 0; font-size: 12px; }
+.archive-body .breadcrumb a { color: var(--accent); }
+.archive-body .intro-box { padding: 0 0 0 22px; margin-bottom: 35px; border-left: 2px solid #325c5c; }
+.archive-body .intro-box p { font-size: 14px; color: #afbfca; }
+.archive-body .intro-highlight { color: #d3e9ee; font-weight: 550; }
+.archive-body .subject-grid { display: grid; gap: 14px; }
+.archive-body .subject { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: 20px 23px; min-width: 0; }
+.archive-body .subject[open] { border-color: #44766e; }
+.archive-body summary { display: flex; gap: 20px; justify-content: space-between; align-items: center; list-style: none; cursor: pointer; }
+.archive-body summary::-webkit-details-marker { display: none; }
+.archive-body .subject-title { min-width: 0; display: flex; flex-direction: column; gap: 9px; }
+.archive-body .subject-name { font-size: 16px; font-weight: 600; line-height: 1.4; }
+.archive-body .subject-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.archive-body .chip { display: inline-flex; padding: 3px 8px; border: 1px solid #30424f; border-radius: 4px; font-size: 10px; color: #b3c7d2; }
+.archive-body .subject-arrow { color: #7da4ad; font-size: 12px; transition: transform .2s; flex-shrink: 0; }
+.archive-body .subject[open] .subject-arrow { transform: rotate(90deg); color: var(--accent); }
+.archive-body .subject-body { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+.archive-body .subject-body p { max-width: 80ch; color: #b0bfca; font-size: 14px; line-height: 1.8; }
+.archive-body .resource-list { display: flex; flex-direction: column; gap: 0; list-style: none; margin: 0; padding: 0; }
+.archive-body .resource-list li { display: flex; flex-wrap: wrap; gap: 10px 15px; align-items: center; padding: 15px 0; border-top: 1px solid var(--line); font-size: 13px; min-width: 0; }
+.archive-body .resource-type { color: #8eadbf; font-size: 10px; min-width: 72px; }
+.archive-body .practice-title { flex: 1 1 240px; font-weight: 550; line-height: 1.6; min-width: 0; overflow-wrap: anywhere; }
+.archive-body .empty, .archive-body .plain-text { color: #a0afba; font-size: 12px; font-weight: 400; }
+.archive-body .resource-links { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-left: auto; }
+.archive-body .resource-links a { color: var(--accent); font-size: 11px; overflow-wrap: anywhere; min-height: 30px; display: inline-flex; align-items: center; }
+.archive-body .resource-links a:hover { text-decoration: underline; }
+.archive-body .section-note { border-left: 2px solid #325c5c; padding-left: 15px; font-size: 12px; color: #afbfca; margin-top: 20px; }
+.archive-body .footer-nav { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; padding-top: 30px; }
+.archive-body .btn-next { padding: 9px 14px; border: 1px solid #38534f; border-radius: 5px; color: var(--accent); font-size: 12px; }
+.archive-body .btn-next:hover { border-color: var(--accent); }
+@media (max-width: 540px) {
+  .archive-nav { margin-bottom: 28px; }
+  .archive-body h1 { font-size: 28px; }
+  .archive-body .subject { padding: 18px; }
+  .archive-body .resource-list li { flex-direction: column; align-items: flex-start; gap: 7px; }
+  .archive-body .practice-title { flex: initial; }
+  .archive-body .resource-links { margin-left: 0; }
+}

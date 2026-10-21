@@ -1,332 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Desarrollo y scripts seguros · Fabiola RS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desarrollo y scripts seguros · Fabiola Rueda</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  
 
-  <style>
-    :root{
-      --bg:#0f1625;
-      --tx:#f3f5fa;
-      --muted:#a2a7b7;
-      --card:#1a2234;
-      --card-soft:#131b2c;
-      --bd:#2b3349;
-      --acc:#00bfae;
-      --acc-soft:#14d1c5;
-      --accent-box:rgba(0,191,174,.08);
-    }
-
-    *{box-sizing:border-box;}
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      margin:0;
-      padding:56px 8%;
-      font-family:Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:var(--bg);
-      color:var(--tx);
-      line-height:1.7;
-    }
-
-    .page-header{
-      max-width:980px;
-      margin:0 auto 24px;
-    }
-
-    h1{
-      margin:0 0 8px;
-      font-size:2.1rem;
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    h1 span.emoji{
-      font-size:1.9rem;
-    }
-
-    .subtitle{
-      margin:0;
-      color:var(--muted);
-      font-size:.98rem;
-    }
-
-    .breadcrumb{
-      margin-top:10px;
-      font-size:.9rem;
-      color:var(--muted);
-    }
-
-    .breadcrumb a{
-      color:var(--acc);
-      text-decoration:none;
-      font-weight:600;
-    }
-
-    .breadcrumb a:hover{
-      text-decoration:underline;
-    }
-
-    .intro-box{
-      max-width:980px;
-      margin:0 auto 24px;
-      background:var(--accent-box);
-      border:1px solid rgba(0,191,174,.25);
-      border-radius:14px;
-      padding:18px 20px;
-    }
-
-    .intro-box p{
-      margin:0 0 10px;
-      color:#dfe5ee;
-    }
-
-    .intro-box p:last-child{
-      margin-bottom:0;
-    }
-
-    .intro-highlight{
-      color:var(--acc-soft);
-      font-weight:700;
-    }
-
-    .subject-grid{
-      max-width:980px;
-      margin:24px auto 0;
-      display:grid;
-      gap:16px;
-    }
-
-    details.subject{
-      background:var(--card);
-      border:1.5px solid var(--bd);
-      border-radius:14px;
-      padding:14px 16px 12px;
-      transition:.2s ease;
-    }
-
-    details.subject[open]{
-      border-color:var(--acc-soft);
-      box-shadow:0 0 0 1px rgba(0,191,174,.2);
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-    }
-
-    summary{
-      list-style:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      cursor:pointer;
-      gap:16px;
-    }
-
-    summary::-webkit-details-marker{
-      display:none;
-    }
-
-    .subject-title{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-      min-width:0;
-    }
-
-    .subject-name{
-      font-weight:700;
-      font-size:1rem;
-      color:#f6f8fc;
-    }
-
-    .subject-tags{
-      font-size:.8rem;
-      color:var(--muted);
-    }
-
-    .chip{
-      display:inline-block;
-      padding:2px 8px;
-      border-radius:999px;
-      border:1px solid #2b3349;
-      margin-right:4px;
-      margin-bottom:4px;
-      background:#131b2c;
-    }
-
-    .subject-arrow{
-      font-size:1.1rem;
-      color:var(--muted);
-      transition:transform .2s ease;
-      flex-shrink:0;
-    }
-
-    details[open] .subject-arrow{
-      transform:rotate(90deg);
-      color:var(--acc);
-    }
-
-    .subject-body{
-      margin-top:12px;
-      padding-top:14px;
-      border-top:1px solid #252c40;
-      font-size:.93rem;
-    }
-
-    .subject-body p{
-      margin:0 0 14px;
-      color:#c9d0dc;
-    }
-
-    .resource-list{
-      list-style:none;
-      padding:0;
-      margin:0;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .resource-list li{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px 14px;
-      align-items:center;
-      font-size:.9rem;
-      padding:12px 16px;
-      background:rgba(255,255,255,.02);
-      border:1px solid rgba(255,255,255,.07);
-      border-radius:10px;
-    }
-
-    .resource-type{
-      font-size:.8rem;
-      padding:4px 10px;
-      border-radius:999px;
-      background:#121a2a;
-      border:1px solid #283144;
-      color:#cbd6ef;
-      font-weight:700;
-      flex-shrink:0;
-    }
-
-    .practice-title{
-      color:#f5f7ff;
-      font-size:1rem;
-      font-weight:800;
-      line-height:1.35;
-      flex:1 1 260px;
-    }
-
-    .practice-title.empty{
-      color:var(--muted);
-      font-style:italic;
-      font-weight:600;
-    }
-
-    .resource-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px 10px;
-      align-items:center;
-      min-width:0;
-      margin-left:auto;
-    }
-
-    .resource-links a{
-      color:var(--acc);
-      text-decoration:none;
-      font-weight:800;
-      margin-right:10px;
-      word-break:break-word;
-    }
-
-    .resource-links a:hover{
-      text-decoration:underline;
-    }
-    .request-link{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      white-space:nowrap;
-    }
-
-    .plain-text{
-      color:#dbe1ea;
-      font-size:.92rem;
-    }
-
-    .empty{
-      font-style:italic;
-      color:var(--muted);
-    }
-
-    .section-note{
-      margin-top:14px;
-      padding:12px 14px;
-      background:rgba(0,191,174,.05);
-      border:1px solid rgba(0,191,174,.18);
-      border-radius:10px;
-      color:#dfe5ee;
-      font-size:.88rem;
-    }
-
-    .section-note strong{
-      color:var(--acc-soft);
-    }
-
-    .footer-nav{
-      max-width:980px;
-      margin:32px auto 0;
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .btn-next{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:10px 16px;
-      border-radius:10px;
-      border:none;
-      text-decoration:none;
-      font-weight:700;
-      font-size:.93rem;
-      cursor:pointer;
-      background:var(--acc);
-      color:#0f1625;
-      transition:.2s ease;
-    }
-
-    .btn-next:hover{
-      background:var(--acc-soft);
-      transform:translateY(-1px);
-    }
-
-
-    @media (max-width:640px){
-      body{
-        padding:40px 5%;
-      }
-
-      h1{
-        font-size:1.75rem;
-      }
-
-      .subtitle{
-        font-size:.94rem;
-      }
-    }
-  </style>
-</head>
-<body>
+  
+<link rel="stylesheet" href="../assets/css/site.css"><link rel="stylesheet" href="../assets/css/archive.css"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><script defer="" src="../assets/js/icons.js"></script><script defer src="../assets/js/translations.js"></script><script defer src="../assets/js/i18n.js"></script><script defer="" src="../assets/js/site.js"></script><link rel="canonical" href="https://fabiolars5.github.io/proyectos-paginas/2F-desarrollo-seguro.html"><meta name="description" content="Documentación de proyectos y entregables de Fabiola Rueda. Archivo original en español."></head>
+<body class="archive-body"><a class="skip-link" href="#main">Saltar al contenido</a><nav class="archive-nav" aria-label="Navegación"><a class="brand" href="../index.html#projects-cybersecurity"><span class="brand-symbol" data-icon="shield-check"></span>Fabiola Rueda</a><a href="../projects.html">Biblioteca</a><a href="../education.html">Formación</a><a href="../index.html#contact">Contacto</a><div class="language-switch" role="group" aria-label="Language"><button type="button" data-language="en" lang="en" title="English" aria-pressed="true">EN</button><button type="button" data-language="es" lang="es" title="Español" aria-pressed="false">ES</button></div></nav><p class="archive-notice">Documentación original · Español</p>
 
   <header class="page-header">
     <h1>
@@ -335,7 +19,7 @@
     </h1>
 
     <div class="breadcrumb">
-      <a href="../index.html">⬅ Volver al portfolio</a> ·
+      <a href="../index.html#projects-cybersecurity">⬅ Volver al portfolio</a> ·
       <span>Automatización y desarrollo</span>
     </div>
   </header>
@@ -352,10 +36,10 @@
     </p>
   </section>
 
-  <main class="subject-grid">
+  <main class="subject-grid" id="main">
 
-    <!-- 1. Scripts de automatización seguros -->
-    <details class="subject" open>
+    
+    <details class="subject" open="" id="scripts-de-automatizacion-con-enfoque-de-seguridad">
       <summary>
         <div class="subject-title">
           <span class="subject-name">Scripts de automatización con enfoque de seguridad</span>
@@ -394,8 +78,8 @@
       </div>
     </details>
 
-    <!-- 2. Utilidades internas -->
-    <details class="subject">
+    
+    <details class="subject" id="pequenas-utilidades-internas-con-desarrollo-seguro">
       <summary>
         <div class="subject-title">
           <span class="subject-name">Pequeñas utilidades internas con desarrollo seguro</span>
@@ -426,8 +110,8 @@
       </div>
     </details>
 
-    <!-- 3. Checklists y guías -->
-    <details class="subject">
+    
+    <details class="subject" id="checklists-y-guias-de-desarrollo-seguro">
       <summary>
         <div class="subject-title">
           <span class="subject-name">Checklists y guías de desarrollo seguro</span>
@@ -466,8 +150,8 @@
       </div>
     </details>
 
-    <!-- 4. Seguridad en el ciclo de vida -->
-    <details class="subject">
+    
+    <details class="subject" id="seguridad-integrada-en-el-ciclo-de-vida-del-script">
       <summary>
         <div class="subject-title">
           <span class="subject-name">Seguridad integrada en el ciclo de vida del script</span>
@@ -498,8 +182,8 @@
       </div>
     </details>
 
-    <!-- 5. Revisión y refactorización segura -->
-    <details class="subject">
+    
+    <details class="subject" id="revision-y-refactorizacion-con-enfoque-seguro">
       <summary>
         <div class="subject-title">
           <span class="subject-name">Revisión y refactorización con enfoque seguro</span>
