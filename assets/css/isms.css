@@ -1,0 +1,41 @@
+.hero h1 { margin-bottom: 28px; }
+.business-intro { display: grid; grid-template-columns: 1fr 1.12fr; gap: 64px; }
+.business-statement { font-size: 29px; font-weight: 550; line-height: 1.4; margin: 0; max-width: 420px; }
+.business-statement span { color: var(--accent); }
+.business-copy { max-width: 610px; color: #aabac6; font-size: 14px; }
+.business-copy p:last-child { margin-bottom: 0; }
+.business-principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 35px; padding-top: 36px; margin-top: 36px; border-top: 1px solid var(--line); }
+.business-principles .icon { color: var(--accent); margin-bottom: 16px; }
+.business-principles h3 { font-size: 16px; }
+.business-principles p { color: var(--muted); font-size: 13px; margin-bottom: 0; }
+.profile-context { margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--line); }
+.profile-context .about-copy { font-size: 14px; }
+.profile-context .about-copy h3 { font-size: 20px; color: var(--text); }
+.isms-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.isms-project-grid .project-card-top { margin-bottom: 18px; }
+.isms-project-grid .project-card > p { margin-bottom: 22px; }
+.case-boundary { border-left: 2px solid #49756f; padding-left: 18px; margin-top: 28px; }
+.case-layout .case-boundary h2 { font-size: 17px; margin-top: 0; }
+.case-layout .case-boundary p { font-size: 12px; margin-bottom: 0; }
+.case-layout > div { min-width: 0; }
+.case-layout h2:first-child { margin-top: 0; }
+.case-layout .deliverable .text-link { white-space: normal; }
+.case-layout .deliverable p { min-width: 0; }
+.case-meta dd { overflow-wrap: anywhere; }
+.case-work-list { padding-left: 20px; }
+.case-footer-link { margin-top: 30px; }
+.library-intro { max-width: 720px; }
+.draft-empty { max-width: 600px; }
+@media (max-width: 800px) {
+  .business-intro { grid-template-columns: 1fr; gap: 24px; }
+  .business-statement { max-width: 600px; }
+  .business-principles { gap: 25px; }
+}
+@media (max-width: 540px) {
+  .business-statement { font-size: 24px; }
+  .business-principles, .isms-project-grid { grid-template-columns: 1fr; }
+  .business-principles { gap: 24px; }
+  .business-principles .icon { margin-bottom: 10px; }
+  .profile-context { margin-top: 32px; padding-top: 28px; }
+  .contact-section h2 { font-size: 36px; }
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "slug": "context-scope",
+    "module": "S-02 / CP01–CP02",
+    "icon": "building-2",
+    "category": "implementation",
+    "title": ["Context & ISMS scope", "Contexto y alcance del SGSI"],
+    "area": ["ISMS implementation", "Implantación del SGSI"],
+    "tags": [["ISO/IEC 27001", "ISO/IEC 27001"], ["Context", "Contexto"], ["Scope", "Alcance"]],
+    "summary": ["Analysis of organisational context, stakeholder needs and boundaries to define what the management system covers.", "Análisis del contexto organizativo, las necesidades de las partes interesadas y los límites para definir qué abarca el sistema de gestión."],
+    "context": ["Two separate training assignments: an organisational-context analysis using a known organisation as an academic reference, and a scope exercise based on a hospital scenario. They are not client engagements or a single implementation project.", "Dos ejercicios formativos independientes: un análisis de contexto que utiliza una organización conocida como referencia académica y un ejercicio de alcance basado en un escenario hospitalario. No son trabajos para clientes ni un único proyecto de implantación."],
+    "work": [
+      ["Identify internal and external issues, interested parties and information security needs in the context assignment.", "Identificar cuestiones internas y externas, partes interesadas y necesidades de seguridad de la información en el ejercicio de contexto."],
+      ["Relate relevant information and processes to confidentiality, integrity, availability and risk.", "Relacionar la información y los procesos relevantes con la confidencialidad, integridad, disponibilidad y riesgo."],
+      ["Select processes and activities for the proposed hospital scope, considering boundaries and dependencies.", "Seleccionar procesos y actividades para el alcance hospitalario propuesto, considerando límites y dependencias."]
+    ],
+    "reasoning": ["A useful scope explains which activities and information are covered and how dependencies are handled. Defining it as a list of IT systems alone can overlook the people and processes that use the information.", "Un alcance útil explica qué actividades e información se incluyen y cómo se tratan sus dependencias. Definirlo solo como una lista de sistemas informáticos puede dejar fuera a las personas y los procesos que utilizan la información."],
+    "output": ["A documented context analysis and a separate proposed scope, with the reasoning for the processes included.", "Un análisis de contexto documentado y una propuesta de alcance independiente, con la justificación de los procesos incluidos."],
+    "boundary": ["Educational analysis based on course scenarios and reference information. It does not demonstrate implementation or validation of an ISMS in the organisations used as examples.", "Análisis educativo basado en escenarios del curso e información de referencia. No acredita la implantación ni la validación de un SGSI en las organizaciones utilizadas como ejemplo."],
+    "deliverables": [["Context analysis · CP01", "Análisis de contexto · CP01"], ["Scope proposal · CP02", "Propuesta de alcance · CP02"]]
+  },
+  {
+    "slug": "risk-assessment",
+    "module": "S-03 / CP01–CP05",
+    "icon": "scale",
+    "category": "risk",
+    "title": ["Risk assessment & treatment", "Evaluación y tratamiento de riesgos"],
+    "area": ["Information security risk", "Riesgos de seguridad de la información"],
+    "tags": [["Assets", "Activos"], ["Impact", "Impacto"], ["Treatment", "Tratamiento"], ["Residual risk", "Riesgo residual"]],
+    "summary": ["A fictitious hospital case connecting asset dependencies, threat assessment and treatment decisions.", "Caso de un hospital ficticio que relaciona dependencias entre activos, evaluación de amenazas y decisiones de tratamiento."],
+    "context": ["Five connected exercises consolidated into a risk report for Hospital Monte Aneto, a fictitious organisation used in the training. The assessment works with the information and assumptions of that scenario.", "Cinco ejercicios relacionados, consolidados en un informe de riesgos para el Hospital Monte Aneto, una organización ficticia utilizada en la formación. La evaluación trabaja con la información y los supuestos de ese escenario."],
+    "work": [
+      ["Value assets and the impact of information security events using the dimensions considered in the case.", "Valorar los activos y el impacto de los eventos de seguridad de la información mediante las dimensiones consideradas en el caso."],
+      ["Analyse asset dependencies and the propagation of impact to supporting resources.", "Analizar las dependencias entre activos y la propagación del impacto a los recursos de soporte."],
+      ["Assess threats and likelihood, evaluate risk scenarios and document treatment proposals.", "Evaluar amenazas y probabilidad, valorar escenarios de riesgo y documentar propuestas de tratamiento."],
+      ["Review the residual-risk levels resulting from the proposed treatment within the exercise.", "Revisar los niveles de riesgo residual derivados del tratamiento propuesto dentro del ejercicio."]
+    ],
+    "reasoning": ["An asset's relevance depends on the information and processes it supports. Linking dependencies, impact and treatment makes the assessment easier to explain and helps distinguish a proposed control from evidence of an effective control.", "La relevancia de un activo depende de la información y los procesos a los que da soporte. Relacionar dependencias, impacto y tratamiento permite explicar la evaluación y distinguir un control propuesto de la evidencia de un control eficaz."],
+    "output": ["A consolidated CP01–CP05 report bringing together asset valuation, dependencies, threat analysis, risk assessment and treatment.", "Un informe consolidado CP01–CP05 que reúne valoración de activos, dependencias, análisis de amenazas, evaluación y tratamiento de riesgos."],
+    "boundary": ["Simulated case. Residual-risk values are estimates within the exercise, not measured business results or evidence that controls were deployed in a real hospital.", "Caso simulado. Los valores de riesgo residual son estimaciones del ejercicio, no resultados empresariales medidos ni evidencia de controles desplegados en un hospital real."],
+    "deliverables": [["Consolidated risk report · CP01–CP05", "Informe consolidado de riesgos · CP01–CP05"]]
+  },
+  {
+    "slug": "gap-analysis",
+    "module": "S-02 / CP04",
+    "icon": "file-chart-column",
+    "category": "implementation",
+    "title": ["Gap analysis", "Análisis diferencial"],
+    "area": ["Control review", "Revisión de controles"],
+    "tags": [["ISO/IEC 27002", "ISO/IEC 27002"], ["Policies", "Políticas"], ["Backups", "Copias de seguridad"], ["Responsibilities", "Responsabilidades"]],
+    "summary": ["Review of policy governance, backup practices and disciplinary arrangements against the control expectations in a training scenario.", "Revisión de la gestión de políticas, las prácticas de respaldo y el proceso disciplinario frente a los controles planteados en un escenario formativo."],
+    "context": ["The assignment describes three situations with incomplete practices or documentation. I examined the information available, identified relevant interviewees and documented gaps and improvement recommendations.", "El ejercicio describe tres situaciones con prácticas o documentación incompletas. Analicé la información disponible, identifiqué a las personas a entrevistar y documenté carencias y recomendaciones de mejora."],
+    "work": [
+      ["Review the distinction between an IT good-practice manual and an approved, communicated and reviewed information security policy framework.", "Revisar la diferencia entre un manual de buenas prácticas de TI y un marco de políticas de seguridad aprobado, comunicado y revisado."],
+      ["Examine backup responsibilities, media inventory, configuration knowledge and evidence of restoration tests.", "Examinar las responsabilidades de respaldo, el inventario de soportes, el conocimiento de la configuración y las evidencias de pruebas de restauración."],
+      ["Consider the need for defined, communicated responsibilities and procedures when addressing security-related misconduct.", "Considerar la necesidad de responsabilidades y procedimientos definidos y comunicados ante incumplimientos relacionados con la seguridad."]
+    ],
+    "reasoning": ["The existence of a document or an automated task does not, by itself, establish that a control is working. The review considers approval, responsibilities, communication, execution and evidence before drawing a conclusion.", "La existencia de un documento o una tarea automatizada no demuestra, por sí sola, que un control funcione. La revisión considera aprobación, responsabilidades, comunicación, ejecución y evidencias antes de llegar a una conclusión."],
+    "output": ["A control-by-control analysis identifying interviewees, gaps and reasoned recommendations for the three scenarios.", "Un análisis por control con las personas a entrevistar, las carencias y las recomendaciones razonadas para los tres escenarios."],
+    "boundary": ["Training analysis, not a full organisational compliance assessment or legal opinion. Recommendations were proposed within the case; implementation and effectiveness were not verified.", "Análisis formativo, no una evaluación integral de cumplimiento ni asesoramiento jurídico. Las recomendaciones se propusieron dentro del caso; no se verificaron su implantación ni eficacia."],
+    "deliverables": [["Gap analysis · CP04", "Análisis diferencial · CP04"]]
+  },
+  {
+    "slug": "internal-audit",
+    "module": "S-05 / CP01–CP04",
+    "icon": "clipboard-check",
+    "category": "audit",
+    "title": ["Internal audit preparation", "Preparación de auditoría interna"],
+    "area": ["ISMS auditing", "Auditoría del SGSI"],
+    "tags": [["ISO/IEC 27001", "ISO/IEC 27001"], ["Evidence", "Evidencias"], ["Sampling", "Muestreo"], ["Audit planning", "Planificación de auditoría"]],
+    "summary": ["Four practical assignments covering scope, documentation, control verification and a simulated audit plan.", "Cuatro ejercicios prácticos sobre alcance, documentación, verificación de controles y planificación de una auditoría simulada."],
+    "context": ["A series of internal-audit exercises based on fictitious organisations. The work progresses from evaluating the scope and documentation to considering evidence, sampling and the organisation of an audit.", "Una serie de ejercicios de auditoría interna basados en organizaciones ficticias. El trabajo avanza desde la evaluación del alcance y la documentación hasta las evidencias, el muestreo y la organización de una auditoría."],
+    "work": [
+      ["Evaluate the scope, relevant functions, organisational boundaries and third-party interfaces.", "Evaluar el alcance, las funciones relevantes, los límites organizativos y las interfaces con terceros."],
+      ["Review management-system documentation and the corrective action plan in the scenario.", "Revisar la documentación del sistema de gestión y el plan de acciones correctivas del escenario."],
+      ["Identify audit techniques and evidence for responsibilities, suppliers, physical access and network controls.", "Identificar técnicas de auditoría y evidencias sobre responsabilidades, proveedores, acceso físico y controles de red."],
+      ["Prepare a simulated four-day audit plan with activities, roles, timings, meetings and sampled areas.", "Preparar un plan de auditoría simulado de cuatro días con actividades, funciones, horarios, reuniones y áreas a muestrear."]
+    ],
+    "reasoning": ["An audit conclusion needs evidence related to a defined criterion and scope. Sampling and interviews should be planned to test what happens in practice, while keeping the auditor's evaluation separate from a consultant's implementation recommendations.", "Una conclusión de auditoría necesita evidencias relacionadas con un criterio y un alcance definidos. El muestreo y las entrevistas deben planificarse para comprobar la práctica, separando la evaluación del auditor de las recomendaciones de implantación de un consultor."],
+    "output": ["Four completed assignments: scope review, documentary and corrective-action review, control audit techniques and an audit plan.", "Cuatro ejercicios completados: revisión del alcance, revisión documental y de acciones correctivas, técnicas de auditoría de controles y un plan de auditoría."],
+    "boundary": ["Simulated audit preparation. It does not represent a completed certification audit or independent audit engagement for a real client.", "Preparación de auditoría simulada. No representa una auditoría de certificación realizada ni un encargo de auditoría independiente para un cliente real."],
+    "deliverables": [["Scope review · CP01", "Revisión del alcance · CP01"], ["Documentary review & corrective actions · CP02", "Revisión documental y acciones correctivas · CP02"], ["Control audit techniques · CP03", "Técnicas de auditoría de controles · CP03"], ["Simulated audit plan · CP04", "Plan de auditoría simulado · CP04"]]
+  }
+]

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cybersecurity lock favicon">
+  <defs>
+    <linearGradient id="bg" x1="9" y1="6" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101a2d"/>
+      <stop offset="1" stop-color="#07101e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="18" y1="10" x2="47" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7dd3fc"/>
+      <stop offset=".5" stop-color="#00bfae"/>
+      <stop offset="1" stop-color="#14d1c5"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <path d="M32 6.8 51 14.4v14.5c0 13.1-7.7 22.2-19 28.2-11.3-6-19-15.1-19-28.2V14.4L32 6.8Z" fill="none" stroke="rgba(125,211,252,.28)" stroke-width="2.2"/>
+
+  <path d="M23.5 28.5v-5.3C23.5 17.7 27.1 14 32 14s8.5 3.7 8.5 9.2v5.3" fill="none" stroke="url(#accent)" stroke-width="4" stroke-linecap="round"/>
+  <rect x="19" y="27" width="26" height="22" rx="5" fill="#111a2b" stroke="url(#accent)" stroke-width="3" filter="url(#glow)"/>
+  <circle cx="32" cy="37" r="3.2" fill="#7dd3fc"/>
+  <path d="M32 40.2v5" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round"/>
+
+  <path d="M14 48h6M44 48h6M17 42l4 3M47 42l-4 3" stroke="#00bfae" stroke-width="1.6" stroke-linecap="round" opacity=".75"/>
+  <circle cx="14" cy="48" r="1.8" fill="#00bfae"/>
+  <circle cx="50" cy="48" r="1.8" fill="#00bfae"/>
+</svg>
