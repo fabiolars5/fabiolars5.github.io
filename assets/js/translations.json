@@ -756,8 +756,8 @@
     "Seguridad de la información en la práctica."
   ],
   [
-    "Operational participation in the ISMS alongside access administration, security monitoring and IT support. My work connects documented requirements with records, technical controls and follow-up actions.",
-    "Participación operativa en el SGSI junto con administración de accesos, monitorización de seguridad y soporte IT. Mi trabajo conecta los requisitos documentados con registros, controles técnicos y acciones de seguimiento."
+    "Operational ISMS work alongside day-to-day IT support and systems administration, including access management, security monitoring, internal applications and process automation.",
+    "Trabajo operativo en el SGSI junto con soporte IT diario y administración de sistemas, incluyendo gestión de accesos, monitorización de seguridad, aplicaciones internas y automatización de procesos."
   ],
   [
     "ISMS documentation & evidence",
@@ -788,16 +788,16 @@
     "Ciclo de vida de cuentas · Roles · Permisos"
   ],
   [
-    "Operational security & IT",
-    "Seguridad operativa e IT"
+    "Operational security",
+    "Seguridad operativa"
   ],
   [
-    "Monitoring · Vulnerabilities · Automation",
-    "Monitorización · Vulnerabilidades · Automatización"
+    "Monitoring · Vulnerabilities · Incidents",
+    "Monitorización · Vulnerabilidades · Incidentes"
   ],
   [
-    "Provide L1–L3 support and systems administration; develop and document scripts for recurring IT tasks.",
-    "Prestar soporte L1–L3 y administrar sistemas; desarrollar y documentar scripts para tareas IT recurrentes."
+    "Provide onsite and remote L1–L3 support for hardware, software, networks, VPN, Wi-Fi and DNS.",
+    "Prestar soporte L1–L3 presencial y remoto para hardware, software, redes, VPN, Wi-Fi y DNS."
   ],
   [
     "These responsibilities describe my professional role. The AENOR case studies below are separate training exercises; no corporate documents are published.",
@@ -1266,5 +1266,37 @@
   [
     "Professional experience and applied coursework in ISMS, risk management, controls and internal auditing.",
     "Experiencia profesional y prácticas formativas en SGSI, gestión de riesgos, controles y auditoría interna."
+  ],
+  [
+    "Systems administration & IT support",
+    "Administración de sistemas y soporte IT"
+  ],
+  [
+    "L1–L3 support · Devices · Networks",
+    "Soporte L1–L3 · Equipos · Redes"
+  ],
+  [
+    "Automation, databases & applications",
+    "Automatización, bases de datos y aplicaciones"
+  ],
+  [
+    "Analyse suspicious email headers, links and attachments to support incident review and follow-up.",
+    "Analizar cabeceras, enlaces y adjuntos de correos sospechosos para apoyar la revisión y el seguimiento de incidentes."
+  ],
+  [
+    "Configure Windows, macOS and Linux devices, corporate software, domain membership and user profiles.",
+    "Configurar equipos Windows, macOS y Linux, software corporativo, incorporación al dominio y perfiles de usuario."
+  ],
+  [
+    "Collaborate with international teams in system update meetings using English.",
+    "Colaborar con equipos internacionales en reuniones de actualización de sistemas en inglés."
+  ],
+  [
+    "Maintain SQL Server databases through SSMS and T-SQL queries; support internal applications and CSV-based bulk operations.",
+    "Mantener bases de datos SQL Server mediante SSMS y consultas T-SQL; dar soporte a aplicaciones internas y operaciones masivas con CSV."
+  ],
+  [
+    "Develop and document Python, PowerShell and CMD scripts for recurring IT tasks and internal processes.",
+    "Desarrollar y documentar scripts en Python, PowerShell y CMD para tareas IT recurrentes y procesos internos."
   ]
 ]
